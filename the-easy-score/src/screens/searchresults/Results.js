@@ -1,10 +1,11 @@
 import React from "react";
+import "./styles.css";
 
 const Results = () => {
   return (
-    <div>
-      <div></div>
-    </div>
+    <main className="results-container">
+      <div>You made it to search results!</div>
+    </main>
   );
 };
 

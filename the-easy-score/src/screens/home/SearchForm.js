@@ -1,12 +1,18 @@
 import React from "react";
 
-const SearchForm = () => {
+const SearchForm = ({ push }) => {
   const handleChange = (e) => {
     console.log(e);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+    push("/search");
+  };
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           <input
             type="text"

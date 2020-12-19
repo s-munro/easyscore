@@ -3,13 +3,13 @@ import "./styles.css";
 
 import SearchForm from "./SearchForm";
 
-const Home = () => {
+const Home = (props) => {
   return (
     <main className="home-main">
       <div>
         <h2>Easy Score Home Page</h2>
       </div>
-      <SearchForm />
+      <SearchForm push={props.history.push} />
     </main>
   );
 };
