@@ -24,7 +24,10 @@ const App = () => {
           path="/professors/:id"
           render={(props) => <Professor {...props} />}
         />
-        <Route path="/search" render={(props) => <Results {...props} />} />
+        <Route
+          path="/search/:axiosUrl"
+          render={(props) => <Results {...props} />}
+        />
       </Switch>
       <Footer />
     </Router>
