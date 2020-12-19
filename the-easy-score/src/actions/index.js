@@ -7,16 +7,13 @@ export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
 export const CHANGE_URL = "CHANGE_URL";
 
 export const fetchResults = (func, url) => (dispatch) => {
-  console.log("url: ", url);
   dispatch({ type: FETCH_DATA_START });
 
-  console.log("func: ", func);
   axios
     .get(
       `https://cors-anywhere.herokuapp.com/https://theeasyscore.com/results&jsonquery=${url}`
     )
     .then((res) => {
-      // console.log("res: ", res);
       dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data.courses });
     })
     .catch((err) => {
