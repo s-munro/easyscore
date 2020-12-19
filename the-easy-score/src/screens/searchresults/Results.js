@@ -10,8 +10,6 @@ import "./styles.css";
 const Results = (props) => {
   const params = useParams();
 
-  console.log("params: ", params);
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchResults(getData, params.axiosUrl));
