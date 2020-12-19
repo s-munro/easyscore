@@ -1,12 +1,22 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { useEffect } from "react";
+import { connect, useDispatch } from "react-redux";
 import { fetchResults } from "../../actions";
+import { useParams } from "react-router-dom";
 
-// import getData from "../../utils/api/axiosCall";
+import { getData } from "../../utils/api/getData";
 
 import "./styles.css";
 
-const Results = () => {
+const Results = (props) => {
+  const params = useParams();
+
+  console.log("params: ", params);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchResults(getData, params.axiosUrl));
+  }, []);
+
   return (
     <main className="results-container">
       <div>You made it to search results!</div>
@@ -22,8 +32,10 @@ const Results = () => {
 
 const mapStateToProps = (state) => {
   return {
-    params: state.params,
+    searchUrl: state.searchUrl,
     isLoading: state.isLoading,
+    courses: state.courses,
+    errorText: state.errorText,
   };
 };
 
