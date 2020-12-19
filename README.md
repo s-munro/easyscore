@@ -14,3 +14,6 @@ The easy score is a web applicated intended as a course-planning resource for st
   - Scaffolding
     - screens, footer & nav folders added.
     * README added
+    * axios added as a dependency
+    * axios folder created
+    * Home.js form button pushes history to '/search'
