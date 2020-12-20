@@ -1,3 +1,62 @@
 .results-container {
   min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  border: 1px solid blue;
+  width: 100%;
+  margin: 0;
+}
+/********* HEADER LEFT SIDE ***********/
+.header-third-left-side {
+  border: 1px solid pink;
+  margin: 2% 5%;
+}
+
+.filter-options-title {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/************* HEADER CENTER ***************/
+.header-third-center {
+  border: 1px solid pink;
+  margin: 2% 5%;
+}
+/************* HEADER RIGHT SIDE ***********/
+.header-third-right-side {
+  border: 1px solid pink;
+  margin: 2% 5%;
+}
+
+.course-days-explanation-key-container {
+  display: flex;
+}
+
+.day {
+  background-color: cornflowerblue;
+  color: cornsilk;
+  margin: 1%;
+  padding: 2%;
+}
+
+/*************** COURSE CARD ***************/
+.course-card {
+  border: 1px solid blue;
+}
+
+/** COURSE-CARD-INSTRUCTOR COMPONENT **/
+.professor-main-container {
+  display: flex;
+  border: 1px solid pink;
 }
