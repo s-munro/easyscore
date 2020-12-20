@@ -1,32 +1,44 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { fetchResults } from "../../actions";
 import { useParams } from "react-router-dom";
 
 import { getData } from "../../utils/api/getData";
+import { filterToKeyword } from "./hooks/";
+
+import Header from "./components/Header";
+import CourseCard from "./components/CourseCard";
+import NoResults from "./components/NoResults";
 
 import "./styles.css";
 
 const Results = (props) => {
+  const [keyword, setKeyword] = useState("");
   const params = useParams();
+
+  console.log("results props: ", props);
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchResults(getData, params.axiosUrl));
+    filterToKeyword(params.axiosUrl, setKeyword);
   }, []);
 
   return (
     <main className="results-container">
-      <div>You made it to search results!</div>
+      <Header keyword={keyword} />
+      <div>
+        {props.courses.length > 0 ? (
+          props.courses.map((course) => {
+            return <CourseCard course={course} key={course.url} />;
+          })
+        ) : (
+          <NoResults />
+        )}
+      </div>
     </main>
   );
 };
-
-// search button will push to this page, axios calls using url from state
-// how do we get a unique url to bookmark/return to?
-// ^^^^ what would be neccesary? ^^^^:
-// <Route to="???????" <-- how to figure out the url & render ?
-// push to route, then use useParams to draw props for axios call
 
 const mapStateToProps = (state) => {
   return {

@@ -21,7 +21,12 @@ const reducer = (state = initialState, action) => {
     case FETCH_DATA_SUCCESS:
       return { ...state, isLoading: false, courses: action.payload };
     case FETCH_DATA_FAILURE:
-      return { ...state, isLoading: false, errorText: action.payload };
+      return {
+        ...state,
+        isLoading: false,
+        errorText: action.payload,
+        courses: [],
+      };
     default:
       return state;
   }
