@@ -14,6 +14,7 @@ export const fetchResults = (func, url) => (dispatch) => {
       `https://cors-anywhere.herokuapp.com/https://theeasyscore.com/results&jsonquery=${url}`
     )
     .then((res) => {
+      console.log("res: ", res);
       dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data.courses });
     })
     .catch((err) => {

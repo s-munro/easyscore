@@ -4,11 +4,11 @@
 
 ** The Easy Score **
 
-The easy score is a web applicated intended as a course-planning resource for students to compare courses, professors, and grade distributions. The site is being redesigned as a single page react app, with this repository as our workpoint.
+The easy score is a web applicated intended as a course-planning resource for students to compare courses, professors, and grade distributions. The site is being redesigned as a single page react app with this repository as our workpoint.
 
-#### Change Log
+### Change Log
 
-**Friday/Saturday, December 18/19:**
+#### Friday/Saturday, December 18/19:
 
 - Sam Munro
 
@@ -29,4 +29,9 @@ The easy score is a web applicated intended as a course-planning resource for st
       - 'showing results for x' x dynamically updates based off of the url so that it still shows recognizes and shows search terms even if people just visit through a link.
       - CourseCard is displaying data based off of the api return
       - CourseCardInstructor component is created for the first three iterations of instructors.map. To clarify to users, the card also displays the total number of professors for the course (instructors.length)
-      * **Worth noting:** Coursecard may look unusual when only one or two results display instead of a full page. May be worth it to consider using a different style of card (horizontal vs tall) for cases where results are a small number (i.e. res.data.length < 3 ? <HorizontalCard /> : <VerticalCard />)
+      * **Worth noting:** Coursecard may look unusual when only one or two results display instead of a full page. May be worth it to consider using a different style of card (horizontal vs tall) for cases where results are a small number (i.e. res.data.length < 3 ? HorizontalCard : VerticalCard )
+
+  #### Sunday, December 20:
+
+  - Sam Munro
+    - Design still hasn't been touched: focusing still on functionality and the scaffolding.
