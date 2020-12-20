@@ -2,7 +2,6 @@ import React from "react";
 import "../styles.css";
 
 import CourseCardInstructor from "./CourseCardInstructor";
-const mockCourse = {};
 
 const CourseCard = ({ course }) => {
   console.log("coursecard course: ", course);
@@ -10,14 +9,16 @@ const CourseCard = ({ course }) => {
     <div className="course-card">
       <div className="course-card-top-half">
         <div className="top-half-top-twothirds">
-          <div className="top-half-top-third-left-side">98/100</div>
+          <div className="top-half-top-third-left-side">
+            <div className="course-rating">{course.rating}/100</div>
+          </div>
           <div className="top-half-top-third-right-side">
             <div className="explanation">Easy Score Course Average</div>
             <div className="explanation">**Based on grade distribution</div>
           </div>
         </div>
         <div className="top-half-bottom-third">
-          HPER-N324 FOOD CHEMISTRY LABORATORY
+          {course.full_code} {course.name}
         </div>
       </div>
       <div className="course-card-bottom-half">

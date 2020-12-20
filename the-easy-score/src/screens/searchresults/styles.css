@@ -52,7 +52,18 @@
 
 /*************** COURSE CARD ***************/
 .course-card {
-  border: 1px solid blue;
+  border: 2px solid rgb(202, 0, 0);
+}
+
+.top-half-top-twothirds {
+  display: flex;
+  align-items: center;
+}
+
+.course-rating {
+  background-color: rgb(129, 1, 1);
+  color: rgb(212, 212, 212);
+  /******* placeholder colors ******/
 }
 
 /** COURSE-CARD-INSTRUCTOR COMPONENT **/
