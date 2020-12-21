@@ -1,0 +1,53 @@
+/**************  PROFESSOR CARD STYLES ****************/
+.professor-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid gray;
+}
+/**** LEFT THIRD ****/
+.professor-card-left-third-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+.professor-card-left-third-top-portion {
+  display: flex;
+}
+
+.professor-card-easy-score {
+  background-color: red;
+}
+
+.explanation {
+  color: rgb(133, 133, 133);
+}
+
+.professor-card-professor-name {
+  /* text */
+  color: black;
+}
+
+/**** CENTER THIRD ****/
+.professor-card-center-container {
+  display: flex;
+}
+
+.professor-card-grade-percentage-container {
+  border-left: 3px solid rgb(133, 133, 133);
+  border-right: 3px solid rgb(133, 133, 133);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grade-percentage-grade-letter {
+  color: rgb(134, 0, 0);
+}
+
+.grade-percentage-grade-percentage {
+  color: rgb(68, 68, 68);
+}
+
+/**** RIGHT THIRD ****/
