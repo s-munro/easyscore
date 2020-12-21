@@ -1,6 +1,7 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ course }) => {
+  console.log("header course: ", course);
   return (
     <div>
       <header className="header">

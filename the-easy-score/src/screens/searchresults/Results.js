@@ -16,9 +16,8 @@ const Results = (props) => {
   const [keyword, setKeyword] = useState("");
   const params = useParams();
 
-  console.log("results props: ", props);
-
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchResults(getData, params.axiosUrl));
     filterToKeyword(params.axiosUrl, setKeyword);
