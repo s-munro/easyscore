@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles.css";
 
 import CourseCardInstructor from "./CourseCardInstructor";
@@ -17,9 +18,13 @@ const CourseCard = ({ course }) => {
             <div className="explanation">**Based on grade distribution</div>
           </div>
         </div>
-        <div className="top-half-bottom-third">
-          {course.full_code} {course.name}
-        </div>
+        <Link
+          to={`/courses/${course.full_code}_${course.name.replace(/ /g, "_")}`}
+        >
+          <div className="top-half-bottom-third">
+            {course.full_code} {course.name}
+          </div>
+        </Link>
       </div>
       <div className="course-card-bottom-half">
         <div>{course.instructors.length} Professors available</div>

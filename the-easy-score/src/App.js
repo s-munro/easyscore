@@ -19,7 +19,10 @@ const App = () => {
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route path="/contact" render={(props) => <Contact {...props} />} />
-        <Route path="/courses/:id" render={(props) => <Course {...props} />} />
+        <Route
+          path="/courses/:courseid"
+          render={(props) => <Course {...props} />}
+        />
         <Route
           path="/professors/:id"
           render={(props) => <Professor {...props} />}

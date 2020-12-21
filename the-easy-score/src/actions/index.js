@@ -19,7 +19,7 @@ export const fetchResults = (func, url) => (dispatch) => {
     })
     .catch((err) => {
       console.log("err: ", err);
-      dispatch({ type: FETCH_DATA_FAILURE });
+      dispatch({ type: FETCH_DATA_FAILURE, payload: err.message });
     });
 };
 
