@@ -35,3 +35,4 @@ The easy score is a web applicated intended as a course-planning resource for st
 
   - Sam Munro
     - Design still hasn't been touched: focusing still on functionality and the scaffolding.
+    * Axios call and corresponding state updates working on course page, passes course as props to ProfessorCard & Header.
