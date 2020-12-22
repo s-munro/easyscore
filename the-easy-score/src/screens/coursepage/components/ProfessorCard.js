@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles.css";
 
-const ProfessorCard = (props) => {
-  console.log("professorcard course: ", props.course);
+const ProfessorCard = ({ instructor }) => {
+  console.log("professorcard professor: ", instructor);
   return (
     <div className="professor-card">
       {/* LEFT PORTION OF PROFESSOR CARD  */}
