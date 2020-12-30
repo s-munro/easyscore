@@ -9,6 +9,7 @@ import { filterToKeyword } from "./hooks/";
 import Header from "./components/Header";
 import CourseCard from "./components/CourseCard";
 import NoResults from "./components/NoResults";
+import Loading from "../../components/Loading";
 
 import "./styles.css";
 
@@ -26,15 +27,21 @@ const Results = (props) => {
   return (
     <main className="results-container">
       <Header keyword={keyword} />
-      <div>
-        {props.courses.length > 0 ? (
-          props.courses.map((course) => {
-            return <CourseCard course={course} key={course.url} />;
-          })
-        ) : (
-          <NoResults />
-        )}
-      </div>
+      {props.isLoading === true ? (
+        <div>
+          <Loading />
+        </div>
+      ) : (
+        <div>
+          {props.courses.length > 0 ? (
+            props.courses.map((course) => {
+              return <CourseCard course={course} key={course.url} />;
+            })
+          ) : (
+            <NoResults />
+          )}
+        </div>
+      )}
     </main>
   );
 };

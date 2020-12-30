@@ -36,3 +36,8 @@ The easy score is a web applicated intended as a course-planning resource for st
   - Sam Munro
     - Design still hasn't been touched: focusing still on functionality and the scaffolding.
     * Axios call and corresponding state updates working on course page, passes course as props to ProfessorCard & Header.
+
+  #### Tuesday, December 22:
+
+  - Sam Munro
+    - Set up loading component for when isLoading true. Loading spinner imported from 'react-loader-spinner'
