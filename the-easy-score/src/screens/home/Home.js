@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./home.css";
 
 import SearchForm from "./SearchForm";
 
