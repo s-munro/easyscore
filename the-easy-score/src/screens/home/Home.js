@@ -7,7 +7,7 @@ const Home = (props) => {
   return (
     <main className="home-main">
       <div>
-        <h2>Easy Score Home Page</h2>
+        <h2>Choose the <b id='home-emphasis'>easy</b> option</h2>
       </div>
       <SearchForm push={props.history.push} />
     </main>
