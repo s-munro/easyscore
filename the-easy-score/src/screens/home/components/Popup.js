@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles.css";
+import "../home.css";
 
 const Popup = ({ title, subTitle, onExit }) => {
   return (

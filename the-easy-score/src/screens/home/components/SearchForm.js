@@ -54,7 +54,8 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
             onChange={handleChange}
           />
         </label>
-
+        <button>Search</button>
+        <br></br>
         <select name="requirement" onChange={handleChange}>
           <option value="">Choose a requirement</option>
           <option value={0}>A&H credit</option>
