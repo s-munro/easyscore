@@ -41,3 +41,21 @@ The easy score is a web applicated intended as a course-planning resource for st
 
   - Sam Munro
     - Set up loading component for when isLoading true. Loading spinner imported from 'react-loader-spinner'
+
+  ### Saturday, Jan 2:
+
+  - Sam Munro
+    - API:
+      - New API baseURL in utils/getData.js
+      - API returning JSON successfully (no errors yet)
+    - HOME PAGE
+      - Filter selection menu component appears on click of filter button
+      * **Created Popup.js**--on SearchForm.js filter button click Popup.js appears. Need to add inputs to it and make sure it can manipulate the relevant state/values/etc.
+        - Created with local state (ShowPopup and setShowPopUp) boolean. Relevant functions are handleOpenPopup and handleClosePopup.
+        * Popup display data (text, title, etc) passed as props into the component, since it's likely we use multiple Popups.
+        * .clicked class added/removed according to showPopup, modifying border color. dark border = active, light border = inactive.
+    * COURSE PAGE:
+      - Course name, info, etc updated according to the selected course (data from api call); was previously hard coded.
+      * isLoading true returns loading component. Else, checks if courses.length > 0, and if true then returns Header.js and courses[0].instructors.map to return ProfessorCard for each instructor.
+    * SEARCHRESULTS:
+      - **if a blank search is done, API call gathers ~5,000 results. Takes a long time to load need solution**

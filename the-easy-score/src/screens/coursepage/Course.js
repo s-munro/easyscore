@@ -6,14 +6,14 @@ import { getData } from "../../utils/api/getData";
 
 import Header from "./components/Header";
 import ProfessorCard from "./components/ProfessorCard";
+import Loading from "../../components/Loading";
 
 const Course = (props) => {
-  const [isCourseArray, setIsCourseArray] = useState(false);
-  const [courseRender, setCourseRender] = useState(false);
   const params = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("hello!");
     const newUrl = `'keyword'=_'${params.courseid}'&_'requirement'=_''&_'level'=_''&_'credit'=_''&_'timing'=_''&_'next_sem'=_''&_'days'=_[]`;
     changeUrl(newUrl);
     dispatch(fetchResults(getData, newUrl));
@@ -24,7 +24,20 @@ const Course = (props) => {
 
   return (
     <div>
-      <Header course={props.courses} />
+      {props.isLoading === true ? (
+        <Loading />
+      ) : (
+        <div>
+          {props.courses.length > 0 ? (
+            <div>
+              <Header course={props.courses[0]} />
+              {props.courses[0].instructors.map((instructor, index) => {
+                return <ProfessorCard instructor={instructor} key={index} />;
+              })}
+            </div>
+          ) : null}
+        </div>
+      )}
     </div>
   );
 };

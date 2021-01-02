@@ -8,8 +8,8 @@ const Header = ({ course }) => {
         <div className="header-third-left-side">
           <div className="search-input-text-div">
             <h3>Showing instructors for</h3>
-            <h2>'HPER-N325'</h2>
-            <h3>Food Chem Laboratory</h3>
+            <h2>{course.full_code}</h2>
+            <h3>{course.name}</h3>
           </div>
           <div className="easy-score-left-explanation-key-div">
             <div className="score-and-text-wrapper">
@@ -25,7 +25,7 @@ const Header = ({ course }) => {
 
         <div className="header-third-center">
           <div className="course-easy-score-div">
-            <div>90</div>
+            <div>{course.rating}/100</div>
             <div>Course EasyScore</div>
           </div>
         </div>

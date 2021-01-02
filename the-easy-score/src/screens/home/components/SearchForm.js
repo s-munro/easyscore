@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { fetchResults, changeUrl } from "../../actions/index";
+import { fetchResults, changeUrl } from "../../../actions/index";
+
+import Popup from "./Popup";
 
 const initialUrlValues = {
   keyword: "",
@@ -13,6 +15,7 @@ const initialUrlValues = {
 
 const SearchForm = ({ push, changeUrl, searchUrl }) => {
   const [urlValues, setUrlValues] = useState(initialUrlValues);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     console.log(e);
@@ -21,11 +24,9 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     //  1. replace spaces in keyword with underscores:
     // let noSpaceKeyword = urlValues.keyword.replace(" ", "_");
     // let noEqualsKeyword = noSpaceKeyword.replace(":", "=");
-
     //  2. make api call
     // setUrlValues({ ...urlValues, keyword: noEqualsKeyword });
     const newUrl = `'keyword'=_'${urlValues.keyword}'&_'requirement'=_'${urlValues.requirement}'&_'level'=_'${urlValues.level}'&_'credit'=_'${urlValues.credit}'&_'timing'=_'${urlValues.timing}'&_'next_sem'=_'${urlValues.next_sem}'&_'days'=_[]`;
@@ -34,9 +35,12 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
     push(`/search/${newUrl}`);
   };
 
-  // https://theeasyscore.com/results&searchquery='keyword'=_''&_'requirement'=_''&_'level'=_''&_'credit'=_''&_'timing'=_''&_'next_sem'=_'0'&_'days'=_[]
-
-  // keyword, requirement, level, credit, timing, next_sem
+  const handleClickPopup = () => {
+    setShowPopup(!showPopup);
+  };
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
 
   return (
     <div className="home-form-container">
@@ -164,6 +168,22 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           </label>
         </div>
 
+        <div
+          className={`pseudo-button ${showPopup === true ? "clicked" : ""}`}
+          onClick={handleClickPopup}
+        >
+          Pseudo-Button
+        </div>
+
+        {showPopup && (
+          <Popup
+            title={"title"}
+            subTitle={"subTitle"}
+            onExit={handleClosePopup}
+          />
+        )}
+
+        <button>Search</button>
       </form>
     </div>
   );
