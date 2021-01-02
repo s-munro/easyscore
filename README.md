@@ -41,3 +41,9 @@ The easy score is a web applicated intended as a course-planning resource for st
 
   - Sam Munro
     - Set up loading component for when isLoading true. Loading spinner imported from 'react-loader-spinner'
+
+  ### Saturday, Jan 2:
+
+  - Sam Munro
+    - New API baseURL in utils/getData.js
+    - API returning JSON successfully (no errors yet)
