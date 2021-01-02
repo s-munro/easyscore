@@ -52,5 +52,6 @@ The easy score is a web applicated intended as a course-planning resource for st
       - Filter selection menu component appears on click of filter button
       * Created Popup.js--on SearchForm.js filter button click Popup.js appears. Need to add inputs to it and make sure it can manipulate the relevant state/values/etc.
         - Created with local state (ShowPopup and setShowPopUp) boolean. Relevant functions handleOpenPopup and handleClosePopup.
+        * Popup display data (text, title, etc) passed as props into the component, since it's likely we use multiple Popups.
     * COURSE PAGE:
       - Course name, info, etc needs to update according to the class. Is hard-coded data right now.
