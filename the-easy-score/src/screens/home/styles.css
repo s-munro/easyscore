@@ -15,13 +15,18 @@
 
 /*********  MENU DISPLAY BUTTON ************/
 .pseudo-button {
-  background-color: rgb(189, 189, 189);
+  /* background-color: rgb(189, 189, 189); */
+  border: 3px solid rgb(189, 189, 189);
 }
 .pseudo-button:hover {
-  background-color: rgb(129, 129, 129);
+  border: 3px solid rgb(129, 129, 129);
   transition: 0.2s;
 }
 
-.clicked {
-  background-color: rgb(97, 97, 97);
+.pseudo-button.clicked {
+  border: 3px solid rgb(44, 44, 44);
+}
+.pseudo-button.clicked:hover {
+  border: 3px solid rgb(129, 129, 129);
+  transition: 0.2s;
 }

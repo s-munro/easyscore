@@ -35,8 +35,8 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
     push(`/search/${newUrl}`);
   };
 
-  const handleOpenPopup = () => {
-    setShowPopup(true);
+  const handleClickPopup = () => {
+    setShowPopup(!showPopup);
   };
   const handleClosePopup = () => {
     setShowPopup(false);
@@ -166,20 +166,20 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
             />
           </label>
         </div>
-        {/* <div className="pseudo-button" onClick={handleFilterClick}>
-          Pseudo-Button
-        </div> */}
 
-        {showPopup === true ? (
+        <div
+          className={`pseudo-button ${showPopup === true ? "clicked" : ""}`}
+          onClick={handleClickPopup}
+        >
+          Pseudo-Button
+        </div>
+
+        {showPopup && (
           <Popup
             title={"title"}
             subTitle={"subTitle"}
             onExit={handleClosePopup}
           />
-        ) : (
-          <div className="pseudo-button" onClick={handleOpenPopup}>
-            Pseudo-Button
-          </div>
         )}
 
         <button>Search</button>
