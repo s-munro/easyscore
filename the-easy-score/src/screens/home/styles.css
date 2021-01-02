@@ -12,3 +12,16 @@
   align-items: center;
   flex-wrap: wrap;
 }
+
+/*********  MENU DISPLAY BUTTON ************/
+.pseudo-button {
+  background-color: rgb(189, 189, 189);
+}
+.pseudo-button:hover {
+  background-color: rgb(129, 129, 129);
+  transition: 0.2s;
+}
+
+.clicked {
+  background-color: rgb(97, 97, 97);
+}

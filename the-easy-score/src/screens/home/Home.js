@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-import SearchForm from "./SearchForm";
+import SearchForm from "./components/SearchForm";
 
 const Home = (props) => {
   return (

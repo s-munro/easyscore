@@ -49,4 +49,8 @@ The easy score is a web applicated intended as a course-planning resource for st
       - New API baseURL in utils/getData.js
       - API returning JSON successfully (no errors yet)
     - HOME PAGE
-      - Working on filter selection menu appearing on click of filter button...
+      - Filter selection menu component appears on click of filter button
+      * Created Popup.js--on SearchForm.js filter button click Popup.js appears. Need to add inputs to it and make sure it can manipulate the relevant state/values/etc.
+        - Created with local state (ShowPopup and setShowPopUp) boolean. Relevant functions handleOpenPopup and handleClosePopup.
+    * COURSE PAGE:
+      - Course name, info, etc needs to update according to the class. Is hard-coded data right now.
