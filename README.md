@@ -45,5 +45,8 @@ The easy score is a web applicated intended as a course-planning resource for st
   ### Saturday, Jan 2:
 
   - Sam Munro
-    - New API baseURL in utils/getData.js
-    - API returning JSON successfully (no errors yet)
+    - API:
+      - New API baseURL in utils/getData.js
+      - API returning JSON successfully (no errors yet)
+    - HOME PAGE
+      - Working on filter selection menu appearing on click of filter button...
