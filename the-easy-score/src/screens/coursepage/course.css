@@ -1,19 +1,26 @@
-header {
-  border-bottom: 1px solid #b3b3b3;
-}
 
+.profCardContainer {
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
 /**************  PROFESSOR CARD STYLES ****************/
 
 .professor-card {
   display: flex;
   align-items: center;
-  border: 1px solid gray;
+  background-color:  rgb(245, 245, 245);
+  border: 1px solid rgb(189, 189, 189);
+  height: 25vh;
+  box-shadow: 0px 11px 7px -12px #4e4e4e;
+  margin-bottom: 2%;
 }
 /**** LEFT THIRD ****/
 .professor-card-left-third-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  border: 2px solid #9a0000;
+  height: 100%;
 }
 
 .professor-card-left-third-top-portion {
@@ -21,11 +28,13 @@ header {
 }
 
 .professor-card-easy-score {
-  background-color: red;
+  background-color: #9a0000;
+  margin-left: 2%;
 }
 
 .explanation {
   color: rgb(133, 133, 133);
+
 }
 
 .professor-card-professor-name {
@@ -39,8 +48,9 @@ header {
 }
 
 .professor-card-grade-percentage-container {
-  border-left: 3px solid rgb(133, 133, 133);
-  border-right: 3px solid rgb(133, 133, 133);
+  margin-left: 5%;
+  border-left: 1px solid rgb(133, 133, 133);
+  border-right: 1px solid rgb(133, 133, 133);
   display: flex;
   flex-direction: column;
   justify-content: center;
