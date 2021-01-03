@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { fetchResults, changeUrl } from "../../../actions/index";
+import SearchIcon from '@material-ui/icons/Search';
 
 import Popup from "./Popup";
 
@@ -49,15 +50,15 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           <input
             type="text"
             name="keyword"
-            placeholder="Enter keyword to search"
+            placeholder="'Biology', 'Chem-C', 'L112', etc."
             value={urlValues.keyword}
             onChange={handleChange}
           />
         </label>
-        <button>Search</button>
+        <button className="homeSrchBtn"><SearchIcon /></button>
         <br></br>
         <select name="requirement" onChange={handleChange}>
-          <option value="">Choose a requirement</option>
+          <option className="homeFilterDisplay" value="">Requirements</option>
           <option value={0}>A&H credit</option>
           <option value={1}>Diversity in U.S. Credit</option>
           <option value={6}>English Composition</option>
@@ -71,7 +72,7 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
         </select>
 
         <select name="level" onChange={handleChange}>
-          <option value="">All course numbers</option>
+          <option value="">Course Level</option>
           <option value={12}>100–299</option>
           <option value={8}>300–399</option>
           <option value={9}>400–499</option>
@@ -80,7 +81,7 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
         </select>
 
         <select name="credit" onChange={handleChange}>
-          <option value="">All credit hours</option>
+          <option value="">Credit Hours</option>
           <option value={1}>1</option>
           <option value={2}>2</option>
           <option value={3}>3</option>
@@ -91,15 +92,16 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
         </select>
 
         <select name="timing" onChange={handleChange}>
-          <option value="">All times of day</option>
+          <option value="">Time of day</option>
           <option value={1}>Morning (7:00 a.m.–10:59 a.m.)</option>
           <option value={2}>Afternoon (11 a.m.–4:59 p.m.)</option>
           <option value={3}>Evening (5 p.m.–11:59 p.m.)</option>
         </select>
-
+        
         <select name="next_sem" onChange={handleChange}>
-          <option value={0}>All past semesters</option>
-          <option value={1}>Next Semester Courses only</option>
+        <option value="">Semesters</option>
+          <option value={0}>Previous</option>
+          <option value={1}>Upcoming</option>
         </select>
 
         <div>
@@ -182,8 +184,6 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
             onExit={handleClosePopup}
           />
         )}
-
-        <button>Search</button>
       </form>
     </div>
   );
