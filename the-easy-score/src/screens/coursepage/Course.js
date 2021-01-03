@@ -31,7 +31,7 @@ const Course = (props) => {
           {props.courses.length > 0 ? (
             <div>
               <Header course={props.courses[0]} />
-              <div>
+              <div className="profCardContainer">
               {props.courses[0].instructors.map((instructor, index) => {
                 return <ProfessorCard instructor={instructor} key={index} />;
               })}
