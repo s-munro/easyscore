@@ -6,6 +6,17 @@
   align-items: center;
 }
 
+.courseDisplayContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  padding-top: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 .header {
   display: flex;
   width: 100%;
@@ -51,7 +62,10 @@
 
 /*************** COURSE CARD ***************/
 .course-card {
-  border: 2px solid rgb(202, 0, 0);
+  border: 1px solid #b3b3b3;
+  background-color: #ffffff;
+  border-radius: 8px;
+  color: #222222;
 }
 
 .top-half-top-twothirds {

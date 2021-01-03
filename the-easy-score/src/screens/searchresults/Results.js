@@ -27,6 +27,7 @@ const Results = (props) => {
   return (
     <main className="results-container">
       <Header keyword={keyword} />
+      <hr class='lineBreak'/>
       {props.isLoading === true ? (
         <div>
           <Loading />
