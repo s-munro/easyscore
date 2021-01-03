@@ -1,4 +1,10 @@
 /**************  PROFESSOR CARD STYLES ****************/
+.courseDisplayContainer {
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 5%;
+}
 .professor-card {
   display: flex;
   align-items: center;

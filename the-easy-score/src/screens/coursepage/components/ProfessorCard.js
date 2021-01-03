@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles.css";
+import "../course.css";
 
 const ProfessorCard = ({ instructor }) => {
   console.log("professorcard professor: ", instructor);
