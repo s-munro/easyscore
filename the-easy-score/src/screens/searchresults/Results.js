@@ -32,7 +32,7 @@ const Results = (props) => {
           <Loading />
         </div>
       ) : (
-        <div>
+        <div className="courseDisplayContainer">
           {props.courses.length > 0 ? (
             props.courses.map((course) => {
               return <CourseCard course={course} key={course.url} />;

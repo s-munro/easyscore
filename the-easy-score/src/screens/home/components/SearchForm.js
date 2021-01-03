@@ -46,6 +46,7 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
   return (
     <div className="home-form-container">
       <form onSubmit={handleSubmit}>
+       <div className="homeSrchInput">
         <label>
           <input
             type="text"
@@ -56,6 +57,7 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           />
         </label>
         <button className="homeSrchBtn"><SearchIcon /></button>
+      </div> 
         <br></br>
         <select name="requirement" onChange={handleChange}>
           <option className="homeFilterDisplay" value="">Requirements</option>
