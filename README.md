@@ -66,12 +66,12 @@ The easy score is a web applicated intended as a course-planning resource for st
 
   - TODO:
 
-    - Add pseudo-buttons for all dropdowns--best way to manage state for this?
-    - Day selector needs to be pseudo button dropdown as well
-    - Results page 'about # results'
-    - Search bar and filter buttons on course results page
-    - Incorporate the new api query for course page
-    - Applied filters?
-    - Course page toggle for current vs previous semesters
+    - [] Add pseudo-buttons for all dropdowns--best way to manage state for this?
+    - [] Day selector needs to be pseudo button dropdown as well
+    - [x] Results page 'about # results'
+    - [] Search bar and filter buttons on course results page
+    - [] Incorporate the new api query for course page
+    - [] Applied filters?
+    - [] Course page toggle for current vs previous semesters
 
   - Progress:
