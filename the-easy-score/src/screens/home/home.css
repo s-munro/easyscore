@@ -10,7 +10,6 @@
 
 .home-form-container {
   margin-top: 25%;
-  border: 2px solid #9a0000;
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -19,6 +18,18 @@
 }
 
 /*********  MENU DISPLAY BUTTON ************/
+.homeFilterDisplay {
+  text-align: center;
+  align-content: center;
+  background-color: #9a0000;
+  color: #ffffff;
+  border-radius: 500px;
+  border: none;
+  padding-top: 2px;
+  width: 25%;
+  height: 20%;
+}
+
 .pseudo-button {
   /* background-color: rgb(189, 189, 189); */
   text-align: center;
@@ -44,4 +55,10 @@
 .pseudo-button.clicked:hover {
   border: 3px solid rgb(129, 129, 129);
   transition: 0.2s;
+}
+
+.popUp {
+  background-color: aqua;
+  border-radius: 4%;
+  width: 30%;
 }
