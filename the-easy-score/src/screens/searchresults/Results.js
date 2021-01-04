@@ -12,7 +12,7 @@ import NoResults from "./components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
 
-import "./styles.css";
+import "./results.css";
 
 const Results = (props) => {
   const [keyword, setKeyword] = useState("");
@@ -28,9 +28,7 @@ const Results = (props) => {
   return (
     <main className="results-container">
       <Header keyword={keyword} />
-
-      <hr class="lineBreak" />
-
+      
       {props.isLoading === true ? (
         <div>
           <Loading />
