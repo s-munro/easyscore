@@ -42,7 +42,7 @@ The easy score is a web applicated intended as a course-planning resource for st
   - Sam Munro
     - Set up loading component for when isLoading true. Loading spinner imported from 'react-loader-spinner'
 
-  ### Saturday, Jan 2:
+  #### Saturday, Jan 2:
 
   - Sam Munro
     - API:
@@ -59,3 +59,19 @@ The easy score is a web applicated intended as a course-planning resource for st
       * isLoading true returns loading component. Else, checks if courses.length > 0, and if true then returns Header.js and courses[0].instructors.map to return ProfessorCard for each instructor.
     * SEARCHRESULTS:
       - **if a blank search is done, API call gathers ~5,000 results. Takes a long time to load need solution**
+
+  #### Sunday, Jan 3:
+
+  - Sam Munro
+
+  - TODO:
+
+    - [] Add pseudo-buttons for all dropdowns--best way to manage state for this?
+    - [] Day selector needs to be pseudo button dropdown as well
+    - [x] Results page 'about # results'
+    - [] Search bar and filter buttons on course results page
+    - [] Incorporate the new api query for course page
+    - [] Applied filters?
+    - [] Course page toggle for current vs previous semesters
+
+  - Progress:
