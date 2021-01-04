@@ -10,8 +10,8 @@ const ProfessorCard = ({ instructor }) => {
         <div className="professor-card-left-third-top-portion">
           <div className="professor-card-easy-score">{instructor.rating}</div>
           <div className="left-third-info-text-container">
-            <div className="explanation">Easy Score Course Average</div>
-            <div className="explanation">**Based on grade distribution</div>
+            <div className="explanation">Prof EasyScore</div>
+            <div className="explanation">Based on grade distribution</div>
           </div>
         </div>
         <div className="professor-card-professor-name">{instructor.name}</div>

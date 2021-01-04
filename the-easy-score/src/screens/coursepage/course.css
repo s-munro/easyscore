@@ -16,39 +16,72 @@
   margin-bottom: 2%;
 }
 /**** LEFT THIRD ****/
+
+left-third-info-text-container{
+  display: flex;
+  flex-direction: row;
+}
 .professor-card-left-third-container {
   display: flex;
   flex-direction: column;
   border: 2px solid #9a0000;
+  width: 25%;
+  font-weight: 700;
   height: 100%;
+  width: 35vh;
 }
 
 .professor-card-left-third-top-portion {
   display: flex;
+  flex-direction: column;
+  height: 80%;
 }
 
 .professor-card-easy-score {
   background-color: #9a0000;
-  margin-left: 2%;
+  color: #ffffff;
+  border-radius: 8%;
+  text-align: center;
+  font-size: 130%;
+  padding-top: 11%;
+  padding-bottom: 11%;
+  margin-left: 5%;
+  margin-top:5%;
+  width: 40%;
+  height: 65%;
 }
 
 .explanation {
   color: rgb(133, 133, 133);
-
+  font-weight: normal;
+  font-size: 75%;
+  text-align: left;
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  
 }
 
 .professor-card-professor-name {
   /* text */
   color: black;
+  margin-left: 5%;
+  margin-top: 3%;
+  letter-spacing: .5px;
+  font-size: 120%;
+  margin-bottom: 2%;
 }
 
 /**** CENTER THIRD ****/
 .professor-card-center-container {
   display: flex;
+  width: 60%;
 }
 
 .professor-card-grade-percentage-container {
-  margin-left: 5%;
+  margin-right: 3%;
+  margin-left: 3%;
+  width: 16%;
   border-left: 1px solid rgb(133, 133, 133);
   border-right: 1px solid rgb(133, 133, 133);
   display: flex;
@@ -58,11 +91,54 @@
 }
 
 .grade-percentage-grade-letter {
-  color: rgb(134, 0, 0);
+  color:#9a0000;
+  font-weight: bold;
 }
 
 .grade-percentage-grade-percentage {
-  color: rgb(68, 68, 68);
+  color: black;
+  font-weight: 500;
 }
 
 /**** RIGHT THIRD ****/
+
+.professor-card-right-third-container {
+  
+  height: 100%;
+  width:23%;
+  text-align: center;
+  border-left: 1px solid rgb(133, 133, 133);
+}
+
+.card-right-third-top-half {
+  height: 35%;
+  border-bottom: 1px solid rgb(133, 133, 133);
+}
+
+.card-semesters-taught-title {
+  margin-top: 10%;
+  margin-bottom:2%;
+  font-size: 95%;
+}
+
+.card-semesters-taught-number{
+  color: black;
+  font-weight: bold;
+}
+
+
+.card-right-third-bottom-half {
+  height: 50%;
+  
+}
+
+.card-class-size-title {
+  margin-top: 8%;
+  margin-bottom: 2%;
+  font-size: 95%;
+}
+
+.card-class-size-number {
+  color: black;
+  font-weight: bold;
+}
