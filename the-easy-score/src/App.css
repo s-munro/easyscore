@@ -15,7 +15,8 @@ nav a {
   color: #717171;
 }
 .nav-bar {
-  display: flex;background-color:  #f4f4f6;
+  display: flex;
+  background-color:  #f4f4f6;
   align-items: center;
   height: 7vh;
   width: 100%;
