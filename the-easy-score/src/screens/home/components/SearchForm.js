@@ -61,8 +61,8 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           </button>
         </div>
         <br></br>
-        <select name="requirement" onChange={handleChange}>
-          <option className="homeFilterDisplay" value="">
+        <select className="homeFilterDisplay" name="requirement" onChange={handleChange}>
+          <option value="">
             Requirements
           </option>
           <option value={0}>A&H credit</option>
@@ -77,7 +77,7 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           <option value="0GENEDMM">World Language Class</option>
         </select>
 
-        <select name="level" onChange={handleChange}>
+        <select className="homeFilterDisplay" name="level" onChange={handleChange}>
           <option value="">Course Level</option>
           <option value={12}>100–299</option>
           <option value={8}>300–399</option>
@@ -86,7 +86,7 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           <option value={13}>Honors Level Courses</option>
         </select>
 
-        <select name="credit" onChange={handleChange}>
+        <select className="homeFilterDisplay" name="credit" onChange={handleChange}>
           <option value="">Credit Hours</option>
           <option value={1}>1</option>
           <option value={2}>2</option>
@@ -97,14 +97,14 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           <option value={7}>7+</option>
         </select>
 
-        <select name="timing" onChange={handleChange}>
+        <select className="homeFilterDisplay" name="timing" onChange={handleChange}>
           <option value="">Time of day</option>
           <option value={1}>Morning (7:00 a.m.–10:59 a.m.)</option>
           <option value={2}>Afternoon (11 a.m.–4:59 p.m.)</option>
           <option value={3}>Evening (5 p.m.–11:59 p.m.)</option>
         </select>
 
-        <select name="next_sem" onChange={handleChange}>
+        <select className="homeFilterDisplay" name="next_sem" onChange={handleChange}>
           <option value="">Semesters</option>
           <option value={0}>Previous</option>
           <option value={1}>Upcoming</option>
