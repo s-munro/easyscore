@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import ProfessorCard from "./components/ProfessorCard";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
+import SecondaryNav from "../../navbar/SecondaryNav";
 
 const Course = (props) => {
   const params = useParams();
@@ -25,6 +26,7 @@ const Course = (props) => {
 
   return (
     <div>
+      <SecondaryNav />
       {props.isLoading === true ? (
         <Loading />
       ) : (
