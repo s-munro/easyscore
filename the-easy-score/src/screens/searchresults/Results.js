@@ -11,6 +11,7 @@ import CourseCard from "./components/CourseCard";
 import NoResults from "./components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
+import SecondaryNav from "../../navbar/SecondaryNav";
 
 import "./results.css";
 
@@ -26,32 +27,35 @@ const Results = (props) => {
   }, []);
 
   return (
-    <main className="results-container">
-      <Header keyword={keyword} courses={props.courses} header={0} />
+    <div className="page-container">
+      <SecondaryNav />
+      <main className="results-container">
+        <Header keyword={keyword} courses={props.courses} header={0} />
 
-      {props.isLoading === true ? (
-        <div>
-          <Loading />
-        </div>
-      ) : (
-        <div className="courseDisplayContainer">
-          {props.courses.length > 0 ? (
-            [
-              <ResultsNumber
-                number={props.courses.length}
-                results={"course(s)"}
-                header={1}
-              />,
-              props.courses.map((course) => {
-                return <CourseCard course={course} key={course.url} />;
-              }),
-            ]
-          ) : (
-            <NoResults />
-          )}
-        </div>
-      )}
-    </main>
+        {props.isLoading === true ? (
+          <div>
+            <Loading />
+          </div>
+        ) : (
+          <div className="courseDisplayContainer">
+            {props.courses.length > 0 ? (
+              [
+                <ResultsNumber
+                  number={props.courses.length}
+                  results={"course(s)"}
+                  header={1}
+                />,
+                props.courses.map((course) => {
+                  return <CourseCard course={course} key={course.url} />;
+                }),
+              ]
+            ) : (
+              <NoResults />
+            )}
+          </div>
+        )}
+      </main>
+    </div>
   );
 };
 
