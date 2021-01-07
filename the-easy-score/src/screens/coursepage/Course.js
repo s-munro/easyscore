@@ -7,6 +7,7 @@ import { getData } from "../../utils/api/getData";
 import Header from "./components/Header";
 import ProfessorCard from "./components/ProfessorCard";
 import Loading from "../../components/Loading";
+import ResultsNumber from "../../components/ResultsNumber";
 
 const Course = (props) => {
   const params = useParams();
@@ -31,11 +32,16 @@ const Course = (props) => {
           {props.courses.length > 0 ? (
             <div>
               <Header course={props.courses[0]} />
+              <ResultsNumber
+                number={props.courses[0].instructors.length}
+                results={"instructors"}
+                header={1}
+              />
               <div className="profCardContainer">
-              {props.courses[0].instructors.map((instructor, index) => {
-                return <ProfessorCard instructor={instructor} key={index} />;
-              })}
-             </div> 
+                {props.courses[0].instructors.map((instructor, index) => {
+                  return <ProfessorCard instructor={instructor} key={index} />;
+                })}
+              </div>
             </div>
           ) : null}
         </div>

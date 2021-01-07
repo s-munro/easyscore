@@ -1,4 +1,5 @@
 import React from "react";
+import ResultsNumber from "../../../components/ResultsNumber";
 
 const Header = ({ course }) => {
   console.log("header course: ", course);
@@ -7,7 +8,11 @@ const Header = ({ course }) => {
       <header className="header">
         <div className="header-third-left-side">
           <div className="search-input-text-div">
-            <h3>Showing instructors for</h3>
+            <ResultsNumber
+              number={course.instructors.length}
+              results={"instructors"}
+              header={0}
+            />
             <h2>{course.full_code}</h2>
             <h3>{course.name}</h3>
           </div>

@@ -27,8 +27,8 @@ const Results = (props) => {
 
   return (
     <main className="results-container">
-      <Header keyword={keyword} />
-      
+      <Header keyword={keyword} courses={props.courses} header={0} />
+
       {props.isLoading === true ? (
         <div>
           <Loading />
@@ -40,6 +40,7 @@ const Results = (props) => {
               <ResultsNumber
                 number={props.courses.length}
                 results={"course(s)"}
+                header={1}
               />,
               props.courses.map((course) => {
                 return <CourseCard course={course} key={course.url} />;

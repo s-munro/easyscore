@@ -1,12 +1,17 @@
 import React from "react";
+import ResultsNumber from "../../../components/ResultsNumber";
 
-const Header = ({ keyword }) => {
+const Header = ({ keyword, courses }) => {
   return (
     <header className="header">
       {/* LEFT THIRD OF HEADER  */}
       <div className="header-third-left-side">
         <div className="search-input-text-div">
-          <h3>Showing results for</h3>
+          <ResultsNumber
+            number={courses.length}
+            results={"courses"}
+            header={0}
+          />
           <h2>'{keyword}'</h2>
         </div>
         <div className="filter-options">
