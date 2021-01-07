@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Nav from "./navbar/Nav";
 import Footer from "./footer/Footer";
 
 import Contact from "./screens/contact/Contact";
@@ -22,7 +21,6 @@ import "./App.css";
 const App = () => {
   return (
     <Router>
-      <Nav />
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route path="/contact" render={(props) => <Contact {...props} />} />
