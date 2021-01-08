@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { changeUrl } from "../../../actions/index";
-import SearchIcon from "@material-ui/icons/Search";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+// import SearchIcon from "@material-ui/icons/Search";
 
-import Popup from "./Popup";
+// import Popup from "./Popup";
 
 const initialUrlValues = {
   keyword: "",
@@ -16,7 +17,6 @@ const initialUrlValues = {
 
 const SearchForm = ({ push, changeUrl, searchUrl }) => {
   const [urlValues, setUrlValues] = useState(initialUrlValues);
-  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     console.log(e);
@@ -36,20 +36,14 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
     push(`/search/${newUrl}`);
   };
 
-  const handleClickPopup = () => {
-    setShowPopup(!showPopup);
-  };
-  const handleClosePopup = () => {
-    setShowPopup(false);
-  };
-
   return (
     <div className="home-form-container">
       <form onSubmit={handleSubmit}>
         <div className="homeSrchInput">
           <label>
             <input
-              type="text"
+              className="homeInputBox"
+              type=" text"
               name="keyword"
               placeholder="'Biology', 'Chem-C', 'L112', etc."
               value={urlValues.keyword}
@@ -57,78 +51,77 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
             />
           </label>
           <button className="homeSrchBtn">
-            <SearchIcon />
+            <ArrowForwardIosIcon />
+            {/* <p className="buttonSymbol">></p> */}
           </button>
         </div>
         <br></br>
-        <select
-          className="homeFilterDisplay"
-          name="requirement"
-          onChange={handleChange}
-        >
-          <option value="">Requirements</option>
-          <option value={0}>A&H credit</option>
-          <option value={1}>Diversity in U.S. Credit</option>
-          <option value={6}>English Composition</option>
-          <option value={11}>Intensive Writing Credit</option>
-          <option value={7}>Mathematical Model</option>
-          <option value={3}>N&amp;M credit</option>
-          <option value={5}>Public Oral Communication Credit</option>
-          <option value={2}>S&H credit</option>
-          <option value={4}>World Culture credit</option>
-          <option value="0GENEDMM">World Language Class</option>
-        </select>
+        <div className="homeFilterBtnContainer">
+          <select
+            className="homeFilterDisplay"
+            name="requirement"
+            onChange={handleChange}
+          >
+            <option value="">Requirements</option>
+            <option value={0}>A&H credit</option>
+            <option value={1}>Diversity in U.S. Credit</option>
+            <option value={6}>English Composition</option>
+            <option value={11}>Intensive Writing Credit</option>
+            <option value={7}>Mathematical Model</option>
+            <option value={3}>N&amp;M credit</option>
+            <option value={5}>Public Oral Communication Credit</option>
+            <option value={2}>S&H credit</option>
+            <option value={4}>World Culture credit</option>
+            <option value="0GENEDMM">World Language Class</option>
+          </select>
 
-        <select
-          className="homeFilterDisplay"
-          name="level"
-          onChange={handleChange}
-        >
-          <option value="">Course Level</option>
-          <option value={12}>100–299</option>
-          <option value={8}>300–399</option>
-          <option value={9}>400–499</option>
-          <option value={10}>Graduate Level Courses</option>
-          <option value={13}>Honors Level Courses</option>
-        </select>
+          <select
+            className="homeFilterDisplay fBtn2"
+            name="level"
+            onChange={handleChange}
+          >
+            <option value="">Course Level</option>
+            <option value={12}>100–299</option>
+            <option value={8}>300–399</option>
+            <option value={9}>400–499</option>
+            <option value={10}>Graduate Level Courses</option>
+            <option value={13}>Honors Level Courses</option>
+          </select>
 
-        <select
-          className="homeFilterDisplay"
-          name="credit"
-          onChange={handleChange}
-        >
-          <option value="">Credit Hours</option>
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-          <option value={6}>6</option>
-          <option value={7}>7+</option>
-        </select>
+          <select
+            className="homeFilterDisplay fBtn2"
+            name="credit"
+            onChange={handleChange}
+          >
+            <option value="">Credit Hours</option>
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5</option>
+            <option value={6}>6</option>
+            <option value={7}>7+</option>
+          </select>
 
-        <select
-          className="homeFilterDisplay"
-          name="timing"
-          onChange={handleChange}
-        >
-          <option value="">Time of day</option>
-          <option value={1}>Morning (7:00 a.m.–10:59 a.m.)</option>
-          <option value={2}>Afternoon (11 a.m.–4:59 p.m.)</option>
-          <option value={3}>Evening (5 p.m.–11:59 p.m.)</option>
-        </select>
+          <select
+            className="homeFilterDisplay fBtn2"
+            name="timing"
+            onChange={handleChange}
+          >
+            <option value="">Time of day</option>
+            <option value={1}>Morning (7:00 a.m.–10:59 a.m.)</option>
+            <option value={2}>Afternoon (11 a.m.–4:59 p.m.)</option>
+            <option value={3}>Evening (5 p.m.–11:59 p.m.)</option>
+          </select>
 
-        <select
-          className="homeFilterDisplay"
-          name="next_sem"
-          onChange={handleChange}
-        >
+          {/* <select className="homeFilterDisplay" name="next_sem" onChange={handleChange}>
+
           <option value="">Semesters</option>
           <option value={0}>Previous</option>
           <option value={1}>Upcoming</option>
-        </select>
+        </select> */}
 
-        <div>
+          {/* <div>
           <label>
             Mon:
             <input
@@ -193,21 +186,8 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
             />
           </label>
         </div>
-
-        <div
-          className={`pseudo-button ${showPopup === true ? "clicked" : ""}`}
-          onClick={handleClickPopup}
-        >
-          Pseudo-Button
+ */}
         </div>
-
-        {showPopup && (
-          <Popup
-            title={"title"}
-            subTitle={"subTitle"}
-            onExit={handleClosePopup}
-          />
-        )}
       </form>
     </div>
   );

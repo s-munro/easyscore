@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+
+import TimeofDayPopup from "./filterpopups/TimeofDayPopup";
+
 import "./filters.css";
 
 const TimeofDayFilter = () => {
-  return <div className="filter-button">Time of Day</div>;
+  const [displayDropDown, setDisplayDropdown] = useState(false);
+
+  const handleClick = (e) => {
+    console.log("click");
+    setDisplayDropdown(!displayDropDown);
+  };
+
+  return (
+    <div>
+      <div className="filter-button" onClick={handleClick}>
+        Credit Hours
+      </div>
+      {displayDropDown === true ? <TimeofDayPopup /> : null}
+    </div>
+  );
 };
 
 export default TimeofDayFilter;
