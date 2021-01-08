@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { fetchResults, changeUrl } from "../../../actions/index";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import SearchIcon from "@material-ui/icons/Search";
 
 import Popup from "./Popup";
 
@@ -107,7 +108,9 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           <option value={3}>Evening (5 p.m.–11:59 p.m.)</option>
         </select>
 
+
         {/* <select className="homeFilterDisplay" name="next_sem" onChange={handleChange}>
+
           <option value="">Semesters</option>
           <option value={0}>Previous</option>
           <option value={1}>Upcoming</option>
@@ -207,6 +210,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchResults, changeUrl })(
-  SearchForm
-);
+export default connect(mapStateToProps, { changeUrl })(SearchForm);

@@ -1,8 +1,31 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+
+import { connect } from "react-redux";
+import { changeUrl } from "../actions/index";
+
 import "../App.css";
 
-const SecondaryNav = () => {
+const SecondaryNav = (props) => {
+  const initialFormValue = {
+    keyword: "",
+  };
+
+  const history = useHistory();
+
+  const [urlValues, setUrlValues] = useState(initialFormValue);
+
+  const handleChange = (e) => {
+    e.persist();
+    setUrlValues({ ...urlValues, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    const newUrl = `'keyword'=_'${urlValues.keyword}'&_'requirement'=_''&_'level'=_''&_'credit'=_''&_'timing'=_''&_'next_sem'=_''&_'days'=_[]`;
+    props.changeUrl(newUrl);
+
+    history.push(`/search/${newUrl}`);
+  };
   return (
     <nav className="nav-bar-2">
       <div className="logoContainer">
@@ -10,10 +33,26 @@ const SecondaryNav = () => {
           <div className="homeLogo">The Easy Score</div>
         </Link>
       </div>
-
-      <input type="text" name="keyword" />
+      <form onSubmit={handleSubmit}>
+        <label>
+          <input
+            type="text"
+            name="keyword"
+            placeholder="Search Keyword"
+            value={urlValues.keyword}
+            onChange={handleChange}
+          />
+        </label>
+        <button>Search</button>
+      </form>
     </nav>
   );
 };
 
-export default SecondaryNav;
+const mapStateToProps = (state) => {
+  return {
+    searchUrl: state.searchUrl,
+  };
+};
+
+export default connect(mapStateToProps, { changeUrl })(SecondaryNav);
