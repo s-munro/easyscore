@@ -5,9 +5,12 @@
 }
 
 body {
-  background-color: #f4f4f6;
+  background-image: url("../src/homebackground.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
 }
-
 /***************** NAVBAR 1 *********************/
 nav a {
   text-decoration: none;
