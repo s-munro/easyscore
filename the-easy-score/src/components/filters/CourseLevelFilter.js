@@ -49,9 +49,7 @@ export default function CourseLevelFilter() {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleSelect = (e) => {
-    console.log("click");
-  };
+  const handleSelect = (e) => {};
 
   const handleClose = () => {
     setAnchorEl(null);

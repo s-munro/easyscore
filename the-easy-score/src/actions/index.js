@@ -12,11 +12,9 @@ export const fetchResults = (func, url) => (dispatch) => {
   axios
     .get(`https://theeasyscore.com/results&jsonquery=${url}`)
     .then((res) => {
-      console.log("res: ", res);
       dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data.courses });
     })
     .catch((err) => {
-      console.log("err: ", err);
       dispatch({ type: FETCH_DATA_FAILURE, payload: err.message });
     });
 };
