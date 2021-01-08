@@ -12,6 +12,7 @@ import NoResults from "./components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
 import SecondaryNav from "../../navbar/SecondaryNav";
+import FiltersCard from "./components/FiltersCard";
 
 import "./results.css";
 
@@ -31,27 +32,35 @@ const Results = (props) => {
       <SecondaryNav />
       <main className="results-container">
         <Header keyword={keyword} courses={props.courses} header={0} />
-
+        {/*************** BEGIN RENDERING RESULTS *********************/}
+        {/* LOADING */}
         {props.isLoading === true ? (
           <div>
             <Loading />
           </div>
         ) : (
-          <div className="courseDisplayContainer">
-            {props.courses.length > 0 ? (
-              [
-                <ResultsNumber
-                  number={props.courses.length}
-                  results={"course(s)"}
-                  header={1}
-                />,
-                props.courses.map((course) => {
-                  return <CourseCard course={course} key={course.url} />;
-                }),
-              ]
-            ) : (
-              <NoResults />
-            )}
+          //************* END LOADING *****/
+          //************* LOAD RESULTS ****/
+          //**** NUMBER */
+          <div>
+            <ResultsNumber
+              number={props.courses.length}
+              results={"course(s)"}
+              header={1}
+            />
+            {/********* END NUMBER, RENDER CARDS ********/}
+            <div className="courseDisplayContainer">
+              {props.courses.length > 0 ? (
+                [
+                  props.courses.map((course) => {
+                    return <CourseCard course={course} key={course.url} />;
+                  }),
+                ]
+              ) : (
+                //********  RENDER NO RESULTS IF NO RESULTS  *******/
+                <NoResults />
+              )}
+            </div>
           </div>
         )}
       </main>
