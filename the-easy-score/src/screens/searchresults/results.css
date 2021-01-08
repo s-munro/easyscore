@@ -61,7 +61,16 @@
   margin: 1%;
   padding: 2%;
 }
+/***************** AREA BELOW HEADER ********************/
+.filtersCard-courses-container {
+  display: flex;
+}
 
+/********** FILTERS CARD ********/
+.filters-card-container {
+  border: 1px solid black;
+  height: 40vh;
+}
 /*************** COURSE CARD ***************/
 .course-card {
   border: 1px solid #b3b3b3;

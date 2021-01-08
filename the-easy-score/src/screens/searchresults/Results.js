@@ -43,23 +43,28 @@ const Results = (props) => {
           //************* LOAD RESULTS ****/
           //**** NUMBER */
           <div>
-            <ResultsNumber
-              number={props.courses.length}
-              results={"course(s)"}
-              header={1}
-            />
-            {/********* END NUMBER, RENDER CARDS ********/}
-            <div className="courseDisplayContainer">
-              {props.courses.length > 0 ? (
-                [
-                  props.courses.map((course) => {
-                    return <CourseCard course={course} key={course.url} />;
-                  }),
-                ]
-              ) : (
-                //********  RENDER NO RESULTS IF NO RESULTS  *******/
-                <NoResults />
-              )}
+            <div>
+              <ResultsNumber
+                number={props.courses.length}
+                results={"course(s)"}
+                header={1}
+              />
+            </div>
+            <div className="filtersCard-courses-container">
+              <FiltersCard />
+              {/********* END NUMBER, RENDER CARDS ********/}
+              <div className="courseDisplayContainer">
+                {props.courses.length > 0 ? (
+                  [
+                    props.courses.map((course) => {
+                      return <CourseCard course={course} key={course.url} />;
+                    }),
+                  ]
+                ) : (
+                  //********  RENDER NO RESULTS IF NO RESULTS  *******/
+                  <NoResults />
+                )}
+              </div>
             </div>
           </div>
         )}
