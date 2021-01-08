@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { fetchResults, changeUrl } from "../../../actions/index";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import { changeUrl } from "../../../actions/index";
 import SearchIcon from "@material-ui/icons/Search";
 
 import Popup from "./Popup";
@@ -50,8 +49,7 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
         <div className="homeSrchInput">
           <label>
             <input
-              className="homeInputBox"
-              type=" text"
+              type="text"
               name="keyword"
               placeholder="'Biology', 'Chem-C', 'L112', etc."
               value={urlValues.keyword}
@@ -59,16 +57,16 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
             />
           </label>
           <button className="homeSrchBtn">
-            <ArrowForwardIosIcon />
-            {/* <p className="buttonSymbol">></p> */}
+            <SearchIcon />
           </button>
         </div>
         <br></br>
-        <div className="homeFilterBtnContainer">
-        <select className="homeFilterDisplay" name="requirement" onChange={handleChange}>
-          <option value="">
-            Requirements
-          </option>
+        <select
+          className="homeFilterDisplay"
+          name="requirement"
+          onChange={handleChange}
+        >
+          <option value="">Requirements</option>
           <option value={0}>A&H credit</option>
           <option value={1}>Diversity in U.S. Credit</option>
           <option value={6}>English Composition</option>
@@ -81,7 +79,11 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           <option value="0GENEDMM">World Language Class</option>
         </select>
 
-        <select className="homeFilterDisplay fBtn2" name="level" onChange={handleChange}>
+        <select
+          className="homeFilterDisplay"
+          name="level"
+          onChange={handleChange}
+        >
           <option value="">Course Level</option>
           <option value={12}>100–299</option>
           <option value={8}>300–399</option>
@@ -90,7 +92,11 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           <option value={13}>Honors Level Courses</option>
         </select>
 
-        <select className="homeFilterDisplay fBtn2" name="credit" onChange={handleChange}>
+        <select
+          className="homeFilterDisplay"
+          name="credit"
+          onChange={handleChange}
+        >
           <option value="">Credit Hours</option>
           <option value={1}>1</option>
           <option value={2}>2</option>
@@ -101,22 +107,28 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           <option value={7}>7+</option>
         </select>
 
-        <select className="homeFilterDisplay fBtn2" name="timing" onChange={handleChange}>
+        <select
+          className="homeFilterDisplay"
+          name="timing"
+          onChange={handleChange}
+        >
           <option value="">Time of day</option>
           <option value={1}>Morning (7:00 a.m.–10:59 a.m.)</option>
           <option value={2}>Afternoon (11 a.m.–4:59 p.m.)</option>
           <option value={3}>Evening (5 p.m.–11:59 p.m.)</option>
         </select>
 
-
-        {/* <select className="homeFilterDisplay" name="next_sem" onChange={handleChange}>
-
+        <select
+          className="homeFilterDisplay"
+          name="next_sem"
+          onChange={handleChange}
+        >
           <option value="">Semesters</option>
           <option value={0}>Previous</option>
           <option value={1}>Upcoming</option>
-        </select> */}
+        </select>
 
-        {/* <div>
+        <div>
           <label>
             Mon:
             <input
@@ -195,8 +207,7 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
             subTitle={"subTitle"}
             onExit={handleClosePopup}
           />
-        )} */}
-        </div>
+        )}
       </form>
     </div>
   );
