@@ -1,11 +1,8 @@
 import React from "react";
+import "./filters.css";
 
 const SemestersFilter = () => {
-  return (
-    <div>
-      <button>Semesters</button>
-    </div>
-  );
+  return <div className="filter-button">Semesters</div>;
 };
 
 export default SemestersFilter;

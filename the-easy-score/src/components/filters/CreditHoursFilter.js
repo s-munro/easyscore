@@ -1,11 +1,8 @@
 import React from "react";
+import "./filters.css";
 
 const CreditHoursFilter = () => {
-  return (
-    <div>
-      <button>Credit Hours</button>
-    </div>
-  );
+  return <div className="filter-button">Credit Hours</div>;
 };
 
 export default CreditHoursFilter;

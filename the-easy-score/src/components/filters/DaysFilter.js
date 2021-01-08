@@ -1,11 +1,8 @@
 import React from "react";
+import "./filters.css";
 
 const DaysFilter = () => {
-  return (
-    <div>
-      <button>Days</button>
-    </div>
-  );
+  return <div className="filter-button">Select Days</div>;
 };
 
 export default DaysFilter;
