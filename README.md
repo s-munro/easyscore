@@ -81,20 +81,21 @@ The easy score is a web applicated intended as a course-planning resource for st
 - TODO:
 
   - [x] Secondary nav bar with search form
-
-  * [x] Add functionality to second nav bar search form
-
-  * [] Add pseudo-buttons for all dropdowns--best way to manage state for this?
-  * [x?] Day selector needs to be pseudo button dropdown as well
-  * [x] Results page 'about # results'
+  - [] Add functionality to second nav bar search form
+  - [] Add pseudo-buttons for all dropdowns--best way to manage state for this?
+  - [x?] Day selector needs to be pseudo button dropdown as well
+  - [x] Results page 'about # results'
     - [x] ResultsNumber component changes depending on if in header or in body of page
-  * [inprogress] Filter buttons on course results page
-  * [] Incorporate the new api query for course page
-  * [] Applied filters?
-  * [] Course page toggle for current vs previous semesters
+  - [inprogress] Filter buttons on course results page
+  - [] Incorporate the new api query for course page
+  - [] Applied filters?
+  - [] Course page toggle for current vs previous semesters
 
   #### Thursday, Jan 7:
 
   - TODO:
-    - [] Add functionality to second nav bar search form
+    - [x] Add functionality to second nav bar search form
+    * [x] Flesh out filter card component for course page
+      - [] Add dropdowns for filters in filter card
+      - [] Make dropdowns functional
     * [] Add pseudo-buttons for all dropdowns--best way to manage state for this?
