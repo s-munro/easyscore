@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { changeUrl } from "../../../actions/index";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import SearchIcon from "@material-ui/icons/Search";
+
+// import SearchIcon from "@material-ui/icons/Search";
 
 // import Popup from "./Popup";
 
@@ -42,7 +43,8 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
         <div className="homeSrchInput">
           <label>
             <input
-              type="text"
+              className="homeInputBox"
+              type=" text"
               name="keyword"
               placeholder="'Biology', 'Chem-C', 'L112', etc."
               value={urlValues.keyword}
@@ -50,7 +52,8 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
             />
           </label>
           <button className="homeSrchBtn">
-            <SearchIcon />
+            <ArrowForwardIosIcon />
+            {/* <p className="buttonSymbol">></p> */}
           </button>
         </div>
         <br></br>
@@ -117,7 +120,7 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           <option value="">Semesters</option>
           <option value={0}>Previous</option>
           <option value={1}>Upcoming</option>
-        </select>
+        </select> */}
 
           {/* <div>
           <label>
