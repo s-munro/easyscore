@@ -1,3 +1,9 @@
+/***** No Results Background ********/
+.no-results-background {
+  background-color: white;
+  width: 100%;
+}
+
 .results-container {
   min-height: 75vh;
   display: flex;
