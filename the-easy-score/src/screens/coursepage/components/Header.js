@@ -2,7 +2,6 @@ import React from "react";
 import ResultsNumber from "../../../components/ResultsNumber";
 
 const Header = ({ course }) => {
-  console.log("header course: ", course);
   return (
     <div>
       <header className="header">

@@ -8,7 +8,6 @@ const TimeofDayFilter = () => {
   const [displayDropDown, setDisplayDropdown] = useState(false);
 
   const handleClick = (e) => {
-    console.log("click");
     setDisplayDropdown(!displayDropDown);
   };
 

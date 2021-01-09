@@ -5,7 +5,6 @@ import "../results.css";
 import CourseCardInstructor from "./CourseCardInstructor";
 
 const CourseCard = ({ course }) => {
-  console.log("coursecard course: ", course);
   return (
     <div className="course-card">
       <div className="course-card-top-half">
@@ -26,7 +25,9 @@ const CourseCard = ({ course }) => {
         </Link>
       </div>
       <div className="course-card-bottom-half">
-        <div className="comparisonNum">Professors scored: {course.instructors.length}</div>
+        <div className="comparisonNum">
+          Professors scored: {course.instructors.length}
+        </div>
         <div className="course-card-professors-container">
           {course.instructors.length > 3
             ? course.instructors.slice(0, 3).map((professor) => {

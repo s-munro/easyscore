@@ -15,7 +15,6 @@ const Course = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("hello!");
     const newUrl = `'keyword'=_'${params.courseid}'&_'requirement'=_''&_'level'=_''&_'credit'=_''&_'timing'=_''&_'next_sem'=_''&_'days'=_[]`;
     changeUrl(newUrl);
     dispatch(fetchResults(getData, newUrl));

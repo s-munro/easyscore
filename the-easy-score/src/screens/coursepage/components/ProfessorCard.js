@@ -2,7 +2,6 @@ import React from "react";
 import "../course.css";
 
 const ProfessorCard = ({ instructor }) => {
-  console.log("professorcard professor: ", instructor);
   return (
     <div className="professor-card">
       {/* LEFT PORTION OF PROFESSOR CARD  */}

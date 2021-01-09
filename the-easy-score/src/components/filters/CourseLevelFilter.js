@@ -1,100 +1,24 @@
-import React from "react";
-import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-// import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-// import InboxIcon from "@material-ui/icons/MoveToInbox";
-// import DraftsIcon from "@material-ui/icons/Drafts";
-// import SendIcon from "@material-ui/icons/Send";
+import React, { useState } from "react";
 
-// import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import CourseLevelPopup from "./filterpopups/CourseLevelPopup";
 
-const StyledMenu = withStyles({
-  paper: {
-    border: "1px solid #d3d4d5",
-  },
-})((props) => (
-  <Menu
-    elevation={0}
-    getContentAnchorEl={null}
-    anchorOrigin={{
-      vertical: "bottom",
-      horizontal: "center",
-    }}
-    transformOrigin={{
-      vertical: "top",
-      horizontal: "center",
-    }}
-    {...props}
-  />
-));
+import "./filters.css";
 
-const StyledMenuItem = withStyles((theme) => ({
-  root: {
-    "&:focus": {
-      backgroundColor: theme.palette.primary.main,
-      "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
-        color: theme.palette.common.white,
-      },
-    },
-  },
-}))(MenuItem);
+const CourseLevelFilter = () => {
+  const [displayPopup, setDisplayPopup] = useState(false);
 
-export default function CourseLevelFilter() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleSelect = (e) => {
-    console.log("click");
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
+  const handleClick = (e) => {
+    setDisplayPopup(!displayPopup);
   };
 
   return (
     <div>
-      <Button
-        aria-controls="customized-menu"
-        aria-haspopup="true"
-        variant="contained"
-        color="primary"
-        onClick={handleClick}
-      >
-        Level
-      </Button>
-
-      <StyledMenu
-        id="customized-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
-        <StyledMenuItem>
-          <ListItemText primary="100-199" />
-          {/* <ListItemIcon>
-            <ArrowForwardIosIcon fontSize="small" />
-          </ListItemIcon> */}
-        </StyledMenuItem>
-        <StyledMenuItem>
-          <ListItemText primary="200-299" />
-          {/* <ListItemIcon>
-            <ArrowForwardIosIcon fontSize="small" />
-          </ListItemIcon> */}
-        </StyledMenuItem>
-        <StyledMenuItem onClick={handleSelect}>
-          <ListItemText primary="300-399" />
-          {/* <ListItemIcon>
-            <ArrowForwardIosIcon fontSize="small" />
-          </ListItemIcon> */}
-        </StyledMenuItem>
-      </StyledMenu>
+      <div className="filter-button" onClick={handleClick}>
+        Credit Hours
+      </div>
+      {displayPopup === true ? <CourseLevelPopup /> : null}
     </div>
   );
-}
+};
+
+export default CourseLevelFilter;
