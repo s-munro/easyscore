@@ -5,10 +5,10 @@ import CreditHoursPopup from "./filterpopups/CreditHoursPopup";
 import "./filters.css";
 
 const CreditHoursFilter = () => {
-  const [displayDropDown, setDisplayDropdown] = useState(false);
+  const [displayPopup, setDisplayPopup] = useState(false);
 
   const handleClick = (e) => {
-    setDisplayDropdown(!displayDropDown);
+    setDisplayPopup(!displayPopup);
   };
 
   return (
@@ -16,7 +16,7 @@ const CreditHoursFilter = () => {
       <div className="filter-button" onClick={handleClick}>
         Credit Hours
       </div>
-      {displayDropDown === true ? <CreditHoursPopup /> : null}
+      {displayPopup === true ? <CreditHoursPopup /> : null}
     </div>
   );
 };

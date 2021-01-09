@@ -10,6 +10,19 @@ const initialState = {
   isLoading: false,
   courses: [],
   errorText: "",
+  display: {
+    displayPopups: {
+      courseLevel: false,
+    },
+  },
+  // displayPopups: {
+  //   courseLevel: false,
+  //   creditHours: false,
+  //   days: false,
+  //   requirements: false,
+  //   semesters: false,
+  //   timeofDay: false,
+  // },
 };
 
 const reducer = (state = initialState, action) => {

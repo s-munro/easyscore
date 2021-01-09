@@ -96,6 +96,6 @@ The easy score is a web applicated intended as a course-planning resource for st
   - TODO:
     - [x] Add functionality to second nav bar search form
     * [x] Flesh out filter card component for course page
-      - [] Add dropdowns for filters in filter card
+      - [inprogress] Add dropdowns for filters in filter card
       - [] Make dropdowns functional
     * [] Add pseudo-buttons for all dropdowns--best way to manage state for this?
