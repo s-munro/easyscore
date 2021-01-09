@@ -20,10 +20,7 @@ const Header = ({ keyword, courses }) => {
             <div>Filter by:</div>
           </div>
           <div className="filters-container">
-            <div>Course Level</div>
-            <div>Credit Hours</div>
-            <div>Time of Day</div>
-            <div>Requirements</div>
+            
           </div>
         </div>
       </div>
@@ -52,12 +49,7 @@ const Header = ({ keyword, courses }) => {
           fugit, cupiditate.
         </div>
         <div className="course-days-explanation-key-container">
-          <div className="day">M</div>
-          <div className="day">T</div>
-          <div className="day">W</div>
-          <div className="day">R</div>
-          <div className="day">F</div>
-          Course Day Indicators
+          
         </div>
       </div>
     </header>
