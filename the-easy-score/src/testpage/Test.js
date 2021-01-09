@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FiltersBar from "./FiltersBar";
 import Popup from "./Popup";
+import "~antd/dist/antd.css";
 
 import { Card } from "antd";
 import { Popover, Button } from "antd";
