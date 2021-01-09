@@ -13,7 +13,9 @@ const CourseCard = ({ course }) => {
             <div className="course-rating">{course.rating}</div>
           </div>
           <div className="top-half-top-third-right-side">
-            <div className="explanation">Easy Score Course Average</div>
+            <div className="explanation">
+              Professors scored: {course.instructors.length}
+            </div>
           </div>
         </div>
         <Link
@@ -25,9 +27,7 @@ const CourseCard = ({ course }) => {
         </Link>
       </div>
       <div className="course-card-bottom-half">
-        <div className="comparisonNum">
-          Professors scored: {course.instructors.length}
-        </div>
+        <div className="comparisonNum">Credit Hours ({course.credits})</div>
         <div className="course-card-professors-container">
           {course.instructors.length > 3
             ? course.instructors.slice(0, 3).map((professor) => {
