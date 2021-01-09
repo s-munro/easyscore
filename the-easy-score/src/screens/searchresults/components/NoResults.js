@@ -1,9 +1,9 @@
 import React from "react";
-
+import { Empty } from "antd";
 const NoResults = () => {
   return (
-    <div>
-      <div>No results!</div>
+    <div className="no-results-background-">
+      <Empty />
     </div>
   );
 };
