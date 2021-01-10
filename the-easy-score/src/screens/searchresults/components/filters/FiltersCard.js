@@ -36,21 +36,9 @@ const FiltersCard = (props) => {
         <br />
         <TimeofDayPopover />
         <br />
-
-        <Popover
-          placement="bottomLeft"
-          title={"Filter by Time of Day"}
-          content={TimeofDayPopover}
-          trigger="click"
-        >
-          <Button>Time of Day </Button>
-        </Popover>
-
-        <br />
         <br />
 
         <Button onClick={handleFiltersSubmit}>Apply Filters</Button>
-        <br />
         <Button onClick={handleFiltersReset}>Reset Filters</Button>
       </Card>
     </div>

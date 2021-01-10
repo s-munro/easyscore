@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { setLevelFilterValue } from "../../../../../actions/index";
-import { Select, Button } from "antd";
+import { Select, Button, Typography } from "antd";
 
 const CourseLevelPopover = (props) => {
+  const { Title } = Typography;
+
   const { Option } = Select;
 
   const handleChange = (e) => {
@@ -12,6 +14,7 @@ const CourseLevelPopover = (props) => {
 
   return (
     <div>
+      <Title level={5}>Filter Course Level</Title>
       <Select
         style={{ width: 200 }}
         placeholder="Filter Course Level"
