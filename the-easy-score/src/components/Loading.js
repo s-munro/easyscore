@@ -1,11 +1,13 @@
-import Loader from "react-loader-spinner";
 import React from "react";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { Spin, Space } from "antd";
+import "../App.css";
 
 const Loading = () => {
   return (
-    <div>
-      <Loader type="ThreeDots" color="lightgray" height={40} width={40} />
+    <div className="loading-div">
+      <Space size={"large"}>
+        <Spin size="large" />
+      </Space>
     </div>
   );
 };
