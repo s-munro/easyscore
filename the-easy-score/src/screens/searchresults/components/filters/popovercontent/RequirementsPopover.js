@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Button, Select } from "antd";
+import { Button, Select, Typography } from "antd";
 
 import { setRequirementsFilterValue } from "../../../../../actions/index";
 
 const RequirementsPopover = (props) => {
+  const { Title } = Typography;
   const { Option } = Select;
 
   const handleChange = (e) => {
@@ -14,6 +15,7 @@ const RequirementsPopover = (props) => {
 
   return (
     <div>
+      <Title level={5}>Filter Requirements</Title>
       <Select
         style={{ width: 200 }}
         placeholder="Filter by Fulfilled Requirements"

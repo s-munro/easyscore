@@ -1,23 +1,36 @@
 import React from "react";
-import { Button } from "antd";
-import { Select } from "semantic-ui-react";
+import { Button, Radio, Typography } from "antd";
 
-const TimeofDayPopover = () => {
-  const timeofDayOptions = [
-    { key: 1, value: 12, text: "100-299" },
-    { key: 2, value: 8, text: "300-399" },
-    { key: 3, value: 9, text: "400-499" },
-    { key: 4, value: 10, text: "Graduate Level Courses" },
-    { key: 5, value: 13, text: "Honors Level Courses" },
-  ];
+const TimeofDayPopover = (props) => {
+  const { Title } = Typography;
+
+  const radioStyle = {
+    display: "block",
+    height: "30px",
+    lineHeight: "30px",
+  };
+
+  const handleChange = (e) => {
+    console.log(e.target.value);
+  };
 
   return (
     <div>
-      <Select
-        className="select-space"
-        placeholder="Time of Day"
-        options={timeofDayOptions}
-      />
+      <Title level={5}>Time of Day</Title>
+      <Radio.Group onChange={handleChange} value={2}>
+        <Radio style={radioStyle} value={1}>
+          Morning (7:00 a.m.–10:59 a.m.)
+        </Radio>
+        <Radio style={radioStyle} value={2}>
+          Afternoon (11 a.m.–4:59 p.m.)
+        </Radio>
+        <Radio style={radioStyle} value={3}>
+          Evening (5 p.m.–11:59 p.m.)
+        </Radio>
+        <Radio style={radioStyle} value={""}>
+          Any Time
+        </Radio>
+      </Radio.Group>
       <Button>Clear</Button>
     </div>
   );

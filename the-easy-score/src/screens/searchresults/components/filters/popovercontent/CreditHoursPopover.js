@@ -1,9 +1,11 @@
 import React from "react";
-import { Select, Button } from "antd";
+import { Select, Button, Typography } from "antd";
 import { connect } from "react-redux";
 import { setCreditsFilterValue } from "../../../../../actions/index";
 
 const CreditHoursPopover = (props) => {
+  const { Title } = Typography;
+
   const { Option } = Select;
 
   const handleChange = (e) => {
@@ -21,6 +23,7 @@ const CreditHoursPopover = (props) => {
 
   return (
     <div>
+      <Title level={5}>Filter Credit Hours</Title>
       <Select
         style={{ width: 200 }}
         placeholder="Filter Credit Hours"
