@@ -1,6 +1,9 @@
 import React from "react";
 import { Button, Radio, Typography } from "antd";
 
+import { connect } from "react-redux";
+import { setTimeFilterValue } from "../../../../../actions/index";
+
 const TimeofDayPopover = (props) => {
   const { Title } = Typography;
 
@@ -11,13 +14,24 @@ const TimeofDayPopover = (props) => {
   };
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    props.setTimeFilterValue(e.target.value);
+  };
+
+  const handleClear = (e) => {
+    e.preventDefault();
+    props.setTimeFilterValue("");
   };
 
   return (
     <div>
       <Title level={5}>Time of Day</Title>
-      <Radio.Group onChange={handleChange} value={2}>
+      <Radio.Group
+        onChange={handleChange}
+        value={props.filters.timeofDay.value}
+      >
+        <Radio style={radioStyle} value={""}>
+          Any Time
+        </Radio>
         <Radio style={radioStyle} value={1}>
           Morning (7:00 a.m.–10:59 a.m.)
         </Radio>
@@ -27,13 +41,18 @@ const TimeofDayPopover = (props) => {
         <Radio style={radioStyle} value={3}>
           Evening (5 p.m.–11:59 p.m.)
         </Radio>
-        <Radio style={radioStyle} value={""}>
-          Any Time
-        </Radio>
       </Radio.Group>
-      <Button>Clear</Button>
+      <Button onClick={handleClear}>Clear</Button>
     </div>
   );
 };
 
-export default TimeofDayPopover;
+const mapStateToProps = (state) => {
+  return {
+    filters: state.filters,
+  };
+};
+
+export default connect(mapStateToProps, { setTimeFilterValue })(
+  TimeofDayPopover
+);

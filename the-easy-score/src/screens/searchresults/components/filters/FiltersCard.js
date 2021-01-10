@@ -8,9 +8,7 @@ import RequirementsPopover from "./popovercontent/RequirementsPopover";
 import CreditHoursPopover from "./popovercontent/CreditHoursPopover";
 import TimeofDayPopover from "./popovercontent/TimeofDayPopover";
 
-import SearchForm from "../../../home/components/SearchForm";
-
-import { Card, Popover, Button } from "antd";
+import { Card, Button } from "antd";
 
 const FiltersCard = (props) => {
   const handleFiltersSubmit = (e) => {
