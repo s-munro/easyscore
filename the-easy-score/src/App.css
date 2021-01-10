@@ -9,7 +9,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  
 }
 /***************** NAVBAR 1 *********************/
 nav a {
@@ -18,7 +17,7 @@ nav a {
 }
 .nav-bar {
   display: flex;
-  border-bottom: 1px solid #1871BD;
+  border-bottom: 1px solid #1871bd;
   background-color: #f4f4f6;
   align-items: center;
   height: 7vh;
