@@ -13,6 +13,11 @@ const RequirementsPopover = (props) => {
     props.setRequirementsFilterValue(e);
   };
 
+  const handleClear = (e) => {
+    e.preventDefault();
+    props.setRequirementsFilterValue("");
+  };
+
   return (
     <div>
       <Title level={5}>Filter Requirements</Title>
@@ -20,6 +25,7 @@ const RequirementsPopover = (props) => {
         style={{ width: 200 }}
         placeholder="Filter by Fulfilled Requirements"
         onChange={handleChange}
+        value={props.filters.requirements.value}
       >
         <Option value="">Any Requirement</Option>
         <Option value={0}>A&H Credit</Option>
@@ -35,7 +41,7 @@ const RequirementsPopover = (props) => {
       </Select>
       <br />
       <Button>Submit</Button>
-      <Button>Clear</Button>
+      <Button onClick={handleClear}>Clear</Button>
     </div>
   );
 };

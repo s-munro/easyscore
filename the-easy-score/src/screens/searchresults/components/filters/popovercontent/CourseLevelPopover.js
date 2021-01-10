@@ -12,6 +12,11 @@ const CourseLevelPopover = (props) => {
     props.setLevelFilterValue(e);
   };
 
+  const handleClear = (e) => {
+    e.preventDefault();
+    props.setLevelFilterValue("");
+  };
+
   return (
     <div>
       <Title level={5}>Filter Course Level</Title>
@@ -19,6 +24,7 @@ const CourseLevelPopover = (props) => {
         style={{ width: 200 }}
         placeholder="Filter Course Level"
         onChange={handleChange}
+        value={props.filters.courseLevel.value}
       >
         <Option value="">Any Course Level</Option>
         <Option value={12}>100-299</Option>
@@ -29,7 +35,7 @@ const CourseLevelPopover = (props) => {
       </Select>
       <br />
       <Button>Submit</Button>
-      <Button>Clear</Button>
+      <Button onClick={handleClear}>Clear</Button>
     </div>
   );
 };

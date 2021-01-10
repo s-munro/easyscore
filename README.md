@@ -99,3 +99,19 @@ The easy score is a web applicated intended as a course-planning resource for st
       - [inprogress] Add dropdowns for filters in filter card
       - [] Make dropdowns functional
     * [] Add pseudo-buttons for all dropdowns--best way to manage state for this?
+
+  #### Friday, Jan 8 & Saturday, Jan 9:
+
+  - [x] Styled Filters added, styled filters card added
+  - [x] Actions and reducer set up for filters to update to global state
+  - [] Need to utilize global state methods to update courses and searches
+  - [] Need to utilize filter isActive boolean state for active appearance on filter (see airbnb)
+  - [] Radio buttons for time of day filter?
+
+  #### Sunday, Jan 10:
+
+  - [x] filter buttons set to state
+  - [x] state updates on change
+  - [x] clear button resets filters & state
+  - [inprogress] update courses by applying state
+    - update on submit only?
