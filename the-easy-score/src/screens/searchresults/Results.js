@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
-import { fetchResults } from "../../actions";
+import { fetchResults, setCourses } from "../../actions";
 import { useParams } from "react-router-dom";
 
 import { getData } from "../../utils/api/getData";
@@ -12,7 +12,9 @@ import NoResults from "./components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
 import SecondaryNav from "../../navbar/SecondaryNav";
-import FiltersCard from "./components/FiltersCard";
+// import FiltersCard from "./components/FiltersCard";
+
+import FiltersCard from "./components/filters/FiltersCard";
 
 import "./results.css";
 
@@ -24,6 +26,7 @@ const Results = (props) => {
 
   useEffect(() => {
     dispatch(fetchResults(getData, params.axiosUrl));
+    // dispatch(setCourses(props.courses));
     filterToKeyword(params.axiosUrl, setKeyword);
   }, []);
 
@@ -31,7 +34,7 @@ const Results = (props) => {
     <div className="page-container">
       <SecondaryNav />
       <main className="results-container">
-        <Header keyword={keyword} courses={props.courses} header={0} />
+        <Header keyword={keyword} courses={props.displayedCourses} header={0} />
         {/*************** BEGIN RENDERING RESULTS *********************/}
         {/* LOADING */}
         {props.isLoading === true ? (
@@ -45,7 +48,7 @@ const Results = (props) => {
           <div>
             <div>
               <ResultsNumber
-                number={props.courses.length}
+                number={props.displayedCourses.length}
                 results={"course(s)"}
                 header={1}
               />
@@ -54,9 +57,9 @@ const Results = (props) => {
               <FiltersCard />
               {/********* END NUMBER, RENDER CARDS ********/}
               <div className="courseDisplayContainer">
-                {props.courses.length > 0 ? (
+                {props.displayedCourses.length > 0 ? (
                   [
-                    props.courses.map((course) => {
+                    props.displayedCourses.map((course) => {
                       return <CourseCard course={course} key={course.url} />;
                     }),
                   ]
@@ -78,8 +81,9 @@ const mapStateToProps = (state) => {
     searchUrl: state.searchUrl,
     isLoading: state.isLoading,
     courses: state.courses,
+    displayedCourses: state.displayedCourses,
     errorText: state.errorText,
   };
 };
 
-export default connect(mapStateToProps, { fetchResults })(Results);
+export default connect(mapStateToProps, { fetchResults, setCourses })(Results);

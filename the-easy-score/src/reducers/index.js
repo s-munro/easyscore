@@ -3,26 +3,37 @@ import {
   FETCH_DATA_SUCCESS,
   FETCH_DATA_FAILURE,
   CHANGE_URL,
+  SET_COURSES_ON_PAGE,
+  SET_LEVEL_FILTER_VALUE,
+  SET_REQUIREMENTS_FILTER_VALUE,
+  SET_CREDITS_FILTER_VALUE,
+  SET_TIME_FILTER_VALUE,
 } from "../actions";
 
 const initialState = {
   searchUrl: "",
   isLoading: false,
   courses: [],
+  displayedCourses: [],
   errorText: "",
-  display: {
-    displayPopups: {
-      courseLevel: false,
+  filters: {
+    courseLevel: {
+      isActive: false,
+      value: "",
+    },
+    requirements: {
+      isActive: false,
+      value: "",
+    },
+    creditHours: {
+      isActive: false,
+      value: "",
+    },
+    timeofDay: {
+      isActive: false,
+      value: "",
     },
   },
-  // displayPopups: {
-  //   courseLevel: false,
-  //   creditHours: false,
-  //   days: false,
-  //   requirements: false,
-  //   semesters: false,
-  //   timeofDay: false,
-  // },
 };
 
 const reducer = (state = initialState, action) => {
@@ -39,6 +50,43 @@ const reducer = (state = initialState, action) => {
         isLoading: false,
         errorText: action.payload,
         courses: [],
+      };
+    case SET_COURSES_ON_PAGE:
+      return { ...state, displayedCourses: action.payload };
+    case SET_LEVEL_FILTER_VALUE:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          courseLevel: { ...state.filters.courseLevel, value: action.payload },
+        },
+      };
+    case SET_REQUIREMENTS_FILTER_VALUE:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          requirements: {
+            ...state.filters.requirements,
+            value: action.payload,
+          },
+        },
+      };
+    case SET_CREDITS_FILTER_VALUE:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          creditHours: { ...state.filters.creditHours, value: action.payload },
+        },
+      };
+    case SET_TIME_FILTER_VALUE:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          timeofDay: { ...state.filters.timeofDay, value: action.payload },
+        },
       };
     default:
       return state;
