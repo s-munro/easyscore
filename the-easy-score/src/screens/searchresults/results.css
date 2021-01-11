@@ -1,3 +1,29 @@
+/* box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015); */
+/* soft gray #d9d9d9; */
+
+/* .ant-btn-primary {
+  color: #850000;
+} */
+
+/* .ant-select-selector:hover,
+.ant-select-selector:focus-within {
+  border: 1px solid red !important;
+} */
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: #f5222d !important ;
+}
+.ant-radio-checked .ant-radio-inner:after {
+  background-color: red;
+}
+
+.ant-radio:hover .ant-radio-inner {
+  border-color: red;
+}
+.ant-btn:hover {
+  border-color: f5222d;
+}
+
 /***** No Results Background ********/
 .no-results-background {
   background-color: white;

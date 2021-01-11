@@ -35,11 +35,11 @@ const TimeofDayPopover = (props) => {
     props.setCourses(filteredCourses);
   };
 
-  const handleClear = (e) => {
-    e.preventDefault();
-    props.setTimeFilterValue("");
-    props.setCourses(props.courses);
-  };
+  // const handleClear = (e) => {
+  //   e.preventDefault();
+  //   props.setTimeFilterValue("");
+  //   props.setCourses(props.courses);
+  // };
 
   return (
     <div>
@@ -61,8 +61,8 @@ const TimeofDayPopover = (props) => {
           Evening (5 p.m.–11:59 p.m.)
         </Radio>
       </Radio.Group>
-      <Button onClick={handleSubmit}>Submit</Button>
-      <Button onClick={handleClear}>Clear</Button>
+      {/* <Button onClick={handleSubmit}>Submit</Button>
+      <Button onClick={handleClear}>Clear</Button> */}
     </div>
   );
 };
