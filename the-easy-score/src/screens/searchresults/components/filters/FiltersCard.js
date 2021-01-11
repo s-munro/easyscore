@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { setCourses, resetFilterValues } from "../../../../actions/index";
 
 import CourseLevelPopover from "./popovercontent/CourseLevelPopover";
-import RequirementsPopover from "./popovercontent/RequirementsPopover";
+// import RequirementsPopover from "./popovercontent/RequirementsPopover";
 import CreditHoursPopover from "./popovercontent/CreditHoursPopover";
 import TimeofDayPopover from "./popovercontent/TimeofDayPopover";
 
