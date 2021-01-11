@@ -113,5 +113,7 @@ The easy score is a web applicated intended as a course-planning resource for st
   - [x] filter buttons set to state
   - [x] state updates on change
   - [x] clear button resets filters & state
-  - [inprogress] update courses by applying state
-    - update on submit only?
+  - [x] update courses by applying state
+  - [x] update on submit only
+  - [x] resumes previous course list on 'reset filters'
+  - [x] ant radio red

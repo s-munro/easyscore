@@ -1,8 +1,8 @@
 import React from "react";
-import { Button, Radio, Typography } from "antd";
+import { Radio, Typography } from "antd";
 
 import { connect } from "react-redux";
-import { setTimeFilterValue } from "../../../../../actions/index";
+import { setTimeFilterValue, setCourses } from "../../../../../actions/index";
 
 const TimeofDayPopover = (props) => {
   const { Title } = Typography;
@@ -17,10 +17,29 @@ const TimeofDayPopover = (props) => {
     props.setTimeFilterValue(e.target.value);
   };
 
-  const handleClear = (e) => {
-    e.preventDefault();
-    props.setTimeFilterValue("");
-  };
+  // const handleSubmit = (e) => {
+  //   const filteredCourses = [];
+
+  //   props.displayedCourses.filter((course) =>
+  //     course.instructors.map((instructor) => {
+  //       return instructor.timings.map((timing) => {
+  //         return timing.map((timing) => {
+  //           if (timing === props.filters.timeofDay.value) {
+  //             filteredCourses.push(course);
+  //           }
+  //         });
+  //       });
+  //     })
+  //   );
+
+  //   props.setCourses(filteredCourses);
+  // };
+
+  // const handleClear = (e) => {
+  //   e.preventDefault();
+  //   props.setTimeFilterValue("");
+  //   props.setCourses(props.courses);
+  // };
 
   return (
     <div>
@@ -42,17 +61,20 @@ const TimeofDayPopover = (props) => {
           Evening (5 p.m.–11:59 p.m.)
         </Radio>
       </Radio.Group>
-      <Button onClick={handleClear}>Clear</Button>
+      {/* <Button onClick={handleSubmit}>Submit</Button>
+      <Button onClick={handleClear}>Clear</Button> */}
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
+    courses: state.courses,
+    displayedCourses: state.displayedCourses,
     filters: state.filters,
   };
 };
 
-export default connect(mapStateToProps, { setTimeFilterValue })(
+export default connect(mapStateToProps, { setTimeFilterValue, setCourses })(
   TimeofDayPopover
 );
