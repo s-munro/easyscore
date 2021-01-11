@@ -10,6 +10,7 @@ export const SET_LEVEL_FILTER_VALUE = "SET_LEVEL_FILTER_VALUE";
 export const SET_REQUIREMENTS_FILTER_VALUE = "SET_REQUIREMENTS_FILTER_VALUE";
 export const SET_CREDITS_FILTER_VALUE = "SET_CREDITS_FILTER_VALUE";
 export const SET_TIME_FILTER_VALUE = "SET_TIME_FILTER_VALUE";
+export const RESET_FILTER_VALUES = "RESET_FILTER_VALUES";
 
 export const fetchResults = (func, url) => (dispatch) => {
   dispatch({ type: FETCH_DATA_START });
@@ -46,4 +47,8 @@ export const setCreditsFilterValue = (value) => {
 };
 export const setTimeFilterValue = (value) => {
   return { type: SET_TIME_FILTER_VALUE, payload: value };
+};
+
+export const resetFilterValues = () => {
+  return { type: RESET_FILTER_VALUES, payload: "" };
 };

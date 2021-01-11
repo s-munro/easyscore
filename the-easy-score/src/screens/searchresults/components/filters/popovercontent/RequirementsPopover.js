@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Button, Select, Typography } from "antd";
+import { Select, Typography } from "antd";
 
 import { setRequirementsFilterValue } from "../../../../../actions/index";
 
@@ -13,10 +13,10 @@ const RequirementsPopover = (props) => {
     props.setRequirementsFilterValue(e);
   };
 
-  const handleClear = (e) => {
-    e.preventDefault();
-    props.setRequirementsFilterValue("");
-  };
+  // const handleClear = (e) => {
+  //   e.preventDefault();
+  //   props.setRequirementsFilterValue("");
+  // };
 
   return (
     <div>
@@ -40,8 +40,8 @@ const RequirementsPopover = (props) => {
         <Option value="0GENEDMM">World Landuage Class</Option>
       </Select>
       <br />
-      <Button>Submit</Button>
-      <Button onClick={handleClear}>Clear</Button>
+      {/* <Button>Submit</Button>
+      <Button onClick={handleClear}>Clear</Button> */}
     </div>
   );
 };

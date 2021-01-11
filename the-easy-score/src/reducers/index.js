@@ -8,6 +8,7 @@ import {
   SET_REQUIREMENTS_FILTER_VALUE,
   SET_CREDITS_FILTER_VALUE,
   SET_TIME_FILTER_VALUE,
+  RESET_FILTER_VALUES,
 } from "../actions";
 
 const initialState = {
@@ -85,6 +86,19 @@ const reducer = (state = initialState, action) => {
         ...state,
         filters: {
           ...state.filters,
+          timeofDay: { ...state.filters.timeofDay, value: action.payload },
+        },
+      };
+    case RESET_FILTER_VALUES:
+      return {
+        ...state,
+        filters: {
+          courseLevel: { ...state.filters.courseLevel, value: action.payload },
+          requirements: {
+            ...state.filters.requirements,
+            value: action.payload,
+          },
+          creditHours: { ...state.filters.creditHours, value: action.payload },
           timeofDay: { ...state.filters.timeofDay, value: action.payload },
         },
       };

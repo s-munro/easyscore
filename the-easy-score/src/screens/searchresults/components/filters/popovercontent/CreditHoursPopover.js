@@ -12,10 +12,10 @@ const CreditHoursPopover = (props) => {
     props.setCreditsFilterValue(e);
   };
 
-  const handleClear = (e) => {
-    e.preventDefault();
-    props.setCreditsFilterValue("");
-  };
+  // const handleClear = (e) => {
+  //   e.preventDefault();
+  //   props.setCreditsFilterValue("");
+  // };
 
   // <option value="">Credit Hours</option>
   // <option value={1}>1</option>
@@ -45,8 +45,8 @@ const CreditHoursPopover = (props) => {
         <Option value={7}>7+</Option>
       </Select>
       <br />
-      <Button>Submit</Button>
-      <Button onClick={handleClear}>Clear</Button>
+      {/* <Button>Submit</Button>
+      <Button onClick={handleClear}>Clear</Button> */}
     </div>
   );
 };
