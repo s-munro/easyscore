@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Radio, Typography } from "antd";
+import { Radio, Typography } from "antd";
 
 import { connect } from "react-redux";
 import { setTimeFilterValue, setCourses } from "../../../../../actions/index";
@@ -17,23 +17,23 @@ const TimeofDayPopover = (props) => {
     props.setTimeFilterValue(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    const filteredCourses = [];
+  // const handleSubmit = (e) => {
+  //   const filteredCourses = [];
 
-    props.displayedCourses.filter((course) =>
-      course.instructors.map((instructor) => {
-        return instructor.timings.map((timing) => {
-          return timing.map((timing) => {
-            if (timing === props.filters.timeofDay.value) {
-              filteredCourses.push(course);
-            }
-          });
-        });
-      })
-    );
+  //   props.displayedCourses.filter((course) =>
+  //     course.instructors.map((instructor) => {
+  //       return instructor.timings.map((timing) => {
+  //         return timing.map((timing) => {
+  //           if (timing === props.filters.timeofDay.value) {
+  //             filteredCourses.push(course);
+  //           }
+  //         });
+  //       });
+  //     })
+  //   );
 
-    props.setCourses(filteredCourses);
-  };
+  //   props.setCourses(filteredCourses);
+  // };
 
   // const handleClear = (e) => {
   //   e.preventDefault();

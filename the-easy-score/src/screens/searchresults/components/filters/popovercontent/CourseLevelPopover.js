@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { setLevelFilterValue, setCourses } from "../../../../../actions/index";
-import { Select, Button, Typography } from "antd";
+import { Select, Typography } from "antd";
 
 const CourseLevelPopover = (props) => {
   const { Title } = Typography;
@@ -17,38 +17,38 @@ const CourseLevelPopover = (props) => {
   //   props.setLevelFilterValue("");
   // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    const lowerLevelCourses = props.displayedCourses.filter((course) => {
-      return course.code <= 299;
-    });
-    const middleLevelCourses = props.displayedCourses.filter((course) => {
-      return course.code >= 300 && course.code <= 399;
-    });
+  //   const lowerLevelCourses = props.displayedCourses.filter((course) => {
+  //     return course.code <= 299;
+  //   });
+  //   const middleLevelCourses = props.displayedCourses.filter((course) => {
+  //     return course.code >= 300 && course.code <= 399;
+  //   });
 
-    const upperLevelCourses = props.displayedCourses.filter((course) => {
-      return course.code >= 400 && course.code <= 499;
-    });
+  //   const upperLevelCourses = props.displayedCourses.filter((course) => {
+  //     return course.code >= 400 && course.code <= 499;
+  //   });
 
-    const graduateLevelCourses = props.displayedCourses.filter((course) => {
-      return course.code > 499;
-    });
+  //   const graduateLevelCourses = props.displayedCourses.filter((course) => {
+  //     return course.code > 499;
+  //   });
 
-    const setArrayByCourseLevel = () => {
-      if (props.filters.courseLevel.value === 12) {
-        return lowerLevelCourses;
-      } else if (props.filters.courseLevel.value === 8) {
-        return middleLevelCourses;
-      } else if (props.filters.courseLevel.value === 9) {
-        return upperLevelCourses;
-      } else if (props.filters.courseLevel.value === 10) {
-        return graduateLevelCourses;
-      }
-    };
+  //   const setArrayByCourseLevel = () => {
+  //     if (props.filters.courseLevel.value === 12) {
+  //       return lowerLevelCourses;
+  //     } else if (props.filters.courseLevel.value === 8) {
+  //       return middleLevelCourses;
+  //     } else if (props.filters.courseLevel.value === 9) {
+  //       return upperLevelCourses;
+  //     } else if (props.filters.courseLevel.value === 10) {
+  //       return graduateLevelCourses;
+  //     }
+  //   };
 
-    props.setCourses(setArrayByCourseLevel());
-  };
+  //   props.setCourses(setArrayByCourseLevel());
+  // };
   return (
     <div>
       <Title level={5}>Filter Course Level</Title>
