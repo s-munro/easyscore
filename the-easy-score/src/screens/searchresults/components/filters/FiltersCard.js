@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { setCourses } from "../../../../actions/index";
+import { setCourses, resetFilterValues } from "../../../../actions/index";
 
 import CourseLevelPopover from "./popovercontent/CourseLevelPopover";
 import RequirementsPopover from "./popovercontent/RequirementsPopover";
@@ -11,13 +11,15 @@ import TimeofDayPopover from "./popovercontent/TimeofDayPopover";
 import { Card, Button } from "antd";
 
 const FiltersCard = (props) => {
-  const handleFiltersSubmit = (e) => {
-    e.preventDefault();
-    props.setCourses([]);
-  };
+  // const handleFiltersSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(props.filters);
+  //   console.log(props.displayedCourses);
+  // };
 
   const handleFiltersReset = (e) => {
     e.preventDefault();
+    props.resetFilterValues();
     props.setCourses(props.courses);
   };
 
@@ -25,7 +27,7 @@ const FiltersCard = (props) => {
     <div>
       {/* hey sheens, thoughts on having this stick to the page as we scroll down?  */}
 
-      <Card title={"Filter Results By:"} style={{ width: 300 }}>
+      <Card title={"Filter Results By:"} style={{ width: 275 }}>
         <CourseLevelPopover />
         <br />
         <CreditHoursPopover />
@@ -36,7 +38,7 @@ const FiltersCard = (props) => {
         <br />
         <br />
 
-        <Button onClick={handleFiltersSubmit}>Apply Filters</Button>
+        {/* <Button onClick={handleFiltersSubmit}>Apply Filters</Button> */}
         <Button onClick={handleFiltersReset}>Reset Filters</Button>
       </Card>
     </div>
@@ -47,7 +49,10 @@ const mapStateToProps = (state) => {
   return {
     courses: state.courses,
     displayedCourses: state.displayedCourses,
+    filters: state.filters,
   };
 };
 
-export default connect(mapStateToProps, { setCourses })(FiltersCard);
+export default connect(mapStateToProps, { setCourses, resetFilterValues })(
+  FiltersCard
+);

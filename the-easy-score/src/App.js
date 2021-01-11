@@ -9,7 +9,7 @@ import Professor from "./screens/professorpage/Professor";
 import Results from "./screens/searchresults/Results";
 import Home from "./screens/home/Home";
 
-import Test from "./testpage/Test";
+// import Test from "./testpage/Test";
 
 import "./App.css";
 
@@ -38,7 +38,7 @@ const App = () => {
           path="/search/:axiosUrl"
           render={(props) => <Results {...props} />}
         />
-        <Route path="/test" render={(props) => <Test {...props} />} />
+        {/* <Route path="/test" render={(props) => <Test {...props} />} /> */}
       </Switch>
       <Footer />
     </Router>

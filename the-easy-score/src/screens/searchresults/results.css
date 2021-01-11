@@ -4,12 +4,16 @@
   width: 100%;
 }
 
-.results-container {
+.page-container {
   min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-color: #fafafa;
+}
+.results-container {
+  margin: 3%;
 }
 
 .courseDisplayContainer {

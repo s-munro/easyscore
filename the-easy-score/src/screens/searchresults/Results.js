@@ -33,8 +33,9 @@ const Results = (props) => {
   return (
     <div className="page-container">
       <SecondaryNav />
-      <main className="results-container">
+      <main className="page-container">
         <Header keyword={keyword} courses={props.displayedCourses} header={0} />
+        <div className="results-container">
         {/*************** BEGIN RENDERING RESULTS *********************/}
         {/* LOADING */}
         {props.isLoading === true ? (
@@ -71,6 +72,7 @@ const Results = (props) => {
             </div>
           </div>
         )}
+        </div>
       </main>
     </div>
   );
