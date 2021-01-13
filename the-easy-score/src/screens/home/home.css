@@ -1,19 +1,64 @@
+       .miniLogoEasy {
+         text-emphasis-style: bold;
+       }
+       .miniLogoScore {
+         color: #9a0000;
+       }
+       
+       /*********  HOME ************/
+/*********  MAIN CONTENT SECTION ************/
+
 .home-main {
-  height: 84vh;
-  margin: 2% 15% 2% 15%;
-  padding-right: 12%;
-  padding-left: 12%;
-  border-radius: 4px;
+  
+  display: flex;
+  flex-direction: row;
+  margin: 8% 7% 8% 7%;
+  height: 55vh;
 }
 
-.home-form-container {
+.homePageLeftMain {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 2%;
+  border-left: 1px solid #b40404;
+  border-bottom: 1px solid #b40404;
+  text-align: left;
+}
+
+.homePageRightMain {
+  width: 55%;
+  padding: 2% 5% 2% 5%;
+  border-radius: 500px;
+}
+
+.homePageRightBckGrd {
+  height: 100%;
+  background: #9A0000;
+  background: -webkit-linear-gradient(top left, #9A0000, #B02507);
+  background: -moz-linear-gradient(top left, #9A0000, #B02507);
+  background: linear-gradient(to bottom right, #9A0000, #B02507);
+  
+  border-radius: 2%;
+}
+
+.homePageImage {
+  border: 1px solid black;
+  height: 50%;
+  margin-top: -68%;
+  background: white;
+}
+
+/* .home-form-container {
   margin-top: 25%;
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-}
+} */
 
 /*********  MENU DISPLAY BUTTON ************/
 
