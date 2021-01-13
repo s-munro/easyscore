@@ -4,6 +4,7 @@ import Frame from "../home/components/computerscreen.jpg"
 import "./home.css";
 import SecondaryNav from "../../navbar/SecondaryNav";
 import SearchForm from "./components/SearchForm";
+import SlideShow from "./components/SlideShow";
 
 const Home = (props) => {
   return (
@@ -30,8 +31,11 @@ const Home = (props) => {
 
         <div className="homePageRightMain">
           <div className="homePageRightBckGrd"></div>
-          <div className="homePageImage"></div>
-          <div className="homePageSlideShow"></div>
+          <div className="iframeContainer">
+            <div className="homePageImage">
+              <SlideShow />
+            </div>
+          </div>
         </div>
         {/* <SearchForm push={props.history.push} /> */}
       </main>
