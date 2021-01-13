@@ -1,5 +1,6 @@
 import React from "react";
 import Nav from "../../navbar/Nav";
+import Frame from "../home/components/computerscreen.jpg"
 import "./home.css";
 import SecondaryNav from "../../navbar/SecondaryNav";
 import SearchForm from "./components/SearchForm";
@@ -15,11 +16,11 @@ const Home = (props) => {
           </h2>
           <p>
             {" "}
-            We are The EasyScore -using our scoring system based on grade 
+            We are The <b className="miniLogoEasy">Easy</b><b className="miniLogoScore">Score</b> -using our scoring system based on grade 
             distribution data, we do the work of grade 
             hunting for you and find an easy A for your courses! {" "}
           </p>
-          <h3>Choose the <b id="miniemphasiseasy">easy</b> option!</h3>
+          <h3>Choose the <b class="miniLogoScore">easy</b> option!</h3>
           <div className="homeGraphicContainer">
             <div className="homeGraphicEasyScore"></div>
             <div className="homeGraphicArrow"></div>
@@ -28,9 +29,8 @@ const Home = (props) => {
         </div>
 
         <div className="homePageRightMain">
-          <div className="homePageRightBckGrd">
-            <div className="homePageImage"><img src="../home/components/computerscreen.jpg"></img></div>
-          </div>
+          <div className="homePageRightBckGrd"></div>
+          <div className="homePageImage"></div>
           <div className="homePageSlideShow"></div>
         </div>
         {/* <SearchForm push={props.history.push} /> */}

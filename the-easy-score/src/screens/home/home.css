@@ -1,12 +1,19 @@
-        /*********  HOME ************/
+       .miniLogoEasy {
+         text-emphasis-style: bold;
+       }
+       .miniLogoScore {
+         color: #9a0000;
+       }
+       
+       /*********  HOME ************/
 /*********  MAIN CONTENT SECTION ************/
 
 .home-main {
   
   display: flex;
   flex-direction: row;
-  margin: 4% 7% 4% 7%;
-  height: 65vh;
+  margin: 8% 7% 8% 7%;
+  height: 55vh;
 }
 
 .homePageLeftMain {
@@ -15,15 +22,15 @@
   width: 45%;
   padding-left: 3%;
   padding-right: 3%;
+  padding-top: 2%;
   border-left: 1px solid #b40404;
   border-bottom: 1px solid #b40404;
-  text-align: center;
+  text-align: left;
 }
 
 .homePageRightMain {
   width: 55%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 2% 5% 2% 5%;
   border-radius: 500px;
 }
 
@@ -34,10 +41,14 @@
   background: -moz-linear-gradient(top left, #9A0000, #B02507);
   background: linear-gradient(to bottom right, #9A0000, #B02507);
   
+  border-radius: 2%;
 }
 
 .homePageImage {
-  background-size: cover;
+  border: 1px solid black;
+  height: 50%;
+  margin-top: -68%;
+  background: white;
 }
 
 /* .home-form-container {
