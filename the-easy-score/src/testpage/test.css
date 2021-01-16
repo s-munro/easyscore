@@ -1,0 +1,23 @@
+/* @import "~antd/dist/antd.css"; */
+
+.filters-bar {
+  background-color: whitesmoke;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup-menu {
+  background-color: white;
+  border: 1px solid black;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* z-index: 1000; */
+  position: absolute;
+}
+.select-space {
+  margin: 15%;
+}
