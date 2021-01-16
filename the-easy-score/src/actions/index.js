@@ -44,15 +44,23 @@ export const setKeywordFilterValue = (value) => {
 };
 
 export const setLevelFilterValue = (value) => {
-  return { type: SET_LEVEL_FILTER_VALUE, payload: value };
+  if (value === "") {
+    let newValue = "";
+    return { type: SET_LEVEL_FILTER_VALUE, payload: newValue };
+  } else {
+    let newValue = parseInt(value);
+    return { type: SET_LEVEL_FILTER_VALUE, payload: newValue };
+  }
 };
 
 export const setRequirementsFilterValue = (value) => {
   return { type: SET_REQUIREMENTS_FILTER_VALUE, payload: value };
 };
+
 export const setCreditsFilterValue = (value) => {
   return { type: SET_CREDITS_FILTER_VALUE, payload: value };
 };
+
 export const setTimeFilterValue = (value) => {
   return { type: SET_TIME_FILTER_VALUE, payload: value };
 };

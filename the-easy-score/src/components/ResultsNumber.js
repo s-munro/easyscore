@@ -1,6 +1,6 @@
 import React from "react";
 
-const ResultsNumber = ({ number, results, header }) => {
+const ResultsNumber = ({ number, results, header, keyword }) => {
   console.log(header);
 
   if (header === 0) {
@@ -12,7 +12,8 @@ const ResultsNumber = ({ number, results, header }) => {
   } else {
     return (
       <div>
-        Loading ({number}) {results}...
+        Showing {number} {results} for <br />
+        <span>{keyword}</span>
       </div>
     );
   }
