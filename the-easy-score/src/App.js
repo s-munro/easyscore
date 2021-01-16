@@ -35,7 +35,6 @@ const App = () => {
           path="/search/:axiosUrl"
           render={(props) => <Results {...props} />}
         />
-        {/* <Route path="/test" render={(props) => <Test {...props} />} /> */}
       </Switch>
       <Footer />
     </Router>

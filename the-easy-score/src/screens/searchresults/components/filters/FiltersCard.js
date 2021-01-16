@@ -1,6 +1,6 @@
 import React from "react";
-
 import { connect } from "react-redux";
+
 import {
   setCourses,
   setKeywordFilterValue,
@@ -9,13 +9,6 @@ import {
   resetFilterValues,
 } from "../../../../actions/index";
 
-import CourseLevelPopover from "./popovercontent/CourseLevelPopover";
-// import RequirementsPopover from "./popovercontent/RequirementsPopover";
-import CreditHoursPopover from "./popovercontent/CreditHoursPopover";
-import TimeofDayPopover from "./popovercontent/TimeofDayPopover";
-
-import FilterSelect from "../../../../components/FilterSelect";
-
 import {
   requirementsValues,
   courseLevelValues,
@@ -23,9 +16,11 @@ import {
   timeofDayValues,
 } from "../../../../data/FilterSelectsData";
 
-import "../../results.css";
+import FilterSelect from "../../../../components/FilterSelect";
 
 import { Card, Button, Form } from "react-bootstrap";
+
+import "../../results.css";
 
 const FiltersCard = (props) => {
   const handleChange = (e) => {
@@ -75,8 +70,6 @@ const FiltersCard = (props) => {
     };
 
     const filterByCourseLevel = () => {
-      console.log("its happening!!!!");
-      console.log("cvvalue: ", props.filters.courseLevel.value);
       const lowerLevelCourses = timeFilteredCourses.filter((course) => {
         return course.code <= 299;
       });
@@ -90,8 +83,7 @@ const FiltersCard = (props) => {
         return course.code > 499;
       });
 
-      if (props.filters.courseLevel.value == 12) {
-        console.log("low");
+      if (props.filters.courseLevel.value === 12) {
         return lowerLevelCourses;
       } else if (props.filters.courseLevel.value === 8) {
         console.log("mid");
