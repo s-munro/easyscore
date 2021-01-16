@@ -6,9 +6,6 @@ import SecondaryNav from "../../navbar/SecondaryNav";
 import SearchForm from "./components/SearchForm";
 import SlideShow from "./components/SlideShow";
 
-import { FormControl } from "react-bootstrap";
-import FilterSelect from "../../components/FilterSelect";
-
 // Sheena,
 // React boostrap FormControl documentation below, covers styling I think:
 // https://react-bootstrap.github.io/components/forms/
@@ -67,29 +64,7 @@ const Home = (props) => {
         <h1>
           Easy<span>Score</span>
         </h1>
-        <FormControl />
-        <div className="filters-container">
-          <FilterSelect
-            select_id={"courseLevel"}
-            handleSelectChange={handleSelectChange}
-            selectValues={courseLevelValues}
-          />
-          <FilterSelect
-            select_id={"creditHours"}
-            handleSelectChange={handleSelectChange}
-            selectValues={creditHoursValues}
-          />
-          <FilterSelect
-            select_id={"requirements"}
-            handleSelectChange={handleSelectChange}
-            selectValues={requirementsValues}
-          />
-          <FilterSelect
-            select_id={"timeofDay"}
-            handleSelectChange={handleSelectChange}
-            selectValues={timeofDayValues}
-          />
-        </div>
+        <SearchForm />
       </main>
       {/* <main className="home-main">
         <div className="homePageLeftMain">

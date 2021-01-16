@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { changeUrl } from "../../../actions/index";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
-// import SearchIcon from "@material-ui/icons/Search";
-
-// import Popup from "./Popup";
+import { FormControl } from "react-bootstrap";
+import FilterSelect from "../../../components/FilterSelect";
 
 const initialUrlValues = {
   keyword: "",
@@ -17,6 +15,51 @@ const initialUrlValues = {
 };
 
 const SearchForm = ({ push, changeUrl, searchUrl }) => {
+  const requirementsValues = [
+    { value: "", title: "Any Requirement" },
+    { value: 0, title: "A&H Credit" },
+    { value: 1, title: "Diversity in U.S. Credit" },
+    { value: 6, title: "English Composition" },
+    { value: 11, title: "Intensive Writing" },
+    { value: 7, title: "Mathematical Model" },
+    { value: 3, title: "N&M Credit" },
+    { value: 5, title: "Public Oral Communication" },
+    { value: 2, title: "S&H Credit" },
+    { value: 4, title: "World Culture Credit" },
+    { value: "0GENEDMM", title: "World Landuage Class" },
+  ];
+
+  const courseLevelValues = [
+    { value: "", title: "Any Course Level" },
+    { value: 12, title: "100-299" },
+    { value: 8, title: "300-399" },
+    { value: 9, title: "400-499" },
+    { value: 10, title: "Graduate Level Courses" },
+    { value: 13, title: "Honors Level Courses" },
+  ];
+
+  const creditHoursValues = [
+    { value: "", title: "Any Credit Hours" },
+    { value: 1, title: "1" },
+    { value: 2, title: "2" },
+    { value: 3, title: "3" },
+    { value: 4, title: "4" },
+    { value: 5, title: "5" },
+    { value: 6, title: "6" },
+    { value: 7, title: "7+" },
+  ];
+
+  const timeofDayValues = [
+    { value: "", title: "Any time of day" },
+    { value: 1, title: "Morning (7:00 a.m.–10:59 a.m.)" },
+    { value: 2, title: "Afternoon (11 a.m.–4:59 p.m.)" },
+    { value: 3, title: "Evening (5 p.m.–11:59 p.m.)" },
+  ];
+
+  const handleSelectChange = (e) => {
+    console.log(e.target.name, e.target.value);
+  };
+
   const [urlValues, setUrlValues] = useState(initialUrlValues);
 
   const handleChange = (e) => {
@@ -26,11 +69,6 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //  1. replace spaces in keyword with underscores:
-    // let noSpaceKeyword = urlValues.keyword.replace(" ", "_");
-    // let noEqualsKeyword = noSpaceKeyword.replace(":", "=");
-    //  2. make api call
-    // setUrlValues({ ...urlValues, keyword: noEqualsKeyword });
     const newUrl = `'keyword'=_'${urlValues.keyword}'&_'requirement'=_'${urlValues.requirement}'&_'level'=_'${urlValues.level}'&_'credit'=_'${urlValues.credit}'&_'timing'=_'${urlValues.timing}'&_'next_sem'=_'${urlValues.next_sem}'&_'days'=_[]`;
     changeUrl(newUrl);
 
@@ -39,7 +77,31 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
 
   return (
     <div className="home-form-container">
-      <form onSubmit={handleSubmit}>
+      <FormControl />
+      <div className="filters-container">
+        <FilterSelect
+          select_id={"courseLevel"}
+          handleSelectChange={handleSelectChange}
+          selectValues={courseLevelValues}
+        />
+        <FilterSelect
+          select_id={"creditHours"}
+          handleSelectChange={handleSelectChange}
+          selectValues={creditHoursValues}
+        />
+        <FilterSelect
+          select_id={"requirements"}
+          handleSelectChange={handleSelectChange}
+          selectValues={requirementsValues}
+        />
+        <FilterSelect
+          select_id={"timeofDay"}
+          handleSelectChange={handleSelectChange}
+          selectValues={timeofDayValues}
+        />
+      </div>
+
+      {/* <form onSubmit={handleSubmit}>
         <div className="homeSrchInput">
           <label>
             <input
@@ -53,7 +115,6 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
           </label>
           <button className="homeSrchBtn">
             <ArrowForwardIosIcon />
-            {/* <p className="buttonSymbol">></p> */}
           </button>
         </div>
         <br></br>
@@ -114,82 +175,8 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
             <option value={2}>Afternoon (11 a.m.–4:59 p.m.)</option>
             <option value={3}>Evening (5 p.m.–11:59 p.m.)</option>
           </select>
-
-          {/* <select className="homeFilterDisplay" name="next_sem" onChange={handleChange}>
-
-          <option value="">Semesters</option>
-          <option value={0}>Previous</option>
-          <option value={1}>Upcoming</option>
-        </select> */}
-
-          {/* <div>
-          <label>
-            Mon:
-            <input
-              type="checkbox"
-              name="day"
-              value="M"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Tues:
-            <input
-              type="checkbox"
-              name="day"
-              value="T"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Wed:
-            <input
-              type="checkbox"
-              name="day"
-              value="W"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Thurs:
-            <input
-              type="checkbox"
-              name="day"
-              value="R"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Fri:
-            <input
-              type="checkbox"
-              name="day"
-              value="F"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Sat:
-            <input
-              type="checkbox"
-              name="day"
-              value="S"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Sun:
-            <input
-              type="checkbox"
-              name="day"
-              value="N"
-              onChange={handleChange}
-            />
-          </label>
         </div>
- */}
-        </div>
-      </form>
+      </form> */}
     </div>
   );
 };
@@ -199,6 +186,7 @@ const mapStateToProps = (state) => {
     searchUrl: state.searchUrl,
     isLoading: state.isLoading,
     courses: state.courses,
+    filters: state.filters,
   };
 };
 
