@@ -116,10 +116,10 @@ const FiltersCard = (props) => {
           return course.credits === props.filters.creditHours.value;
         });
         console.log("filteredCourses: ", filteredCourses);
-        // props.setCourses(filteredCourses);
+        props.setCourses(filteredCourses);
       } else {
         console.log("filtered func: ", func);
-        // props.setCourses(func);
+        props.setCourses(func);
       }
     };
 
