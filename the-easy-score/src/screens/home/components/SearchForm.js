@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { changeUrl } from "../../../actions/index";
+import {
+  changeUrl,
+  setKeywordFilterValue,
+  setLevelFilterValue,
+  setRequirementsFilterValue,
+  setCreditsFilterValue,
+  setTimeFilterValue,
+} from "../../../actions/index";
 
 import { FormControl } from "react-bootstrap";
 import FilterSelect from "../../../components/FilterSelect";
@@ -58,23 +65,24 @@ const SearchForm = (props, { push, changeUrl, searchUrl }) => {
     { value: 3, title: "Evening (5 p.m.–11:59 p.m.)" },
   ];
 
-  const handleSelectChange = (e) => {
-    console.log(e.target.name, e.target.value);
-  };
+  // const handleSelectChange = (e) => {
+  //   console.log(e.target.name, e.target.value);
+  // };
 
   const handleChange = (e) => {
     console.log(e);
 
     if (e.target.name === "keyword") {
       console.log("keyword");
+      props.setKeywordFilterValue(e.target.value);
     } else if (e.target.name === "courseLevel") {
-      console.log("courseLevel");
+      props.setLevelFilterValue(e.target.value);
     } else if (e.target.name === "creditHours") {
-      console.log("creditHours");
+      props.setCreditsFilterValue(e.target.value);
     } else if (e.target.name === "timeofDay") {
-      console.log("timeofDay");
+      props.setTimeFilterValue(e.target.value);
     } else if (e.target.name === "requirements") {
-      console.log("requirements");
+      props.setRequirementsFilterValue(e.target.value);
     } else {
       console.log("nope");
     }
@@ -92,111 +100,36 @@ const SearchForm = (props, { push, changeUrl, searchUrl }) => {
 
   return (
     <div className="home-form-container">
-      <FormControl
-        value={props.filters.keyword.value}
-        onChange={handleChange}
-        placeholder="this is a placeholder"
-        name="keyword"
-      />
-      <div className="filters-container">
-        <FilterSelect
-          select_id={"courseLevel"}
-          handleSelectChange={handleChange}
-          selectValues={courseLevelValues}
+      <form onSubmit={handleSubmit}>
+        <FormControl
+          value={props.filters.keyword.value}
+          onChange={handleChange}
+          placeholder="this is a placeholder"
+          name="keyword"
         />
-        <FilterSelect
-          select_id={"creditHours"}
-          handleSelectChange={handleChange}
-          selectValues={creditHoursValues}
-        />
-        <FilterSelect
-          select_id={"requirements"}
-          handleSelectChange={handleChange}
-          selectValues={requirementsValues}
-        />
-        <FilterSelect
-          select_id={"timeofDay"}
-          handleSelectChange={handleChange}
-          selectValues={timeofDayValues}
-        />
-      </div>
-
-      {/* <form onSubmit={handleSubmit}>
-        <div className="homeSrchInput">
-          <label>
-            <input
-              className="homeInputBox"
-              type=" text"
-              name="keyword"
-              placeholder="'Biology', 'Chem-C', 'L112', etc."
-              value={urlValues.keyword}
-              onChange={handleChange}
-            />
-          </label>
-          <button className="homeSrchBtn">
-            <ArrowForwardIosIcon />
-          </button>
+        <div className="filters-container">
+          <FilterSelect
+            select_id={"courseLevel"}
+            handleSelectChange={handleChange}
+            selectValues={courseLevelValues}
+          />
+          <FilterSelect
+            select_id={"creditHours"}
+            handleSelectChange={handleChange}
+            selectValues={creditHoursValues}
+          />
+          <FilterSelect
+            select_id={"requirements"}
+            handleSelectChange={handleChange}
+            selectValues={requirementsValues}
+          />
+          <FilterSelect
+            select_id={"timeofDay"}
+            handleSelectChange={handleChange}
+            selectValues={timeofDayValues}
+          />
         </div>
-        <br></br>
-        <div className="homeFilterBtnContainer">
-          <select
-            className="homeFilterDisplay"
-            name="requirement"
-            onChange={handleChange}
-          >
-            <option value="">Requirements</option>
-            <option value={0}>A&H credit</option>
-            <option value={1}>Diversity in U.S. Credit</option>
-            <option value={6}>English Composition</option>
-            <option value={11}>Intensive Writing Credit</option>
-            <option value={7}>Mathematical Model</option>
-            <option value={3}>N&amp;M credit</option>
-            <option value={5}>Public Oral Communication Credit</option>
-            <option value={2}>S&H credit</option>
-            <option value={4}>World Culture credit</option>
-            <option value="0GENEDMM">World Language Class</option>
-          </select>
-
-          <select
-            className="homeFilterDisplay fBtn2"
-            name="level"
-            onChange={handleChange}
-          >
-            <option value="">Course Level</option>
-            <option value={12}>100–299</option>
-            <option value={8}>300–399</option>
-            <option value={9}>400–499</option>
-            <option value={10}>Graduate Level Courses</option>
-            <option value={13}>Honors Level Courses</option>
-          </select>
-
-          <select
-            className="homeFilterDisplay fBtn2"
-            name="credit"
-            onChange={handleChange}
-          >
-            <option value="">Credit Hours</option>
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-            <option value={6}>6</option>
-            <option value={7}>7+</option>
-          </select>
-
-          <select
-            className="homeFilterDisplay fBtn2"
-            name="timing"
-            onChange={handleChange}
-          >
-            <option value="">Time of day</option>
-            <option value={1}>Morning (7:00 a.m.–10:59 a.m.)</option>
-            <option value={2}>Afternoon (11 a.m.–4:59 p.m.)</option>
-            <option value={3}>Evening (5 p.m.–11:59 p.m.)</option>
-          </select>
-        </div>
-      </form> */}
+      </form>
     </div>
   );
 };
@@ -210,4 +143,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { changeUrl })(SearchForm);
+export default connect(mapStateToProps, {
+  changeUrl,
+  setKeywordFilterValue,
+  setLevelFilterValue,
+  setRequirementsFilterValue,
+  setCreditsFilterValue,
+  setTimeFilterValue,
+})(SearchForm);

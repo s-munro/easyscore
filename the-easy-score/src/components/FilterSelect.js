@@ -7,10 +7,6 @@ import { FormControl } from "react-bootstrap";
 // the documentation is fucking massive
 
 const FilterSelect = ({ selectValues, handleSelectChange, select_id }) => {
-  const handleChange = (e) => {
-    console.log(e);
-  };
-
   return (
     <div>
       <FormControl as="select" name={select_id} onChange={handleSelectChange}>
@@ -21,7 +17,6 @@ const FilterSelect = ({ selectValues, handleSelectChange, select_id }) => {
             </option>
           );
         })}
-        {/* </select> */}
       </FormControl>
     </div>
   );

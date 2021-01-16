@@ -22,7 +22,6 @@ const SecondaryNav = (props) => {
 
   const handleSubmit = (e) => {
     const newUrl = `'keyword'=_'${urlValues.keyword}'&_'requirement'=_''&_'level'=_''&_'credit'=_''&_'timing'=_''&_'next_sem'=_''&_'days'=_[]`;
-    props.changeUrl(newUrl);
 
     history.push(`/search/${newUrl}`);
   };
@@ -51,7 +50,7 @@ const SecondaryNav = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    searchUrl: state.searchUrl,
+    filters: state.filters,
   };
 };
 
