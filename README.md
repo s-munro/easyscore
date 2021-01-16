@@ -128,4 +128,6 @@ The easy score is a web applicated intended as a course-planning resource for st
   - [x] home page working with bootstrap, forms & state
   - [x] keyword and next_sem added to reducer filters
   - [x] changeUrl and url removed from state and actions
+  - [x] general cleanup and working toward dry code/best practices
+  - [x] removed home search card select components in favor of reusable pure select component
   - [inprogress] migrating search results page antd to bootstrap
