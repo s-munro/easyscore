@@ -78,13 +78,6 @@ const SearchForm = (props, { push }) => {
     } else {
       console.log("nope");
     }
-
-    // setUrlValues({ ...urlValues, [e.target.name]: e.target.value });
-
-    // 'keyword'=_'chem'&_'requirement'=_''&_'level'=_'8'&_'credit'=_''&_'timing'=_''&_'next_sem'=_'0'&_'days'=_[]
-
-    // https://theeasyscore.com/results&searchquery='
-    // 'keyword'=_'chem'&_'requirement'=_''&_'level'=_'8'&_'credit'=_''&_'timing'=_''&_'next_sem'=_'0'&_'days'=_[]
   };
 
   const handleSubmit = async (e) => {

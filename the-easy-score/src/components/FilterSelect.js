@@ -6,10 +6,20 @@ import { FormControl } from "react-bootstrap";
 // https://react-bootstrap.github.io/components/forms/
 // the documentation is fucking massive
 
-const FilterSelect = ({ selectValues, handleSelectChange, select_id }) => {
+const FilterSelect = ({
+  selectValues,
+  handleSelectChange,
+  select_id,
+  selectValue,
+}) => {
   return (
     <div>
-      <FormControl as="select" name={select_id} onChange={handleSelectChange}>
+      <FormControl
+        as="select"
+        name={select_id}
+        onChange={handleSelectChange}
+        value={selectValue}
+      >
         {selectValues.map((value) => {
           return (
             <option key={value.value} value={value.value}>
