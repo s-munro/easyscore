@@ -1,19 +1,26 @@
 // import { getData } from "../utils/api/getData";
 import axios from "axios";
 
+// Data-related exports
 export const FETCH_DATA_START = "FETCH_DATA_START";
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
-export const CHANGE_URL = "CHANGE_URL";
 export const SET_COURSES_ON_PAGE = "SET_COURSES_ON_PAGE";
+
+// Filter-related exports
+export const SET_KEYWORD_FILTER_VALUE = "SET_KEYWORD_FILTER_VALUE";
 export const SET_LEVEL_FILTER_VALUE = "SET_LEVEL_FILTER_VALUE";
 export const SET_REQUIREMENTS_FILTER_VALUE = "SET_REQUIREMENTS_FILTER_VALUE";
 export const SET_CREDITS_FILTER_VALUE = "SET_CREDITS_FILTER_VALUE";
 export const SET_TIME_FILTER_VALUE = "SET_TIME_FILTER_VALUE";
 export const RESET_FILTER_VALUES = "RESET_FILTER_VALUES";
 
-export const fetchResults = (func, url) => (dispatch) => {
+// Data-related actions ****************
+
+export const fetchResults = (url) => (dispatch) => {
   dispatch({ type: FETCH_DATA_START });
+
+  console.log("link: ", `https://theeasyscore.com/results&jsonquery=${url}`);
 
   axios
     .get(`https://theeasyscore.com/results&jsonquery=${url}`)
@@ -26,15 +33,16 @@ export const fetchResults = (func, url) => (dispatch) => {
     });
 };
 
-export const changeUrl = (url) => {
-  return { type: CHANGE_URL, payload: url };
-};
-
 export const setCourses = (courses) => {
   return { type: SET_COURSES_ON_PAGE, payload: courses };
 };
 
-//*************************  FILTERS ACTIONS  ******************************/
+// Filters-related actions ****************
+
+export const setKeywordFilterValue = (value) => {
+  return { type: SET_KEYWORD_FILTER_VALUE, payload: value };
+};
+
 export const setLevelFilterValue = (value) => {
   return { type: SET_LEVEL_FILTER_VALUE, payload: value };
 };

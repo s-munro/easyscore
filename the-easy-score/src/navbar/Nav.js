@@ -5,21 +5,12 @@ import "../App.css";
 const Nav = () => {
   return (
     <nav className="nav-bar">
-      <ul className="nav-ul">
-       <div className="logoContainer"> 
-        <Link to="/">
-          <li className='homeLogo'>The Easy Score</li>
-        </Link>
-       </div> 
-       <div className="homeNavLinks">
-        <Link to="/help">
-          <li>Help</li>
-        </Link>
-        <Link to="/contact">
-          <li>Contact</li>
-        </Link>
-       </div> 
-      </ul>
+      <Link to="/about">
+        <div>About</div>
+      </Link>
+      <Link to="/contact">
+        <div>Contact</div>
+      </Link>
     </nav>
   );
 };

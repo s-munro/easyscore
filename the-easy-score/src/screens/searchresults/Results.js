@@ -3,7 +3,6 @@ import { connect, useDispatch } from "react-redux";
 import { fetchResults, setCourses } from "../../actions";
 import { useParams } from "react-router-dom";
 
-import { getData } from "../../utils/api/getData";
 import { filterToKeyword } from "./hooks/";
 
 import Header from "./components/Header";
@@ -12,7 +11,6 @@ import NoResults from "./components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
 import SecondaryNav from "../../navbar/SecondaryNav";
-// import FiltersCard from "./components/FiltersCard";
 
 import FiltersCard from "./components/filters/FiltersCard";
 
@@ -22,10 +20,13 @@ const Results = (props) => {
   const [keyword, setKeyword] = useState("");
   const params = useParams();
 
+  console.log("yello!");
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchResults(getData, params.axiosUrl));
+    console.log("params axiosurl: ", params.axiosUrl);
+    dispatch(fetchResults(params.axiosUrl));
     // dispatch(setCourses(props.courses));
     filterToKeyword(params.axiosUrl, setKeyword);
   }, []);
@@ -36,42 +37,42 @@ const Results = (props) => {
       <main className="page-container">
         <Header keyword={keyword} courses={props.displayedCourses} header={0} />
         <div className="results-container">
-        {/*************** BEGIN RENDERING RESULTS *********************/}
-        {/* LOADING */}
-        {props.isLoading === true ? (
-          <div>
-            <Loading />
-          </div>
-        ) : (
-          //************* END LOADING *****/
-          //************* LOAD RESULTS ****/
-          //**** NUMBER */
-          <div>
+          {/*************** BEGIN RENDERING RESULTS *********************/}
+          {/* LOADING */}
+          {props.isLoading === true ? (
             <div>
-              <ResultsNumber
-                number={props.displayedCourses.length}
-                results={"course(s)"}
-                header={1}
-              />
+              <Loading />
             </div>
-            <div className="filtersCard-courses-container">
-              <FiltersCard />
-              {/********* END NUMBER, RENDER CARDS ********/}
-              <div className="courseDisplayContainer">
-                {props.displayedCourses.length > 0 ? (
-                  [
-                    props.displayedCourses.map((course) => {
-                      return <CourseCard course={course} key={course.url} />;
-                    }),
-                  ]
-                ) : (
-                  //********  RENDER NO RESULTS IF NO RESULTS  *******/
-                  <NoResults />
-                )}
+          ) : (
+            //************* END LOADING *****/
+            //************* LOAD RESULTS ****/
+            //**** NUMBER */
+            <div>
+              <div>
+                <ResultsNumber
+                  number={props.displayedCourses.length}
+                  results={"course(s)"}
+                  header={1}
+                />
+              </div>
+              <div className="filtersCard-courses-container">
+                <FiltersCard />
+                {/********* END NUMBER, RENDER CARDS ********/}
+                <div className="courseDisplayContainer">
+                  {props.displayedCourses.length > 0 ? (
+                    [
+                      props.displayedCourses.map((course) => {
+                        return <CourseCard course={course} key={course.url} />;
+                      }),
+                    ]
+                  ) : (
+                    //********  RENDER NO RESULTS IF NO RESULTS  *******/
+                    <NoResults />
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
         </div>
       </main>
     </div>
@@ -80,7 +81,6 @@ const Results = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    searchUrl: state.searchUrl,
     isLoading: state.isLoading,
     courses: state.courses,
     displayedCourses: state.displayedCourses,

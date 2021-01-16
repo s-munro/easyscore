@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./footer/Footer";
 
 import Contact from "./screens/contact/Contact";
+import About from "./screens/about/About";
 import Course from "./screens/coursepage/Course";
-import Professor from "./screens/professorpage/Professor";
 import Results from "./screens/searchresults/Results";
 import Home from "./screens/home/Home";
 
@@ -26,13 +26,10 @@ const App = () => {
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route path="/contact" render={(props) => <Contact {...props} />} />
+        <Route path="/about" render={(props) => <About {...props} />} />
         <Route
           path="/courses/:courseid"
           render={(props) => <Course {...props} />}
-        />
-        <Route
-          path="/professors/:id"
-          render={(props) => <Professor {...props} />}
         />
         <Route
           path="/search/:axiosUrl"

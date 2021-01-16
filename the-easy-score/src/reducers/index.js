@@ -2,9 +2,9 @@ import {
   FETCH_DATA_START,
   FETCH_DATA_SUCCESS,
   FETCH_DATA_FAILURE,
-  CHANGE_URL,
   SET_COURSES_ON_PAGE,
   SET_LEVEL_FILTER_VALUE,
+  SET_KEYWORD_FILTER_VALUE,
   SET_REQUIREMENTS_FILTER_VALUE,
   SET_CREDITS_FILTER_VALUE,
   SET_TIME_FILTER_VALUE,
@@ -12,7 +12,6 @@ import {
 } from "../actions";
 
 const initialState = {
-  searchUrl: "",
   isLoading: false,
   courses: [],
   displayedCourses: [],
@@ -34,13 +33,19 @@ const initialState = {
       isActive: false,
       value: "",
     },
+    keyword: {
+      isActive: false,
+      value: "",
+    },
+    next_sem: {
+      isActive: false,
+      value: "",
+    },
   },
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case CHANGE_URL:
-      return { ...state, searchUrl: action.payload };
     case FETCH_DATA_START:
       return { ...state, isLoading: true };
     case FETCH_DATA_SUCCESS:
@@ -54,6 +59,14 @@ const reducer = (state = initialState, action) => {
       };
     case SET_COURSES_ON_PAGE:
       return { ...state, displayedCourses: action.payload };
+    case SET_KEYWORD_FILTER_VALUE:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          keyword: { ...state.filters.keyword, value: action.payload },
+        },
+      };
     case SET_LEVEL_FILTER_VALUE:
       return {
         ...state,
@@ -100,6 +113,8 @@ const reducer = (state = initialState, action) => {
           },
           creditHours: { ...state.filters.creditHours, value: action.payload },
           timeofDay: { ...state.filters.timeofDay, value: action.payload },
+          keyword: { ...state.filters.keyword, value: action.payload },
+          next_sem: { ...state.filters.keyword, value: action.payload },
         },
       };
     default:
