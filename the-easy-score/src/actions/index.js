@@ -31,10 +31,6 @@ export const fetchResults = (func, url) => (dispatch) => {
     });
 };
 
-export const changeUrl = (url) => {
-  return { type: CHANGE_URL, payload: url };
-};
-
 export const setCourses = (courses) => {
   return { type: SET_COURSES_ON_PAGE, payload: courses };
 };
