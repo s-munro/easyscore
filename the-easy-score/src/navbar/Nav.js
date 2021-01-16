@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "../App.css";
 
 const Nav = () => {
+  const { params } = useParams();
+
+  console.log("params: ", params);
   return (
     <nav className="nav-bar">
       <Link to="/about">
