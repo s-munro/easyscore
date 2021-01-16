@@ -14,7 +14,9 @@ const initialUrlValues = {
   next_sem: "",
 };
 
-const SearchForm = ({ push, changeUrl, searchUrl }) => {
+const SearchForm = (props, { push, changeUrl, searchUrl }) => {
+  const [urlValues, setUrlValues] = useState(initialUrlValues);
+
   const requirementsValues = [
     { value: "", title: "Any Requirement" },
     { value: 0, title: "A&H Credit" },
@@ -60,16 +62,29 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
     console.log(e.target.name, e.target.value);
   };
 
-  const [urlValues, setUrlValues] = useState(initialUrlValues);
-
   const handleChange = (e) => {
     console.log(e);
-    setUrlValues({ ...urlValues, [e.target.name]: e.target.value });
+
+    if (e.target.name === "keyword") {
+      console.log("keyword");
+    } else if (e.target.name === "courseLevel") {
+      console.log("courseLevel");
+    } else if (e.target.name === "creditHours") {
+      console.log("creditHours");
+    } else if (e.target.name === "timeofDay") {
+      console.log("timeofDay");
+    } else if (e.target.name === "requirements") {
+      console.log("requirements");
+    } else {
+      console.log("nope");
+    }
+
+    // setUrlValues({ ...urlValues, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newUrl = `'keyword'=_'${urlValues.keyword}'&_'requirement'=_'${urlValues.requirement}'&_'level'=_'${urlValues.level}'&_'credit'=_'${urlValues.credit}'&_'timing'=_'${urlValues.timing}'&_'next_sem'=_'${urlValues.next_sem}'&_'days'=_[]`;
+    const newUrl = `'keyword'=_'${props.filters.keyword.value}'&_'requirement'=_'${props.filters.requirements.value}'&_'level'=_'${props.filters.courseLevel.value}'&_'credit'=_'${props.filters.creditHours.value}'&_'timing'=_'${props.filters.timeofDay.value}'&_'next_sem'=_'${props.filters.next_sem.value}'&_'days'=_[]`;
     changeUrl(newUrl);
 
     push(`/search/${newUrl}`);
@@ -77,26 +92,31 @@ const SearchForm = ({ push, changeUrl, searchUrl }) => {
 
   return (
     <div className="home-form-container">
-      <FormControl />
+      <FormControl
+        value={props.filters.keyword.value}
+        onChange={handleChange}
+        placeholder="this is a placeholder"
+        name="keyword"
+      />
       <div className="filters-container">
         <FilterSelect
           select_id={"courseLevel"}
-          handleSelectChange={handleSelectChange}
+          handleSelectChange={handleChange}
           selectValues={courseLevelValues}
         />
         <FilterSelect
           select_id={"creditHours"}
-          handleSelectChange={handleSelectChange}
+          handleSelectChange={handleChange}
           selectValues={creditHoursValues}
         />
         <FilterSelect
           select_id={"requirements"}
-          handleSelectChange={handleSelectChange}
+          handleSelectChange={handleChange}
           selectValues={requirementsValues}
         />
         <FilterSelect
           select_id={"timeofDay"}
-          handleSelectChange={handleSelectChange}
+          handleSelectChange={handleChange}
           selectValues={timeofDayValues}
         />
       </div>

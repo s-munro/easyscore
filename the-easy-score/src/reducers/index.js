@@ -34,6 +34,9 @@ const initialState = {
       isActive: false,
       value: "",
     },
+    keyword: {
+      value: "",
+    },
   },
 };
 
