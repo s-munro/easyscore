@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import {
-  changeUrl,
   setKeywordFilterValue,
   setLevelFilterValue,
   setRequirementsFilterValue,
@@ -21,9 +20,7 @@ const initialUrlValues = {
   next_sem: "",
 };
 
-const SearchForm = (props, { push, changeUrl, searchUrl }) => {
-  const [urlValues, setUrlValues] = useState(initialUrlValues);
-
+const SearchForm = (props, { push }) => {
   const requirementsValues = [
     { value: "", title: "Any Requirement" },
     { value: 0, title: "A&H Credit" },
@@ -93,7 +90,6 @@ const SearchForm = (props, { push, changeUrl, searchUrl }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newUrl = `'keyword'=_'${props.filters.keyword.value}'&_'requirement'=_'${props.filters.requirements.value}'&_'level'=_'${props.filters.courseLevel.value}'&_'credit'=_'${props.filters.creditHours.value}'&_'timing'=_'${props.filters.timeofDay.value}'&_'next_sem'=_'${props.filters.next_sem.value}'&_'days'=_[]`;
-    changeUrl(newUrl);
 
     push(`/search/${newUrl}`);
   };
@@ -136,7 +132,6 @@ const SearchForm = (props, { push, changeUrl, searchUrl }) => {
 
 const mapStateToProps = (state) => {
   return {
-    searchUrl: state.searchUrl,
     isLoading: state.isLoading,
     courses: state.courses,
     filters: state.filters,
@@ -144,7 +139,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  changeUrl,
   setKeywordFilterValue,
   setLevelFilterValue,
   setRequirementsFilterValue,

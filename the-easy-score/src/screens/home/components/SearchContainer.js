@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import { setKeywordValue, changeUrl } from "../../../actions/index";
+import { setKeywordValue } from "../../../actions/index";
 
 import CourseLevelFilter from "./filters/CourseLevelFilter";
 import CreditHoursFilter from "./filters/CreditHoursFilter";
@@ -24,7 +24,6 @@ const SearchContainer = (props, { filters }) => {
 
   const onSearch = (e) => {
     const newUrl = `'keyword'=_'${props.filters.keyword.value}'&_'requirement'=_'${props.filters.requirements.value}'&_'level'=_'${props.filters.courseLevel.value}'&_'credit'=_'${props.filters.creditHours.value}'&_'timing'=_'${props.filters.timeofDay.value}'&_'next_sem'=_'${props.filters.next_sem.value}'&_'days'=_[]`;
-    changeUrl(newUrl);
 
     history.push(`/search/${newUrl}`);
   };
@@ -54,12 +53,9 @@ const SearchContainer = (props, { filters }) => {
 
 const mapStateToProps = (state) => {
   return {
-    searchUrl: state.searchUrl,
     isLoading: state.isLoading,
     filters: state.filters,
   };
 };
 
-export default connect(mapStateToProps, { setKeywordValue, changeUrl })(
-  SearchContainer
-);
+export default connect(mapStateToProps, { setKeywordValue })(SearchContainer);

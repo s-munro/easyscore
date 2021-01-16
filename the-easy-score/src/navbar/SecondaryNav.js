@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import { connect } from "react-redux";
-import { changeUrl } from "../actions/index";
 
 import "../App.css";
 
@@ -54,4 +53,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { changeUrl })(SecondaryNav);
+export default connect(mapStateToProps)(SecondaryNav);
