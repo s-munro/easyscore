@@ -117,3 +117,15 @@ The easy score is a web applicated intended as a course-planning resource for st
   - [x] update on submit only
   - [x] resumes previous course list on 'reset filters'
   - [x] ant radio red
+
+  ### Week of Monday, Jan 11
+
+  ... misc, ant styles, filter styled, added to state
+
+  #### Saturday, Jan 16
+
+  - [x] home page migrated to bootstrap from ant
+  - [x] home page working with bootstrap, forms & state
+  - [x] keyword and next_sem added to reducer filters
+  - [x] changeUrl and url removed from state and actions
+  - [inprogress] migrating search results page antd to bootstrap
