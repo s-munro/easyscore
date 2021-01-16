@@ -3,7 +3,6 @@ import { connect, useDispatch } from "react-redux";
 import { fetchResults, setCourses } from "../../actions";
 import { useParams } from "react-router-dom";
 
-import { getData } from "../../utils/api/getData";
 import { filterToKeyword } from "./hooks/";
 
 import Header from "./components/Header";
@@ -12,7 +11,6 @@ import NoResults from "./components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
 import SecondaryNav from "../../navbar/SecondaryNav";
-// import FiltersCard from "./components/FiltersCard";
 
 import FiltersCard from "./components/filters/FiltersCard";
 
@@ -22,10 +20,13 @@ const Results = (props) => {
   const [keyword, setKeyword] = useState("");
   const params = useParams();
 
+  console.log("yello!");
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchResults(getData, params.axiosUrl));
+    console.log("params axiosurl: ", params.axiosUrl);
+    dispatch(fetchResults(params.axiosUrl));
     // dispatch(setCourses(props.courses));
     filterToKeyword(params.axiosUrl, setKeyword);
   }, []);

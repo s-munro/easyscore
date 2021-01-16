@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   setKeywordFilterValue,
@@ -6,21 +7,15 @@ import {
   setRequirementsFilterValue,
   setCreditsFilterValue,
   setTimeFilterValue,
+  resetFilterValues,
 } from "../../../actions/index";
 
 import { FormControl } from "react-bootstrap";
 import FilterSelect from "../../../components/FilterSelect";
 
-const initialUrlValues = {
-  keyword: "",
-  requirement: "",
-  level: "",
-  credit: "",
-  timing: "",
-  next_sem: "",
-};
-
 const SearchForm = (props, { push }) => {
+  const history = useHistory();
+
   const requirementsValues = [
     { value: "", title: "Any Requirement" },
     { value: 0, title: "A&H Credit" },
@@ -62,9 +57,9 @@ const SearchForm = (props, { push }) => {
     { value: 3, title: "Evening (5 p.m.–11:59 p.m.)" },
   ];
 
-  // const handleSelectChange = (e) => {
-  //   console.log(e.target.name, e.target.value);
-  // };
+  useEffect(() => {
+    props.resetFilterValues();
+  }, []);
 
   const handleChange = (e) => {
     console.log(e);
@@ -85,13 +80,18 @@ const SearchForm = (props, { push }) => {
     }
 
     // setUrlValues({ ...urlValues, [e.target.name]: e.target.value });
+
+    // 'keyword'=_'chem'&_'requirement'=_''&_'level'=_'8'&_'credit'=_''&_'timing'=_''&_'next_sem'=_'0'&_'days'=_[]
+
+    // https://theeasyscore.com/results&searchquery='
+    // 'keyword'=_'chem'&_'requirement'=_''&_'level'=_'8'&_'credit'=_''&_'timing'=_''&_'next_sem'=_'0'&_'days'=_[]
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newUrl = `'keyword'=_'${props.filters.keyword.value}'&_'requirement'=_'${props.filters.requirements.value}'&_'level'=_'${props.filters.courseLevel.value}'&_'credit'=_'${props.filters.creditHours.value}'&_'timing'=_'${props.filters.timeofDay.value}'&_'next_sem'=_'${props.filters.next_sem.value}'&_'days'=_[]`;
+    const newUrl = `'keyword'=_'${props.filters.keyword.value}'&_'requirement'=_'${props.filters.requirements.value}'&_'level'=_'${props.filters.courseLevel.value}'&_'credit'=_'${props.filters.creditHours.value}'&_'timing'=_'${props.filters.timeofDay.value}'&_'next_sem'=_''&_'days'=_[]`;
 
-    push(`/search/${newUrl}`);
+    history.push(`/search/${newUrl}`);
   };
 
   return (
@@ -144,4 +144,5 @@ export default connect(mapStateToProps, {
   setRequirementsFilterValue,
   setCreditsFilterValue,
   setTimeFilterValue,
+  resetFilterValues,
 })(SearchForm);

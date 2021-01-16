@@ -113,6 +113,8 @@ const reducer = (state = initialState, action) => {
           },
           creditHours: { ...state.filters.creditHours, value: action.payload },
           timeofDay: { ...state.filters.timeofDay, value: action.payload },
+          keyword: { ...state.filters.keyword, value: action.payload },
+          next_sem: { ...state.filters.keyword, value: action.payload },
         },
       };
     default:

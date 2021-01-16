@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
 import { fetchResults } from "../../actions/index";
-import { getData } from "../../utils/api/getData";
 
 import Header from "./components/Header";
 import ProfessorCard from "./components/ProfessorCard";
@@ -16,7 +15,7 @@ const Course = (props) => {
 
   useEffect(() => {
     const newUrl = `'keyword'=_'${params.courseid}'&_'requirement'=_''&_'level'=_''&_'credit'=_''&_'timing'=_''&_'next_sem'=_''&_'days'=_[]`;
-    dispatch(fetchResults(getData, newUrl));
+    dispatch(fetchResults(newUrl));
   }, []);
 
   // const instructors = course.instructors;

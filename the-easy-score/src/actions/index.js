@@ -17,8 +17,10 @@ export const RESET_FILTER_VALUES = "RESET_FILTER_VALUES";
 
 // Data-related actions ****************
 
-export const fetchResults = (func, url) => (dispatch) => {
+export const fetchResults = (url) => (dispatch) => {
   dispatch({ type: FETCH_DATA_START });
+
+  console.log("link: ", `https://theeasyscore.com/results&jsonquery=${url}`);
 
   axios
     .get(`https://theeasyscore.com/results&jsonquery=${url}`)

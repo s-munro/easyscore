@@ -1,10 +1,10 @@
 import React from "react";
 import Nav from "../../navbar/Nav";
-import Frame from "../home/components/computerscreen.jpg";
+// import Frame from "../home/components/computerscreen.jpg";
 import "./home.css";
-import SecondaryNav from "../../navbar/SecondaryNav";
+// import SecondaryNav from "../../navbar/SecondaryNav";
 import SearchForm from "./components/SearchForm";
-import SlideShow from "./components/SlideShow";
+// import SlideShow from "./components/SlideShow";
 
 // Sheena,
 // React boostrap FormControl documentation below, covers styling I think:
