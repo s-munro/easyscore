@@ -37,7 +37,13 @@ nav a {
 
 /************** FOOTER ***********************/
 .footer-container {
-  height: 2vh;
+  position:absolute;
+  width:100%;
+  
+  bottom:0px;
+  color:#a3a3a3;
+  height: 4em;
+  font-size: small;
   display: flex;
   justify-content: center;
   align-items: baseline;

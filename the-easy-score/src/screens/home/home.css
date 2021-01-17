@@ -6,23 +6,15 @@ main {
   justify-content: center;
   align-items: center;
   height: 80vh;
+  
 }
 
-
-
-/*********  MENU DISPLAY BUTTON ************/
-
-.homeSrchInput {
-  border-bottom: 2px solid #1871bd;
-  width: 57%;
+.logoTitleContainer {
+  margin-bottom: 1%;
 }
 
-.homeInputBox {
-  border: none;
-  color: #9a0000;
-  margin-bottom: 2%;
-  margin-right: 8%;
-  width: 75%;
+.logoTitle {
+  font-size: 300%;
 }
 
 .scoreLogo {
