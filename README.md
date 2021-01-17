@@ -66,10 +66,8 @@ The easy score is a web applicated intended as a course-planning resource for st
 
   - TODO:
 
-    - [] Add pseudo-buttons for all dropdowns--best way to manage state for this?
-    - [] Day selector needs to be pseudo button dropdown as well
     - [x] Results page 'about # results'
-    - [] Search bar and filter buttons on course results page
+    - [x] Search bar and filter buttons on course results page
     - [] Incorporate the new api query for course page
     - [] Applied filters?
     - [] Course page toggle for current vs previous semesters
@@ -81,8 +79,7 @@ The easy score is a web applicated intended as a course-planning resource for st
 - TODO:
 
   - [x] Secondary nav bar with search form
-  - [] Add functionality to second nav bar search form
-  - [] Add pseudo-buttons for all dropdowns--best way to manage state for this?
+  - [x] Add functionality to second nav bar search form
   - [x?] Day selector needs to be pseudo button dropdown as well
   - [x] Results page 'about # results'
     - [x] ResultsNumber component changes depending on if in header or in body of page
@@ -96,17 +93,17 @@ The easy score is a web applicated intended as a course-planning resource for st
   - TODO:
     - [x] Add functionality to second nav bar search form
     * [x] Flesh out filter card component for course page
-      - [inprogress] Add dropdowns for filters in filter card
-      - [] Make dropdowns functional
-    * [] Add pseudo-buttons for all dropdowns--best way to manage state for this?
+      - [x] Add dropdowns for filters in filter card
+      - [x] Make dropdowns functional
+    * [x] Add pseudo-buttons for all dropdowns--best way to manage state for this?
 
   #### Friday, Jan 8 & Saturday, Jan 9:
 
   - [x] Styled Filters added, styled filters card added
   - [x] Actions and reducer set up for filters to update to global state
-  - [] Need to utilize global state methods to update courses and searches
-  - [] Need to utilize filter isActive boolean state for active appearance on filter (see airbnb)
-  - [] Radio buttons for time of day filter?
+  - [x] Need to utilize global state methods to update courses and searches
+  - [cancelled] Need to utilize filter isActive boolean state for active appearance on filter (see airbnb)
+  - [x] Radio buttons for time of day filter?
 
   #### Sunday, Jan 10:
 
@@ -130,4 +127,13 @@ The easy score is a web applicated intended as a course-planning resource for st
   - [x] changeUrl and url removed from state and actions
   - [x] general cleanup and working toward dry code/best practices
   - [x] removed home search card select components in favor of reusable pure select component
-  - [inprogress] migrating search results page antd to bootstrap
+  - [x] migrating search results page antd to bootstrap
+
+  #### Sunday, Jan 17
+
+  - [x] button added to home page
+  - [x] setNavStyle action and navStyle state
+  - [x] nav style changes depending on page
+  - [] incorporate chart.js and fuzzy search on course page
+  - [] get filters functioning on course page
+  - [] hamburger/modal filters on course page nav
