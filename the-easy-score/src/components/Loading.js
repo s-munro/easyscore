@@ -3,13 +3,7 @@ import { Spin, Space } from "antd";
 import "../App.css";
 
 const Loading = () => {
-  return (
-    <div className="loading-div">
-      <Space size={"large"}>
-        <Spin size="large" />
-      </Space>
-    </div>
-  );
+  return <Spin size="large" />;
 };
 
 export default Loading;

@@ -25,7 +25,9 @@ const Course = (props) => {
   return (
     <div className="container">
       {props.isLoading === true ? (
-        <Loading />
+        <div className="w-100 d-flex justify-content-center">
+          <Loading />
+        </div>
       ) : (
         <div>
           {props.courses.length > 0 ? (
