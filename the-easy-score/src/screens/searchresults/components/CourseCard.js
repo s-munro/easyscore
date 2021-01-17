@@ -38,7 +38,7 @@ const CourseCard = ({ course }) => {
               "_"
             )}`}
           >
-            More ->
+            More
           </Link>
         </div>
       </div>
