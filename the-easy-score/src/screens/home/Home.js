@@ -13,15 +13,17 @@ import SearchForm from "./components/SearchForm";
 
 const Home = (props) => {
   return (
-    <div>
+    <div className="container">
       <Nav />
       <main>
         <div className="logoTitleContainer">
-         <h1><b>Easy</b><span className="scoreLogo">Score</span></h1>
+          <h1>
+            <b>Easy</b>
+            <span className="scoreLogo">Score</span>
+          </h1>
         </div>
         <SearchForm />
       </main>
-    
     </div>
   );
 };

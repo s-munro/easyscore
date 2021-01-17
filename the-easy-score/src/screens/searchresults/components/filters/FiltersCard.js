@@ -128,10 +128,11 @@ const FiltersCard = (props) => {
   };
 
   return (
-    <div>
+    <div className="mb-5">
       {/* hey sheens, thoughts on having this stick to the page as we scroll down?  */}
 
-      <Card style={{ width: "18rem" }}>
+      {/* <Card style={{ width: "18rem" }}> */}
+      <Card>
         <Card.Body>
           <Card.Title>Filter Results</Card.Title>
           <br />

@@ -6,7 +6,8 @@ import CourseCardInstructor from "./CourseCardInstructor";
 
 const CourseCard = ({ course }) => {
   return (
-    <div className="course-card">
+    // <div style={{ backgroundColor: "red" }}>Hi</div>
+    <div className="course-card w-100">
       <div className="course-card-top-portion">
         <div className="couse-card-top-portion-left-side">
           <div className="course-card-easyscore">{course.rating}</div>
@@ -31,7 +32,14 @@ const CourseCard = ({ course }) => {
           {course.full_code}: {course.name}
         </div>
         <div className="course-card-click-more">
-          <Link>More -></Link>
+          <Link
+            to={`/courses/${course.full_code}_${course.name.replace(
+              / /g,
+              "_"
+            )}`}
+          >
+            More ->
+          </Link>
         </div>
       </div>
     </div>
