@@ -1,6 +1,3 @@
-
-
-
 /*********  MAIN CONTENT SECTION ************/
 
 main {
@@ -28,36 +25,12 @@ main {
   width: 75%;
 }
 
-.homeSrchBtn {
-  background: transparent;
-  border: 2px solid #9a0000;
-  padding: 2px;
+.scoreLogo {
   color: #9a0000;
-  border-radius: 100%;
-  margin-left: 5px;
-  height: 80%;
+  font-weight: 500;
 }
 
-.buttonSymbol {
-  font-family: "Redressed", Arial, Helvetica, sans-serif;
-  color: #9a0000;
-}
 
-.homeFilterBtnContainer {
-  border: none;
-}
 
-.homeFilterDisplay {
-  text-align: center;
-  align-content: center;
-  background: transparent;
-  color: #1871bd;
-  border-radius: 500px;
-  border: 1px solid #1871bd;
-  padding-top: 2px;
-  padding-left: 2px;
-  width: 20%;
-  height: 30px;
-  margin-right: 1.5%;
-}
+
 

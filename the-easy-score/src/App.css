@@ -10,7 +10,10 @@
 /***************** NAVBAR 1 *********************/
 nav a {
   text-decoration: none;
+  padding-right: 5%;
+  color: #9a0000;
 }
+
 .nav-bar {
   display: flex;
   align-items: center;
@@ -19,34 +22,6 @@ nav a {
   width: 100%;
 }
 
-.nav-bar div {
-  margin: 0 4% 0 4%;
-}
-
-.nav-ul {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.nav-ul li {
-  list-style-type: none;
-}
-
-.logoContainer {
-  width: 40%;
-  margin-right: 35%;
-}
-
-.homeNavLinks {
-  display: flex;
-  flex-direction: row;
-  width: 30%;
-}
-
-.homeNavLinks li {
-  margin-right: 143px;
-}
 
 /****************** NAVBAR 2 *******************/
 .nav-bar-2 {

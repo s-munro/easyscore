@@ -64,21 +64,25 @@ const SearchForm = (props, { push }) => {
         />
         <div className="filters-container">
           <FilterSelect
+            className="homePageFilter"
             select_id={"courseLevel"}
             handleSelectChange={handleChange}
             selectValues={courseLevelValues}
           />
           <FilterSelect
+            className="homePageFilter"
             select_id={"creditHours"}
             handleSelectChange={handleChange}
             selectValues={creditHoursValues}
           />
           <FilterSelect
+            className="homePageFilter"
             select_id={"requirements"}
             handleSelectChange={handleChange}
             selectValues={requirementsValues}
           />
           <FilterSelect
+            className="homePageFilter"
             select_id={"timeofDay"}
             handleSelectChange={handleChange}
             selectValues={timeofDayValues}
