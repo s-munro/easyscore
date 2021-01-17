@@ -22,16 +22,62 @@ const GradeDistChart = ({ average_grades }) => {
       ],
     },
     options: {
+      legend: {
+        display: false,
+      },
       response: true,
       maintainAspectRatio: false,
       scales: {
-        yAxes: [
+        xAxes: [
           {
-            ticks: {
-              beginAtZero: true,
+            ticks: { display: true },
+            gridLines: {
+              display: false,
+              drawBorder: true,
             },
           },
         ],
+        yAxes: [
+          {
+            ticks: {
+              fontSize: 8,
+              min: 0,
+              max: 4,
+              stepSize: 1,
+              suggestedMin: 0.5,
+              suggestedMax: 5.5,
+              beginAtZero: true,
+              callback: function (label, index, labels) {
+                switch (label) {
+                  case 0:
+                    return "0%";
+                  case 1:
+                    return "25%";
+                  case 2:
+                    return "50%";
+                  case 3:
+                    return "75%";
+                  case 4:
+                    return "100%";
+                  default:
+                    return "%";
+                }
+              },
+            },
+          },
+        ],
+      },
+    },
+    tooltips: {
+      displayColors: false,
+      titleFontSize: 16,
+      bodyFontSize: 14,
+      xPadding: 10,
+      yPadding: 10,
+      callbacks: {
+        label: (tooltipItem, data) => {
+          return `$ ${tooltipItem.value}`;
+        },
       },
     },
   };
