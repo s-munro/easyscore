@@ -33,15 +33,18 @@ const Results = (props) => {
     props.setNavStyle(2);
   }, []);
 
+  useEffect(() => {
+    dispatch(fetchResults(params.axiosUrl));
+    dispatch(setCourses(props.courses));
+  }, [params.axiosUrl]);
+
   return (
     <div className="container">
       <div className="mt-5">
         <SearchForm />
       </div>
       <hr></hr>
-      <div className="">
-        {/*************** BEGIN RENDERING RESULTS *********************/}
-        {/* LOADING */}
+      <div>
         {props.isLoading === true ? (
           <div>
             <Loading />
