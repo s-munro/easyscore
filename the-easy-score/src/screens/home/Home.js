@@ -17,7 +17,7 @@ const Home = (props) => {
       <Nav />
       <main>
         <div className="logoTitleContainer">
-         <h1><b>Easy</b><span className="scoreLogo">Score</span></h1>
+         <h1 className="logoTitle"><b>Easy</b><span className="scoreLogo">Score</span></h1>
         </div>
         <SearchForm />
       </main>
