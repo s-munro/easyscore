@@ -1,8 +1,6 @@
 import React from "react";
 
 const ResultsNumber = ({ number, results, header, full_code, course_name }) => {
-  console.log(header);
-
   if (header === 0) {
     return (
       <div>
