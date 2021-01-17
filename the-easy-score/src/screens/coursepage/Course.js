@@ -19,8 +19,7 @@ const Course = (props) => {
     props.setNavStyle(3);
   }, []);
 
-  // const instructors = course.instructors;
-  // console.log("instructors: ", instructors);
+  const course = props.courses[0];
 
   return (
     <div>
@@ -31,9 +30,12 @@ const Course = (props) => {
           {props.courses.length > 0 ? (
             <div>
               <Header course={props.courses[0]} />
+              <hr />
               <ResultsNumber
                 number={props.courses[0].instructors.length}
                 results={"instructors"}
+                full_code={course.full_code}
+                course_name={course.name}
                 header={1}
               />
               <div className="profCardContainer">

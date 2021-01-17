@@ -1,12 +1,45 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import {
+  setKeywordFilterValue,
+  setLevelFilterValue,
+  setCreditsFilterValue,
+  setTimeFilterValue,
+  setRequirementsFilterValue,
+} from "../actions/index";
+
+import { FormControl } from "react-bootstrap";
 import "../App.css";
 
 const Nav = (props) => {
-  const { params } = useParams();
+  const { history } = useHistory();
 
-  console.log("params: ", params);
+  const handleChange = (e) => {
+    console.log(e);
+
+    if (e.target.name === "keyword") {
+      console.log("keyword");
+      props.setKeywordFilterValue(e.target.value);
+    } else if (e.target.name === "courseLevel") {
+      props.setLevelFilterValue(e.target.value);
+    } else if (e.target.name === "creditHours") {
+      props.setCreditsFilterValue(e.target.value);
+    } else if (e.target.name === "timeofDay") {
+      props.setTimeFilterValue(e.target.value);
+    } else if (e.target.name === "requirements") {
+      props.setRequirementsFilterValue(e.target.value);
+    } else {
+      console.log("nope");
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newUrl = `'keyword'=_'${props.filters.keyword.value}'&_'requirement'=_'${props.filters.requirements.value}'&_'level'=_'${props.filters.courseLevel.value}'&_'credit'=_'${props.filters.creditHours.value}'&_'timing'=_'${props.filters.timeofDay.value}'&_'next_sem'=_''&_'days'=_[]`;
+
+    history.push(`/search/${newUrl}`);
+  };
 
   if (props.navStyle === 1) {
     return (
@@ -35,8 +68,24 @@ const Nav = (props) => {
     );
   } else {
     return (
-      <nav>
-        <div>Hello nav 3!!</div>
+      <nav className="nav-3">
+        <Link to="/">
+          <div>EasyScore</div>
+        </Link>
+        <Link to="/about">
+          <div>About</div>
+        </Link>
+        <Link to="/contact">
+          <div>Contact</div>
+        </Link>
+        <FormControl
+          value={props.filters.keyword.value}
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+          placeholder="Search for keyword, i.e., 'Biology'"
+          name="keyword"
+          id="searchForm"
+        />
       </nav>
     );
   }
@@ -45,7 +94,14 @@ const Nav = (props) => {
 const mapStateToProps = (state) => {
   return {
     navStyle: state.navStyle,
+    filters: state.filters,
   };
 };
 
-export default connect(mapStateToProps, {})(Nav);
+export default connect(mapStateToProps, {
+  setKeywordFilterValue,
+  setLevelFilterValue,
+  setCreditsFilterValue,
+  setTimeFilterValue,
+  setRequirementsFilterValue,
+})(Nav);
