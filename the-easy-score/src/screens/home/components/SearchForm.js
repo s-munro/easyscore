@@ -25,6 +25,15 @@ const SearchForm = (props, { push }) => {
 
   useEffect(() => {
     props.resetFilterValues();
+    // const placeholderValues = [
+    //   "Search for keyword, i.e., 'Biology'",
+    //   "Search for keyword, i.e., 'Chem 117",
+    // ];
+    // let i = 0;
+    // setInterval(() => {
+    //   document.getElementById("searchForm").placeholder = placeholderValues[i];
+    //   i = (i + 1) % placeholderValues.length;
+    // }, 2000);
   }, []);
 
   const handleChange = (e) => {
@@ -54,15 +63,16 @@ const SearchForm = (props, { push }) => {
   };
 
   return (
-    <div className="home-form-container">
+    <div className="home-form-container w-100">
       <form onSubmit={handleSubmit}>
         <FormControl
           value={props.filters.keyword.value}
           onChange={handleChange}
-          placeholder="Search keyword, i.e., 'Biology'"
+          placeholder="Search for keyword, i.e., 'Biology'"
           name="keyword"
+          id="searchForm"
         />
-        <div className="filters-container">
+        <div className="filters-container w-100 d-flex justify-content-between align-items-center mt-3">
           <FilterSelect
             className="homePageFilter"
             select_id={"courseLevel"}
