@@ -134,6 +134,9 @@ The easy score is a web applicated intended as a course-planning resource for st
   - [x] button added to home page
   - [x] setNavStyle action and navStyle state
   - [x] nav style changes depending on page
-  - [] incorporate chart.js and fuzzy search on course page
+  - [x] incorporate chart.js doughnut for professor score
+  - [] incorporate chart.js bar for grade dist
+  - [] incorporate fuzzy search on course page
+  - [x] professor name to '{lastname}, {firstinitial}.' function
   - [] get filters functioning on course page
   - [] hamburger/modal filters on course page nav

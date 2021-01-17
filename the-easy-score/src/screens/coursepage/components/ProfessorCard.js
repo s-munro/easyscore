@@ -53,7 +53,7 @@ const ProfessorCard = ({ instructor }) => {
           </div>
           <div className="col">
             Graph
-            <GradeDistChart />
+            <GradeDistChart average_grades={instructor.average_grades} />
           </div>
         </div>
       </Card>
