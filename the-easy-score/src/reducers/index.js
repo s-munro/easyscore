@@ -9,6 +9,7 @@ import {
   SET_CREDITS_FILTER_VALUE,
   SET_TIME_FILTER_VALUE,
   RESET_FILTER_VALUES,
+  SET_NAV_STYLE,
 } from "../actions";
 
 const initialState = {
@@ -42,6 +43,7 @@ const initialState = {
       value: "",
     },
   },
+  navStyle: 1,
 };
 
 const reducer = (state = initialState, action) => {
@@ -116,6 +118,11 @@ const reducer = (state = initialState, action) => {
           keyword: { ...state.filters.keyword, value: action.payload },
           next_sem: { ...state.filters.keyword, value: action.payload },
         },
+      };
+    case SET_NAV_STYLE:
+      return {
+        ...state,
+        navStyle: action.payload,
       };
     default:
       return state;
