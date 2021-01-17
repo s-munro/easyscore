@@ -17,8 +17,10 @@ import {
   timeofDayValues,
 } from "../../../data/FilterSelectsData";
 
-import { FormControl } from "react-bootstrap";
+import { FormControl, Button, InputGroup } from "react-bootstrap";
 import FilterSelect from "../../../components/FilterSelect";
+
+import "../home.css";
 
 const SearchForm = (props, { push }) => {
   const history = useHistory();
@@ -65,13 +67,20 @@ const SearchForm = (props, { push }) => {
   return (
     <div className="home-form-container w-100">
       <form onSubmit={handleSubmit}>
-        <FormControl
-          value={props.filters.keyword.value}
-          onChange={handleChange}
-          placeholder="Search for keyword, i.e., 'Biology'"
-          name="keyword"
-          id="searchForm"
-        />
+        <InputGroup>
+          <FormControl
+            value={props.filters.keyword.value}
+            onChange={handleChange}
+            placeholder="Search for keyword, i.e., 'Biology'"
+            name="keyword"
+            id="searchForm"
+          />
+          <InputGroup.Append>
+            <Button type="submit" onSubmit={handleSubmit} id="basic-addon2">
+              Search
+            </Button>
+          </InputGroup.Append>
+        </InputGroup>
         <div className="filters-container w-100 d-flex justify-content-between align-items-center mt-3">
           <FilterSelect
             className="homePageFilter"

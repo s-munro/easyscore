@@ -1,8 +1,6 @@
 import React from "react";
 
-const ResultsNumber = ({ number, results, header, keyword }) => {
-  console.log(header);
-
+const ResultsNumber = ({ number, results, header, full_code, course_name }) => {
   if (header === 0) {
     return (
       <div>
@@ -13,23 +11,12 @@ const ResultsNumber = ({ number, results, header, keyword }) => {
     return (
       <div>
         Showing {number} {results} for <br />
-        <span>{keyword}</span>
+        <span>
+          {full_code} {course_name}
+        </span>
       </div>
     );
   }
-  // return (
-  //   <div>
-  //     {{ header } === 0 ? (
-  //       <div>
-  //         Showing ({number}) {results} for
-  //       </div>
-  //     ) : (
-  //       <div>
-  //         Loading ({number}) {results}...
-  //       </div>
-  //     )}
-  //   </div>
-  // );
 };
 
 export default ResultsNumber;
