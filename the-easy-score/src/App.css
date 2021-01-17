@@ -8,18 +8,19 @@
 }
 
 /***************** NAVBAR 1 *********************/
+
 nav a {
   text-decoration: none;
-  padding-right: 5%;
   color: #9a0000;
+  padding-right: 5%;
 }
 
 .nav-bar {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  justify-self: flex-end;
+  align-items: center;  
   height: 7vh;
-  width: 100%;
+  width: 130%;
 }
 
 
@@ -39,7 +40,6 @@ nav a {
 .footer-container {
   position:absolute;
   width:100%;
-  
   bottom:0px;
   color:#a3a3a3;
   height: 4em;
