@@ -21,7 +21,7 @@ const Nav = (props) => {
     );
   } else if (props.navStyle === 2) {
     return (
-      <nav>
+      <nav className="nav-2">
         <Link to="/">
           <div>EasyScore</div>
         </Link>

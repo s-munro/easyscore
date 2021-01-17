@@ -1,12 +1,15 @@
 /*********  MAIN CONTENT SECTION ************/
 
+.primary-color {
+  background-color: #9a0000;
+}
+
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 80vh;
-  
 }
 
 .logoTitleContainer {
@@ -21,8 +24,3 @@ main {
   color: #9a0000;
   font-weight: 500;
 }
-
-
-
-
-

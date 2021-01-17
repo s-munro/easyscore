@@ -35,8 +35,6 @@ const Results = (props) => {
 
   return (
     <div className="container">
-      {/* <SecondaryNav /> */}
-      <Nav />
       <div className="mt-5">
         <SearchForm />
       </div>

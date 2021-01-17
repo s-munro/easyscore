@@ -24,7 +24,6 @@ const Course = (props) => {
 
   return (
     <div>
-      <SecondaryNav />
       {props.isLoading === true ? (
         <Loading />
       ) : (
