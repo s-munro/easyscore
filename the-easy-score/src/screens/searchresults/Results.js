@@ -10,7 +10,7 @@ import NoResults from "./components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
 import Courses from "./components/Courses";
-import Pagination from "../../components/Pagination";
+import TablePagination from "../../components/TablePagination";
 
 import SearchForm from "../home/components/SearchForm";
 
@@ -35,10 +35,10 @@ const Results = (props) => {
     props.setNavStyle(2);
   }, []);
 
-  useEffect(() => {
-    dispatch(fetchResults(params.axiosUrl));
-    dispatch(setCourses(props.courses));
-  }, [params.axiosUrl]);
+  // useEffect(() => {
+  //   dispatch(fetchResults(params.axiosUrl));
+  //   dispatch(setCourses(props.courses));
+  // }, [params.axiosUrl]);
 
   const indexOfLastCourse = currentPage * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
@@ -80,11 +80,15 @@ const Results = (props) => {
                 {props.displayedCourses.length > 0 ? (
                   <div>
                     <Courses currentCourses={currentCourses} />
-                    <Pagination
-                      itemsPerPage={coursesPerPage}
-                      totalItems={props.displayedCourses.length}
-                      paginate={paginate}
-                    />
+                    {props.isLoading === false ? (
+                      <TablePagination
+                        count={Math.ceil(props.displayedCourses.length / 3)}
+                        page={currentPage}
+                        rowsPerPage={4}
+                        rowsPerPageOptions={[4]}
+                        paginate={paginate}
+                      />
+                    ) : null}
                   </div>
                 ) : (
                   //********  RENDER NO RESULTS IF NO RESULTS  *******/
