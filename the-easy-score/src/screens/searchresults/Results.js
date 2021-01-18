@@ -24,8 +24,6 @@ const Results = (props) => {
   const [coursesPerPage, setCoursesPerPage] = useState(12);
   const params = useParams();
 
-  console.log("current page: ", currentPage);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -65,7 +63,7 @@ const Results = (props) => {
         ) : (
           <div className="row mt-5">
             <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
-              <FiltersCard />
+              <FiltersCard setCurrentPage={setCurrentPage} />
             </div>
             <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
               <div className="row">

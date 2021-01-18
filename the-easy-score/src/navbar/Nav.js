@@ -16,10 +16,7 @@ const Nav = (props) => {
   const { history } = useHistory();
 
   const handleChange = (e) => {
-    console.log(e);
-
     if (e.target.name === "keyword") {
-      console.log("keyword");
       props.setKeywordFilterValue(e.target.value);
     } else if (e.target.name === "courseLevel") {
       props.setLevelFilterValue(e.target.value);
@@ -30,7 +27,6 @@ const Nav = (props) => {
     } else if (e.target.name === "requirements") {
       props.setRequirementsFilterValue(e.target.value);
     } else {
-      console.log("nope");
     }
   };
 

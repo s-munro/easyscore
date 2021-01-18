@@ -21,8 +21,6 @@ export const RESET_FILTER_VALUES = "RESET_FILTER_VALUES";
 export const fetchResults = (url) => (dispatch) => {
   dispatch({ type: FETCH_DATA_START });
 
-  console.log("link: ", `https://theeasyscore.com/results&jsonquery=${url}`);
-
   axios
     .get(`https://theeasyscore.com/results&jsonquery=${url}`)
     .then((res) => {
@@ -49,25 +47,35 @@ export const setKeywordFilterValue = (value) => {
 };
 
 export const setLevelFilterValue = (value) => {
-  if (value === "") {
-    let newValue = "";
-    return { type: SET_LEVEL_FILTER_VALUE, payload: newValue };
+  if (value !== "") {
+    return { type: SET_LEVEL_FILTER_VALUE, payload: parseInt(value) };
   } else {
-    let newValue = parseInt(value);
-    return { type: SET_LEVEL_FILTER_VALUE, payload: newValue };
+    return { type: SET_LEVEL_FILTER_VALUE, payload: value };
   }
 };
 
 export const setRequirementsFilterValue = (value) => {
-  return { type: SET_REQUIREMENTS_FILTER_VALUE, payload: value };
+  if (value !== "") {
+    return { type: SET_REQUIREMENTS_FILTER_VALUE, payload: parseInt(value) };
+  } else {
+    return { type: SET_REQUIREMENTS_FILTER_VALUE, payload: value };
+  }
 };
 
 export const setCreditsFilterValue = (value) => {
-  return { type: SET_CREDITS_FILTER_VALUE, payload: value };
+  if (value !== "") {
+    return { type: SET_CREDITS_FILTER_VALUE, payload: parseInt(value) };
+  } else {
+    return { type: SET_CREDITS_FILTER_VALUE, payload: value };
+  }
 };
 
 export const setTimeFilterValue = (value) => {
-  return { type: SET_TIME_FILTER_VALUE, payload: value };
+  if (value !== "") {
+    return { type: SET_TIME_FILTER_VALUE, payload: parseInt(value) };
+  } else {
+    return { type: SET_TIME_FILTER_VALUE, payload: value };
+  }
 };
 
 export const resetFilterValues = () => {
