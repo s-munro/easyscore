@@ -143,3 +143,9 @@ The easy score is a web applicated intended as a course-planning resource for st
   - [] hamburger/modal filters on course page nav
   - [x] incorporated pagination to search page
   - [x] usePagination custom hook
+
+  #### Monday, Jan 18
+
+  - [x] course page filters card working
+    - [x] Filters values parsed to integers when put to state (they were coming in as strings?)
+    - [x] conditional check for if value === "", not parseint
