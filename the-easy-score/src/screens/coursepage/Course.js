@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
-import { fetchResults, setNavStyle } from "../../actions/index";
+import { setNavStyle, fetchCoursePage } from "../../actions/index";
 
 import Header from "./components/Header";
 import Loading from "../../components/Loading";
@@ -18,18 +18,15 @@ const Course = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [instructorsPerPage, setInstructorsPerPage] = useState(5);
 
-  const course = props.courses[0];
-
   useEffect(() => {
-    const newUrl = `'keyword'=_'${params.courseid}'&_'requirement'=_''&_'level'=_''&_'credit'=_''&_'timing'=_''&_'next_sem'=_''&_'days'=_[]`;
-    dispatch(fetchResults(newUrl));
+    dispatch(fetchCoursePage(params.courseid));
     props.setNavStyle(3);
   }, []);
 
   /******  PAGINATION  ******/
   const indexOfLastInstructor = currentPage * instructorsPerPage;
   const indexOfFirstInstructor = indexOfLastInstructor - instructorsPerPage;
-  const currentInstructors = props.displayedInstructors.slice(
+  const currentInstructors = props.coursePage.displayedInstructors.slice(
     indexOfFirstInstructor,
     indexOfLastInstructor
   );
@@ -44,39 +41,37 @@ const Course = (props) => {
         </div>
       ) : (
         <div>
-          {props.courses.length > 0 ? (
-            <div>
-              <Header course={props.courses[0]} />
-              <hr />
-              <ResultsNumber
-                number={props.courses[0].instructors.length}
-                results={"instructors"}
-                full_code={course.full_code}
-                course_name={course.name}
-                header={1}
-              />
-              <ProfessorSearch />
-              <div className="row mt-5">
-                <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
-                  <ProfFiltersCard />
-                </div>
-                <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
-                  <div className="row">
-                    <Professors currentInstructors={currentInstructors} />
-                    {props.isLoading === false ? (
-                      <TablePagination
-                        count={Math.ceil(47 / 5)}
-                        page={currentPage}
-                        rowsPerPage={1}
-                        rowsPerPageOptions={[1]}
-                        paginate={paginate}
-                      />
-                    ) : null}
-                  </div>
+          <div>
+            <Header course={props.coursePage.course} />
+            <hr />
+            <ResultsNumber
+              number={props.coursePage.displayedInstructors.length}
+              results={"instructors"}
+              full_code={props.coursePage.course.full_code}
+              course_name={props.coursePage.course.name}
+              header={1}
+            />
+            <ProfessorSearch />
+            <div className="row mt-5">
+              <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
+                <ProfFiltersCard />
+              </div>
+              <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
+                <div className="row">
+                  <Professors currentInstructors={currentInstructors} />
+                  {props.isLoading === false ? (
+                    <TablePagination
+                      count={Math.ceil(47 / 5)}
+                      page={currentPage}
+                      rowsPerPage={1}
+                      rowsPerPageOptions={[1]}
+                      paginate={paginate}
+                    />
+                  ) : null}
                 </div>
               </div>
             </div>
-          ) : null}
+          </div>
         </div>
       )}
     </div>
@@ -86,11 +81,11 @@ const Course = (props) => {
 const mapStateToProps = (state) => {
   return {
     isLoading: state.isLoading,
-    courses: state.courses,
     errorText: state.errorText,
-    instructors: state.instructors,
-    displayedInstructors: state.displayedInstructors,
+    coursePage: state.coursePage,
   };
 };
 
-export default connect(mapStateToProps, { fetchResults, setNavStyle })(Course);
+export default connect(mapStateToProps, { fetchCoursePage, setNavStyle })(
+  Course
+);

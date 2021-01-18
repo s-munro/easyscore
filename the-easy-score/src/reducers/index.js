@@ -72,6 +72,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         coursePage: { ...state.coursePage, course: action.payload },
+        isLoading: false,
       };
     case SET_INSTRUCTORS_ON_PAGE:
       return {
