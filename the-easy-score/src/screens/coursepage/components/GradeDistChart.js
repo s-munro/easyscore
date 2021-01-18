@@ -72,8 +72,8 @@ const GradeDistChart = ({ average_grades }) => {
       displayColors: false,
       titleFontSize: 16,
       bodyFontSize: 14,
-      xPadding: 10,
-      yPadding: 10,
+      xPadding: 5,
+      yPadding: 5,
       callbacks: {
         label: (tooltipItem, data) => {
           return `$ ${tooltipItem.value}`;

@@ -5,12 +5,10 @@ import { useParams } from "react-router-dom";
 
 import { filterToKeyword } from "./hooks/";
 
-import Header from "./components/Header";
 import CourseCard from "./components/CourseCard";
 import NoResults from "./components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
-import Nav from "../../navbar/Nav";
 
 import SearchForm from "../home/components/SearchForm";
 
@@ -55,6 +53,16 @@ const Results = (props) => {
               <FiltersCard />
             </div>
             <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
+              <div className="row">
+                <div className="col mb-4">
+                  <ResultsNumber
+                    number={props.displayedCourses.length}
+                    results={"courses"}
+                    keyword={keyword}
+                    header={0}
+                  />
+                </div>
+              </div>
               <div className="row">
                 {props.displayedCourses.length > 0 ? (
                   [
