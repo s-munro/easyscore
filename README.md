@@ -141,3 +141,5 @@ The easy score is a web applicated intended as a course-planning resource for st
   - [x] professor name to '{lastname}, {firstinitial}.' function
   - [] get filters functioning on course page
   - [] hamburger/modal filters on course page nav
+  - [x] incorporated pagination to search page
+  - [x] usePagination custom hook
