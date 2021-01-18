@@ -18,32 +18,40 @@ const TablePagination = ({
 
   console.log(pagination);
 
+  const handlePaginateFirst = () => {
+    paginate(parseInt(1));
+  };
+
+  const handlePaginatePrevious = () => {
+    paginate(parseInt(page - 1));
+  };
+
   const handlePaginate = (e) => {
-    // console.log(e.target.id);
-    const targetId = e.target.getAttribute("id");
-    // paginate();
-    if (targetId === "firstpagination") {
-      paginate(1);
-    } else if (targetId === "prevpagination") {
-      paginate(page - 1);
-    } else if (targetId === "nextpagination") {
-      paginate(page + 1);
-    } else if (targetId === "lastpagination") {
-      paginate(pagination.pageCount);
-      console.log("wahooooo!!!");
-    } else {
-      paginate(targetId);
-    }
+    paginate(parseInt(e.target.getAttribute("id")));
+  };
+
+  const handlePaginateNext = () => {
+    paginate(parseInt(page + 1));
+  };
+
+  const handlePaginateLast = () => {
+    paginate(parseInt(pagination.pageCount));
   };
 
   return (
     <div>
       <Pagination>
         {pagination.showFirst === true ? (
-          <Pagination.First id={"firstpagination"} onClick={handlePaginate} />
+          <Pagination.First
+            id={"firstpagination"}
+            onClick={handlePaginateFirst}
+          />
         ) : null}
         {pagination.showPrevious === true ? (
-          <Pagination.Prev id={"prevpagination"} onClick={handlePaginate} />
+          <Pagination.Prev
+            id={"prevpagination"}
+            onClick={handlePaginatePrevious}
+          />
         ) : null}
         {pagination.pages.map((pageLink) => {
           return (
@@ -57,10 +65,10 @@ const TablePagination = ({
           );
         })}
         {pagination.showNext === true && (
-          <Pagination.Next id={"nextpagination"} onClick={handlePaginate} />
+          <Pagination.Next onClick={handlePaginateNext} />
         )}
         {pagination.showLast === true && (
-          <Pagination.Last id={"lastpagination"} onClick={handlePaginate} />
+          <Pagination.Last onClick={handlePaginateLast} />
         )}
       </Pagination>
     </div>

@@ -24,7 +24,7 @@ const Results = (props) => {
   const [coursesPerPage, setCoursesPerPage] = useState(12);
   const params = useParams();
 
-  console.log("yello!");
+  console.log("current page: ", currentPage);
 
   const dispatch = useDispatch();
 
@@ -33,12 +33,14 @@ const Results = (props) => {
     dispatch(setCourses(props.courses));
     filterToKeyword(params.axiosUrl, setKeyword);
     props.setNavStyle(2);
+    setCurrentPage(1);
   }, []);
 
-  // useEffect(() => {
-  //   dispatch(fetchResults(params.axiosUrl));
-  //   dispatch(setCourses(props.courses));
-  // }, [params.axiosUrl]);
+  useEffect(() => {
+    dispatch(fetchResults(params.axiosUrl));
+    dispatch(setCourses(props.courses));
+    setCurrentPage(1);
+  }, [params.axiosUrl]);
 
   const indexOfLastCourse = currentPage * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
