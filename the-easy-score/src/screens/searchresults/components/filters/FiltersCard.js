@@ -7,6 +7,7 @@ import {
   setLevelFilterValue,
   setCreditsFilterValue,
   resetFilterValues,
+  setTimeFilterValue,
 } from "../../../../actions/index";
 
 import {
@@ -24,26 +25,25 @@ import "../../results.css";
 
 const FiltersCard = (props) => {
   const handleChange = (e) => {
-    console.log(e);
-
     if (e.target.name === "keyword") {
-      console.log("keyword");
       props.setKeywordFilterValue(e.target.value);
     } else if (e.target.name === "courseLevel") {
+      console.log("courselevel etargetname");
       props.setLevelFilterValue(e.target.value);
     } else if (e.target.name === "creditHours") {
+      console.log("credithours etargetname");
       props.setCreditsFilterValue(e.target.value);
     } else if (e.target.name === "timeofDay") {
       props.setTimeFilterValue(e.target.value);
     } else if (e.target.name === "requirements") {
       props.setRequirementsFilterValue(e.target.value);
     } else {
-      console.log("nope");
     }
   };
 
   const handleFiltersSubmit = (e) => {
     e.preventDefault();
+    props.setCurrentPage(1);
 
     props.setCourses(props.courses);
 
@@ -51,7 +51,7 @@ const FiltersCard = (props) => {
 
     const filterByTime = () => {
       if (props.filters.timeofDay.value !== "") {
-        props.displayedCourses.filter((course) =>
+        props.courses.filter((course) =>
           course.instructors.map((instructor) => {
             return instructor.timings.map((timing) => {
               return timing.map((timing) => {
@@ -63,7 +63,7 @@ const FiltersCard = (props) => {
           })
         );
       } else {
-        props.displayedCourses.forEach((course) => {
+        props.courses.forEach((course) => {
           timeFilteredCourses.push(course);
         });
       }
@@ -86,38 +86,34 @@ const FiltersCard = (props) => {
       if (props.filters.courseLevel.value === 12) {
         return lowerLevelCourses;
       } else if (props.filters.courseLevel.value === 8) {
-        console.log("mid");
         return middleLevelCourses;
       } else if (props.filters.courseLevel.value === 9) {
-        console.log("high");
         return upperLevelCourses;
       } else if (props.filters.courseLevel.value === 10) {
-        console.log("grad");
         return graduateLevelCourses;
       } else if (props.filters.courseLevel.value === "") {
-        console.log("else");
         return timeFilteredCourses;
       }
-      console.log("wahoo!");
     };
 
     const filterByCreditHours = (func) => {
+      console.log("filtercredithours func: ", func);
       if (props.filters.creditHours.value !== "") {
-        console.log("yep!");
+        console.log("creditHours state value isnt blank");
         const filteredCourses = func.filter((course) => {
+          if (course.credits === parseInt(props.filters.creditHours.value)) {
+            console.log("equals");
+          }
           return course.credits === props.filters.creditHours.value;
         });
-        console.log("filteredCourses: ", filteredCourses);
         props.setCourses(filteredCourses);
       } else {
-        console.log("filtered func: ", func);
+        console.log("creditHours state is blank");
         props.setCourses(func);
       }
     };
 
     filterByTime();
-    console.log("time filtered: ", timeFilteredCourses);
-    console.log("bycourselevel", filterByCourseLevel());
     filterByCreditHours(filterByCourseLevel());
   };
 
@@ -129,9 +125,6 @@ const FiltersCard = (props) => {
 
   return (
     <div className="mb-5">
-      {/* hey sheens, thoughts on having this stick to the page as we scroll down?  */}
-
-      {/* <Card style={{ width: "18rem" }}> */}
       <Card>
         <Card.Body>
           <Card.Title>Filter Results</Card.Title>
@@ -159,7 +152,7 @@ const FiltersCard = (props) => {
             Credit Hours
           </Card.Subtitle>
           <FilterSelect
-            select_id={"courseLevel"}
+            select_id={"creditHours"}
             handleSelectChange={handleChange}
             selectValues={creditHoursValues}
             selectValue={props.filters.creditHours.value}
@@ -167,7 +160,7 @@ const FiltersCard = (props) => {
           <br />
           <Card.Subtitle className="mb-2 text-muted">Time of Day</Card.Subtitle>
           <FilterSelect
-            select_id={"courseLevel"}
+            select_id={"timeofDay"}
             handleSelectChange={handleChange}
             selectValues={timeofDayValues}
             selectValue={props.filters.timeofDay.value}
@@ -197,4 +190,5 @@ export default connect(mapStateToProps, {
   setLevelFilterValue,
   setCreditsFilterValue,
   resetFilterValues,
+  setTimeFilterValue,
 })(FiltersCard);

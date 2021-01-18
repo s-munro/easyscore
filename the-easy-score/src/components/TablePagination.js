@@ -16,8 +16,6 @@ const TablePagination = ({
     rowsPerPageOptions,
   });
 
-  console.log(pagination);
-
   const handlePaginateFirst = () => {
     paginate(parseInt(1));
   };

@@ -2,9 +2,7 @@ import React from "react";
 import SecondaryNav from "../../navbar/SecondaryNav";
 
 const Contact = () => {
-  const handleChange = (e) => {
-    console.log(e);
-  };
+  const handleChange = (e) => {};
   return (
     <div>
       <SecondaryNav />
