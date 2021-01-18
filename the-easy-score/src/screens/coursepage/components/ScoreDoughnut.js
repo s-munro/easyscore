@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Chart from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import { Progress } from "antd";
 import "chartjs-plugin-doughnutlabel";
 
 const ScoreDoughnut = ({ easyScore }) => {
@@ -50,16 +49,8 @@ const ScoreDoughnut = ({ easyScore }) => {
           width={PIXEL_SIZE}
           height={PIXEL_SIZE}
         />
+        Hello world
       </div>
-      {/* <Progress
-        strokeColor={{
-          from: "#9a0000",
-          to: "#9a0000",
-        }}
-        format={() => `${score}`}
-        type="circle"
-        percent={score}
-      /> */}
     </div>
   );
 };
