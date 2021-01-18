@@ -1,18 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
 import { fetchResults, setNavStyle } from "../../actions/index";
 
 import Header from "./components/Header";
-import ProfessorCard from "./components/ProfessorCard";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
 import ProfessorSearch from "./components/ProfessorSearch";
 import ProfFiltersCard from "./components/filters/ProfFiltersCard";
+import Professors from "./components/Professors";
+import TablePagination from "../../components/TablePagination";
 
 const Course = (props) => {
   const params = useParams();
   const dispatch = useDispatch();
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [instructorsPerPage, setInstructorsPerPage] = useState(5);
+
+  const course = props.courses[0];
 
   useEffect(() => {
     const newUrl = `'keyword'=_'${params.courseid}'&_'requirement'=_''&_'level'=_''&_'credit'=_''&_'timing'=_''&_'next_sem'=_''&_'days'=_[]`;
@@ -20,7 +26,15 @@ const Course = (props) => {
     props.setNavStyle(3);
   }, []);
 
-  const course = props.courses[0];
+  /******  PAGINATION  ******/
+  const indexOfLastInstructor = currentPage * instructorsPerPage;
+  const indexOfFirstInstructor = indexOfLastInstructor - instructorsPerPage;
+  const currentInstructors = props.displayedInstructors.slice(
+    indexOfFirstInstructor,
+    indexOfLastInstructor
+  );
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  /*****  END PAGINATION  *****/
 
   return (
     <div className="container">
@@ -48,16 +62,16 @@ const Course = (props) => {
                 </div>
                 <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
                   <div className="row">
-                    {course.instructors.map((instructor, index) => {
-                      return (
-                        <div
-                          key={index}
-                          className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 mb-5"
-                        >
-                          <ProfessorCard instructor={instructor} key={index} />
-                        </div>
-                      );
-                    })}
+                    <Professors currentInstructors={currentInstructors} />
+                    {props.isLoading === false ? (
+                      <TablePagination
+                        count={Math.ceil(47 / 5)}
+                        page={currentPage}
+                        rowsPerPage={1}
+                        rowsPerPageOptions={[1]}
+                        paginate={paginate}
+                      />
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -74,6 +88,8 @@ const mapStateToProps = (state) => {
     isLoading: state.isLoading,
     courses: state.courses,
     errorText: state.errorText,
+    instructors: state.instructors,
+    displayedInstructors: state.displayedInstructors,
   };
 };
 
