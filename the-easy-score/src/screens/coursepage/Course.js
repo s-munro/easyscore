@@ -16,7 +16,7 @@ const Course = (props) => {
   const dispatch = useDispatch();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [instructorsPerPage, setInstructorsPerPage] = useState(5);
+  const instructorsPerPage = 5;
 
   useEffect(() => {
     dispatch(fetchCoursePage(params.courseid));
@@ -59,7 +59,9 @@ const Course = (props) => {
               <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
                 <div className="row">
                   <Professors currentInstructors={currentInstructors} />
-                  {props.isLoading === false ? (
+                </div>
+                {props.isLoading === false ? (
+                  <div className="row">
                     <TablePagination
                       count={props.coursePage.displayedInstructors.length}
                       page={currentPage}
@@ -67,8 +69,8 @@ const Course = (props) => {
                       rowsPerPageOptions={[1]}
                       paginate={paginate}
                     />
-                  ) : null}
-                </div>
+                  </div>
+                ) : null}
               </div>
             </div>
           </div>

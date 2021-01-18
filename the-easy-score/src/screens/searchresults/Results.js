@@ -5,14 +5,13 @@ import { useParams } from "react-router-dom";
 
 import { filterToKeyword } from "./hooks/";
 
-import CourseCard from "./components/CourseCard";
 import NoResults from "./components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
 import Courses from "./components/Courses";
 import TablePagination from "../../components/TablePagination";
 
-import SearchForm from "../home/components/SearchForm";
+import SearchForm from "../../components/SearchForm";
 
 import FiltersCard from "./components/filters/FiltersCard";
 
@@ -21,7 +20,7 @@ import "./results.css";
 const Results = (props) => {
   const [keyword, setKeyword] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [coursesPerPage, setCoursesPerPage] = useState(12);
+  const coursesPerPage = 12;
   const params = useParams();
 
   const dispatch = useDispatch();
@@ -52,7 +51,7 @@ const Results = (props) => {
   return (
     <div className="container">
       <div className="mt-5">
-        <SearchForm />
+        <SearchForm nav={false} />
       </div>
       <hr></hr>
       <div>

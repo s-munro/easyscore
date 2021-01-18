@@ -9,11 +9,12 @@ import {
   setRequirementsFilterValue,
 } from "../actions/index";
 
-import { FormControl } from "react-bootstrap";
+import SearchForm from "../components/SearchForm";
+// import { InputGroup, Button, FormControl } from "react-bootstrap";
 import "../App.css";
 
 const Nav = (props) => {
-  const { history } = useHistory();
+  const history = useHistory();
 
   const handleChange = (e) => {
     if (e.target.name === "keyword") {
@@ -32,6 +33,7 @@ const Nav = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("click!!!");
     const newUrl = `'keyword'=_'${props.filters.keyword.value}'&_'requirement'=_'${props.filters.requirements.value}'&_'level'=_'${props.filters.courseLevel.value}'&_'credit'=_'${props.filters.creditHours.value}'&_'timing'=_'${props.filters.timeofDay.value}'&_'next_sem'=_''&_'days'=_[]`;
 
     history.push(`/search/${newUrl}`);
@@ -74,14 +76,21 @@ const Nav = (props) => {
         <Link to="/contact">
           <div>Contact</div>
         </Link>
-        <FormControl
-          value={props.filters.keyword.value}
-          onChange={handleChange}
-          onSubmit={handleSubmit}
-          placeholder="Search for keyword, i.e., 'Biology'"
-          name="keyword"
-          id="searchForm"
-        />
+        <SearchForm formType={"nav"} />
+        {/* <InputGroup>
+          <FormControl
+            value={props.filters.keyword.value}
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+            placeholder="Search for keyword, i.e., 'Biology'"
+            name="keyword"
+          />
+          <InputGroup.Append>
+            <Button type="submit" onSubmit={handleSubmit} id="basic-addon2">
+              Search
+            </Button>
+          </InputGroup.Append>
+        </InputGroup> */}
       </nav>
     );
   }

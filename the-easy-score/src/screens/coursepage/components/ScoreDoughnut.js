@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Chart from "chart.js";
+import React from "react";
+// import Chart from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import "chartjs-plugin-doughnutlabel";
 
@@ -12,8 +12,8 @@ const ScoreDoughnut = ({ easyScore }) => {
     datasets: [
       {
         data: [score, 100 - score],
-        backgroundColor: ["#9a0000", "#ffff"],
-        hoverBackgroundColor: ["#9a0000", "#9a0066"],
+        backgroundColor: ["#914949", "#ffff"],
+        hoverBackgroundColor: ["#914949", "#914949"],
       },
     ],
   };
