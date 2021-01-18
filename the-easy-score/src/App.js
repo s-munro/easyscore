@@ -30,7 +30,7 @@ const App = () => {
             render={(props) => <Results {...props} />}
           />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );

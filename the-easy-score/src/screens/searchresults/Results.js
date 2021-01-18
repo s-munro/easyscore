@@ -9,6 +9,8 @@ import CourseCard from "./components/CourseCard";
 import NoResults from "./components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
+import Courses from "./components/Courses";
+import TablePagination from "../../components/TablePagination";
 
 import SearchForm from "../home/components/SearchForm";
 
@@ -18,6 +20,8 @@ import "./results.css";
 
 const Results = (props) => {
   const [keyword, setKeyword] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [coursesPerPage, setCoursesPerPage] = useState(12);
   const params = useParams();
 
   console.log("yello!");
@@ -31,10 +35,19 @@ const Results = (props) => {
     props.setNavStyle(2);
   }, []);
 
-  useEffect(() => {
-    dispatch(fetchResults(params.axiosUrl));
-    dispatch(setCourses(props.courses));
-  }, [params.axiosUrl]);
+  // useEffect(() => {
+  //   dispatch(fetchResults(params.axiosUrl));
+  //   dispatch(setCourses(props.courses));
+  // }, [params.axiosUrl]);
+
+  const indexOfLastCourse = currentPage * coursesPerPage;
+  const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
+  const currentCourses = props.displayedCourses.slice(
+    indexOfFirstCourse,
+    indexOfLastCourse
+  );
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="container">
@@ -65,18 +78,18 @@ const Results = (props) => {
               </div>
               <div className="row">
                 {props.displayedCourses.length > 0 ? (
-                  [
-                    props.displayedCourses.map((course) => {
-                      return (
-                        <div
-                          key={course.url}
-                          className="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-5"
-                        >
-                          <CourseCard course={course} key={course.url} />
-                        </div>
-                      );
-                    }),
-                  ]
+                  <div>
+                    <Courses currentCourses={currentCourses} />
+                    {props.isLoading === false ? (
+                      <TablePagination
+                        count={Math.ceil(props.displayedCourses.length / 3)}
+                        page={currentPage}
+                        rowsPerPage={4}
+                        rowsPerPageOptions={[4]}
+                        paginate={paginate}
+                      />
+                    ) : null}
+                  </div>
                 ) : (
                   //********  RENDER NO RESULTS IF NO RESULTS  *******/
                   <NoResults />
