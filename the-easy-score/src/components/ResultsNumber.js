@@ -1,10 +1,19 @@
 import React from "react";
 
-const ResultsNumber = ({ number, results, header, full_code, course_name }) => {
+const ResultsNumber = ({
+  number,
+  results,
+  header,
+  full_code,
+  course_name,
+  keyword,
+}) => {
   if (header === 0) {
     return (
       <div>
-        Showing ({number}) {results} for
+        Showing {number} {results} for
+        <br />
+        <span>{keyword}</span>
       </div>
     );
   } else {
