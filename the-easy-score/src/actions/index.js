@@ -27,7 +27,12 @@ export const fetchResults = (url) => (dispatch) => {
     .get(`https://theeasyscore.com/results&jsonquery=${url}`)
     .then((res) => {
       dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data.courses });
-      dispatch({ type: SET_COURSES_ON_PAGE, payload: res.data.courses });
+      dispatch({
+        type: SET_COURSES_ON_PAGE,
+        payload: res.data.courses.sort(function (a, b) {
+          return b.rating - a.rating;
+        }),
+      });
     })
     .catch((err) => {
       dispatch({ type: FETCH_DATA_FAILURE, payload: err.message });
@@ -43,7 +48,9 @@ export const fetchCoursePage = (full_code) => (dispatch) => {
       dispatch({ type: FETCH_COURSE_PAGE_SUCCESS, payload: res.data.course });
       dispatch({
         type: SET_INSTRUCTORS_ON_PAGE,
-        payload: res.data.course.instructors,
+        payload: res.data.course.instructors.sort(function (a, b) {
+          return b.rating - a.rating;
+        }),
       });
     })
     .catch((err) => {
@@ -52,7 +59,12 @@ export const fetchCoursePage = (full_code) => (dispatch) => {
 };
 
 export const setCourses = (courses) => {
-  return { type: SET_COURSES_ON_PAGE, payload: courses };
+  return {
+    type: SET_COURSES_ON_PAGE,
+    payload: courses.sort(function (a, b) {
+      return b.rating - a.rating;
+    }),
+  };
 };
 
 export const setNavStyle = (style) => {

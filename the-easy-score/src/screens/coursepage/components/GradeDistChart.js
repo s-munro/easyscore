@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Chartjs from "chart.js";
 
 const GradeDistChart = ({ average_grades }) => {
+  console.log("dist chart avg: ", average_grades);
+
   const chartConfig = {
     type: "bar",
     data: {
@@ -72,8 +74,8 @@ const GradeDistChart = ({ average_grades }) => {
       displayColors: false,
       titleFontSize: 16,
       bodyFontSize: 14,
-      xPadding: 5,
-      yPadding: 5,
+      xPadding: 1,
+      yPadding: 1,
       callbacks: {
         label: (tooltipItem, data) => {
           return `$ ${tooltipItem.value}`;
