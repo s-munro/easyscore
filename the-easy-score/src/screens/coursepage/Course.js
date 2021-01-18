@@ -61,9 +61,9 @@ const Course = (props) => {
                   <Professors currentInstructors={currentInstructors} />
                   {props.isLoading === false ? (
                     <TablePagination
-                      count={Math.ceil(47 / 5)}
+                      count={props.coursePage.displayedInstructors.length}
                       page={currentPage}
-                      rowsPerPage={1}
+                      rowsPerPage={5}
                       rowsPerPageOptions={[1]}
                       paginate={paginate}
                     />
