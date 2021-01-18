@@ -16,7 +16,7 @@ const usePagination = ({ count, page, rowsPerPage, rowsPerPageOptions }) => {
       return value.slice(-5);
     }
 
-    return value.slice(page - 3, page + 2);
+    return value.slice(parseInt(page) - 3, parseInt(page) + 2);
   }, [page, pageCount]);
 
   const showFirst = useMemo(() => {
