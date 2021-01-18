@@ -149,3 +149,8 @@ The easy score is a web applicated intended as a course-planning resource for st
   - [x] course page filters card working
     - [x] Filters values parsed to integers when put to state (they were coming in as strings?)
     - [x] conditional check for if value === "", not parseint
+  - [] pagination for professors on coursepage
+  - [] fuzzy searchbar for professors on coursepage
+  - [] working filters for professors on coursepage
+  - [] searchform filters affecting filterscard filters on results page
+  - [] graphs for professors bug
