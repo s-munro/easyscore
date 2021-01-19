@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
 import ScoreDoughnut from "./ScoreDoughnut";
-import GradeDistChart from "./GradeDistChart";
+import GradeDistChart2 from "./GradeDistChart2";
 
 import { Card } from "react-bootstrap";
 
 import "../course.css";
 
 const ProfessorCard = ({ instructor }) => {
+  // console.log("instructor: ", instructor);
   const [transformedName, setTransformedName] = useState(instructor.name);
 
   useEffect(() => {
     transformProfessorName(instructor.name);
-  }, []);
+  }, [instructor]);
 
   const transformProfessorName = (instructorName) => {
+    console.log("doing it!!!");
     const nameArray = instructorName.split(",");
     const firstName = nameArray[0];
     const lastNameString = nameArray[1];
@@ -52,7 +54,7 @@ const ProfessorCard = ({ instructor }) => {
             </div>
           </div>
           <div className="col">
-            <GradeDistChart average_grades={instructor.average_grades} />
+            <GradeDistChart2 average_grades={instructor.average_grades} />
           </div>
         </div>
       </Card>

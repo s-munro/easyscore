@@ -2,6 +2,7 @@ import React from "react";
 import ProfessorCard from "./ProfessorCard";
 
 const Professors = (props) => {
+  // console.log("professors prof", props.currentInstructors);
   return (
     <div className="row justify-content-center">
       {props.currentInstructors.map((instructor, index) => {

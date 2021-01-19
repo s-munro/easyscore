@@ -1,35 +1,66 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
+import Fuse from "fuse.js";
+
 import {
   setKeywordFilterValue,
   setLevelFilterValue,
   setCreditsFilterValue,
   setTimeFilterValue,
   setRequirementsFilterValue,
+  setInstructorsKeywordFilterValue,
+  setInstructorsFuse,
+  setInstructors,
 } from "../../../actions";
 
 import { FormControl } from "react-bootstrap";
 
 const ProfessorSearch = (props) => {
-  const { history } = useHistory();
+  const [query, setQuery] = useState("");
+
+  const fuse = new Fuse(props.coursePage.instructors, {
+    keys: ["name"],
+  });
+  const results = fuse.search(query);
+  const instructorsResults = query
+    ? results.map((instructor) => instructor.item)
+    : props.coursePage.instructors;
 
   const handleChange = (e) => {
-    console.log(e);
+    setQuery(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    console.log(e);
-  };
+  useEffect(() => {
+    // console.log("results", results);
+    // console.log("insres ", instructorsResults);
+    if (query === "" && props.coursePage.filters.next_sem === 0) {
+      props.setInstructors(props.coursePage.instructors);
+    } else if (query === "" && props.coursePage.filters.next_sem === 1) {
+      props.setInstructors(
+        props.coursePage.instructors.filter((instructor) => {
+          return instructor.is_teaching_next_semester === 1;
+        })
+      );
+    } else if (props.coursePage.filters.next_sem === 1) {
+      props.setInstructorsFuse(
+        instructorsResults.filter((instructor) => {
+          return instructor.is_teaching_next_semester === 1;
+        })
+      );
+    } else {
+      // console.log("wahoo");
+      props.setInstructorsFuse(instructorsResults);
+    }
+  }, [query]);
 
   return (
     <div>
       <FormControl
-        value={props.filters.keyword.value}
+        value={query}
         onChange={handleChange}
-        onSubmit={handleSubmit}
-        placeholder="Search for professors"
-        name="professor"
+        placeholder="Search for professor"
+        name="profSearch"
         id="searchForm"
       />
     </div>
@@ -38,7 +69,7 @@ const ProfessorSearch = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    filters: state.filters,
+    coursePage: state.coursePage,
   };
 };
 
@@ -48,4 +79,7 @@ export default connect(mapStateToProps, {
   setCreditsFilterValue,
   setTimeFilterValue,
   setRequirementsFilterValue,
+  setInstructorsKeywordFilterValue,
+  setInstructorsFuse,
+  setInstructors,
 })(ProfessorSearch);
