@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
+import Fuse from "fuse.js";
+
 import {
   setKeywordFilterValue,
   setLevelFilterValue,
@@ -8,24 +10,60 @@ import {
   setTimeFilterValue,
   setRequirementsFilterValue,
   setInstructorsKeywordFilterValue,
+  setInstructorsFuse,
+  setInstructors,
 } from "../../../actions";
 
 import { FormControl } from "react-bootstrap";
 
 const ProfessorSearch = (props) => {
+  const [query, setQuery] = useState("");
+
+  const fuse = new Fuse(props.coursePage.instructors, {
+    keys: ["name"],
+  });
+  const results = fuse.search(query);
+  const instructorsResults = query
+    ? results.map((instructor) => instructor.item)
+    : props.coursePage.instructors;
+
   const handleChange = (e) => {
-    console.log(e.target.value);
-    props.setInstructorsKeywordFilterValue(e.target.value);
+    setQuery(e.target.value);
+    console.log("query", query);
+    console.log("results", results);
+    console.log(instructorsResults);
   };
 
   const handleSubmit = (e) => {
     console.log(e);
   };
 
+  useEffect(() => {
+    console.log("use query", query);
+    console.log("use query results", instructorsResults);
+    if (query === "" && props.coursePage.filters.next_sem === 0) {
+      props.setInstructors(props.coursePage.instructors);
+    } else if (query === "" && props.coursePage.filters.next_sem === 1) {
+      props.setInstructors(
+        props.coursePage.instructors.filter((instructor) => {
+          return instructor.is_teaching_next_semester === 1;
+        })
+      );
+    } else if (props.coursePage.filters.next_sem === 1) {
+      props.setInstructorsFuse(
+        instructorsResults.filter((instructor) => {
+          return instructor.is_teaching_next_semester === 1;
+        })
+      );
+    } else {
+      props.setInstructorsFuse(instructorsResults);
+    }
+  }, [query]);
+
   return (
     <div>
       <FormControl
-        value={props.coursePage.filters.profName}
+        value={query}
         onChange={handleChange}
         onSubmit={handleSubmit}
         placeholder="Search for professor"
@@ -49,4 +87,6 @@ export default connect(mapStateToProps, {
   setTimeFilterValue,
   setRequirementsFilterValue,
   setInstructorsKeywordFilterValue,
+  setInstructorsFuse,
+  setInstructors,
 })(ProfessorSearch);

@@ -87,6 +87,14 @@ export const setInstructors = (instructors) => {
   };
 };
 
+export const setInstructorsFuse = (instructors) => {
+  // const fuseArray = instructors.map((instructor) => {
+  //   return instructor.item;
+  // });
+
+  return { type: SET_INSTRUCTORS_ON_PAGE, payload: instructors };
+};
+
 export const setNavStyle = (style) => {
   return { type: SET_NAV_STYLE, payload: style };
 };

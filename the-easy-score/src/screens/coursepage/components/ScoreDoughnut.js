@@ -13,7 +13,7 @@ const ScoreDoughnut = ({ easyScore }) => {
       {
         data: [score, 100 - score],
         backgroundColor: ["#914949", "#ffff"],
-        hoverBackgroundColor: ["#914949", "#914949"],
+        hoverBackgroundColor: ["#914949"],
       },
     ],
   };

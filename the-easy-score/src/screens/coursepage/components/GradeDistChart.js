@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Chartjs from "chart.js";
 
 const GradeDistChart = ({ average_grades }) => {
-  console.log("dist chart avg: ", average_grades);
+  // console.log("dist chart avg: ", average_grades);
 
   const chartConfig = {
     type: "bar",
