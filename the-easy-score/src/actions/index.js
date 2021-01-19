@@ -48,9 +48,14 @@ export const fetchCoursePage = (full_code) => (dispatch) => {
     .get(`https://theeasyscore.com/results&jsonquery/course=${full_code}`)
     .then((res) => {
       dispatch({ type: FETCH_COURSE_PAGE_SUCCESS, payload: res.data.course });
+      const nextSemesterProfessors = res.data.course.instructors.filter(
+        (professor) => {
+          return professor.is_teaching_next_semester === 1;
+        }
+      );
       dispatch({
         type: SET_INSTRUCTORS_ON_PAGE,
-        payload: res.data.course.instructors.sort(function (a, b) {
+        payload: nextSemesterProfessors.sort(function (a, b) {
           return b.rating - a.rating;
         }),
       });
