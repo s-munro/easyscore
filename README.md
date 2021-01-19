@@ -8,6 +8,9 @@ A student-oriented web application intended as a course-planning resource.  Offe
 
 ### Original Website: ###
 
+![Original Easyscore - Animated gif demo](https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif)
+
+
 https://giphy.com/gifs/nPhDWjt7l7IfeLehwL/html5
 
 
