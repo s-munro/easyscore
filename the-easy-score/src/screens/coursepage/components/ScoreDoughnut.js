@@ -19,6 +19,9 @@ const ScoreDoughnut = ({ easyScore }) => {
   };
 
   const options = {
+    tooltips: {
+      enabled: false,
+    },
     rotation: Math.PI / 0.75,
     cutoutPercentage: 75,
     maintainAspectRation: false,

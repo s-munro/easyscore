@@ -1,8 +1,28 @@
 import React, { useState, useEffect, useRef } from "react";
 import Chartjs from "chart.js";
 
+const initialGradeValues = {
+  A: 1,
+  B: 2,
+  C: 3,
+  D: 4,
+};
+
 const GradeDistChart = ({ average_grades }) => {
-  // console.log("dist chart avg: ", average_grades);
+  console.log("dist chart avg: ", average_grades);
+  console.log("firstone: ", average_grades[0]);
+
+  const [avgGrades, setAvgGrades] = useState(initialGradeValues);
+
+  useEffect(() => {
+    console.log("shabam");
+    setAvgGrades({
+      A: parseInt(average_grades[0]),
+      B: parseInt(average_grades[1]),
+      C: parseInt(average_grades[2]),
+      D: parseInt(average_grades[3]),
+    });
+  }, [average_grades]);
 
   const chartConfig = {
     type: "bar",
@@ -11,12 +31,7 @@ const GradeDistChart = ({ average_grades }) => {
       datasets: [
         {
           label: "Grade Distribution",
-          data: [
-            average_grades[0],
-            average_grades[1],
-            average_grades[2],
-            average_grades[3],
-          ],
+          data: [avgGrades.A, avgGrades.B, avgGrades.C, avgGrades.D],
           backgroundColor: ["#914949", "#914949", "#914949", "#914949"],
           borderColor: ["#914949", "#914949", "#914949", "#914949"],
           borderWidth: 1,
@@ -71,6 +86,8 @@ const GradeDistChart = ({ average_grades }) => {
       },
     },
     tooltips: {
+      display: false,
+      enabled: false,
       displayColors: false,
       titleFontSize: 16,
       bodyFontSize: 14,
