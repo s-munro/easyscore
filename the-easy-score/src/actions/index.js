@@ -19,6 +19,8 @@ export const SET_TIME_FILTER_VALUE = "SET_TIME_FILTER_VALUE";
 export const RESET_FILTER_VALUES = "RESET_FILTER_VALUES";
 export const SET_INSTRUCTORS_NEXT_SEMESTER_FILTER =
   "SET_INSTRUCTORS_NEXT_SEMESTER_FILTER";
+export const SET_PROFNAME_KEYWORD_FILTER_VALUE =
+  "SET_PROFNAME_KEYWORD_FILTER_VALUE";
 
 // Data-related actions ****************
 
@@ -146,4 +148,8 @@ export const setInstructorNextSemesterFilterValue = (value, array) => (
 
 export const resetInstructorFilters = () => (dispatch) => {
   dispatch({ type: SET_INSTRUCTORS_NEXT_SEMESTER_FILTER, payload: 1 });
+};
+
+export const setInstructorsKeywordFilterValue = (value) => {
+  return { type: SET_PROFNAME_KEYWORD_FILTER_VALUE, payload: value };
 };

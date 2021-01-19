@@ -7,15 +7,15 @@ import {
   setCreditsFilterValue,
   setTimeFilterValue,
   setRequirementsFilterValue,
+  setInstructorsKeywordFilterValue,
 } from "../../../actions";
 
 import { FormControl } from "react-bootstrap";
 
 const ProfessorSearch = (props) => {
-  const { history } = useHistory();
-
   const handleChange = (e) => {
-    console.log(e);
+    console.log(e.target.value);
+    props.setInstructorsKeywordFilterValue(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -25,11 +25,11 @@ const ProfessorSearch = (props) => {
   return (
     <div>
       <FormControl
-        value={props.filters.keyword.value}
+        value={props.coursePage.filters.profName}
         onChange={handleChange}
         onSubmit={handleSubmit}
-        placeholder="Search for professors"
-        name="professor"
+        placeholder="Search for professor"
+        name="profSearch"
         id="searchForm"
       />
     </div>
@@ -38,7 +38,7 @@ const ProfessorSearch = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    filters: state.filters,
+    coursePage: state.coursePage,
   };
 };
 
@@ -48,4 +48,5 @@ export default connect(mapStateToProps, {
   setCreditsFilterValue,
   setTimeFilterValue,
   setRequirementsFilterValue,
+  setInstructorsKeywordFilterValue,
 })(ProfessorSearch);

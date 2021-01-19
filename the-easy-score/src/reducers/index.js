@@ -13,6 +13,7 @@ import {
   FETCH_COURSE_PAGE_SUCCESS,
   SET_INSTRUCTORS_ON_PAGE,
   SET_INSTRUCTORS_NEXT_SEMESTER_FILTER,
+  SET_PROFNAME_KEYWORD_FILTER_VALUE,
 } from "../actions";
 
 const initialState = {
@@ -25,6 +26,7 @@ const initialState = {
     displayedInstructors: [],
     filters: {
       next_sem: 1,
+      profName: "",
     },
   },
   errorText: "",
@@ -107,6 +109,17 @@ const reducer = (state = initialState, action) => {
         filters: {
           ...state.filters,
           keyword: { ...state.filters.keyword, value: action.payload },
+        },
+      };
+    case SET_PROFNAME_KEYWORD_FILTER_VALUE:
+      return {
+        ...state,
+        coursePage: {
+          ...state.coursePage,
+          filters: {
+            ...state.coursePage.filters,
+            profName: action.payload,
+          },
         },
       };
     case SET_LEVEL_FILTER_VALUE:
