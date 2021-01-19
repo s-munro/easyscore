@@ -21,10 +21,6 @@ const ProfFiltersCard = (props) => {
     props.resetInstructorFilters();
   };
 
-  const handleSliderChange = (e, value) => {
-    console.log(value);
-  };
-
   const applyFilters = (semesterValue) => {
     // let availableInstructors = []
 
@@ -50,6 +46,14 @@ const ProfFiltersCard = (props) => {
       applyFilters(1);
     }
   };
+
+  const handleSliderChange = (e) => {
+    console.log(e);
+  };
+
+  useEffect(() => {
+    handleFiltersReset();
+  }, []);
 
   return (
     <div className="mb-5">

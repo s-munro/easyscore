@@ -164,3 +164,5 @@ The easy score is a web applicated intended as a course-planning resource for st
   #### Tuesday, Jan 19
 
   - [] updating filters in header vs card UX fix (searchresults)
+  - [] prospective filters? % A's?
+  - [] about and contact pages
