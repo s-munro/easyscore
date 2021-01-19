@@ -7,7 +7,7 @@ import { Card } from "react-bootstrap";
 import "../course.css";
 
 const ProfessorCard = ({ instructor }) => {
-  console.log("instructor: ", instructor);
+  // console.log("instructor: ", instructor);
   const [transformedName, setTransformedName] = useState(instructor.name);
 
   useEffect(() => {
