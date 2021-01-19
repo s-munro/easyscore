@@ -3,7 +3,7 @@ import ProfessorCard from "./ProfessorCard";
 
 const Professors = (props) => {
   return (
-    <div className="row">
+    <div className="row justify-content-center">
       {props.currentInstructors.map((instructor, index) => {
         return (
           <div

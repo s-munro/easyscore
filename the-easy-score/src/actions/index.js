@@ -17,6 +17,8 @@ export const SET_REQUIREMENTS_FILTER_VALUE = "SET_REQUIREMENTS_FILTER_VALUE";
 export const SET_CREDITS_FILTER_VALUE = "SET_CREDITS_FILTER_VALUE";
 export const SET_TIME_FILTER_VALUE = "SET_TIME_FILTER_VALUE";
 export const RESET_FILTER_VALUES = "RESET_FILTER_VALUES";
+export const SET_INSTRUCTORS_NEXT_SEMESTER_FILTER =
+  "SET_INSTRUCTORS_NEXT_SEMESTER_FILTER";
 
 // Data-related actions ****************
 
@@ -67,11 +69,20 @@ export const setCourses = (courses) => {
   };
 };
 
+export const setInstructors = (instructors) => {
+  return {
+    type: SET_INSTRUCTORS_ON_PAGE,
+    payload: instructors.sort(function (a, b) {
+      return b.rating - a.rating;
+    }),
+  };
+};
+
 export const setNavStyle = (style) => {
   return { type: SET_NAV_STYLE, payload: style };
 };
 
-// Filters-related actions ****************
+// COURSES ** Filters-related actions ****************
 
 export const setKeywordFilterValue = (value) => {
   return { type: SET_KEYWORD_FILTER_VALUE, payload: value };
@@ -111,4 +122,13 @@ export const setTimeFilterValue = (value) => {
 
 export const resetFilterValues = () => {
   return { type: RESET_FILTER_VALUES, payload: "" };
+};
+
+// INSTRUCTORS ** Filters-related actions ****************
+
+export const setInstructorNextSemesterFilterValue = (value) => {
+  return {
+    type: SET_INSTRUCTORS_NEXT_SEMESTER_FILTER,
+    payload: parseInt(value),
+  };
 };

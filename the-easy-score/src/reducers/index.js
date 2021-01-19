@@ -12,6 +12,7 @@ import {
   SET_NAV_STYLE,
   FETCH_COURSE_PAGE_SUCCESS,
   SET_INSTRUCTORS_ON_PAGE,
+  SET_INSTRUCTORS_NEXT_SEMESTER_FILTER,
 } from "../actions";
 
 const initialState = {
@@ -22,6 +23,9 @@ const initialState = {
     course: [],
     instructors: [],
     displayedInstructors: [],
+    filters: {
+      next_sem: 1,
+    },
   },
   errorText: "",
   filters: {
@@ -71,8 +75,23 @@ const reducer = (state = initialState, action) => {
     case FETCH_COURSE_PAGE_SUCCESS:
       return {
         ...state,
-        coursePage: { ...state.coursePage, course: action.payload },
+        coursePage: {
+          ...state.coursePage,
+          instructors: action.payload.instructors,
+          course: action.payload,
+        },
         isLoading: false,
+      };
+    case SET_INSTRUCTORS_NEXT_SEMESTER_FILTER:
+      return {
+        ...state,
+        coursePage: {
+          ...state.coursePage,
+          filters: {
+            ...state.coursePage.filters,
+            next_sem: action.payload,
+          },
+        },
       };
     case SET_INSTRUCTORS_ON_PAGE:
       return {

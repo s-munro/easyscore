@@ -41,16 +41,13 @@ const ScoreDoughnut = ({ easyScore }) => {
   };
 
   return (
-    <div>
-      <div style={{ width: PIXEL_SIZE }}>
-        <Doughnut
-          data={data}
-          options={options}
-          width={PIXEL_SIZE}
-          height={PIXEL_SIZE}
-        />
-        Hello world
-      </div>
+    <div style={{ width: PIXEL_SIZE }}>
+      <Doughnut
+        data={data}
+        options={options}
+        width={PIXEL_SIZE}
+        height={PIXEL_SIZE}
+      />
     </div>
   );
 };
