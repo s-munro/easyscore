@@ -24,6 +24,68 @@
   border-color: f5222d;
 }
 
+/***** COURSE CARDS ********/
+
+.course-card {
+  border: 1px solid #b3b3b3;
+  background-color: #ffffff;
+  border-radius: 4px;
+  color: #222222;
+  box-shadow: 0px 11px 7px -12px #4e4e4e;
+  padding: 2%;
+}
+
+.course-card-top-portion {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 85%;
+  color: #6c757d;
+  margin-bottom: 4%;
+}
+
+.couse-card-top-portion-left-side {
+  width: 50%;
+}
+
+.course-card-easyscore {
+  background-color: #b32727;
+  color: #ffffff;
+  font-size: 175%;
+  padding: 25%;
+  margin-left: 5%;
+  margin-top: 5%;
+  width: 75%;
+  height: 85%;
+  box-shadow: 0px 11px 7px -12px #4e4e4e;
+  border-radius: 10%;
+}
+
+.couse-card-top-portion-right-side {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+}
+
+.course-card-credits {
+  color:  #b32727;
+}
+
+.course-card-professors-scored {
+  color:  #b32727;
+}
+
+.course-card-course-title {
+  color:  #b32727;
+  margin-left: 2%;
+  margin-bottom: 5%;
+}
+
+
+
+
 /***** No Results Background ********/
 .no-results-background {
   background-color: white;
@@ -42,76 +104,8 @@
   margin: 3%;
 }
 
-.courseDisplayContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  padding-top: 2%;
-  padding-left: 2%;
-  padding-bottom: 2%;
-  padding-right: 2%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.header {
-  display: flex;
-  width: 100%;
-  margin: 0;
-  border-bottom: 1px solid #b3b3b3;
-}
-/********* HEADER LEFT SIDE ***********/
-.header-third-left-side {
-  border: 1px solid pink;
-  margin: 2% 5%;
-}
-
-.filter-options-title {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.filters-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/************* HEADER CENTER ***************/
-.header-third-center {
-  border: 1px solid pink;
-  margin: 2% 5%;
-}
-/************* HEADER RIGHT SIDE ***********/
-.header-third-right-side {
-  border: 1px solid pink;
-  margin: 2% 5%;
-}
-
-.course-days-explanation-key-container {
-  display: flex;
-}
-
-.day {
-  background-color: cornflowerblue;
-  color: cornsilk;
-  margin: 1%;
-  padding: 2%;
-}
-/***************** AREA BELOW HEADER ********************/
-.filtersCard-courses-container {
-  display: flex;
-}
-
 /********** FILTERS CARD ********/
 .filters-card-container {
   border: 1px solid black;
   height: 40vh;
-}
-/*************** COURSE CARD ***************/
-.course-card {
-  border: 1px solid #b3b3b3;
-  background-color: #ffffff;
-  border-radius: 4px;
-  color: #222222;
-  box-shadow: 0px 11px 7px -12px #4e4e4e;
 }

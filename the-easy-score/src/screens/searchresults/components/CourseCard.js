@@ -8,15 +8,19 @@ const CourseCard = ({ course }) => {
   return (
     // <div style={{ backgroundColor: "red" }}>Hi</div>
     <div className="course-card w-100">
+
       <div className="course-card-top-portion">
+
         <div className="couse-card-top-portion-left-side">
           <div className="course-card-easyscore">{course.rating}</div>
         </div>
+
         <div className="couse-card-top-portion-right-side">
           <div className="course-card-credits-container">
             <div className="course-card-credits-title">Credits</div>
             <div className="course-card-credits">{course.credits}</div>
           </div>
+
           <div className="course-card-professors-scored-container">
             <div className="course-card-professors-scored-title">
               Professors Scored
@@ -24,9 +28,11 @@ const CourseCard = ({ course }) => {
             <div className="course-card-professors-scored">
               {course.instructors.length}
             </div>
-          </div>
+          </div> 
         </div>
+   
       </div>
+      
       <div className="course-card-bottom-sections">
         <div className="course-card-course-title">
           {course.full_code}: {course.name}
