@@ -6,15 +6,23 @@
 
 A student-oriented web application intended as a course-planning resource.  Offers students the ability to quickly and easily compare courses, professors, and grade distributions, as well as to search for which courses satisfy their target requirements (credit hours, time of day, credit types, etc). The site is being redesigned as a single page react app with this repository as our workpoint.
 
-### Change Log
+### Original Website: ###
+
+https://giphy.com/gifs/nPhDWjt7l7IfeLehwL/html5
+
 
 ** Contributors: **
 - https://github.com/s-munro
 - https://github.com/Shevphi
 
+
+
+
+### Change Log
+
 #### Friday/Saturday, December 18/19:
 
-- Sam Munro
+- s-munro
 
   - Scaffolding/setup
 
@@ -37,18 +45,18 @@ A student-oriented web application intended as a course-planning resource.  Offe
 
   #### Sunday, December 20:
 
-  - Sam Munro
+  - s-munro
     - Design still hasn't been touched: focusing still on functionality and the scaffolding.
     * Axios call and corresponding state updates working on course page, passes course as props to ProfessorCard & Header.
 
   #### Tuesday, December 22:
 
-  - Sam Munro
+  - s-munro
     - Set up loading component for when isLoading true. Loading spinner imported from 'react-loader-spinner'
 
   #### Saturday, Jan 2:
 
-  - Sam Munro
+  - s-munro
     - API:
       - New API baseURL in utils/getData.js
       - API returning JSON successfully (no errors yet)
@@ -66,7 +74,7 @@ A student-oriented web application intended as a course-planning resource.  Offe
 
   #### Sunday, Jan 3:
 
-  - Sam Munro
+  - s-munro
 
   - TODO:
 
@@ -78,7 +86,7 @@ A student-oriented web application intended as a course-planning resource.  Offe
 
 #### Wednesday, Jan 6:
 
-- Sam Munro
+- s-munro
 
 - TODO:
 
