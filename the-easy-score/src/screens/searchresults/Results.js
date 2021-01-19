@@ -36,6 +36,7 @@ const Results = (props) => {
   useEffect(() => {
     dispatch(fetchResults(params.axiosUrl));
     dispatch(setCourses(props.courses));
+    filterToKeyword(params.axiosUrl, setKeyword);
     setCurrentPage(1);
   }, [params.axiosUrl]);
 

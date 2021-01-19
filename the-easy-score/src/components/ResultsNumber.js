@@ -13,7 +13,7 @@ const ResultsNumber = ({
       <div>
         Showing {number} {results} for
         <br />
-        <span>{keyword}</span>
+        <span>'{keyword}'</span>
       </div>
     );
   } else {
