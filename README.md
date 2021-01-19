@@ -4,9 +4,13 @@
 
 ** The Easy Score **
 
-The easy score is a web applicated intended as a course-planning resource for students to compare courses, professors, and grade distributions. The site is being redesigned as a single page react app with this repository as our workpoint.
+A student-oriented web application intended as a course-planning resource.  Offers students the ability to quickly and easily compare courses, professors, and grade distributions, as well as to search for which courses satisfy their target requirements (credit hours, time of day, credit types, etc). The site is being redesigned as a single page react app with this repository as our workpoint.
 
 ### Change Log
+
+** Contributors: **
+- https://github.com/s-munro
+- https://github.com/Shevphi
 
 #### Friday/Saturday, December 18/19:
 
