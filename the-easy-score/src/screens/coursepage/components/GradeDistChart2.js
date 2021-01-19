@@ -44,7 +44,7 @@ const GradeDistChart2 = ({ average_grades }) => {
       <Bar
         data={data}
         width={240}
-        height={140}
+        height={200}
         options={{
           maintainAspectRatio: false,
           title: {
