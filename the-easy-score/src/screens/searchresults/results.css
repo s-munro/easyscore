@@ -24,6 +24,43 @@
   border-color: f5222d;
 }
 
+/***** COURSE CARDS ********/
+.course-card {
+  border: 1px solid #b3b3b3;
+  background-color: #ffffff;
+  border-radius: 4px;
+  color: #222222;
+  box-shadow: 0px 11px 7px -12px #4e4e4e;
+  padding: 2%;
+}
+
+.course-card-top-portion {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+ 
+}
+
+.couse-card-top-portion-left-side {
+  width: 50%;
+}
+
+.course-card-easyscore {
+  background-color: #9a0000;
+  color: #ffffff;
+  width: 75%;
+  height: 75%;
+}
+
+.couse-card-top-portion-right-side {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+
 /***** No Results Background ********/
 .no-results-background {
   background-color: white;
@@ -42,76 +79,8 @@
   margin: 3%;
 }
 
-.courseDisplayContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  padding-top: 2%;
-  padding-left: 2%;
-  padding-bottom: 2%;
-  padding-right: 2%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.header {
-  display: flex;
-  width: 100%;
-  margin: 0;
-  border-bottom: 1px solid #b3b3b3;
-}
-/********* HEADER LEFT SIDE ***********/
-.header-third-left-side {
-  border: 1px solid pink;
-  margin: 2% 5%;
-}
-
-.filter-options-title {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.filters-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/************* HEADER CENTER ***************/
-.header-third-center {
-  border: 1px solid pink;
-  margin: 2% 5%;
-}
-/************* HEADER RIGHT SIDE ***********/
-.header-third-right-side {
-  border: 1px solid pink;
-  margin: 2% 5%;
-}
-
-.course-days-explanation-key-container {
-  display: flex;
-}
-
-.day {
-  background-color: cornflowerblue;
-  color: cornsilk;
-  margin: 1%;
-  padding: 2%;
-}
-/***************** AREA BELOW HEADER ********************/
-.filtersCard-courses-container {
-  display: flex;
-}
-
 /********** FILTERS CARD ********/
 .filters-card-container {
   border: 1px solid black;
   height: 40vh;
-}
-/*************** COURSE CARD ***************/
-.course-card {
-  border: 1px solid #b3b3b3;
-  background-color: #ffffff;
-  border-radius: 4px;
-  color: #222222;
-  box-shadow: 0px 11px 7px -12px #4e4e4e;
 }
