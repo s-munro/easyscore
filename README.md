@@ -159,4 +159,8 @@ The easy score is a web applicated intended as a course-planning resource for st
     - [x] reset and re-filter for next semester on switch change
     - [] prospective filters? % A's?
   - [x] searchform filters affecting filterscard filters on results page
-  - [] graphs for professors bug
+  - [x] graphs for professors bug
+
+  #### Tuesday, Jan 19
+
+  - [] updating filters in header vs card UX fix (searchresults)
