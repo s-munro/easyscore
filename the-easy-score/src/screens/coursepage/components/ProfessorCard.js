@@ -7,13 +7,15 @@ import { Card } from "react-bootstrap";
 import "../course.css";
 
 const ProfessorCard = ({ instructor }) => {
+  console.log("instructor: ", instructor);
   const [transformedName, setTransformedName] = useState(instructor.name);
 
   useEffect(() => {
     transformProfessorName(instructor.name);
-  }, []);
+  }, [instructor]);
 
   const transformProfessorName = (instructorName) => {
+    console.log("doing it!!!");
     const nameArray = instructorName.split(",");
     const firstName = nameArray[0];
     const lastNameString = nameArray[1];

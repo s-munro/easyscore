@@ -91,6 +91,7 @@ export const setInstructorsFuse = (instructors) => {
   // const fuseArray = instructors.map((instructor) => {
   //   return instructor.item;
   // });
+  console.log("action instructors", instructors);
 
   return { type: SET_INSTRUCTORS_ON_PAGE, payload: instructors };
 };
