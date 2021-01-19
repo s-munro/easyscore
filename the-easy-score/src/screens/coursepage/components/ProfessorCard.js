@@ -28,7 +28,7 @@ const ProfessorCard = ({ instructor }) => {
           <div className="col">
             <div className="row">{transformedName}</div>
             <div className="row">
-              <div className="col">
+              <div className="col align-items-center">
                 <ScoreDoughnut easyScore={instructor.rating} />
               </div>
               <div className="col">

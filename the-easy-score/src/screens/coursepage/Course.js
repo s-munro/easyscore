@@ -1,26 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
-import { fetchResults, setNavStyle } from "../../actions/index";
+import { setNavStyle, fetchCoursePage } from "../../actions/index";
 
 import Header from "./components/Header";
-import ProfessorCard from "./components/ProfessorCard";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
 import ProfessorSearch from "./components/ProfessorSearch";
 import ProfFiltersCard from "./components/filters/ProfFiltersCard";
+import Professors from "./components/Professors";
+import TablePagination from "../../components/TablePagination";
 
 const Course = (props) => {
   const params = useParams();
   const dispatch = useDispatch();
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const instructorsPerPage = 5;
+
   useEffect(() => {
-    const newUrl = `'keyword'=_'${params.courseid}'&_'requirement'=_''&_'level'=_''&_'credit'=_''&_'timing'=_''&_'next_sem'=_''&_'days'=_[]`;
-    dispatch(fetchResults(newUrl));
+    dispatch(fetchCoursePage(params.courseid));
     props.setNavStyle(3);
   }, []);
 
-  const course = props.courses[0];
+  /******  PAGINATION  ******/
+  const indexOfLastInstructor = currentPage * instructorsPerPage;
+  const indexOfFirstInstructor = indexOfLastInstructor - instructorsPerPage;
+  const currentInstructors = props.coursePage.displayedInstructors.slice(
+    indexOfFirstInstructor,
+    indexOfLastInstructor
+  );
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  /*****  END PAGINATION  *****/
 
   return (
     <div className="container">
@@ -30,39 +41,39 @@ const Course = (props) => {
         </div>
       ) : (
         <div>
-          {props.courses.length > 0 ? (
-            <div>
-              <Header course={props.courses[0]} />
-              <hr />
-              <ResultsNumber
-                number={props.courses[0].instructors.length}
-                results={"instructors"}
-                full_code={course.full_code}
-                course_name={course.name}
-                header={1}
-              />
-              <ProfessorSearch />
-              <div className="row mt-5">
-                <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
-                  <ProfFiltersCard />
+          <div>
+            <Header course={props.coursePage.course} />
+            <hr />
+            <ResultsNumber
+              number={props.coursePage.displayedInstructors.length}
+              results={"instructors"}
+              full_code={props.coursePage.course.full_code}
+              course_name={props.coursePage.course.name}
+              header={1}
+            />
+            <ProfessorSearch />
+            <div className="row mt-5">
+              <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
+                <ProfFiltersCard />
+              </div>
+              <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
+                <div className="row">
+                  <Professors currentInstructors={currentInstructors} />
                 </div>
-                <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
+                {props.isLoading === false ? (
                   <div className="row">
-                    {course.instructors.map((instructor, index) => {
-                      return (
-                        <div
-                          key={index}
-                          className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 mb-5"
-                        >
-                          <ProfessorCard instructor={instructor} key={index} />
-                        </div>
-                      );
-                    })}
+                    <TablePagination
+                      count={props.coursePage.displayedInstructors.length}
+                      page={currentPage}
+                      rowsPerPage={5}
+                      rowsPerPageOptions={[1]}
+                      paginate={paginate}
+                    />
                   </div>
-                </div>
+                ) : null}
               </div>
             </div>
-          ) : null}
+          </div>
         </div>
       )}
     </div>
@@ -72,9 +83,11 @@ const Course = (props) => {
 const mapStateToProps = (state) => {
   return {
     isLoading: state.isLoading,
-    courses: state.courses,
     errorText: state.errorText,
+    coursePage: state.coursePage,
   };
 };
 
-export default connect(mapStateToProps, { fetchResults, setNavStyle })(Course);
+export default connect(mapStateToProps, { fetchCoursePage, setNavStyle })(
+  Course
+);

@@ -10,12 +10,23 @@ import {
   SET_TIME_FILTER_VALUE,
   RESET_FILTER_VALUES,
   SET_NAV_STYLE,
+  FETCH_COURSE_PAGE_SUCCESS,
+  SET_INSTRUCTORS_ON_PAGE,
+  SET_INSTRUCTORS_NEXT_SEMESTER_FILTER,
 } from "../actions";
 
 const initialState = {
   isLoading: false,
   courses: [],
   displayedCourses: [],
+  coursePage: {
+    course: [],
+    instructors: [],
+    displayedInstructors: [],
+    filters: {
+      next_sem: 1,
+    },
+  },
   errorText: "",
   filters: {
     courseLevel: {
@@ -61,6 +72,35 @@ const reducer = (state = initialState, action) => {
       };
     case SET_COURSES_ON_PAGE:
       return { ...state, displayedCourses: action.payload };
+    case FETCH_COURSE_PAGE_SUCCESS:
+      return {
+        ...state,
+        coursePage: {
+          ...state.coursePage,
+          instructors: action.payload.instructors,
+          course: action.payload,
+        },
+        isLoading: false,
+      };
+    case SET_INSTRUCTORS_NEXT_SEMESTER_FILTER:
+      return {
+        ...state,
+        coursePage: {
+          ...state.coursePage,
+          filters: {
+            ...state.coursePage.filters,
+            next_sem: action.payload,
+          },
+        },
+      };
+    case SET_INSTRUCTORS_ON_PAGE:
+      return {
+        ...state,
+        coursePage: {
+          ...state.coursePage,
+          displayedInstructors: action.payload,
+        },
+      };
     case SET_KEYWORD_FILTER_VALUE:
       return {
         ...state,

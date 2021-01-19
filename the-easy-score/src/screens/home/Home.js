@@ -3,8 +3,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { setNavStyle } from "../../actions/index";
 
-import SearchForm from "./components/SearchForm";
-import Nav from "../../navbar/Nav";
+import SearchForm from "../../components/SearchForm";
 import "./home.css";
 
 const Home = (props) => {
@@ -21,7 +20,7 @@ const Home = (props) => {
             <span className="scoreLogo">Score</span>
           </h1>
         </div>
-        <SearchForm button={true} filters={true} />
+        <SearchForm nav={false} />
       </main>
     </div>
   );

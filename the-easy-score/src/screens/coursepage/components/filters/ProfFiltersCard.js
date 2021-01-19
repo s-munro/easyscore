@@ -1,39 +1,109 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { connect } from "react-redux";
 
-import { Card, Button, Form } from "react-bootstrap";
+import {
+  setInstructors,
+  setInstructorNextSemesterFilterValue,
+  resetInstructorFilters,
+} from "../../../../actions/index";
 
-const ProfFiltersCard = () => {
+import { Card, Button, Form } from "react-bootstrap";
+import { Typography, Slider } from "@material-ui/core";
+
+const ProfFiltersCard = (props) => {
   const handleFiltersReset = (e) => {
-    console.log(e);
+    props.setInstructors(
+      props.coursePage.instructors.filter((instructor) => {
+        return instructor.is_teaching_next_semester === 1;
+      })
+    );
+    props.resetInstructorFilters();
   };
 
-  const handleFiltersSubmit = (e) => {
-    console.log(e);
+  const handleSliderChange = (e, value) => {
+    console.log(value);
+  };
+
+  const applyFilters = (semesterValue) => {
+    // let availableInstructors = []
+
+    const filterNextSemester = (semesterValue) => {
+      const availableInstructors = props.coursePage.instructors.filter(
+        (instructor) => {
+          return instructor.is_teaching_next_semester === semesterValue;
+        }
+      );
+      return availableInstructors;
+    };
+
+    props.setInstructors(filterNextSemester(semesterValue));
+  };
+
+  const handleSwitchChange = (e) => {
+    if (props.coursePage.filters.next_sem === 1) {
+      props.setInstructorNextSemesterFilterValue(0);
+      applyFilters(0);
+    }
+    if (props.coursePage.filters.next_sem === 0) {
+      props.setInstructorNextSemesterFilterValue(1);
+      applyFilters(1);
+    }
   };
 
   return (
     <div className="mb-5">
       <Card>
         <Card.Body>
-          <Card.Title>Filter Results</Card.Title>
+          <Card.Title>Filter/Sort</Card.Title>
           <br />
           <Card.Subtitle className="mb-2 text-muted">
             Next Semester Only
           </Card.Subtitle>
           <Form.Check
             type="switch"
-            id="custom-switch"
-            label="Check this switch"
+            id="professor-filter-next-semester-switch"
+            checked={props.coursePage.filters.next_sem === 1}
+            value={props.coursePage.filters.next_sem}
+            // label="Next Semester Only"
+            onChange={handleSwitchChange}
           />
           <br />
-          <Form.Label>Avg. Class Size</Form.Label>
-          <Form.Control type="range" />
+          <Typography id="discrete-slider-always" gutterBottom>
+            Avg. Class Size
+          </Typography>
+          <Slider
+            // value={value}
+            // defaultValue={80}
+            // getAriaValueText={valuetext}
+            defaultValue={10}
+            aria-labelledby="discrete-slider-always"
+            step={1}
+            min={0}
+            max={60}
+            onChange={handleSliderChange}
+            // marks={marks}
+            valueLabelDisplay="auto"
+          />
           <br />
-          <Form.Label>Semesters Taught</Form.Label>
-          <Form.Control type="range" />
           <br />
-          <Button onClick={handleFiltersSubmit}>Apply Filters</Button>
+          <Typography id="slider" gutterBottom>
+            Min. Semesters Taught
+          </Typography>
+          <Slider
+            // getAriaValueText={valueLabelFormat}
+            // valueLabelFormat={valueLabelFormat}
+            onChange={handleSliderChange}
+            defaultValue={10}
+            step={1}
+            min={0}
+            max={60}
+            valueLabelDisplay="auto"
+            aria-labelledby="non-linear-slider"
+          />
+          <br />
+          <br />
+          <Button onClick={applyFilters}>Apply Filters</Button>
           <Button onClick={handleFiltersReset}>Reset Filters</Button>
         </Card.Body>
       </Card>
@@ -41,4 +111,14 @@ const ProfFiltersCard = () => {
   );
 };
 
-export default connect()(ProfFiltersCard);
+const mapStateToProps = (state) => {
+  return {
+    coursePage: state.coursePage,
+  };
+};
+
+export default connect(mapStateToProps, {
+  setInstructors,
+  setInstructorNextSemesterFilterValue,
+  resetInstructorFilters,
+})(ProfFiltersCard);

@@ -1,11 +1,6 @@
 import React from "react";
 import { FormControl } from "react-bootstrap";
 
-// Sheena,
-// React boostrap FormControl documentation below, covers styling I think:
-// https://react-bootstrap.github.io/components/forms/
-// the documentation is fucking massive
-
 const FilterSelect = ({
   selectValues,
   handleSelectChange,

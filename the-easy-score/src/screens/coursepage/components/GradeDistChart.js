@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Chartjs from "chart.js";
 
 const GradeDistChart = ({ average_grades }) => {
+  console.log("dist chart avg: ", average_grades);
+
   const chartConfig = {
     type: "bar",
     data: {
@@ -15,8 +17,8 @@ const GradeDistChart = ({ average_grades }) => {
             average_grades[2],
             average_grades[3],
           ],
-          backgroundColor: ["#9a0000", "#9a0000", "#9a0000", "#9a0000"],
-          borderColor: ["#9a0000", "#9a0000", "#9a0000", "#9a0000"],
+          backgroundColor: ["#914949", "#914949", "#914949", "#914949"],
+          borderColor: ["#914949", "#914949", "#914949", "#914949"],
           borderWidth: 1,
         },
       ],
@@ -72,8 +74,8 @@ const GradeDistChart = ({ average_grades }) => {
       displayColors: false,
       titleFontSize: 16,
       bodyFontSize: 14,
-      xPadding: 5,
-      yPadding: 5,
+      xPadding: 1,
+      yPadding: 1,
       callbacks: {
         label: (tooltipItem, data) => {
           return `$ ${tooltipItem.value}`;
@@ -94,7 +96,6 @@ const GradeDistChart = ({ average_grades }) => {
 
   return (
     <div>
-      {/* <Bar data={data} width={100} height={50} options={options} ref={barRef} /> */}
       <canvas ref={chartContainer} />
     </div>
   );
