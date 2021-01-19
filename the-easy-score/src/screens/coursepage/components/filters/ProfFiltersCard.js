@@ -4,16 +4,20 @@ import { connect } from "react-redux";
 import {
   setInstructors,
   setInstructorNextSemesterFilterValue,
+  resetInstructorFilters,
 } from "../../../../actions/index";
 
 import { Card, Button, Form } from "react-bootstrap";
 import { Typography, Slider } from "@material-ui/core";
 
 const ProfFiltersCard = (props) => {
-  const [minSemestersTaught, setMinSemestersTaught] = useState(1);
-
   const handleFiltersReset = (e) => {
-    props.setInstructors(props.coursePage.instructors);
+    props.setInstructors(
+      props.coursePage.instructors.filter((instructor) => {
+        return instructor.is_teaching_next_semester === 1;
+      })
+    );
+    props.resetInstructorFilters();
   };
 
   const handleSliderChange = (e, value) => {
@@ -115,4 +119,5 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   setInstructors,
   setInstructorNextSemesterFilterValue,
+  resetInstructorFilters,
 })(ProfFiltersCard);

@@ -141,3 +141,7 @@ export const setInstructorNextSemesterFilterValue = (value, array) => (
 
   // dispatch({ type: SET_INSTRUCTORS_ON_PAGE, payload:  })
 };
+
+export const resetInstructorFilters = () => (dispatch) => {
+  dispatch({ type: SET_INSTRUCTORS_NEXT_SEMESTER_FILTER, payload: 1 });
+};
