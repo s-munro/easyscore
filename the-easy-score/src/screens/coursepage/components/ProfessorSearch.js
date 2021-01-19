@@ -29,18 +29,9 @@ const ProfessorSearch = (props) => {
 
   const handleChange = (e) => {
     setQuery(e.target.value);
-    console.log("query", query);
-    console.log("results", results);
-    console.log(instructorsResults);
-  };
-
-  const handleSubmit = (e) => {
-    console.log(e);
   };
 
   useEffect(() => {
-    console.log("use query", query);
-    console.log("use query results", instructorsResults);
     if (query === "" && props.coursePage.filters.next_sem === 0) {
       props.setInstructors(props.coursePage.instructors);
     } else if (query === "" && props.coursePage.filters.next_sem === 1) {
@@ -65,7 +56,6 @@ const ProfessorSearch = (props) => {
       <FormControl
         value={query}
         onChange={handleChange}
-        onSubmit={handleSubmit}
         placeholder="Search for professor"
         name="profSearch"
         id="searchForm"

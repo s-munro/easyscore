@@ -156,6 +156,7 @@ The easy score is a web applicated intended as a course-planning resource for st
   - [] fuzzy searchbar for professors on coursepage
   - [inProgress] working filters for professors on coursepage
     - [x] needs to filter professors for next semester on render
-    - [] reset and re-filter for next semester on switch change
-  - [] searchform filters affecting filterscard filters on results page
+    - [x] reset and re-filter for next semester on switch change
+    - [] prospective filters? % A's?
+  - [x] searchform filters affecting filterscard filters on results page
   - [] graphs for professors bug
