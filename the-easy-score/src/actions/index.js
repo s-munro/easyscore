@@ -131,9 +131,13 @@ export const resetFilterValues = () => {
 
 // INSTRUCTORS ** Filters-related actions ****************
 
-export const setInstructorNextSemesterFilterValue = (value) => {
-  return {
+export const setInstructorNextSemesterFilterValue = (value, array) => (
+  dispatch
+) => {
+  dispatch({
     type: SET_INSTRUCTORS_NEXT_SEMESTER_FILTER,
     payload: parseInt(value),
-  };
+  });
+
+  // dispatch({ type: SET_INSTRUCTORS_ON_PAGE, payload:  })
 };

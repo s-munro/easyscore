@@ -12,10 +12,6 @@ import { Typography, Slider } from "@material-ui/core";
 const ProfFiltersCard = (props) => {
   const [minSemestersTaught, setMinSemestersTaught] = useState(1);
 
-  useEffect(() => {
-    // applyFilters();
-  }, []);
-
   const handleFiltersReset = (e) => {
     props.setInstructors(props.coursePage.instructors);
   };
@@ -24,30 +20,29 @@ const ProfFiltersCard = (props) => {
     console.log(value);
   };
 
-  const applyFilters = () => {
+  const applyFilters = (semesterValue) => {
     // let availableInstructors = []
 
-    const filterNextSemester = () => {
-      const availableInstructors = props.coursePage.displayedInstructors.filter(
+    const filterNextSemester = (semesterValue) => {
+      const availableInstructors = props.coursePage.instructors.filter(
         (instructor) => {
-          return (
-            instructor.is_teaching_next_semester ===
-            props.coursePage.filters.next_sem
-          );
+          return instructor.is_teaching_next_semester === semesterValue;
         }
       );
       return availableInstructors;
     };
 
-    props.setInstructors(filterNextSemester());
+    props.setInstructors(filterNextSemester(semesterValue));
   };
 
   const handleSwitchChange = (e) => {
     if (props.coursePage.filters.next_sem === 1) {
       props.setInstructorNextSemesterFilterValue(0);
+      applyFilters(0);
     }
     if (props.coursePage.filters.next_sem === 0) {
       props.setInstructorNextSemesterFilterValue(1);
+      applyFilters(1);
     }
   };
 
