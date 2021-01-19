@@ -152,7 +152,8 @@ The easy score is a web applicated intended as a course-planning resource for st
   - [x] pagination for professors on coursepage
   - [x] global state set up for coursepage
   - [x] results sorted by rating
+  - [x] nav searchbar working on course page
   - [] fuzzy searchbar for professors on coursepage
-  - [] working filters for professors on coursepage
+  - [inProgress] working filters for professors on coursepage
   - [] searchform filters affecting filterscard filters on results page
   - [] graphs for professors bug
