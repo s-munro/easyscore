@@ -4,20 +4,17 @@
 
 ** The Easy Score **
 
-A student-oriented web application intended as a course-planning resource.  Offers students the ability to quickly and easily compare courses, professors, and grade distributions, as well as to search for which courses satisfy their target requirements (credit hours, time of day, credit types, etc). The site is being redesigned as a single page react app with this repository as our workpoint.
+A student-oriented web application intended as a course-planning resource. Offers students the ability to quickly and easily compare courses, professors, and grade distributions, as well as to search for which courses satisfy their target requirements (credit hours, time of day, credit types, etc). The site is being redesigned as a single page react app with this repository as our workpoint.
 
-### Original Website: ###
+### Original Website:
 
 ![Original Easyscore - Animated gif demo](https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif)
 https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif
 
-
 ** Contributors: **
+
 - https://github.com/s-munro
 - https://github.com/Shevphi
-
-
-
 
 ### Change Log
 
@@ -179,3 +176,7 @@ https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif
   - [] updating filters in header vs card UX fix (searchresults)
   - [] prospective filters? % A's?
   - [] about and contact pages
+  - [] days for professor render
+  - [] requirements display on course
+  - [] years
+  - [] click on whole coursecard for link
