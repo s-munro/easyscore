@@ -1,5 +1,5 @@
 export const requirementsValues = [
-  { value: "", title: "Any Requirement" },
+  { value: "", title: "Requirements" },
   { value: 0, title: "A&H Credit" },
   { value: 1, title: "Diversity in U.S. Credit" },
   { value: 6, title: "English Composition" },
@@ -13,7 +13,7 @@ export const requirementsValues = [
 ];
 
 export const courseLevelValues = [
-  { value: "", title: "Any Course Level" },
+  { value: "", title: "Course Level" },
   { value: 12, title: "100-299" },
   { value: 8, title: "300-399" },
   { value: 9, title: "400-499" },
@@ -22,7 +22,7 @@ export const courseLevelValues = [
 ];
 
 export const creditHoursValues = [
-  { value: "", title: "Any Credit Hours" },
+  { value: "", title: "Credit Hours" },
   { value: 1, title: "1" },
   { value: 2, title: "2" },
   { value: 3, title: "3" },
@@ -33,7 +33,7 @@ export const creditHoursValues = [
 ];
 
 export const timeofDayValues = [
-  { value: "", title: "Any time of day" },
+  { value: "", title: "Time of Day" },
   { value: 1, title: "Morning (7:00 a.m.–10:59 a.m.)" },
   { value: 2, title: "Afternoon (11 a.m.–4:59 p.m.)" },
   { value: 3, title: "Evening (5 p.m.–11:59 p.m.)" },
