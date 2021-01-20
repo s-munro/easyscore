@@ -7,7 +7,12 @@ const initialChartData = {
     {
       label: "Grades",
       data: [25, 10, 15, 8],
-      backgroundColor: ["#b32727", "#b32727", "#b32727", "#b32727"],
+      backgroundColor: [
+        "#b32727",
+        "#b32727",
+        "#b32727",
+        "#b32727",
+      ],
     },
   ],
 };

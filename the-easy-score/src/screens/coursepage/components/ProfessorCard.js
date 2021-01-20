@@ -27,19 +27,19 @@ const ProfessorCard = ({ instructor }) => {
     <div className="w-100 prof-card">
       <Card>
         <div className="container row">
-          <div className="col">
-            <div className="row">{transformedName}</div>
-            <div className="row">
-              <div className="col align-items-center">
+          <div className="col profCardRightHalf">
+            <div className="row profName">{transformedName}</div>
+            <div className="row profCardContentRightHalf">
+              <div className="col align-items-center doughnutContainer">
                 <ScoreDoughnut easyScore={instructor.rating} />
               </div>
-              <div className="col">
-                <div>Semesters Taught: {instructor.semesters_taught}</div>
+              <div className="col profCardMiddle ">
+                <div>Semesters Taught: <b>{instructor.semesters_taught}</b></div>
                 <div>
-                  Avg. Class Size: {instructor.average_number_of_students}
+                  Avg. Class Size: <b>{instructor.average_number_of_students}</b>
                 </div>
                 <div>
-                  Teaching Next Semester:{" "}
+                  Avail. Next Semester:{" "}
                   {instructor.is_teaching_next_semester === 0 ? (
                     <span>
                       <b>False</b>
