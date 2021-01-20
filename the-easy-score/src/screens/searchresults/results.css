@@ -24,6 +24,10 @@
   border-color: f5222d;
 }
 
+.userInputText {
+  color: #b32727;
+}
+
 /***** COURSE CARDS ********/
 
 .course-card {
@@ -54,6 +58,9 @@
   color: #ffffff;
   font-size: 175%;
   padding: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 5%;
   margin-top: 5%;
   width: 75%;
@@ -80,9 +87,12 @@
 .course-card-course-title {
   color:  #b32727;
   margin-left: 2%;
-  margin-bottom: 5%;
 }
 
+.course-card-click-more {
+  margin-left: 80%;
+  font-size: 85%;
+}
 
 
 

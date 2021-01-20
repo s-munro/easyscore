@@ -4,14 +4,23 @@ import "../course.css";
 const Header = ({ course }) => {
   return (
     <div className="container">
-      <header className="row mt-5">
-        <div className="jumbo-score col-sm">95</div>
+      <header className="row mt-5 testT">
+
+        <div className="jumbo-score ">95</div>
+
         <div className="col-lg">
-          <div className="col-sm">
+
+         <div className="courseName">
             {course.full_code}: {course.name}
-          </div>
-          <div className="col-sm">Credits: {course.credits}</div>
-        </div>
+         </div>
+
+         <div className="course-page-credits-container"> 
+          <div className="course-page-credits-title">Credits: </div>
+          <div className="course-page-credits"> {course.credits}</div>
+         </div> 
+         
+        </div>   
+
         <hr />
       </header>
     </div>

@@ -54,7 +54,7 @@ const ProfessorSearch = (props) => {
   }, [query]);
 
   return (
-    <div>
+    <div className="searchBarContainer">
       <FormControl
         value={query}
         onChange={handleChange}

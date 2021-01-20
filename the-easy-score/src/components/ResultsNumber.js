@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const ResultsNumber = ({
   number,
   results,
@@ -10,18 +11,18 @@ const ResultsNumber = ({
 }) => {
   if (header === 0) {
     return (
-      <div>
+      <div className="showingResultsText">
         Showing {number} {results} for
         <br />
-        <span>'{keyword}'</span>
+        <span className="coursePageKeyword">'{keyword}'</span>
       </div>
     );
   } else {
     return (
-      <div>
+      <div className="showingResultsText">
         Showing {number} {results} for <br />
-        <span>
-          {full_code} {course_name}
+        <span className="coursePageKeyword">
+          '{full_code} {course_name} '
         </span>
       </div>
     );
