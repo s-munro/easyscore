@@ -39,14 +39,14 @@ const ProfessorCard = ({ instructor }) => {
                   Avg. Class Size: <b>{instructor.average_number_of_students}</b>
                 </div>
                 <div>
-                  Avail. Next Semester:{" "}
+                  Avail. Next Term:{" "}
                   {instructor.is_teaching_next_semester === 0 ? (
                     <span>
-                      <b>False</b>
+                      <b>No</b>
                     </span>
                   ) : (
                     <span>
-                      <b>True</b>
+                      <b>Yes</b>
                     </span>
                   )}
                 </div>
