@@ -12,7 +12,7 @@ const ScoreDoughnut = ({ easyScore }) => {
     datasets: [
       {
         data: [score, 100 - score],
-        backgroundColor: ["#914949", "#ffff"],
+        backgroundColor: ["#b32727", "#ffff"],
         hoverBackgroundColor: ["#914949"],
       },
     ],
@@ -36,7 +36,7 @@ const ScoreDoughnut = ({ easyScore }) => {
             font: {
               size: "40",
             },
-            color: "black",
+            color: "#b32727",
           },
         ],
       },

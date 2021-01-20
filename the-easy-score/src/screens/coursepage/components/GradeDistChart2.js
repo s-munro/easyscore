@@ -8,10 +8,10 @@ const initialChartData = {
       label: "Grades",
       data: [25, 10, 15, 8],
       backgroundColor: [
-        "rgba(255, 99, 132, 0.6)",
-        "rgba(255, 99, 132, 0.6)",
-        "rgba(255, 99, 132, 0.6)",
-        "rgba(255, 99, 132, 0.6)",
+        "#b32727",
+        "#b32727",
+        "#b32727",
+        "#b32727",
       ],
     },
   ],
@@ -33,7 +33,7 @@ const GradeDistChart2 = ({ average_grades }) => {
             `${parseInt(average_grades[2])}`,
             `${parseInt(average_grades[3])}`,
           ],
-          backgroundColor: ["#914949", "#914949", "#914949", "#914949"],
+          backgroundColor: ["#b32727", "#b32727", "#b32727", "#b32727"],
         },
       ],
     });
