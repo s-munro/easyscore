@@ -22,7 +22,7 @@ const ResultsNumber = ({
       <div className="showingResultsText">
         Showing {number} {results} for <br />
         <span className="coursePageKeyword">
-          '{full_code} {course_name} '
+          {full_code} {course_name} 
         </span>
       </div>
     );
