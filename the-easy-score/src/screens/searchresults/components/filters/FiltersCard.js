@@ -167,9 +167,10 @@ const FiltersCard = (props) => {
           />
           <br />
           <br />
-
-          <Button onClick={handleFiltersSubmit}>Apply Filters</Button>
-          <Button onClick={handleFiltersReset}>Reset Filters</Button>
+        <div className="filterBtnContainer">
+          <Button className="filterBtn" onClick={handleFiltersSubmit}>Apply</Button>
+          <Button className="filterBtn" onClick={handleFiltersReset}>Reset</Button>
+        </div>  
         </Card.Body>
       </Card>
     </div>
