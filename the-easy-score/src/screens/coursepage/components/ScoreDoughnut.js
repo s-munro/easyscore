@@ -12,12 +12,12 @@ const ScoreDoughnut = ({ easyScore }) => {
     datasets: [
       {
         data: [score, 100 - score],
-        backgroundColor: ["#914949", "#ffff"],
-        hoverBackgroundColor: ["#914949"],
+        backgroundColor: ["#b32727", "#ffff"],
+        hoverBackgroundColor: ["#b32727"],
       },
     ],
   };
-
+  // #914949
   const options = {
     tooltips: {
       enabled: false,
