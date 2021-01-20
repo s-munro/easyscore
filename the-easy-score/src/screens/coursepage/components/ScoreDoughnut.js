@@ -14,10 +14,11 @@ const ScoreDoughnut = ({ easyScore }) => {
         data: [score, 100 - score],
         backgroundColor: ["#b32727", "#ffff"],
         hoverBackgroundColor: ["#914949"],
+
       },
     ],
   };
-
+  // #914949
   const options = {
     tooltips: {
       enabled: false,
