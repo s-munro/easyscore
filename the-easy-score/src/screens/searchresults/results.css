@@ -77,15 +77,15 @@
 }
 
 .course-card-credits {
-  color:  #b32727;
+  color: #b32727;
 }
 
 .course-card-professors-scored {
-  color:  #b32727;
+  color: #b32727;
 }
 
 .course-card-course-title {
-  color:  #b32727;
+  color: #b32727;
   margin-left: 2%;
 }
 
@@ -93,8 +93,6 @@
   margin-left: 80%;
   font-size: 85%;
 }
-
-
 
 /***** No Results Background ********/
 .no-results-background {

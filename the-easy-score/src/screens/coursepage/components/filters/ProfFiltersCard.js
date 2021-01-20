@@ -73,8 +73,26 @@ const ProfFiltersCard = (props) => {
             onChange={handleSwitchChange}
           />
           <br />
+          <Typography id="easy-score-filter" gutterBottom>
+            Easy Score
+          </Typography>
+          <Slider
+            // value={value}
+            // defaultValue={80}
+            // getAriaValueText={valuetext}
+            defaultValue={10}
+            aria-labelledby="easy-score-filter"
+            step={1}
+            min={0}
+            max={60}
+            onChange={handleSliderChange}
+            // marks={marks}
+            valueLabelDisplay="auto"
+          />
+          <br />
+          <br />
           <Typography id="discrete-slider-always" gutterBottom>
-            Avg. Class Size
+            (Grades) Number of A's
           </Typography>
           <Slider
             // value={value}

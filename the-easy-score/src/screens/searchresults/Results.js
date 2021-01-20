@@ -57,8 +57,10 @@ const Results = (props) => {
       <hr></hr>
       <div>
         {props.isLoading === true ? (
-          <div>
-            <Loading />
+          <div className="row w-100 justify-content-center align-items-center">
+            <div className="col justify-content-center align-items-center d-flex justify-content-center align-items-center mt-5">
+              <Loading />
+            </div>
           </div>
         ) : (
           <div className="row mt-5">
@@ -92,7 +94,11 @@ const Results = (props) => {
                   </div>
                 ) : (
                   //********  RENDER NO RESULTS IF NO RESULTS  *******/
-                  <NoResults />
+                  <div className="container">
+                    <div className="ml-10">
+                      <NoResults />
+                    </div>
+                  </div>
                 )}
               </div>
             </div>
