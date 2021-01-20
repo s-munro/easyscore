@@ -23,7 +23,7 @@ const CourseCard = ({ course }) => {
 
           <div className="course-card-professors-scored-container">
             <div className="course-card-professors-scored-title">
-              Professors Scored
+              Professors scored
             </div>
             <div className="course-card-professors-scored">
               {course.instructors.length}
