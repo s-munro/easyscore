@@ -45,8 +45,9 @@
   flex-direction: row;
   align-items: center;
   font-size: 85%;
+  font-weight: 600;
   color: #6c757d;
-  margin-bottom: 4%;
+  margin-bottom: 8%;
 }
 
 .couse-card-top-portion-left-side {
@@ -56,15 +57,16 @@
 .course-card-easyscore {
   background-color: #b32727;
   color: #ffffff;
-  font-size: 175%;
+  font-size: 220%;
+  font-weight: 900;
   padding: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 5%;
   margin-top: 5%;
-  width: 75%;
-  height: 85%;
+  width: 80%;
+  height: 65%;
   box-shadow: 0px 11px 7px -12px #4e4e4e;
   border-radius: 10%;
 }
@@ -87,6 +89,9 @@
 .course-card-course-title {
   color: #b32727;
   margin-left: 2%;
+  margin-bottom: 25%;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
 }
 
 .course-card-click-more {

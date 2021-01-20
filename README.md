@@ -14,7 +14,7 @@ https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif
 ** Contributors: **
 
 - https://github.com/s-munro
-- https://github.com/Shevphi
+- https://github.com/Shevphil
 
 ### Change Log
 
