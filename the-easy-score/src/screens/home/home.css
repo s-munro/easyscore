@@ -10,14 +10,18 @@ main {
   justify-content: center;
   align-items: center;
   height: 80vh;
+  padding-bottom: 20%;
+
 }
 
+
 .logoTitleContainer {
-  margin-bottom: 1%;
+  margin-bottom: 4%;
 }
 
 .logoTitle {
   font-size: 300%;
+  font-weight: bolder;
 }
 
 .scoreLogo {

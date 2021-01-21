@@ -59,10 +59,10 @@ const ProfFiltersCard = (props) => {
     <div className="mb-5">
       <Card>
         <Card.Body>
-          <Card.Title>Filter/Sort</Card.Title>
+          <Card.Title className="filterCardTitle">Filter</Card.Title>
           <br />
           <Card.Subtitle className="mb-2 text-muted">
-            Next Semester Only
+            Avail. Next Term
           </Card.Subtitle>
           <Form.Check
             type="switch"
@@ -92,7 +92,7 @@ const ProfFiltersCard = (props) => {
           <br />
           <br />
           <Typography id="discrete-slider-always" gutterBottom>
-            (Grades) Number of A's
+            Percentage of A's
           </Typography>
           <Slider
             // value={value}
@@ -125,8 +125,8 @@ const ProfFiltersCard = (props) => {
           />
           <br />
           <br />
-          <Button onClick={applyFilters}>Apply Filters</Button>
-          <Button onClick={handleFiltersReset}>Reset Filters</Button>
+          <Button className="filterBtn" onClick={applyFilters}>Apply</Button>
+          <Button className="filterBtn" onClick={handleFiltersReset}>Reset</Button>
         </Card.Body>
       </Card>
     </div>
