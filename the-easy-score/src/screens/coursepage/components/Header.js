@@ -14,9 +14,18 @@ const Header = ({ course }) => {
             {course.full_code}: {course.name}
          </div>
 
+          
+         <div className="reqsTags">
+           <p className="reqsMetText">Requirements met:</p>
+           <div className="reqsContainer">
+            <p className="requirement">Humanties</p>
+            <p className="requirement">Arts</p>
+           </div>
+         </div>
+
          <div className="course-page-credits-container"> 
           <div className="course-page-credits-title">Credits: </div>
-          <div className="course-page-credits"> {course.credits}</div>
+          <div className="course-page-credits"><b> {course.credits}</b></div>
          </div> 
          
         </div>   

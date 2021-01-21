@@ -67,13 +67,13 @@ const Nav = (props) => {
   } else {
     return (
       <nav className="nav-3">
-        <Link to="/">
-          <div>EasyScore</div>
+        <Link className="navBarThreeLogo" to="/">
+          <div><b className="navBarTwoEasy">Easy</b>Score</div>
         </Link>
-        <Link to="/about">
+        <Link className="navBarThreeTextLink" to="/about">
           <div>About</div>
         </Link>
-        <Link to="/contact">
+        <Link className="navBarThreeTextLink" to="/contact">
           <div>Contact</div>
         </Link>
         <SearchForm formType={"nav"} />

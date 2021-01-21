@@ -57,11 +57,11 @@ const Course = (props) => {
                 <ProfFiltersCard />
               </div>
               <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
-                <div className="row">
+                <div className="row w-100 profCardContainer">
                   <Professors currentInstructors={currentInstructors} />
                 </div>
                 {props.isLoading === false ? (
-                  <div className="row">
+                  <div className="row paginationContainer">
                     <TablePagination
                       count={props.coursePage.displayedInstructors.length}
                       page={currentPage}

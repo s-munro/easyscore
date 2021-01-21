@@ -29,6 +29,33 @@
   letter-spacing: 1px;
 }
 
+.reqsTags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.reqsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 1%;
+}
+
+.reqsMetText {
+   font-size: 85%;
+   color:#6c757d;
+}
+
+.requirement {
+  background-color:#6c757d;
+  font-size: 90%;
+  color: #fff;
+  margin-right: 6%;
+  padding: 2%;
+  border-radius: 4px;
+}
+
 .course-page-credits-container {
   display: flex;
   flex-direction: row;
@@ -42,50 +69,78 @@
   margin-right: 1%;
 }
 
+/******RETURNED RESULTS TEXT********/
+
+.showingInstructorsText {
+  color: #6c757d;
+}
+
 /******SEARCH BAR********/
 
 .searchBarContainer {
   margin-top: 3%;
+  margin-right: 5%;
 }
 
 
 /**************PROFESSOR CARD****************/
 
+.profTest {
+  width: 100%;
+}
+
+.spaceTest {
+  margin-left: 15px;
+}
+.profCardContainer {
+  margin-left: 15px;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
 .prof-card {
-  box-shadow: 0px 11px 7px -12px #4e4e4e; 
+  box-shadow: 0px 11px 7px -12px #4e4e4e;
+  width: 113%;
 }
 
 .profName {
   color:black;
   font-weight: bold;
   font-size: 120%;
-  margin-bottom: 4%;
-  margin-left: 2%;
-  margin-top: 4%;
+  margin-top: 1%;
 }
 
-.profCardContentRightHalf {
+.profCardContentContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
 }
 
+
 .doughnutContainer {
-  margin-left: 5%;
-  padding-right: 0;
-  padding-left: 0;
   margin-right: 0;
+  padding-right: 0%;
+  padding-left: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
 }
 
 .profCardMiddle {
   color:  #6c757d;
   font-size: 85%;
-  width: 50%;
-  padding-right: 0;
   padding-left: 0;
-  margin-right: 9%;
+  padding-right: 0;
+  margin-right: 6%;
+  width: 25%;
+  line-height: 155%;
 }
 
+.profCardEnd {
+  padding-bottom: 1%;
+  width: 40%;
+}
 
 
 
