@@ -75,7 +75,7 @@ const SearchForm = (props) => {
             />
             <InputGroup.Append>
               <Button type="submit" onSubmit={handleSubmit} id="basic-addon2">
-                Search
+              Search
               </Button>
             </InputGroup.Append>
           </InputGroup>
