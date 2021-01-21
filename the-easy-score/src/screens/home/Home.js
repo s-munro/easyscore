@@ -14,6 +14,7 @@ const Home = (props) => {
   return (
     <div className="container">
       <main>
+       
         <div className="logoTitleContainer">
           <h1 className="logoTitle">
             <b>Easy</b>
@@ -21,6 +22,7 @@ const Home = (props) => {
           </h1>
         </div>
         <SearchForm nav={false} />
+        
       </main>
     </div>
   );

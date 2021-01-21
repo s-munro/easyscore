@@ -32,13 +32,14 @@
 .filterBtnContainer {
   display: flex;
   flex-direction: row;
-  margin-left: 35%;
 }
+
 .filterBtn {
-  font-size: 90%;
-  font-weight: 700;
-  background-color: #b32727;
-  border: none;
+  font-size: 85%;
+  font-weight: 600;
+  background-color: #fff;
+  color: #b32727;
+  border: .5px solid #b32727;
   margin-right: 8%;
 }
 
@@ -57,9 +58,10 @@
   /* height: 100%; */
   border-radius: 4px;
   color: #222222;
-  box-shadow: 0px 3px 40px #00000020;
+  box-shadow: 0px 3px 20px #00000010;
   padding: 2%;
-  border-bottom:.5px solid lightgray;
+  border-bottom:.5px solid rgba(211, 211, 211, 0.199);
+  border-top:.5px solid rgba(211, 211, 211, 0.199);
 }
 
 .course-card-top-portion {
@@ -68,7 +70,6 @@
   flex-direction: row;
   align-items: center;
   font-size: 85%;
-  font-weight: 600;
   color: #6c757d;
   margin-bottom: 8%;
 }
@@ -81,15 +82,15 @@
   background-color: #b32727;
   color: #ffffff;
   font-size: 220%;
-  font-weight: 900;
+  font-weight:900;
   padding: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 5%;
   margin-top: 5%;
-  width: 80%;
-  height: 65%;
+  width: 80px;
+  height: 80px;
   box-shadow: 0px 11px 7px -12px #4e4e4e;
   border-radius: 10%;
 }
@@ -103,24 +104,28 @@
 
 .course-card-credits {
   color: #b32727;
+  font-weight: 600;
 }
 
 .course-card-professors-scored {
   color: #b32727;
+  font-weight: 600;
 }
 
 .course-card-course-title {
   color: #b32727;
   margin-left: 2%;
-  margin-bottom: 25%;
+  padding-bottom: 10%;
   font-weight: 700;
-  height: 30%;
+  font-size: 105%;
+  height: 70px;
   text-rendering: optimizeLegibility;
 }
 
 .course-card-click-more {
   margin-left: 80%;
   font-size: 85%;
+  margin-top: 25%;
 }
 
 /***** No Results Background ********/
@@ -142,7 +147,7 @@
 }
 
 /********** FILTERS CARD ********/
-.filters-card-container {
-  border: 1px solid black;
+/* .filters-card-container {
+  border:.5px solid rgba(211, 211, 211, 0.199);
   height: 40vh;
-}
+} */
