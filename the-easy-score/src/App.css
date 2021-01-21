@@ -12,7 +12,8 @@
 nav a {
   text-decoration: none;
   color: #9a0000;
-  padding-right: 5%;
+  font-size: 90%;
+  padding-right: 15%;
 }
 
 .nav-bar {
@@ -20,7 +21,10 @@ nav a {
   justify-self: flex-end;
   align-items: center;
   height: 7vh;
-  width: 130%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
 }
 
 /****************** NAVBAR 2 *******************/
