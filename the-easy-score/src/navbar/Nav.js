@@ -53,13 +53,13 @@ const Nav = (props) => {
   } else if (props.navStyle === 2) {
     return (
       <nav className="nav-2">
-        <Link to="/">
-          <div>EasyScore</div>
+        <Link className="navBarTwoLogo" to="/">
+          <div><b className="navBarTwoEasy">Easy</b>Score</div>
         </Link>
-        <Link to="/about">
+        <Link className="navBarTextLink" to="/about">
           <div>About</div>
         </Link>
-        <Link to="/contact">
+        <Link className="navBarTextLink" to="/contact">
           <div>Contact</div>
         </Link>
       </nav>

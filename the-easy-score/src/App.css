@@ -11,7 +11,7 @@
 
 nav a {
   text-decoration: none;
-  color: #9a0000;
+  color: #b32727;
   font-size: 90%;
   padding-right: 15%;
 }
@@ -29,12 +29,34 @@ nav a {
 
 /****************** NAVBAR 2 *******************/
 .nav-2 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 7vh;
   width: 100%;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+
+}
+
+.navBarTwoLogo {
+  margin-right: 65%; 
+  font-size: 145%;
+  font-weight: 500;
+  margin-bottom: 5%;
+  color: #b32727;
+
+}
+
+.navBarTwoEasy {
+  color: black;
+}
+
+.navBarTextLink {
+  text-decoration: none;
+  color: #b32727;
+  font-size: 90%;
+  padding-right: 2%;
+  padding-bottom: 5%;
 }
 
 /****************** NAVBAR 3 *******************/

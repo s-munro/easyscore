@@ -127,15 +127,15 @@ const FiltersCard = (props) => {
     <div className="mb-5">
       <Card>
         <Card.Body>
-          <Card.Title>Filter Results</Card.Title>
+          <Card.Title>Filter results</Card.Title>
           <br />
           <Card.Subtitle className="mb-2 text-muted">
-            Next Semester Only
+            Avail. Next Term
           </Card.Subtitle>
           <Form.Check
             type="switch"
             id="custom-switch"
-            label="Check this switch"
+            // label="Check this switch"
           />
           <br />
           <Card.Subtitle className="mb-2 text-muted">
