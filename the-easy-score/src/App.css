@@ -63,11 +63,24 @@ nav a {
 .nav-3 {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 7vh;
   width: 100%;
   margin: 0;
 }
+
+.navBarThreeLogo {
+  margin-right: 15%;
+  font-size: 145%;
+  font-weight: 500;
+ padding-bottom: 3%;
+  color: #b32727;
+}
+
+.navBarThreeTextLink {
+  padding-right: 3%;
+  font-size: 90%;
+}
+
 
 /************** FOOTER ***********************/
 .footer-container {

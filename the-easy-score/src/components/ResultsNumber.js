@@ -19,8 +19,8 @@ const ResultsNumber = ({
     );
   } else {
     return (
-      <div className="showingResultsText">
-        Showing {number} {results} for <br />
+      <div className="showingInstructorsText">
+        Showing <b>{number}</b> {results} for <br />
         <span className="coursePageKeyword">
           {full_code} {course_name} 
         </span>

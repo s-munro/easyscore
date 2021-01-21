@@ -73,8 +73,8 @@ const ProfFiltersCard = (props) => {
             onChange={handleSwitchChange}
           />
           <br />
-          <Typography id="easy-score-filter" gutterBottom>
-            Easy Score
+          <Typography className="mb-2 text-muted" id="easy-score-filter" gutterBottom>
+             By Easy Score
           </Typography>
           <Slider
             // value={value}
@@ -91,8 +91,8 @@ const ProfFiltersCard = (props) => {
           />
           <br />
           <br />
-          <Typography id="discrete-slider-always" gutterBottom>
-            Percentage of A's
+          <Typography className="mb-2 text-muted" id="discrete-slider-always" gutterBottom>
+             By Percentage of A's
           </Typography>
           <Slider
             // value={value}
@@ -109,8 +109,8 @@ const ProfFiltersCard = (props) => {
           />
           <br />
           <br />
-          <Typography id="slider" gutterBottom>
-            Min. Semesters Taught
+          <Typography className="mb-2 text-muted" id="slider" gutterBottom>
+             By Min. Semesters Taught
           </Typography>
           <Slider
             // getAriaValueText={valueLabelFormat}

@@ -24,21 +24,22 @@ const ProfessorCard = ({ instructor }) => {
   };
 
   return (
-    <div className="w-100 prof-card">
-      <Card>
-        <div className="container row">
-          <div className="col profCardRightHalf">
-            <div className="row profName">{transformedName}</div>
-            <div className="row profCardContentRightHalf">
-              <div className="col align-items-center doughnutContainer">
-                <ScoreDoughnut easyScore={instructor.rating} />
-              </div>
-              <div className="col profCardMiddle ">
-                <div>Semesters Taught: <b>{instructor.semesters_taught}</b></div>
-                <div>
-                  Avg. Class Size: <b>{instructor.average_number_of_students}</b>
-                </div>
-                <div>
+      <Card className="container row prof-card">
+      
+
+          <div className="row profName">{transformedName} 2019-2021</div>
+
+
+          <div className="row profCardContentContainer">
+
+            <div className="align-items-center profCardRightContentHalf doughnutContainer">
+              <ScoreDoughnut easyScore={instructor.rating} />
+            </div>
+
+            <div className="profCardRightContentHalf profCardMiddle">
+              <div>Semesters Taught: <b>{instructor.semesters_taught}</b></div>
+              <div>Avg. Class Size: <b>{instructor.average_number_of_students}</b></div>
+              <div>
                   Avail. Next Term:{" "}
                   {instructor.is_teaching_next_semester === 0 ? (
                     <span>
@@ -49,16 +50,19 @@ const ProfessorCard = ({ instructor }) => {
                       <b>Yes</b>
                     </span>
                   )}
-                </div>
               </div>
             </div>
-          </div>
-          <div className="col">
-            <GradeDistChart2 average_grades={instructor.average_grades} />
-          </div>
-        </div>
+
+            <div className="profCardEnd">
+              <GradeDistChart2 average_grades={instructor.average_grades} />
+            </div>
+
+          </div>   
+
+
+
       </Card>
-    </div>
+
   );
 };
 
