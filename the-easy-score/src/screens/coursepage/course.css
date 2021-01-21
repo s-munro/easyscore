@@ -42,23 +42,6 @@
   margin-right: 1%;
 }
 
-
-
-/****** Returned Results Section ********/
-
-.showingResultsText {
-  color: black;
-  font-weight: bold;
-  font-size: 100%;
-}
-
-.coursePageKeyword {
-  color: #b32727;
-  font-size: 90%;
-}
-
-
-
 /******SEARCH BAR********/
 
 .searchBarContainer {

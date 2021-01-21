@@ -28,6 +28,22 @@
   color: #b32727;
 }
 
+/****** Returned Results Section ********/
+
+.showingResultsText {
+  color: black;
+  font-weight: 500;
+  margin-bottom: 1%;
+  padding-left: 0;
+}
+
+.coursePageKeyword {
+  color: #b32727;
+  font-size: 110%;
+  font-weight: bold;
+
+}
+
 /***** FILTER CARD ********/
 .filterBtnContainer {
   display: flex;
@@ -119,6 +135,7 @@
   font-weight: 700;
   font-size: 105%;
   height: 70px;
+  letter-spacing: .5px;
   text-rendering: optimizeLegibility;
 }
 
@@ -145,6 +162,8 @@
 .results-container {
   margin: 3%;
 }
+
+
 
 /********** FILTERS CARD ********/
 /* .filters-card-container {
