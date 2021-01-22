@@ -1,11 +1,11 @@
 import React from "react";
-import SecondaryNav from "../../navbar/SecondaryNav";
+// import SecondaryNav from "../../navbar/SecondaryNav";
 
 const Contact = () => {
   const handleChange = (e) => {};
   return (
     <div>
-      <SecondaryNav />
+      {/* <SecondaryNav /> */}
       <div>
         <form>
           <label>

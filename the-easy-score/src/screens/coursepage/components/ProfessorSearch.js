@@ -56,6 +56,7 @@ const ProfessorSearch = (props) => {
   return (
     <div className="searchBarContainer">
       <FormControl
+        className="profSearch"
         value={query}
         onChange={handleChange}
         placeholder="Search for professor"

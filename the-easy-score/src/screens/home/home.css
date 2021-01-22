@@ -14,7 +14,6 @@ main {
   padding-bottom: 18%;
   padding-left: 2%;
   padding-right: 2%;
-  border: 1px solid black;
 }
 
 
@@ -43,7 +42,8 @@ main {
 .inputAndBtnContainer {
   border: .5px solid  #d8d6d6;
   border-radius: 4px;
-  padding-left: 1%;
+  padding-left: 0.2%;
+  font-size: 90%;
 }
 
 .homeSrchBtn {
@@ -66,4 +66,8 @@ main {
   align-items: center;
   width: 100%;
   padding: 0;
+}
+
+filterSelect {
+  border: none;
 }

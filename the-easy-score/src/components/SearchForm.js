@@ -111,8 +111,9 @@ const SearchForm = (props) => {
     return (
       <div className="w-100">
         <form onSubmit={handleSubmit}>
-          <InputGroup>
+          <InputGroup className="inputAndBtnContainer">
             <FormControl
+              className="inputContainer"
               value={props.filters.keyword.value}
               onChange={handleChange}
               placeholder="Search for keyword, i.e., 'Biology'"
@@ -120,8 +121,8 @@ const SearchForm = (props) => {
               id="searchForm"
             />
             <InputGroup.Append>
-              <Button type="submit" onSubmit={handleSubmit} id="basic-addon2">
-                Search
+              <Button className="homeSrchBtn" type="submit" onSubmit={handleSubmit} id="basic-addon2">
+              <i class="fa fa-search"></i>
               </Button>
             </InputGroup.Append>
           </InputGroup>

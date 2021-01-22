@@ -35,11 +35,11 @@ nav a {
   justify-content: center;
   align-items: center;
   float: right;
-
+  padding-bottom: 2%;
 }
 
 .navBarTwoLogo {
-  margin-right: 65%; 
+  margin-right: 57%; 
   font-size: 145%;
   font-weight: 500;
   margin-bottom: 5%;
@@ -66,14 +66,15 @@ nav a {
   height: 7vh;
   width: 100%;
   margin: 0;
+  padding-top: 4%;
 }
 
 .navBarThreeLogo {
   margin-right: 15%;
   font-size: 145%;
   font-weight: 500;
-  padding-bottom: 3%;
   color: #b32727;
+  padding-bottom: 2%;
 }
 
 .navBarThreeTextLink {
