@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import 'font-awesome/css/font-awesome.min.css';
+
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";

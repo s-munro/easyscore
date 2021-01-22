@@ -85,18 +85,16 @@
 
 /**************PROFESSOR CARD****************/
 
-.profTest {
-  width: 100%;
+.testTest {
+  width: 105%;
 }
 
-.spaceTest {
-  margin-left: 15px;
-}
 .profCardContainer {
   margin-left: 15px;
   margin-right: 0;
   margin-bottom: 20px;
 }
+
 .prof-card {
   box-shadow: 0px 11px 7px -12px #4e4e4e;
   width: 113%;
@@ -107,39 +105,57 @@
   font-weight: bold;
   font-size: 120%;
   margin-top: 1%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+}
+
+.profYears {
+  margin-left: 2%;
+  color:  #6c757d;
+  font-size: 80%;
+}
+.profDays {
+  margin-left: 2%;
+  color:  #6c757d;
+  font-size: 80%;
 }
 
 .profCardContentContainer {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
   width: 100%;
+  padding-right: 1%;
+  margin-bottom: 2%;
 }
 
+.profCardRightContentHalf {
+  padding-bottom: 2%;
+}
 
 .doughnutContainer {
-  margin-right: 0;
+  margin-right: 5%;
   padding-right: 0%;
   padding-left: 0%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
 }
 
 .profCardMiddle {
   color:  #6c757d;
   font-size: 85%;
   padding-left: 0;
-  padding-right: 0;
-  margin-right: 6%;
-  width: 25%;
+  padding-right: 1%;
+  padding-top: 2%;
   line-height: 155%;
+
 }
 
 .profCardEnd {
   padding-bottom: 1%;
-  width: 40%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 
@@ -147,7 +163,7 @@
 /**************FILTER CARD****************/
 
 .filterCardTitle {
-  font-size: 110%;
+  font-size: 105%;
   color:#6c757d;
 }
 

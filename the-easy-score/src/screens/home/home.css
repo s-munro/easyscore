@@ -10,11 +10,14 @@ main {
   justify-content: center;
   align-items: center;
   height: 80vh;
+  width: 100%;
   padding-bottom: 18%;
-
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 
+/*********  LOGO CONTENT ************/
 .logoTitleContainer {
   margin-bottom: 4%;
 }
@@ -27,4 +30,44 @@ main {
 .scoreLogo {
   color:#b32727;
   font-weight: 500;
+}
+
+
+/********* INPUT AND SEARCH BUTTON ************/
+
+.inputContainer {
+  border: none;
+}
+
+.inputAndBtnContainer {
+  border: .5px solid  #d8d6d6;
+  border-radius: 4px;
+  padding-left: 0.2%;
+  font-size: 90%;
+}
+
+.homeSrchBtn {
+  background-color: #ffffff;
+  border: none;
+  color:#b32727;
+  width: 100%;
+}
+
+
+/********* FILTER BUTTONS ************/
+
+.filters-container {
+  align-content: space-between;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+
+filterSelect {
+  border: none;
 }

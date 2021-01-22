@@ -127,7 +127,7 @@ const FiltersCard = (props) => {
     <div className="mb-5">
       <Card>
         <Card.Body>
-          <Card.Title>Filter results</Card.Title>
+          <Card.Title className="mb-2 text-muted">Filter</Card.Title>
           <br />
           <Card.Subtitle className="mb-2 text-muted">
             Avail. Next Term
@@ -138,9 +138,7 @@ const FiltersCard = (props) => {
             // label="Check this switch"
           />
           <br />
-          <Card.Subtitle className="mb-2 text-muted">
-            Course Level
-          </Card.Subtitle>
+          
           <FilterSelect
             select_id={"courseLevel"}
             handleSelectChange={handleChange}
@@ -148,9 +146,7 @@ const FiltersCard = (props) => {
             selectValue={props.filters.courseLevel.value}
           />
           <br />
-          <Card.Subtitle className="mb-2 text-muted">
-            Credit Hours
-          </Card.Subtitle>
+         
           <FilterSelect
             select_id={"creditHours"}
             handleSelectChange={handleChange}
@@ -158,7 +154,7 @@ const FiltersCard = (props) => {
             selectValue={props.filters.creditHours.value}
           />
           <br />
-          <Card.Subtitle className="mb-2 text-muted">Time of Day</Card.Subtitle>
+          
           <FilterSelect
             select_id={"timeofDay"}
             handleSelectChange={handleChange}

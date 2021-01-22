@@ -24,13 +24,13 @@ const ProfessorCard = ({ instructor }) => {
   };
 
   return (
-      <Card className="container row prof-card">
+      <Card className="container prof-card">
       
 
-          <div className="row profName">{transformedName} 2019-2021</div>
-
-
-          <div className="row profCardContentContainer">
+          <div className="profName">{transformedName} </div>
+          <div className="profYears" >2019-2021</div>
+          <div className="profDays">Teaches: <b>T R F</b></div>
+          <div className="profCardContentContainer">
 
             <div className="align-items-center profCardRightContentHalf doughnutContainer">
               <ScoreDoughnut easyScore={instructor.rating} />
