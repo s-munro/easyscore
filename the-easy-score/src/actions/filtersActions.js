@@ -31,6 +31,7 @@ export const SET_COURSE_PAGE_PERCENTAGE_A_FILTER_VALUE =
   "SET_COURSE_PAGE_PERCENTAGE_A_FILTER_VALUE";
 export const SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE =
   "SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE";
+export const RESET_COURSE_PAGE_FILTERS = "RESET_COURSE_PAGE_FILTERS";
 
 // SEARCHFORM ** SearchForm.js Filter-related actions ***
 
@@ -153,7 +154,7 @@ export const setInstructorNextSemesterFilterValue = (value) => {
 };
 
 export const resetInstructorFilters = () => {
-  return { type: SET_INSTRUCTORS_NEXT_SEMESTER_FILTER, payload: 1 };
+  return { type: RESET_COURSE_PAGE_FILTERS };
 };
 
 export const setInstructorsKeywordFilterValue = (value) => {
