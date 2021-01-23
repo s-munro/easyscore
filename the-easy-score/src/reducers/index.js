@@ -280,7 +280,7 @@ const reducer = (state = initialState, action) => {
           filtersCard: {
             ...state.resultsPage.filtersCard,
             courseLevel: {
-              value: action.payload,
+              value: "",
             },
             next_sem: {
               value: 1,

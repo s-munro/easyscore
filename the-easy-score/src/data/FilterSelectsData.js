@@ -25,6 +25,14 @@ export const courseLevelValues = [
   { value: 13, title: "Honors Level Courses" },
 ];
 
+export const courseLevelFilterValues = [
+  { value: "", title: "Course Level" },
+  { value: 12, title: "100-299" },
+  { value: 8, title: "300-399" },
+  { value: 9, title: "400-499" },
+  { value: 10, title: "Graduate Level Courses" },
+];
+
 export const creditHoursValues = [
   { value: "", title: "Credit Hours" },
   { value: 1, title: "1" },
