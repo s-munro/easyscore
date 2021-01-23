@@ -3,6 +3,7 @@ import "../course.css";
 
 const Header = ({ course }) => {
   const [showFulfilled, setShowFulfilled] = useState(false);
+  const [rating, setRating] = useState(course.rating);
   // const [creditType, setCreditType] = useState("");
 
   useEffect(() => {
@@ -12,12 +13,13 @@ const Header = ({ course }) => {
     if (course.credits_fulfilled) {
       setShowFulfilled(true);
     }
+    setRating(Math.round(course.rating));
   }, [course]);
 
   return (
     <div className="container">
       <header className="row mt-5 testT">
-        <div className="jumbo-score ">95</div>
+        <div className="jumbo-score ">{rating}</div>
 
         <div className="col-lg">
           <div className="courseName">

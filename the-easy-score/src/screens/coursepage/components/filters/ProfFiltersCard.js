@@ -89,7 +89,7 @@ const ProfFiltersCard = (props) => {
             aria-labelledby="easy-score-filter"
             step={1}
             min={0}
-            max={60}
+            max={100}
             onChange={handleSliderChange}
             // marks={marks}
             valueLabelDisplay="auto"
@@ -111,7 +111,7 @@ const ProfFiltersCard = (props) => {
             aria-labelledby="discrete-slider-always"
             step={1}
             min={0}
-            max={60}
+            max={100}
             onChange={handleSliderChange}
             // marks={marks}
             valueLabelDisplay="auto"
@@ -128,7 +128,7 @@ const ProfFiltersCard = (props) => {
             defaultValue={10}
             step={1}
             min={0}
-            max={60}
+            max={100}
             valueLabelDisplay="auto"
             aria-labelledby="non-linear-slider"
           />
