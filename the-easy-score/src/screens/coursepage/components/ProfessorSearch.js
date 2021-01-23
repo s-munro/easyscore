@@ -12,6 +12,7 @@ import {
   setRequirementsFilterValue,
   setInstructorsKeywordFilterValue,
   setInstructorsFuse,
+  fuseResetFiltersExceptNextSemester,
 } from "../../../actions/filtersActions";
 
 import { FormControl } from "react-bootstrap";
@@ -28,6 +29,7 @@ const ProfessorSearch = (props) => {
     : props.coursePage.instructors;
 
   const handleChange = (e) => {
+    props.fuseResetFiltersExceptNextSemester();
     setQuery(e.target.value);
   };
 
@@ -80,4 +82,5 @@ export default connect(mapStateToProps, {
   setInstructorsKeywordFilterValue,
   setInstructorsFuse,
   setInstructors,
+  fuseResetFiltersExceptNextSemester,
 })(ProfessorSearch);

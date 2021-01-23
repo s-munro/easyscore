@@ -32,6 +32,7 @@ export const SET_COURSE_PAGE_PERCENTAGE_A_FILTER_VALUE =
 export const SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE =
   "SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE";
 export const RESET_COURSE_PAGE_FILTERS = "RESET_COURSE_PAGE_FILTERS";
+export const FUSE_RESET_COURSE_PAGE_FILTERS = "FUSE_RESET_COURSE_PAGE_FILTERS";
 
 // SEARCHFORM ** SearchForm.js Filter-related actions ***
 
@@ -145,7 +146,7 @@ export const resetSearchPageFilters = () => {
 
 // COURSES ** Results.js Filters-related actions ****************
 
-// instructor page related actions
+// Course page related actions
 export const setInstructorNextSemesterFilterValue = (value) => {
   return {
     type: SET_INSTRUCTORS_NEXT_SEMESTER_FILTER,
@@ -188,4 +189,8 @@ export const setInstructorMinimumSemestersFilterValue = (value) => {
     type: SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE,
     payload: parseInt(value),
   };
+};
+
+export const fuseResetFiltersExceptNextSemester = () => {
+  return { type: FUSE_RESET_COURSE_PAGE_FILTERS };
 };
