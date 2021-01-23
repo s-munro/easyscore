@@ -194,3 +194,11 @@ https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif
     - [x] set cases for updated new filterscard state in resultsPage
     - [x] requirements selector added to filterscard
     - [x] next_sem filter hooked up to state
+
+  #### Saturday, Jan 23
+
+  - [x] search page filters all functioning and working in conjunction with one another
+  - [x] search page filters now update and re-render course results accordingly on change rather than on submit
+  - [x] professors filters functioning
+    - [] fuzzy search in conjunction with filters
+  - [] professor cards animation on render
