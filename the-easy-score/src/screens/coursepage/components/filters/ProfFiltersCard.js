@@ -56,13 +56,26 @@ const ProfFiltersCard = (props) => {
   };
 
   const handleSliderChange = (e, value) => {
+    console.log("changing");
+    console.log("id", e.target);
     if (e.target.id === "ratingFilter") {
       props.setInstructorEasyScoreFilterValue(value);
     } else if (e.target.id === "percentageAs") {
       props.setInstructorPercentageAsFilterValue(value);
-    } else if (e.target.id === "minSemestersTaught") {
+    } else if (e.target.id == "minSemestersTaught") {
+      console.log("wahoo");
       props.setInstructorMinimumSemestersFilterValue(value);
     }
+  };
+
+  const handleMinSemestersChange = (e, value) => {
+    props.setInstructorMinimumSemestersFilterValue(value);
+  };
+  const handlePercentageAsChange = (e, value) => {
+    props.setInstructorPercentageAsFilterValue(value);
+  };
+  const handleRatingChange = (e, value) => {
+    props.setInstructorEasyScoreFilterValue(value);
   };
 
   useEffect(() => {
@@ -103,13 +116,14 @@ const ProfFiltersCard = (props) => {
           <Slider
             id={"ratingFilter"}
             value={props.coursePage.filters.ratingFilter}
-            defaultValue={props.coursePage.filters.ratingFilter}
+            // defaultValue={1}
             aria-labelledby="easy-score-filter"
             step={1}
             min={0}
             max={100}
             name="ratingFilter"
-            onChangeCommitted={handleSliderChange}
+            onChange={handleRatingChange}
+            // onChangeCommitted={handleRatingChange}
             // marks={marks}
             valueLabelDisplay="auto"
           />
@@ -125,12 +139,13 @@ const ProfFiltersCard = (props) => {
           <Slider
             id={"percentageAs"}
             value={props.coursePage.filters.percentageAs}
-            defaultValue={props.coursePage.filters.percentageAs}
+            // defaultValue={1}
             aria-labelledby="discrete-slider-always"
             step={1}
             min={0}
             max={100}
-            onChange={handleSliderChange}
+            // onChange={handlePercentageAsChange}
+            onChange={handlePercentageAsChange}
             name="percentageAs"
             // marks={marks}
             valueLabelDisplay="auto"
@@ -142,9 +157,10 @@ const ProfFiltersCard = (props) => {
           </Typography>
           <Slider
             id={"minSemestersTaught"}
+            // defaultValue={1}
             value={props.coursePage.filters.minSemestersTaught}
-            defaultValue={props.coursePage.filters.minSemestersTaught}
-            onChange={handleSliderChange}
+            // onChange={handleMinSemestersChange}
+            onChange={handleMinSemestersChange}
             step={1}
             min={0}
             max={100}
