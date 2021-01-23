@@ -26,12 +26,7 @@ import { Card, Button, Form } from "react-bootstrap";
 import "../../results.css";
 
 const FiltersCard = (props) => {
-  console.log(
-    "props.resultsPage.filtersCard.next_sem",
-    props.resultsPage.filtersCard.next_sem
-  );
   const handleSwitchChange = (e) => {
-    console.log("yahoooo!!!");
     if (props.resultsPage.filtersCard.next_sem.value === 1) {
       props.setSearchPageFiltersCourseNextSemester(0);
       // applyFilters(0);
@@ -40,6 +35,7 @@ const FiltersCard = (props) => {
       props.setSearchPageFiltersCourseNextSemester(1);
       // applyFilters(1);
     }
+    // applyFilters();
   };
 
   const handleChange = (e) => {
@@ -55,51 +51,65 @@ const FiltersCard = (props) => {
       props.setSearchPageFiltersCourseRequirements(e.target.value);
     } else {
     }
+    // applyFilters();
   };
 
-  const handleFiltersSubmit = (e) => {
-    e.preventDefault();
+  const applyFilters = () => {
     props.setCurrentPage(1);
 
     props.setCourses(props.courses);
 
-    const timeFilteredCourses = [];
+    // functions all depend on one-another, the filters are all activated by calling filterByRequirements
+    const semesterFilteredCourses = props.courses.filter((course) => {
+      if (props.resultsPage.filtersCard.next_sem.value === 0) {
+        return course.taught_next_semester === false;
+      } else if (props.resultsPage.filtersCard.next_sem.value === 1) {
+        return course.taught_next_semester === true;
+      }
+    });
 
-    const filterByTime = () => {
-      if (props.resultsPage.filtersCard.timeofDay.value !== "") {
-        props.courses.filter((course) =>
-          course.instructors.map((instructor) => {
-            return instructor.timings.map((timing) => {
-              return timing.map((timing) => {
-                if (timing === props.resultsPage.filtersCard.timeofDay.value) {
-                  return timeFilteredCourses.push(course);
-                } else {
-                  return null;
-                }
-              });
-            });
-          })
-        );
-      } else {
-        props.courses.forEach((course) => {
-          timeFilteredCourses.push(course);
+    const filterByTime = (semesterFilteredCourses) => {
+      if (
+        props.resultsPage.filtersCard.timeofDay.value !== "" &&
+        semesterFilteredCourses.length > 0
+      ) {
+        let filteredCourses = semesterFilteredCourses.filter((course) => {
+          let instructorsWithValue = course.instructors.some(({ timings }) =>
+            timings[0].some(
+              (timing) =>
+                timing === props.resultsPage.filtersCard.timeofDay.value
+            )
+          );
+          return instructorsWithValue;
         });
+        // console.log("fc", filteredCourses);
+        return filteredCourses;
+      } else {
+        return semesterFilteredCourses;
       }
     };
 
     const filterByCourseLevel = () => {
-      const lowerLevelCourses = timeFilteredCourses.filter((course) => {
-        return course.code <= 299;
-      });
-      const middleLevelCourses = timeFilteredCourses.filter((course) => {
-        return course.code >= 300 && course.code <= 399;
-      });
-      const upperLevelCourses = timeFilteredCourses.filter((course) => {
-        return course.code >= 400 && course.code <= 499;
-      });
-      const graduateLevelCourses = timeFilteredCourses.filter((course) => {
-        return course.code > 499;
-      });
+      const lowerLevelCourses = filterByTime(semesterFilteredCourses).filter(
+        (course) => {
+          return course.code <= 299;
+        }
+      );
+      const middleLevelCourses = filterByTime(semesterFilteredCourses).filter(
+        (course) => {
+          return course.code >= 300 && course.code <= 399;
+        }
+      );
+      const upperLevelCourses = filterByTime(semesterFilteredCourses).filter(
+        (course) => {
+          return course.code >= 400 && course.code <= 499;
+        }
+      );
+      const graduateLevelCourses = filterByTime(semesterFilteredCourses).filter(
+        (course) => {
+          return course.code > 499;
+        }
+      );
 
       if (props.resultsPage.filtersCard.courseLevel.value === 12) {
         return lowerLevelCourses;
@@ -110,49 +120,72 @@ const FiltersCard = (props) => {
       } else if (props.resultsPage.filtersCard.courseLevel.value === 10) {
         return graduateLevelCourses;
       } else if (props.resultsPage.filtersCard.courseLevel.value === "") {
-        return timeFilteredCourses;
+        return filterByTime(semesterFilteredCourses);
       } else {
-        return timeFilteredCourses;
+        return filterByTime(semesterFilteredCourses);
       }
     };
 
-    const filterByCreditHours = (func) => {
+    const filterByCreditHours = () => {
       // console.log("filtercredithours func: ", func);
       if (props.resultsPage.filtersCard.creditHours.value !== "") {
         // console.log("creditHours state value isnt blank");
-        const filteredCourses = func.filter((course) => {
-          if (
-            course.credits ===
-            parseInt(props.resultsPage.filtersCard.creditHours.value)
-          ) {
-            // console.log("equals");
+        const creditsFilteredCourses = filterByCourseLevel().filter(
+          (course) => {
+            return (
+              course.credits === props.resultsPage.filtersCard.creditHours.value
+            );
           }
-          return (
-            course.credits === props.resultsPage.filtersCard.creditHours.value
-          );
-        });
-        props.setCourses(filteredCourses);
+        );
+        return creditsFilteredCourses;
       } else {
         // console.log("creditHours state is blank");
-        props.setCourses(func);
+        return filterByCourseLevel();
       }
     };
 
-    filterByTime();
-    filterByCreditHours(filterByCourseLevel());
+    const filterByRequirements = () => {
+      if (props.resultsPage.filtersCard.requirements.value !== "") {
+        const requirementsFilteredCourses = filterByCreditHours().filter(
+          (course) => {
+            let desiredCredits = course.credits_fulfilled.some(
+              (credit) =>
+                credit === props.resultsPage.filtersCard.requirements.value
+            );
+            return desiredCredits;
+          }
+        );
+        return props.setCourses(requirementsFilteredCourses);
+      } else return props.setCourses(filterByCreditHours());
+    };
+    filterByRequirements();
   };
 
   const handleFiltersReset = (e) => {
     e.preventDefault();
     props.resetSearchPageFilters();
     props.setCourses(props.courses);
+    // applyFilters();
   };
 
+  // filters reset and are applied on initial page render
   useEffect(() => {
-    console.log("wahoo");
     props.resetSearchPageFilters();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // filters are applied on every handleChange
+  useEffect(() => {
+    applyFilters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    props.resultsPage.filtersCard.next_sem.value,
+    props.resultsPage.filtersCard.courseLevel.value,
+    props.resultsPage.filtersCard.requirements.value,
+    props.resultsPage.filtersCard.creditHours.value,
+    props.resultsPage.filtersCard.timeofDay.value,
+    resetSearchPageFilters,
+  ]);
 
   return (
     <div className="mb-5">
@@ -206,7 +239,7 @@ const FiltersCard = (props) => {
           <br />
           <br />
           <div className="filterBtnContainer">
-            <Button className="filterBtn" onClick={handleFiltersSubmit}>
+            <Button className="filterBtn" onClick={applyFilters}>
               Apply
             </Button>
             <Button className="filterBtn" onClick={handleFiltersReset}>
