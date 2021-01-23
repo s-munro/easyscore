@@ -8,9 +8,13 @@ import "../course.css";
 
 const ProfessorCard = ({ instructor, index }) => {
   const [transformedName, setTransformedName] = useState(instructor.name);
+  const [displayDays, setDisplayDays] = useState(false);
 
   useEffect(() => {
     transformProfessorName(instructor.name);
+    instructor.timings[1].length > 0
+      ? setDisplayDays(true)
+      : setDisplayDays(false);
   }, [instructor]);
 
   const transformProfessorName = (instructorName) => {
@@ -21,12 +25,21 @@ const ProfessorCard = ({ instructor, index }) => {
     setTransformedName(`${firstName}, ${lastNameInitial}.`);
   };
 
+  console.log("days", instructor.timings[1].length);
+
   return (
     <Card className="container prof-card">
       <div className="profName">{transformedName} </div>
-      <div className="profYears">2019-2021</div>
+      <div className="profYears">{instructor.years_taught}</div>
       <div className="profDays">
-        Teaches: <b>T R F</b>
+        Days:{" "}
+        <b>
+          {displayDays
+            ? instructor.timings[1].map((timings) => {
+                return `${timings} `;
+              })
+            : "unavailable"}
+        </b>
       </div>
       <div className="profCardContentContainer">
         <div className="align-items-center profCardRightContentHalf doughnutContainer">
