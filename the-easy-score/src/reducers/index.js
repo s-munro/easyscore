@@ -18,12 +18,13 @@ import {
   SET_TIME_FILTER_VALUE,
   RESET_FILTER_VALUES,
   SET_INSTRUCTORS_NEXT_SEMESTER_FILTER,
-  // Misc
+  // CoursePage Actions
   SET_PROFNAME_KEYWORD_FILTER_VALUE,
   SET_COURSE_PAGE_EASY_SCORE_FILTER_VALUE,
   SET_COURSE_PAGE_PERCENTAGE_A_FILTER_VALUE,
   SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE,
   RESET_COURSE_PAGE_FILTERS,
+  FUSE_RESET_COURSE_PAGE_FILTERS,
   // SearchPage Actions
   SEARCH_PAGE_FILTERS_COURSE_LEVEL_FILTER_VALUE,
   SEARCH_PAGE_FILTERS_COURSE_NEXT_SEMESTER_FILTER_VALUE,
@@ -358,6 +359,19 @@ const reducer = (state = initialState, action) => {
           filters: {
             ...state.coursePage.filters,
             next_sem: 1,
+            ratingFilter: 1,
+            percentageAs: 1,
+            minSemestersTaught: 1,
+          },
+        },
+      };
+    case FUSE_RESET_COURSE_PAGE_FILTERS:
+      return {
+        ...state,
+        coursePage: {
+          ...state.coursePage,
+          filters: {
+            ...state.coursePage.filters,
             ratingFilter: 1,
             percentageAs: 1,
             minSemestersTaught: 1,

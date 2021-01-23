@@ -164,7 +164,7 @@ const ProfFiltersCard = (props) => {
             onChange={handleMinSemestersChange}
             step={1}
             min={0}
-            max={100}
+            max={20}
             name="minSemestersTaught"
             valueLabelDisplay="auto"
             aria-labelledby="non-linear-slider"
