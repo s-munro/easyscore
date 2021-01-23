@@ -46,11 +46,9 @@ const ProfFiltersCard = (props) => {
   const handleSwitchChange = (e) => {
     if (props.coursePage.filters.next_sem === 1) {
       props.setInstructorNextSemesterFilterValue(0);
-      applyFilters(0);
     }
     if (props.coursePage.filters.next_sem === 0) {
       props.setInstructorNextSemesterFilterValue(1);
-      applyFilters(1);
     }
   };
 
