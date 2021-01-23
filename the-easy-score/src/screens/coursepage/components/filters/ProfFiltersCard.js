@@ -134,9 +134,9 @@ const ProfFiltersCard = (props) => {
           />
           <br />
           <br />
-          {/* <Button className="filterBtn" onClick={applyFilters}>
+          <Button className="filterBtn" onClick={applyFilters}>
             Apply
-          </Button> */}
+          </Button>
           <Button className="filterBtn" onClick={handleFiltersReset}>
             Reset
           </Button>
