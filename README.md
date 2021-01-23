@@ -187,3 +187,10 @@ https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif
   - [x] professor days render
         -[] render in order of day of week?
   - [x] professor years taught render
+  - [x] state migration/refactoring for results page filters
+    - [x] reorganized actions into fetchDataActions, filterActions, and index.js actions pages
+    - [x] created resultsPage object on state tree, added filters to resultsPage object
+    - [x] new filtersCard actions added
+    - [x] set cases for updated new filterscard state in resultsPage
+    - [x] requirements selector added to filterscard
+    - [x] next_sem filter hooked up to state
