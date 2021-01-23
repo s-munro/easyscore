@@ -14,7 +14,7 @@ import { setCourses } from "../../../../actions/fetchDataActions";
 
 import {
   requirementsValues,
-  courseLevelValues,
+  courseLevelFilterValues,
   creditHoursValues,
   timeofDayValues,
 } from "../../../../data/FilterSelectsData";
@@ -72,7 +72,9 @@ const FiltersCard = (props) => {
             return instructor.timings.map((timing) => {
               return timing.map((timing) => {
                 if (timing === props.resultsPage.filtersCard.timeofDay.value) {
-                  timeFilteredCourses.push(course);
+                  return timeFilteredCourses.push(course);
+                } else {
+                  return null;
                 }
               });
             });
@@ -108,6 +110,8 @@ const FiltersCard = (props) => {
       } else if (props.resultsPage.filtersCard.courseLevel.value === 10) {
         return graduateLevelCourses;
       } else if (props.resultsPage.filtersCard.courseLevel.value === "") {
+        return timeFilteredCourses;
+      } else {
         return timeFilteredCourses;
       }
     };
@@ -147,6 +151,7 @@ const FiltersCard = (props) => {
   useEffect(() => {
     console.log("wahoo");
     props.resetSearchPageFilters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -171,7 +176,7 @@ const FiltersCard = (props) => {
           <FilterSelect
             select_id={"courseLevel"}
             handleSelectChange={handleChange}
-            selectValues={courseLevelValues}
+            selectValues={courseLevelFilterValues}
             selectValue={props.resultsPage.filtersCard.courseLevel.value}
           />
           <br />
