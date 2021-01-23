@@ -25,6 +25,13 @@ export const SET_INSTRUCTORS_NEXT_SEMESTER_FILTER =
 export const SET_PROFNAME_KEYWORD_FILTER_VALUE =
   "SET_PROFNAME_KEYWORD_FILTER_VALUE";
 export const SET_INSTRUCTORS_ON_PAGE = "SET_INSTRUCTORS_ON_PAGE";
+export const SET_COURSE_PAGE_EASY_SCORE_FILTER_VALUE =
+  "SET_COURSE_PAGE_EASY_SCORE_FILTER_VALUE";
+export const SET_COURSE_PAGE_PERCENTAGE_A_FILTER_VALUE =
+  "SET_COURSE_PAGE_PERCENTAGE_A_FILTER_VALUE";
+export const SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE =
+  "SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE";
+export const RESET_COURSE_PAGE_FILTERS = "RESET_COURSE_PAGE_FILTERS";
 
 // SEARCHFORM ** SearchForm.js Filter-related actions ***
 
@@ -147,7 +154,7 @@ export const setInstructorNextSemesterFilterValue = (value) => {
 };
 
 export const resetInstructorFilters = () => {
-  return { type: SET_INSTRUCTORS_NEXT_SEMESTER_FILTER, payload: 1 };
+  return { type: RESET_COURSE_PAGE_FILTERS };
 };
 
 export const setInstructorsKeywordFilterValue = (value) => {
@@ -160,4 +167,25 @@ export const setInstructorsFuse = (instructors) => {
   // });
 
   return { type: SET_INSTRUCTORS_ON_PAGE, payload: instructors };
+};
+
+export const setInstructorEasyScoreFilterValue = (value) => {
+  return {
+    type: SET_COURSE_PAGE_EASY_SCORE_FILTER_VALUE,
+    payload: parseInt(value),
+  };
+};
+
+export const setInstructorPercentageAsFilterValue = (value) => {
+  return {
+    type: SET_COURSE_PAGE_PERCENTAGE_A_FILTER_VALUE,
+    payload: parseInt(value),
+  };
+};
+
+export const setInstructorMinimumSemestersFilterValue = (value) => {
+  return {
+    type: SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE,
+    payload: parseInt(value),
+  };
 };

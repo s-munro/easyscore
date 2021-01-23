@@ -6,6 +6,9 @@ import { setInstructors } from "../../../../actions/fetchDataActions";
 import {
   setInstructorNextSemesterFilterValue,
   resetInstructorFilters,
+  setInstructorEasyScoreFilterValue,
+  setInstructorPercentageAsFilterValue,
+  setInstructorMinimumSemestersFilterValue,
 } from "../../../../actions/filtersActions";
 
 import { Card, Button, Form } from "react-bootstrap";
@@ -24,37 +27,66 @@ const ProfFiltersCard = (props) => {
   const applyFilters = (semesterValue) => {
     // let availableInstructors = []
 
-    const filterNextSemester = (semesterValue) => {
-      const availableInstructors = props.coursePage.instructors.filter(
-        (instructor) => {
-          return instructor.is_teaching_next_semester === semesterValue;
-        }
+    const availableInstructors = props.coursePage.instructors.filter(
+      (instructor) => {
+        return (
+          instructor.is_teaching_next_semester ===
+          props.coursePage.filters.next_sem
+        );
+      }
+    );
+    const filteredByRating = availableInstructors.filter((instructor) => {
+      return instructor.rating >= props.coursePage.filters.ratingFilter;
+    });
+    const filteredByPercentageAs = filteredByRating.filter((instructor) => {
+      return (
+        instructor.average_grades[0] >= props.coursePage.filters.percentageAs
       );
-      return availableInstructors;
-    };
-
-    props.setInstructors(filterNextSemester(semesterValue));
+    });
+    const filteredByMinSemesters = filteredByPercentageAs.filter(
+      (instructor) => {
+        return (
+          instructor.semesters_taught >=
+          props.coursePage.filters.minSemestersTaught
+        );
+      }
+    );
+    props.setInstructors(filteredByMinSemesters);
   };
 
   const handleSwitchChange = (e) => {
     if (props.coursePage.filters.next_sem === 1) {
       props.setInstructorNextSemesterFilterValue(0);
-      applyFilters(0);
     }
     if (props.coursePage.filters.next_sem === 0) {
       props.setInstructorNextSemesterFilterValue(1);
-      applyFilters(1);
     }
   };
 
-  const handleSliderChange = (e) => {
-    console.log(e);
+  const handleMinSemestersChange = (e, value) => {
+    props.setInstructorMinimumSemestersFilterValue(value);
+  };
+  const handlePercentageAsChange = (e, value) => {
+    props.setInstructorPercentageAsFilterValue(value);
+  };
+  const handleRatingChange = (e, value) => {
+    props.setInstructorEasyScoreFilterValue(value);
   };
 
   useEffect(() => {
     handleFiltersReset();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    applyFilters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    props.coursePage.filters.next_sem,
+    props.coursePage.filters.ratingFilter,
+    props.coursePage.filters.percentageAs,
+    props.coursePage.filters.minSemestersTaught,
+  ]);
 
   return (
     <div className="mb-5">
@@ -65,6 +97,7 @@ const ProfFiltersCard = (props) => {
           <Card.Subtitle className="mb-2 text-muted">
             Avail. Next Term
           </Card.Subtitle>
+
           <Form.Check
             type="switch"
             id="professor-filter-next-semester-switch"
@@ -82,15 +115,16 @@ const ProfFiltersCard = (props) => {
             By Easy Score
           </Typography>
           <Slider
-            // value={value}
-            // defaultValue={80}
-            // getAriaValueText={valuetext}
-            defaultValue={10}
+            id={"ratingFilter"}
+            value={props.coursePage.filters.ratingFilter}
+            // defaultValue={1}
             aria-labelledby="easy-score-filter"
             step={1}
             min={0}
             max={100}
-            onChange={handleSliderChange}
+            name="ratingFilter"
+            onChange={handleRatingChange}
+            // onChangeCommitted={handleRatingChange}
             // marks={marks}
             valueLabelDisplay="auto"
           />
@@ -104,15 +138,16 @@ const ProfFiltersCard = (props) => {
             By Percentage of A's
           </Typography>
           <Slider
-            // value={value}
-            // defaultValue={80}
-            // getAriaValueText={valuetext}
-            defaultValue={10}
+            id={"percentageAs"}
+            value={props.coursePage.filters.percentageAs}
+            // defaultValue={1}
             aria-labelledby="discrete-slider-always"
             step={1}
             min={0}
             max={100}
-            onChange={handleSliderChange}
+            // onChange={handlePercentageAsChange}
+            onChange={handlePercentageAsChange}
+            name="percentageAs"
             // marks={marks}
             valueLabelDisplay="auto"
           />
@@ -122,13 +157,15 @@ const ProfFiltersCard = (props) => {
             By Min. Semesters Taught
           </Typography>
           <Slider
-            // getAriaValueText={valueLabelFormat}
-            // valueLabelFormat={valueLabelFormat}
-            onChange={handleSliderChange}
-            defaultValue={10}
+            id={"minSemestersTaught"}
+            // defaultValue={1}
+            value={props.coursePage.filters.minSemestersTaught}
+            // onChange={handleMinSemestersChange}
+            onChange={handleMinSemestersChange}
             step={1}
             min={0}
             max={100}
+            name="minSemestersTaught"
             valueLabelDisplay="auto"
             aria-labelledby="non-linear-slider"
           />
@@ -156,4 +193,7 @@ export default connect(mapStateToProps, {
   setInstructors,
   setInstructorNextSemesterFilterValue,
   resetInstructorFilters,
+  setInstructorEasyScoreFilterValue,
+  setInstructorPercentageAsFilterValue,
+  setInstructorMinimumSemestersFilterValue,
 })(ProfFiltersCard);

@@ -20,6 +20,10 @@ import {
   SET_INSTRUCTORS_NEXT_SEMESTER_FILTER,
   // Misc
   SET_PROFNAME_KEYWORD_FILTER_VALUE,
+  SET_COURSE_PAGE_EASY_SCORE_FILTER_VALUE,
+  SET_COURSE_PAGE_PERCENTAGE_A_FILTER_VALUE,
+  SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE,
+  RESET_COURSE_PAGE_FILTERS,
   // SearchPage Actions
   SEARCH_PAGE_FILTERS_COURSE_LEVEL_FILTER_VALUE,
   SEARCH_PAGE_FILTERS_COURSE_NEXT_SEMESTER_FILTER_VALUE,
@@ -63,6 +67,9 @@ const initialState = {
     filters: {
       next_sem: 1,
       profName: "",
+      ratingFilter: 1,
+      percentageAs: 1,
+      minSemestersTaught: 1,
     },
   },
   errorText: "",
@@ -298,7 +305,7 @@ const reducer = (state = initialState, action) => {
         },
       };
 
-    // professor page
+    // course page
     case SET_PROFNAME_KEYWORD_FILTER_VALUE:
       return {
         ...state,
@@ -310,7 +317,53 @@ const reducer = (state = initialState, action) => {
           },
         },
       };
-
+    case SET_COURSE_PAGE_EASY_SCORE_FILTER_VALUE:
+      return {
+        ...state,
+        coursePage: {
+          ...state.coursePage,
+          filters: {
+            ...state.coursePage.filters,
+            ratingFilter: action.payload,
+          },
+        },
+      };
+    case SET_COURSE_PAGE_PERCENTAGE_A_FILTER_VALUE:
+      return {
+        ...state,
+        coursePage: {
+          ...state.coursePage,
+          filters: {
+            ...state.coursePage.filters,
+            percentageAs: action.payload,
+          },
+        },
+      };
+    case SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE:
+      return {
+        ...state,
+        coursePage: {
+          ...state.coursePage,
+          filters: {
+            ...state.coursePage.filters,
+            minSemestersTaught: action.payload,
+          },
+        },
+      };
+    case RESET_COURSE_PAGE_FILTERS:
+      return {
+        ...state,
+        coursePage: {
+          ...state.coursePage,
+          filters: {
+            ...state.coursePage.filters,
+            next_sem: 1,
+            ratingFilter: 1,
+            percentageAs: 1,
+            minSemestersTaught: 1,
+          },
+        },
+      };
     case SET_NAV_STYLE:
       return {
         ...state,
