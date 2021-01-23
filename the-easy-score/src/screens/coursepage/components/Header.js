@@ -1,34 +1,87 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../course.css";
 
 const Header = ({ course }) => {
+  const [showFulfilled, setShowFulfilled] = useState(false);
+  // const [creditType, setCreditType] = useState("");
+
+  useEffect(() => {
+    if (!course.credits_fulfilled) {
+      return setShowFulfilled(false);
+    }
+    if (course.credits_fulfilled) {
+      setShowFulfilled(true);
+    }
+  }, [course]);
+
   return (
     <div className="container">
       <header className="row mt-5 testT">
-
         <div className="jumbo-score ">95</div>
 
         <div className="col-lg">
-
-         <div className="courseName">
+          <div className="courseName">
             {course.full_code}: {course.name}
-         </div>
+          </div>
 
-          
-         <div className="reqsTags">
-           <p className="reqsMetText">Requirements met:</p>
-           <div className="reqsContainer">
-            <p className="requirement">Humanties</p>
-            <p className="requirement">Arts</p>
-           </div>
-         </div>
+          <div className="reqsTags">
+            <p className="reqsMetText">Requirements met:</p>
+            <div className="reqsContainer">
+              {showFulfilled === true
+                ? course.credits_fulfilled.map((credit) => {
+                    let creditType = "";
+                    if (credit === 0) {
+                      creditType = "A&H";
+                    } else if (credit === 1) {
+                      creditType = "Diversity in U.S.";
+                    } else if (credit === 2) {
+                      creditType = "S&H Credit";
+                    } else if (credit === 3) {
+                      creditType = "N&M Credit";
+                    } else if (credit === 4) {
+                      creditType = "World Culture";
+                    } else if (credit === 5) {
+                      creditType = "Public Oral Comm.";
+                    } else if (credit === 6) {
+                      creditType = "English Composition";
+                    } else if (credit === 7) {
+                      creditType = "Mathematical Modeling";
+                    } else if (credit === 8) {
+                      creditType = "300+ Level";
+                    } else if (credit === 9) {
+                      creditType = "400+ Level";
+                    } else if (credit === 10) {
+                      creditType = "Grad";
+                    } else if (credit === 11) {
+                      creditType = "Intensive Writing";
+                    } else if (credit === 7) {
+                      creditType = "Mathematical Modeling";
+                    } else if (credit === 12) {
+                      creditType = "100-299 Level";
+                    } else if (credit === 13) {
+                      creditType = "Honors";
+                    } else if (credit === "0GENEDMM") {
+                      creditType = "World Language";
+                    } else return null;
+                    return (
+                      <p key={creditType} className="requirement">
+                        {creditType}
+                      </p>
+                    );
+                  })
+                : null}
+              {/* <p className="requirement">Humanties</p>
+              <p className="requirement">Arts</p> */}
+            </div>
+          </div>
 
-         <div className="course-page-credits-container"> 
-          <div className="course-page-credits-title">Credits: </div>
-          <div className="course-page-credits"><b> {course.credits}</b></div>
-         </div> 
-         
-        </div>   
+          <div className="course-page-credits-container">
+            <div className="course-page-credits-title">Credits: </div>
+            <div className="course-page-credits">
+              <b> {course.credits}</b>
+            </div>
+          </div>
+        </div>
 
         <hr />
       </header>

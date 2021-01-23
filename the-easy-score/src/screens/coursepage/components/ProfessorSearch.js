@@ -31,8 +31,6 @@ const ProfessorSearch = (props) => {
   };
 
   useEffect(() => {
-    // console.log("results", results);
-    // console.log("insres ", instructorsResults);
     if (query === "" && props.coursePage.filters.next_sem === 0) {
       props.setInstructors(props.coursePage.instructors);
     } else if (query === "" && props.coursePage.filters.next_sem === 1) {
@@ -48,7 +46,6 @@ const ProfessorSearch = (props) => {
         })
       );
     } else {
-      // console.log("wahoo");
       props.setInstructorsFuse(instructorsResults);
     }
   }, [query]);

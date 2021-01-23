@@ -28,10 +28,10 @@ const FiltersCard = (props) => {
     if (e.target.name === "keyword") {
       props.setKeywordFilterValue(e.target.value);
     } else if (e.target.name === "courseLevel") {
-      console.log("courselevel etargetname");
+      // console.log("courselevel etargetname");
       props.setLevelFilterValue(e.target.value);
     } else if (e.target.name === "creditHours") {
-      console.log("credithours etargetname");
+      // console.log("credithours etargetname");
       props.setCreditsFilterValue(e.target.value);
     } else if (e.target.name === "timeofDay") {
       props.setTimeFilterValue(e.target.value);
@@ -97,18 +97,18 @@ const FiltersCard = (props) => {
     };
 
     const filterByCreditHours = (func) => {
-      console.log("filtercredithours func: ", func);
+      // console.log("filtercredithours func: ", func);
       if (props.filters.creditHours.value !== "") {
-        console.log("creditHours state value isnt blank");
+        // console.log("creditHours state value isnt blank");
         const filteredCourses = func.filter((course) => {
           if (course.credits === parseInt(props.filters.creditHours.value)) {
-            console.log("equals");
+            // console.log("equals");
           }
           return course.credits === props.filters.creditHours.value;
         });
         props.setCourses(filteredCourses);
       } else {
-        console.log("creditHours state is blank");
+        // console.log("creditHours state is blank");
         props.setCourses(func);
       }
     };
@@ -138,7 +138,7 @@ const FiltersCard = (props) => {
             // label="Check this switch"
           />
           <br />
-          
+
           <FilterSelect
             select_id={"courseLevel"}
             handleSelectChange={handleChange}
@@ -146,7 +146,7 @@ const FiltersCard = (props) => {
             selectValue={props.filters.courseLevel.value}
           />
           <br />
-         
+
           <FilterSelect
             select_id={"creditHours"}
             handleSelectChange={handleChange}
@@ -154,7 +154,7 @@ const FiltersCard = (props) => {
             selectValue={props.filters.creditHours.value}
           />
           <br />
-          
+
           <FilterSelect
             select_id={"timeofDay"}
             handleSelectChange={handleChange}
@@ -163,10 +163,14 @@ const FiltersCard = (props) => {
           />
           <br />
           <br />
-        <div className="filterBtnContainer">
-          <Button className="filterBtn" onClick={handleFiltersSubmit}>Apply</Button>
-          <Button className="filterBtn" onClick={handleFiltersReset}>Reset</Button>
-        </div>  
+          <div className="filterBtnContainer">
+            <Button className="filterBtn" onClick={handleFiltersSubmit}>
+              Apply
+            </Button>
+            <Button className="filterBtn" onClick={handleFiltersReset}>
+              Reset
+            </Button>
+          </div>
         </Card.Body>
       </Card>
     </div>

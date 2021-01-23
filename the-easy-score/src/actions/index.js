@@ -49,8 +49,6 @@ export const fetchCoursePage = (full_code) => (dispatch) => {
   axios
     .get(`https://theeasyscore.com/results&jsonquery/course=${full_code}`)
     .then((res) => {
-      console.log("resdata ", res.data);
-      console.log("resdata instructors ", res.data.course.instructors);
       dispatch({ type: FETCH_COURSE_PAGE_SUCCESS, payload: res.data.course });
       const nextSemesterProfessors = res.data.course.instructors.filter(
         (professor) => {
@@ -91,7 +89,6 @@ export const setInstructorsFuse = (instructors) => {
   // const fuseArray = instructors.map((instructor) => {
   //   return instructor.item;
   // });
-  // console.log("action instructors", instructors);
 
   return { type: SET_INSTRUCTORS_ON_PAGE, payload: instructors };
 };
