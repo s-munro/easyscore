@@ -18,26 +18,21 @@ const initialChartData = {
 };
 
 const GradeDistChart2 = ({ average_grades }) => {
-  const [data, setData] = useState(initialChartData);
-
-  useEffect(() => {
-    console.log("yo!");
-    setData({
-      labels: ["A", "B", "C", "D"],
-      datasets: [
-        {
-          label: "Grade %",
-          data: [
-            `${parseInt(average_grades[0])}`,
-            `${parseInt(average_grades[1])}`,
-            `${parseInt(average_grades[2])}`,
-            `${parseInt(average_grades[3])}`,
-          ],
-          backgroundColor: ["#b32727", "#b32727", "#b32727", "#b32727"],
-        },
-      ],
-    });
-  }, [average_grades]);
+  let data = {
+    labels: ["A", "B", "C", "D"],
+    datasets: [
+      {
+        label: "Grade %",
+        data: [
+          `${parseInt(average_grades[0])}`,
+          `${parseInt(average_grades[1])}`,
+          `${parseInt(average_grades[2])}`,
+          `${parseInt(average_grades[3])}`,
+        ],
+        backgroundColor: ["#b32727", "#b32727", "#b32727", "#b32727"],
+      },
+    ],
+  }
 
   return (
     <div>
