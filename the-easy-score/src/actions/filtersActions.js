@@ -70,38 +70,66 @@ export const resetFilterValues = () => {
 
 // SEARCH PAGE FILTERS
 export const setSearchPageFiltersCourseLevel = (level) => {
-  return {
-    type: SEARCH_PAGE_FILTERS_COURSE_LEVEL_FILTER_VALUE,
-    payload: level,
-  };
+  if (level !== "") {
+    return {
+      type: SEARCH_PAGE_FILTERS_COURSE_LEVEL_FILTER_VALUE,
+      payload: parseInt(level),
+    };
+  } else {
+    return {
+      type: SEARCH_PAGE_FILTERS_COURSE_LEVEL_FILTER_VALUE,
+      payload: level,
+    };
+  }
 };
 
 export const setSearchPageFiltersCourseNextSemester = (nextSemesterValue) => {
   return {
-    SEARCH_PAGE_FILTERS_COURSE_NEXT_SEMESTER_FILTER_VALUE,
+    type: SEARCH_PAGE_FILTERS_COURSE_NEXT_SEMESTER_FILTER_VALUE,
     payload: nextSemesterValue,
   };
 };
 
 export const setSearchPageFiltersCourseRequirements = (requirements) => {
-  return {
-    type: SEARCH_PAGE_FILTERS_COURSE_REQUIREMENTS_VALUE,
-    payload: requirements,
-  };
+  if (requirements !== "") {
+    return {
+      type: SEARCH_PAGE_FILTERS_COURSE_REQUIREMENTS_VALUE,
+      payload: parseInt(requirements),
+    };
+  } else {
+    return {
+      type: SEARCH_PAGE_FILTERS_COURSE_REQUIREMENTS_VALUE,
+      payload: requirements,
+    };
+  }
 };
 
 export const setSearchPageFiltersCourseCreditHours = (creditHours) => {
-  return {
-    type: SEARCH_PAGE_FILTERS_COURSE_CREDIT_HOURS_VALUE,
-    payload: creditHours,
-  };
+  if (creditHours !== "") {
+    return {
+      type: SEARCH_PAGE_FILTERS_COURSE_CREDIT_HOURS_VALUE,
+      payload: parseInt(creditHours),
+    };
+  } else {
+    return {
+      type: SEARCH_PAGE_FILTERS_COURSE_CREDIT_HOURS_VALUE,
+      payload: creditHours,
+    };
+  }
 };
 
 export const setSearchPageFiltersTimeofDay = (timeofDay) => {
-  return {
-    type: SEARCH_PAGE_FILTERS_COURSE_TIME_FILTER_VALUE,
-    payload: timeofDay,
-  };
+  if (timeofDay !== "") {
+    return {
+      type: SEARCH_PAGE_FILTERS_COURSE_TIME_FILTER_VALUE,
+      payload: parseInt(timeofDay),
+    };
+  } else {
+    return {
+      type: SEARCH_PAGE_FILTERS_COURSE_TIME_FILTER_VALUE,
+      payload: timeofDay,
+    };
+  }
 };
 
 export const resetSearchPageFilters = () => {

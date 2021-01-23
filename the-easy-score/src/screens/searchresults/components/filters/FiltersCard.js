@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import {
-  setKeywordFilterValue,
-  setLevelFilterValue,
-  setCreditsFilterValue,
-  resetFilterValues,
-  setTimeFilterValue,
+  setSearchPageFiltersCourseLevel,
+  setSearchPageFiltersCourseNextSemester,
+  setSearchPageFiltersCourseRequirements,
+  setSearchPageFiltersCourseCreditHours,
+  setSearchPageFiltersTimeofDay,
+  resetSearchPageFilters,
 } from "../../../../actions/filtersActions";
 
 import { setCourses } from "../../../../actions/fetchDataActions";
@@ -25,19 +26,33 @@ import { Card, Button, Form } from "react-bootstrap";
 import "../../results.css";
 
 const FiltersCard = (props) => {
+  console.log(
+    "props.resultsPage.filtersCard.next_sem",
+    props.resultsPage.filtersCard.next_sem
+  );
+  const handleSwitchChange = (e) => {
+    console.log("yahoooo!!!");
+    if (props.resultsPage.filtersCard.next_sem.value === 1) {
+      props.setSearchPageFiltersCourseNextSemester(0);
+      // applyFilters(0);
+    }
+    if (props.resultsPage.filtersCard.next_sem.value === 0) {
+      props.setSearchPageFiltersCourseNextSemester(1);
+      // applyFilters(1);
+    }
+  };
+
   const handleChange = (e) => {
-    if (e.target.name === "keyword") {
-      props.setKeywordFilterValue(e.target.value);
-    } else if (e.target.name === "courseLevel") {
+    if (e.target.name === "courseLevel") {
       // console.log("courselevel etargetname");
-      props.setLevelFilterValue(e.target.value);
+      props.setSearchPageFiltersCourseLevel(e.target.value);
     } else if (e.target.name === "creditHours") {
       // console.log("credithours etargetname");
-      props.setCreditsFilterValue(e.target.value);
+      props.setSearchPageFiltersCourseCreditHours(e.target.value);
     } else if (e.target.name === "timeofDay") {
-      props.setTimeFilterValue(e.target.value);
+      props.setSearchPageFiltersTimeofDay(e.target.value);
     } else if (e.target.name === "requirements") {
-      props.setRequirementsFilterValue(e.target.value);
+      props.setSearchPageFiltersCourseRequirements(e.target.value);
     } else {
     }
   };
@@ -51,12 +66,12 @@ const FiltersCard = (props) => {
     const timeFilteredCourses = [];
 
     const filterByTime = () => {
-      if (props.filters.timeofDay.value !== "") {
+      if (props.resultsPage.filtersCard.timeofDay.value !== "") {
         props.courses.filter((course) =>
           course.instructors.map((instructor) => {
             return instructor.timings.map((timing) => {
               return timing.map((timing) => {
-                if (timing === props.filters.timeofDay.value) {
+                if (timing === props.resultsPage.filtersCard.timeofDay.value) {
                   timeFilteredCourses.push(course);
                 }
               });
@@ -84,28 +99,33 @@ const FiltersCard = (props) => {
         return course.code > 499;
       });
 
-      if (props.filters.courseLevel.value === 12) {
+      if (props.resultsPage.filtersCard.courseLevel.value === 12) {
         return lowerLevelCourses;
-      } else if (props.filters.courseLevel.value === 8) {
+      } else if (props.resultsPage.filtersCard.courseLevel.value === 8) {
         return middleLevelCourses;
-      } else if (props.filters.courseLevel.value === 9) {
+      } else if (props.resultsPage.filtersCard.courseLevel.value === 9) {
         return upperLevelCourses;
-      } else if (props.filters.courseLevel.value === 10) {
+      } else if (props.resultsPage.filtersCard.courseLevel.value === 10) {
         return graduateLevelCourses;
-      } else if (props.filters.courseLevel.value === "") {
+      } else if (props.resultsPage.filtersCard.courseLevel.value === "") {
         return timeFilteredCourses;
       }
     };
 
     const filterByCreditHours = (func) => {
       // console.log("filtercredithours func: ", func);
-      if (props.filters.creditHours.value !== "") {
+      if (props.resultsPage.filtersCard.creditHours.value !== "") {
         // console.log("creditHours state value isnt blank");
         const filteredCourses = func.filter((course) => {
-          if (course.credits === parseInt(props.filters.creditHours.value)) {
+          if (
+            course.credits ===
+            parseInt(props.resultsPage.filtersCard.creditHours.value)
+          ) {
             // console.log("equals");
           }
-          return course.credits === props.filters.creditHours.value;
+          return (
+            course.credits === props.resultsPage.filtersCard.creditHours.value
+          );
         });
         props.setCourses(filteredCourses);
       } else {
@@ -120,9 +140,14 @@ const FiltersCard = (props) => {
 
   const handleFiltersReset = (e) => {
     e.preventDefault();
-    props.resetFilterValues();
+    props.resetSearchPageFilters();
     props.setCourses(props.courses);
   };
+
+  useEffect(() => {
+    console.log("wahoo");
+    props.resetSearchPageFilters();
+  }, []);
 
   return (
     <div className="mb-5">
@@ -135,8 +160,11 @@ const FiltersCard = (props) => {
           </Card.Subtitle>
           <Form.Check
             type="switch"
-            id="custom-switch"
-            // label="Check this switch"
+            id="course-filter-next-semester-switch"
+            checked={props.resultsPage.filtersCard.next_sem.value === 1}
+            value={props.resultsPage.filtersCard.next_sem.value}
+            // label="Next Semester Only"
+            onChange={handleSwitchChange}
           />
           <br />
 
@@ -145,6 +173,14 @@ const FiltersCard = (props) => {
             handleSelectChange={handleChange}
             selectValues={courseLevelValues}
             selectValue={props.resultsPage.filtersCard.courseLevel.value}
+          />
+          <br />
+
+          <FilterSelect
+            select_id={"requirements"}
+            handleSelectChange={handleChange}
+            selectValues={requirementsValues}
+            selectValue={props.resultsPage.filtersCard.requirements.value}
           />
           <br />
 
@@ -189,9 +225,10 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   setCourses,
-  setKeywordFilterValue,
-  setLevelFilterValue,
-  setCreditsFilterValue,
-  resetFilterValues,
-  setTimeFilterValue,
+  setSearchPageFiltersCourseLevel,
+  setSearchPageFiltersCourseNextSemester,
+  setSearchPageFiltersCourseRequirements,
+  setSearchPageFiltersCourseCreditHours,
+  setSearchPageFiltersTimeofDay,
+  resetSearchPageFilters,
 })(FiltersCard);
