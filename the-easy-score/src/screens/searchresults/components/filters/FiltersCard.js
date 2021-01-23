@@ -140,6 +140,19 @@ const FiltersCard = (props) => {
     //   }
     // };
 
+    const filterByRequirements = () => {
+      if (props.resultsPage.filtersCard.requirements.value !== "") {
+        const requirementsFilteredCourses = props.courses.filter((course) => {
+          let desiredCredits = course.credits_fulfilled.some(
+            (credit) =>
+              credit === props.resultsPage.filtersCard.requirements.value
+          );
+          return desiredCredits;
+        });
+        return requirementsFilteredCourses;
+      } else return props.courses;
+    };
+    console.log("req", filterByRequirements());
     // filterByTime();
     // filterByCreditHours(filterByCourseLevel());
   };
