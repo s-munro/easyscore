@@ -7,7 +7,7 @@ import {
   setCreditsFilterValue,
   setTimeFilterValue,
   setRequirementsFilterValue,
-} from "../actions/index";
+} from "../actions/filtersActions";
 
 import SearchForm from "../components/SearchForm";
 import "../App.css";

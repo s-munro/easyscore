@@ -1,25 +1,61 @@
+import { SET_NAV_STYLE } from "../actions";
+
 import {
   FETCH_DATA_START,
   FETCH_DATA_SUCCESS,
   FETCH_DATA_FAILURE,
   SET_COURSES_ON_PAGE,
+  FETCH_COURSE_PAGE_SUCCESS,
+  SET_INSTRUCTORS_ON_PAGE,
+} from "../actions/fetchDataActions";
+
+import {
+  // SearchForm.js Actions
   SET_LEVEL_FILTER_VALUE,
   SET_KEYWORD_FILTER_VALUE,
   SET_REQUIREMENTS_FILTER_VALUE,
   SET_CREDITS_FILTER_VALUE,
   SET_TIME_FILTER_VALUE,
   RESET_FILTER_VALUES,
-  SET_NAV_STYLE,
-  FETCH_COURSE_PAGE_SUCCESS,
-  SET_INSTRUCTORS_ON_PAGE,
   SET_INSTRUCTORS_NEXT_SEMESTER_FILTER,
+  // Misc
   SET_PROFNAME_KEYWORD_FILTER_VALUE,
-} from "../actions";
+  // SearchPage Actions
+  SEARCH_PAGE_FILTERS_COURSE_LEVEL_FILTER_VALUE,
+  SEARCH_PAGE_FILTERS_COURSE_NEXT_SEMESTER_FILTER_VALUE,
+  SEARCH_PAGE_FILTERS_COURSE_REQUIREMENTS_VALUE,
+  SEARCH_PAGE_FILTERS_COURSE_CREDIT_HOURS_VALUE,
+  SEARCH_PAGE_FILTERS_COURSE_TIME_FILTER_VALUE,
+  SEARCH_PAGE_FILTERS_RESET,
+} from "../actions/filtersActions.js";
 
 const initialState = {
   isLoading: false,
   courses: [],
   displayedCourses: [],
+  resultsPage: {
+    displayedCourses: [],
+    filtersCard: {
+      courseLevel: {
+        value: "",
+      },
+      requirements: {
+        value: "",
+      },
+      creditHours: {
+        value: "",
+      },
+      timeofDay: {
+        value: "",
+      },
+      keyword: {
+        value: "",
+      },
+      next_sem: {
+        value: 1,
+      },
+    },
+  },
   coursePage: {
     course: [],
     instructors: [],
@@ -61,6 +97,8 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    // fetching data cases
+    // course data
     case FETCH_DATA_START:
       return { ...state, isLoading: true };
     case FETCH_DATA_SUCCESS:
@@ -103,23 +141,14 @@ const reducer = (state = initialState, action) => {
           displayedInstructors: action.payload,
         },
       };
+
+    // filtering cases * searchForm
     case SET_KEYWORD_FILTER_VALUE:
       return {
         ...state,
         filters: {
           ...state.filters,
           keyword: { ...state.filters.keyword, value: action.payload },
-        },
-      };
-    case SET_PROFNAME_KEYWORD_FILTER_VALUE:
-      return {
-        ...state,
-        coursePage: {
-          ...state.coursePage,
-          filters: {
-            ...state.coursePage.filters,
-            profName: action.payload,
-          },
         },
       };
     case SET_LEVEL_FILTER_VALUE:
@@ -169,9 +198,119 @@ const reducer = (state = initialState, action) => {
           creditHours: { ...state.filters.creditHours, value: action.payload },
           timeofDay: { ...state.filters.timeofDay, value: action.payload },
           keyword: { ...state.filters.keyword, value: action.payload },
-          next_sem: { ...state.filters.keyword, value: action.payload },
+          next_sem: { ...state.filters.next_sem, value: action.payload },
         },
       };
+    // filtering cases * searchPage
+    case SEARCH_PAGE_FILTERS_COURSE_LEVEL_FILTER_VALUE:
+      return {
+        ...state,
+        resultsPage: {
+          ...state.resultsPage,
+          filtersCard: {
+            ...state.resultsPage.filtersCard,
+            courseLevel: {
+              ...state.resultsPage.filtersCard.courseLevel,
+              value: action.payload,
+            },
+          },
+        },
+      };
+    case SEARCH_PAGE_FILTERS_COURSE_NEXT_SEMESTER_FILTER_VALUE:
+      return {
+        ...state,
+        resultsPage: {
+          ...state.resultsPage,
+          filtersCard: {
+            ...state.resultsPage.filtersCard,
+            next_sem: {
+              ...state.resultsPage.filtersCard.next_sem,
+              value: action.payload,
+            },
+          },
+        },
+      };
+    case SEARCH_PAGE_FILTERS_COURSE_REQUIREMENTS_VALUE:
+      return {
+        ...state,
+        resultsPage: {
+          ...state.resultsPage,
+          filtersCard: {
+            ...state.resultsPage.filtersCard,
+            requirements: {
+              ...state.resultsPage.filtersCard.requirements,
+              value: action.payload,
+            },
+          },
+        },
+      };
+    case SEARCH_PAGE_FILTERS_COURSE_CREDIT_HOURS_VALUE:
+      return {
+        ...state,
+        resultsPage: {
+          ...state.resultsPage,
+          filtersCard: {
+            ...state.resultsPage.filtersCard,
+            creditHours: {
+              ...state.resultsPage.filtersCard.creditHours,
+              value: action.payload,
+            },
+          },
+        },
+      };
+    case SEARCH_PAGE_FILTERS_COURSE_TIME_FILTER_VALUE:
+      return {
+        ...state,
+        resultsPage: {
+          ...state.resultsPage,
+          filtersCard: {
+            ...state.resultsPage.filtersCard,
+            timeofDay: {
+              ...state.resultsPage.filtersCard.timeofDay,
+              value: action.payload,
+            },
+          },
+        },
+      };
+    case SEARCH_PAGE_FILTERS_RESET:
+      return {
+        ...state,
+        resultsPage: {
+          ...state.resultsPage,
+          filtersCard: {
+            ...state.resultsPage.filtersCard,
+            courseLevel: {
+              value: action.payload,
+            },
+            next_sem: {
+              value: 1,
+            },
+            requirements: {
+              value: "",
+            },
+            creditHours: {
+              value: "",
+            },
+            timeofDay: {
+              value: "",
+            },
+          },
+        },
+      };
+
+    // professor page
+    case SET_PROFNAME_KEYWORD_FILTER_VALUE:
+      return {
+        ...state,
+        coursePage: {
+          ...state.coursePage,
+          filters: {
+            ...state.coursePage.filters,
+            profName: action.payload,
+          },
+        },
+      };
+
     case SET_NAV_STYLE:
       return {
         ...state,
