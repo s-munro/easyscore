@@ -26,12 +26,7 @@ import { Card, Button, Form } from "react-bootstrap";
 import "../../results.css";
 
 const FiltersCard = (props) => {
-  console.log(
-    "props.resultsPage.filtersCard.next_sem",
-    props.resultsPage.filtersCard.next_sem
-  );
   const handleSwitchChange = (e) => {
-    console.log("yahoooo!!!");
     if (props.resultsPage.filtersCard.next_sem.value === 1) {
       props.setSearchPageFiltersCourseNextSemester(0);
       // applyFilters(0);
@@ -40,6 +35,7 @@ const FiltersCard = (props) => {
       props.setSearchPageFiltersCourseNextSemester(1);
       // applyFilters(1);
     }
+    // applyFilters();
   };
 
   const handleChange = (e) => {
@@ -55,14 +51,15 @@ const FiltersCard = (props) => {
       props.setSearchPageFiltersCourseRequirements(e.target.value);
     } else {
     }
+    // applyFilters();
   };
 
-  const handleFiltersSubmit = (e) => {
-    e.preventDefault();
+  const applyFilters = () => {
     props.setCurrentPage(1);
 
     props.setCourses(props.courses);
 
+    // functions all depend on one-another, the filters are all activated by calling filterByRequirements
     const semesterFilteredCourses = props.courses.filter((course) => {
       if (props.resultsPage.filtersCard.next_sem.value === 0) {
         return course.taught_next_semester === false;
@@ -168,12 +165,23 @@ const FiltersCard = (props) => {
     e.preventDefault();
     props.resetSearchPageFilters();
     props.setCourses(props.courses);
+    // applyFilters();
   };
 
   useEffect(() => {
     props.resetSearchPageFilters();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    applyFilters();
+  }, [
+    props.resultsPage.filtersCard.next_sem.value,
+    props.resultsPage.filtersCard.courseLevel.value,
+    props.resultsPage.filtersCard.requirements.value,
+    props.resultsPage.filtersCard.creditHours.value,
+    props.resultsPage.filtersCard.timeofDay.value,
+  ]);
 
   return (
     <div className="mb-5">
@@ -227,7 +235,7 @@ const FiltersCard = (props) => {
           <br />
           <br />
           <div className="filterBtnContainer">
-            <Button className="filterBtn" onClick={handleFiltersSubmit}>
+            <Button className="filterBtn" onClick={applyFilters}>
               Apply
             </Button>
             <Button className="filterBtn" onClick={handleFiltersReset}>
