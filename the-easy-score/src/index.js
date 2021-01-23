@@ -10,7 +10,7 @@ import thunk from "redux-thunk";
 
 import reducer from "./reducers";
 
-// import "antd/dist/antd.css";
+import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 

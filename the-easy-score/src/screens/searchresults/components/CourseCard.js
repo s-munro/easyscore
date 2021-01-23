@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../results.css";
 
-import CourseCardInstructor from "./CourseCardInstructor";
-
 const CourseCard = ({ course }) => {
   const score = Math.round(course.rating);
 

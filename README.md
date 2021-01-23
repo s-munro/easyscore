@@ -176,7 +176,14 @@ https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif
   - [] updating filters in header vs card UX fix (searchresults)
   - [] prospective filters? % A's?
   - [] about and contact pages
-  - [] days for professor render
-  - [] requirements display on course
-  - [] years
+  - [x] days for professor render
+  - [x] requirements display on course
+  - [x] years
   - [] click on whole coursecard for link
+
+  #### Friday, Jan 22
+
+  - [x] course fulfilled requirements dynamically render on course header
+  - [x] professor days render
+        -[] render in order of day of week?
+  - [x] professor years taught render

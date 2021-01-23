@@ -1,8 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Footer from "./footer/Footer";
-
 import Contact from "./screens/contact/Contact";
 import About from "./screens/about/About";
 import Course from "./screens/coursepage/Course";
