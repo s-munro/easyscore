@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
-import { fetchResults, setCourses, setNavStyle } from "../../actions";
+import { fetchResults, setCourses } from "../../actions/fetchDataActions";
+import { setNavStyle } from "../../actions/";
 import { useParams } from "react-router-dom";
 
 import { filterToKeyword } from "./hooks/";

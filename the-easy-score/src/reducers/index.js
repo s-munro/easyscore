@@ -1,25 +1,52 @@
+import { SET_NAV_STYLE } from "../actions";
+
 import {
   FETCH_DATA_START,
   FETCH_DATA_SUCCESS,
   FETCH_DATA_FAILURE,
   SET_COURSES_ON_PAGE,
+  FETCH_COURSE_PAGE_SUCCESS,
+  SET_INSTRUCTORS_ON_PAGE,
+} from "../actions/fetchDataActions";
+
+import {
   SET_LEVEL_FILTER_VALUE,
   SET_KEYWORD_FILTER_VALUE,
   SET_REQUIREMENTS_FILTER_VALUE,
   SET_CREDITS_FILTER_VALUE,
   SET_TIME_FILTER_VALUE,
   RESET_FILTER_VALUES,
-  SET_NAV_STYLE,
-  FETCH_COURSE_PAGE_SUCCESS,
-  SET_INSTRUCTORS_ON_PAGE,
   SET_INSTRUCTORS_NEXT_SEMESTER_FILTER,
   SET_PROFNAME_KEYWORD_FILTER_VALUE,
-} from "../actions";
+} from "../actions/filtersActions.js";
 
 const initialState = {
   isLoading: false,
   courses: [],
   displayedCourses: [],
+  resultsPage: {
+    displayedCourses: [],
+    filtersCard: {
+      courseLevel: {
+        value: "",
+      },
+      requirements: {
+        value: "",
+      },
+      creditHours: {
+        value: "",
+      },
+      timeofDay: {
+        value: "",
+      },
+      keyword: {
+        value: "",
+      },
+      next_sem: {
+        value: "",
+      },
+    },
+  },
   coursePage: {
     course: [],
     instructors: [],

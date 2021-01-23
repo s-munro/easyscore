@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
+import { setInstructors } from "../../../../actions/fetchDataActions";
+
 import {
-  setInstructors,
   setInstructorNextSemesterFilterValue,
   resetInstructorFilters,
-} from "../../../../actions/index";
+} from "../../../../actions/filtersActions";
 
 import { Card, Button, Form } from "react-bootstrap";
 import { Typography, Slider } from "@material-ui/core";

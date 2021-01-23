@@ -2,13 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 
 import {
-  setCourses,
   setKeywordFilterValue,
   setLevelFilterValue,
   setCreditsFilterValue,
   resetFilterValues,
   setTimeFilterValue,
-} from "../../../../actions/index";
+} from "../../../../actions/filtersActions";
+
+import { setCourses } from "../../../../actions/fetchDataActions";
 
 import {
   requirementsValues,
@@ -143,7 +144,7 @@ const FiltersCard = (props) => {
             select_id={"courseLevel"}
             handleSelectChange={handleChange}
             selectValues={courseLevelValues}
-            selectValue={props.filters.courseLevel.value}
+            selectValue={props.resultsPage.filtersCard.courseLevel.value}
           />
           <br />
 
@@ -151,7 +152,7 @@ const FiltersCard = (props) => {
             select_id={"creditHours"}
             handleSelectChange={handleChange}
             selectValues={creditHoursValues}
-            selectValue={props.filters.creditHours.value}
+            selectValue={props.resultsPage.filtersCard.creditHours.value}
           />
           <br />
 
@@ -159,7 +160,7 @@ const FiltersCard = (props) => {
             select_id={"timeofDay"}
             handleSelectChange={handleChange}
             selectValues={timeofDayValues}
-            selectValue={props.filters.timeofDay.value}
+            selectValue={props.resultsPage.filtersCard.timeofDay.value}
           />
           <br />
           <br />
@@ -182,6 +183,7 @@ const mapStateToProps = (state) => {
     courses: state.courses,
     displayedCourses: state.displayedCourses,
     filters: state.filters,
+    resultsPage: state.resultsPage,
   };
 };
 

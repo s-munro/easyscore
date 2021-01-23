@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import Fuse from "fuse.js";
 
+import { setInstructors } from "../../../actions/fetchDataActions";
+
 import {
   setKeywordFilterValue,
   setLevelFilterValue,
@@ -10,8 +12,7 @@ import {
   setRequirementsFilterValue,
   setInstructorsKeywordFilterValue,
   setInstructorsFuse,
-  setInstructors,
-} from "../../../actions";
+} from "../../../actions/filtersActions";
 
 import { FormControl } from "react-bootstrap";
 
