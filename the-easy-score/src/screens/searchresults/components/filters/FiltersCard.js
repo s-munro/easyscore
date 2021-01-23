@@ -165,7 +165,6 @@ const FiltersCard = (props) => {
     e.preventDefault();
     props.resetSearchPageFilters();
     props.setCourses(props.courses);
-    // applyFilters();
   };
 
   // filters reset and are applied on initial page render
@@ -239,9 +238,9 @@ const FiltersCard = (props) => {
           <br />
           <br />
           <div className="filterBtnContainer">
-            <Button className="filterBtn" onClick={applyFilters}>
+            {/* <Button className="filterBtn" onClick={applyFilters}>
               Apply
-            </Button>
+            </Button> */}
             <Button className="filterBtn" onClick={handleFiltersReset}>
               Reset
             </Button>
