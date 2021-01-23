@@ -32,14 +32,18 @@ const ProfessorCard = ({ instructor, index }) => {
       <div className="profName">{transformedName} </div>
       <div className="profYears">{instructor.years_taught}</div>
       <div className="profDays">
-        Days:{" "}
-        <b>
-          {displayDays
-            ? instructor.timings[1].map((timings) => {
-                return `${timings} `;
-              })
-            : "unavailable"}
-        </b>
+        {instructor.is_teaching_next_semester === 1 ? (
+          <div>
+            Days:{" "}
+            <b>
+              {displayDays
+                ? instructor.timings[1].map((timings) => {
+                    return `${timings} `;
+                  })
+                : "unavailable"}
+            </b>
+          </div>
+        ) : null}
       </div>
       <div className="profCardContentContainer">
         <div className="align-items-center profCardRightContentHalf doughnutContainer">
