@@ -28,15 +28,6 @@ const SearchForm = (props) => {
 
   useEffect(() => {
     props.resetFilterValues();
-    // const placeholderValues = [
-    //   "Search for keyword, i.e., 'Biology'",
-    //   "Search for keyword, i.e., 'Chem 117",
-    // ];
-    // let i = 0;
-    // setInterval(() => {
-    //   document.getElementById("searchForm").placeholder = placeholderValues[i];
-    //   i = (i + 1) % placeholderValues.length;
-    // }, 2000);
   }, []);
 
   const handleChange = (e) => {
@@ -72,11 +63,16 @@ const SearchForm = (props) => {
               onChange={handleChange}
               placeholder="Search for keyword, i.e., 'Biology'"
               name="keyword"
-              id="searchForm"
+              id="searchForm-nonNav"
             />
             <InputGroup.Append>
-              <Button className="homeSrchBtn" type="submit" onSubmit={handleSubmit} id="basic-addon2">
-              <i class="fa fa-search"></i>
+              <Button
+                className="homeSrchBtn"
+                type="submit"
+                onSubmit={handleSubmit}
+                id="basic-addon2"
+              >
+                <i className="fa fa-search"></i>
               </Button>
             </InputGroup.Append>
           </InputGroup>
@@ -118,11 +114,16 @@ const SearchForm = (props) => {
               onChange={handleChange}
               placeholder="Search for keyword, i.e., 'Biology'"
               name="keyword"
-              id="searchForm"
+              id="searchForm-nav"
             />
             <InputGroup.Append>
-              <Button className="homeSrchBtn" type="submit" onSubmit={handleSubmit} id="basic-addon2">
-              <i class="fa fa-search"></i>
+              <Button
+                className="homeSrchBtn"
+                type="submit"
+                onSubmit={handleSubmit}
+                id="basic-addon2"
+              >
+                <i className="fa fa-search"></i>
               </Button>
             </InputGroup.Append>
           </InputGroup>

@@ -2,14 +2,18 @@ export const requirementsValues = [
   { value: "", title: "Requirements" },
   { value: 0, title: "A&H Credit" },
   { value: 1, title: "Diversity in U.S. Credit" },
-  { value: 6, title: "English Composition" },
-  { value: 11, title: "Intensive Writing" },
-  { value: 7, title: "Mathematical Model" },
-  { value: 3, title: "N&M Credit" },
-  { value: 5, title: "Public Oral Communication" },
   { value: 2, title: "S&H Credit" },
+  { value: 3, title: "N&M Credit" },
   { value: 4, title: "World Culture Credit" },
+  { value: 5, title: "Public Oral Communication" },
+  { value: 6, title: "English Composition" },
+  { value: 7, title: "Mathematical Model" },
+  { value: 8, title: "300+" },
+  { value: 9, title: "400+" },
+  { value: 10, title: "Grad" },
+  { value: 11, title: "Intensive Writing" },
   { value: "0GENEDMM", title: "World Landuage Class" },
+  { value: 12, title: "100-299" },
 ];
 
 export const courseLevelValues = [
