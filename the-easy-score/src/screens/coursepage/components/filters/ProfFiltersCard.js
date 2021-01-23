@@ -24,16 +24,23 @@ const ProfFiltersCard = (props) => {
   const applyFilters = (semesterValue) => {
     // let availableInstructors = []
 
-    const filterNextSemester = (semesterValue) => {
-      const availableInstructors = props.coursePage.instructors.filter(
-        (instructor) => {
-          return instructor.is_teaching_next_semester === semesterValue;
-        }
-      );
-      return availableInstructors;
-    };
+    const availableInstructors = props.coursePage.instructors.filter(
+      (instructor) => {
+        return (
+          instructor.is_teaching_next_semester ===
+          props.coursePage.filters.next_sem
+        );
+      }
+    );
 
-    props.setInstructors(filterNextSemester(semesterValue));
+    props.setInstructors(availableInstructors);
+
+    const filterByEasyScore = () => {
+      const filteredByRating = availableInstructors.filter((instructor) => {
+        return instructor.rating >= props.coursePage.filters.ratingFilter;
+      });
+      return filteredByRating;
+    };
   };
 
   const handleSwitchChange = (e) => {
@@ -55,6 +62,10 @@ const ProfFiltersCard = (props) => {
     handleFiltersReset();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    applyFilters();
+  }, [props.coursePage.filters.next_sem]);
 
   return (
     <div className="mb-5">
