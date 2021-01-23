@@ -35,15 +35,23 @@ const ProfFiltersCard = (props) => {
         );
       }
     );
-
-    props.setInstructors(availableInstructors);
-
-    const filterByEasyScore = () => {
-      const filteredByRating = availableInstructors.filter((instructor) => {
-        return instructor.rating >= props.coursePage.filters.ratingFilter;
-      });
-      return filteredByRating;
-    };
+    const filteredByRating = availableInstructors.filter((instructor) => {
+      return instructor.rating >= props.coursePage.filters.ratingFilter;
+    });
+    const filteredByPercentageAs = filteredByRating.filter((instructor) => {
+      return (
+        instructor.average_grades[0] >= props.coursePage.filters.percentageAs
+      );
+    });
+    const filteredByMinSemesters = filteredByPercentageAs.filter(
+      (instructor) => {
+        return (
+          instructor.semesters_taught >=
+          props.coursePage.filters.minSemestersTaught
+        );
+      }
+    );
+    props.setInstructors(filteredByMinSemesters);
   };
 
   const handleSwitchChange = (e) => {
@@ -52,19 +60,6 @@ const ProfFiltersCard = (props) => {
     }
     if (props.coursePage.filters.next_sem === 0) {
       props.setInstructorNextSemesterFilterValue(1);
-    }
-  };
-
-  const handleSliderChange = (e, value) => {
-    console.log("changing");
-    console.log("id", e.target);
-    if (e.target.id === "ratingFilter") {
-      props.setInstructorEasyScoreFilterValue(value);
-    } else if (e.target.id === "percentageAs") {
-      props.setInstructorPercentageAsFilterValue(value);
-    } else if (e.target.id == "minSemestersTaught") {
-      console.log("wahoo");
-      props.setInstructorMinimumSemestersFilterValue(value);
     }
   };
 
@@ -85,7 +80,13 @@ const ProfFiltersCard = (props) => {
 
   useEffect(() => {
     applyFilters();
-  }, [props.coursePage.filters.next_sem]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    props.coursePage.filters.next_sem,
+    props.coursePage.filters.ratingFilter,
+    props.coursePage.filters.percentageAs,
+    props.coursePage.filters.minSemestersTaught,
+  ]);
 
   return (
     <div className="mb-5">
