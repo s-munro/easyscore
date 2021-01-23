@@ -63,83 +63,85 @@ const FiltersCard = (props) => {
 
     props.setCourses(props.courses);
 
-    const timeFilteredCourses = [];
+    // const semesterFilteredCourses = props.courses.filter((course) => {
+    //   if (props.resultsPage.filtersCard.next_sem.value === 0) {
+    //     return course.taught_next_semester === false;
+    //   } else if (props.resultsPage.filtersCard.next_sem.value === 1) {
+    //     return course.taught_next_semester === true;
+    //   }
+    // });
+    // props.setCourses(semesterFilteredCourses);
 
-    const filterByTime = () => {
-      if (props.resultsPage.filtersCard.timeofDay.value !== "") {
-        props.courses.filter((course) =>
-          course.instructors.map((instructor) => {
-            return instructor.timings.map((timing) => {
-              return timing.map((timing) => {
-                if (timing === props.resultsPage.filtersCard.timeofDay.value) {
-                  return timeFilteredCourses.push(course);
-                } else {
-                  return null;
-                }
-              });
-            });
-          })
-        );
-      } else {
-        props.courses.forEach((course) => {
-          timeFilteredCourses.push(course);
-        });
-      }
-    };
+    // const filterByTime = () => {
+    //   if (props.resultsPage.filtersCard.timeofDay.value !== "") {
+    //     let filteredCourses = props.courses.filter((course) => {
+    //       let instructorsWithValue = course.instructors.some(({ timings }) =>
+    //         timings[0].some(
+    //           (timing) =>
+    //             timing === props.resultsPage.filtersCard.timeofDay.value
+    //         )
+    //       );
+    //       return instructorsWithValue;
+    //     });
+    //     return filteredCourses;
+    //   } else {
+    //     return props.courses;
+    //   }
+    // };
 
-    const filterByCourseLevel = () => {
-      const lowerLevelCourses = timeFilteredCourses.filter((course) => {
-        return course.code <= 299;
-      });
-      const middleLevelCourses = timeFilteredCourses.filter((course) => {
-        return course.code >= 300 && course.code <= 399;
-      });
-      const upperLevelCourses = timeFilteredCourses.filter((course) => {
-        return course.code >= 400 && course.code <= 499;
-      });
-      const graduateLevelCourses = timeFilteredCourses.filter((course) => {
-        return course.code > 499;
-      });
+    // const filterByCourseLevel = () => {
+    //   const lowerLevelCourses = timeFilteredCourses.filter((course) => {
+    //     return course.code <= 299;
+    //   });
+    //   const middleLevelCourses = timeFilteredCourses.filter((course) => {
+    //     return course.code >= 300 && course.code <= 399;
+    //   });
+    //   const upperLevelCourses = timeFilteredCourses.filter((course) => {
+    //     return course.code >= 400 && course.code <= 499;
+    //   });
+    //   const graduateLevelCourses = timeFilteredCourses.filter((course) => {
+    //     return course.code > 499;
+    //   });
 
-      if (props.resultsPage.filtersCard.courseLevel.value === 12) {
-        return lowerLevelCourses;
-      } else if (props.resultsPage.filtersCard.courseLevel.value === 8) {
-        return middleLevelCourses;
-      } else if (props.resultsPage.filtersCard.courseLevel.value === 9) {
-        return upperLevelCourses;
-      } else if (props.resultsPage.filtersCard.courseLevel.value === 10) {
-        return graduateLevelCourses;
-      } else if (props.resultsPage.filtersCard.courseLevel.value === "") {
-        return timeFilteredCourses;
-      } else {
-        return timeFilteredCourses;
-      }
-    };
+    // if (props.resultsPage.filtersCard.courseLevel.value === 12) {
+    //   return lowerLevelCourses;
+    // } else if (props.resultsPage.filtersCard.courseLevel.value === 8) {
+    //   return middleLevelCourses;
+    // } else if (props.resultsPage.filtersCard.courseLevel.value === 9) {
+    //   return upperLevelCourses;
+    // } else if (props.resultsPage.filtersCard.courseLevel.value === 10) {
+    //   return graduateLevelCourses;
+    // } else if (props.resultsPage.filtersCard.courseLevel.value === "") {
+    //   return timeFilteredCourses;
+    // } else {
+    //   return timeFilteredCourses;
+    // }
+    // };
 
-    const filterByCreditHours = (func) => {
-      // console.log("filtercredithours func: ", func);
-      if (props.resultsPage.filtersCard.creditHours.value !== "") {
-        // console.log("creditHours state value isnt blank");
-        const filteredCourses = func.filter((course) => {
-          if (
-            course.credits ===
-            parseInt(props.resultsPage.filtersCard.creditHours.value)
-          ) {
-            // console.log("equals");
-          }
-          return (
-            course.credits === props.resultsPage.filtersCard.creditHours.value
-          );
-        });
-        props.setCourses(filteredCourses);
-      } else {
-        // console.log("creditHours state is blank");
-        props.setCourses(func);
-      }
-    };
+    // const filterByCreditHours = (func) => {
+    //   // console.log("filtercredithours func: ", func);
+    //   if (props.resultsPage.filtersCard.creditHours.value !== "") {
+    //     // console.log("creditHours state value isnt blank");
+    //     const filteredCourses = func.filter((course) => {
+    //       if (
+    //         course.credits ===
+    //         parseInt(props.resultsPage.filtersCard.creditHours.value)
+    //       ) {
+    //         // console.log("equals");
+    //       }
+    //       return (
+    //         course.credits === props.resultsPage.filtersCard.creditHours.value
+    //       );
+    //     });
+    //     props.setCourses(filteredCourses);
+    //   } else {
+    //     // console.log("creditHours state is blank");
+    //     props.setCourses(func);
+    //   }
+    // };
 
-    filterByTime();
-    filterByCreditHours(filterByCourseLevel());
+    // filterByTime();
+    // filterByCreditHours(filterByCourseLevel());
   };
 
   const handleFiltersReset = (e) => {
@@ -149,7 +151,6 @@ const FiltersCard = (props) => {
   };
 
   useEffect(() => {
-    console.log("wahoo");
     props.resetSearchPageFilters();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
