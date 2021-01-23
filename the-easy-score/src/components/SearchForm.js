@@ -28,7 +28,7 @@ const SearchForm = (props) => {
 
   useEffect(() => {
     props.resetFilterValues();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleChange = (e) => {
     if (e.target.name === "keyword") {

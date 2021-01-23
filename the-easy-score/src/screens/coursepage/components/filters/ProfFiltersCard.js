@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import {
@@ -53,6 +52,7 @@ const ProfFiltersCard = (props) => {
 
   useEffect(() => {
     handleFiltersReset();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -73,8 +73,12 @@ const ProfFiltersCard = (props) => {
             onChange={handleSwitchChange}
           />
           <br />
-          <Typography className="mb-2 text-muted" id="easy-score-filter" gutterBottom>
-             By Easy Score
+          <Typography
+            className="mb-2 text-muted"
+            id="easy-score-filter"
+            gutterBottom
+          >
+            By Easy Score
           </Typography>
           <Slider
             // value={value}
@@ -91,8 +95,12 @@ const ProfFiltersCard = (props) => {
           />
           <br />
           <br />
-          <Typography className="mb-2 text-muted" id="discrete-slider-always" gutterBottom>
-             By Percentage of A's
+          <Typography
+            className="mb-2 text-muted"
+            id="discrete-slider-always"
+            gutterBottom
+          >
+            By Percentage of A's
           </Typography>
           <Slider
             // value={value}
@@ -110,7 +118,7 @@ const ProfFiltersCard = (props) => {
           <br />
           <br />
           <Typography className="mb-2 text-muted" id="slider" gutterBottom>
-             By Min. Semesters Taught
+            By Min. Semesters Taught
           </Typography>
           <Slider
             // getAriaValueText={valueLabelFormat}
@@ -125,8 +133,12 @@ const ProfFiltersCard = (props) => {
           />
           <br />
           <br />
-          <Button className="filterBtn" onClick={applyFilters}>Apply</Button>
-          <Button className="filterBtn" onClick={handleFiltersReset}>Reset</Button>
+          <Button className="filterBtn" onClick={applyFilters}>
+            Apply
+          </Button>
+          <Button className="filterBtn" onClick={handleFiltersReset}>
+            Reset
+          </Button>
         </Card.Body>
       </Card>
     </div>

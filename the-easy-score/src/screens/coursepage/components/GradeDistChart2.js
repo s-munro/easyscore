@@ -1,21 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Bar } from "react-chartjs-2";
-
-const initialChartData = {
-  labels: ["A", "B", "C", "D"],
-  datasets: [
-    {
-      label: "Grades",
-      data: [25, 10, 15, 8],
-      backgroundColor: [
-        "#b32727",
-        "#b32727",
-        "#b32727",
-        "#b32727",
-      ],
-    },
-  ],
-};
 
 const GradeDistChart2 = ({ average_grades }) => {
   let data = {
@@ -32,7 +16,7 @@ const GradeDistChart2 = ({ average_grades }) => {
         backgroundColor: ["#b32727", "#b32727", "#b32727", "#b32727"],
       },
     ],
-  }
+  };
 
   return (
     <div>

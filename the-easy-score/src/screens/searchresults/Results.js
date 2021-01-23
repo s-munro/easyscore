@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 import { filterToKeyword } from "./hooks/";
 
-import NoResults from "./components/NoResults";
+import NoResults from "../../components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
 import Courses from "./components/Courses";
