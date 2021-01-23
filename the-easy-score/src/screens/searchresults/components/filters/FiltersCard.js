@@ -168,19 +168,23 @@ const FiltersCard = (props) => {
     // applyFilters();
   };
 
+  // filters reset and are applied on initial page render
   useEffect(() => {
     props.resetSearchPageFilters();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // filters are applied on every handleChange
   useEffect(() => {
     applyFilters();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     props.resultsPage.filtersCard.next_sem.value,
     props.resultsPage.filtersCard.courseLevel.value,
     props.resultsPage.filtersCard.requirements.value,
     props.resultsPage.filtersCard.creditHours.value,
     props.resultsPage.filtersCard.timeofDay.value,
+    resetSearchPageFilters,
   ]);
 
   return (
