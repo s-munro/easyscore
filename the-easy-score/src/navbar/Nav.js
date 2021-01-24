@@ -48,12 +48,12 @@ const Nav = (props) => {
             <b className="navBarTwoEasy">Easy</b>Score
           </div>
         </Link>
-        {/* <Link className="navBarThreeTextLink" to="/about">
+        <Link className="navBarThreeTextLink" to="/about">
           <div>About</div>
         </Link>
         <Link className="navBarThreeTextLink" to="/contact">
           <div>Contact</div>
-        </Link> */}
+        </Link>
         <SearchForm formType={"nav"} />
       </nav>
     );
