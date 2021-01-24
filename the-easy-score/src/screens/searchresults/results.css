@@ -50,6 +50,57 @@
 }
 
 .filterBtn,
+.filterBtn-btn-primary {
+  font-size: 85%;
+  font-weight: 600;
+  background-color: #ffffff;
+  border: 1px solid #b32727;
+  color: #b32727;
+  margin-right: 8%;
+  box-shadow: none;
+}
+.filterBtn:hover,
+.filterBtn.btn-primary:hover,
+.filterBtn:active:hover,
+.filterBtn.btn-primary:active:hover,
+.filterBtn.btn-primary:active:focus,
+.filterBtn:active:focus {
+  font-size: 85%;
+  font-weight: 600;
+  background-color: #ffffff;
+  border: 1px solid #d16a6a;
+  color: #d16a6a;
+  margin-right: 8%;
+  box-shadow: none;
+  outline: none;
+}
+.filterBtn:active,
+.filterBtn.btn-primary:active {
+  font-size: 85%;
+  font-weight: 600;
+  background-color: white;
+  border: 1px solid #d16a6a;
+  color: #d16a6a;
+  margin-right: 8%;
+  box-shadow: none;
+}
+
+.filterBtn:focus,
+.filterBtn.btn-primary:focus .filterBtn:active:focus,
+.filterBtn.btn-primary:active:focus {
+  font-size: 85%;
+  font-weight: 600;
+  outline: none;
+  background-color: #ffffff;
+  border: 1px solid #d16a6a;
+  color: #d16a6a;
+  margin-right: 8%;
+  box-shadow: none;
+}
+
+/** ORIGINAL BUTTON SETTINGS **/
+
+/* .filterBtn,
 .filterBtn.btn-primary,
 .filterBtn:focus,
 .filterBtn.btn-primary:focus {
@@ -66,7 +117,13 @@
   color: lightblue;
   text-emphasis-style: underline;
   background-color: #fff;
-}
+} */
+
+/* .filterBtn:hover {
+  color: lightblue;
+  text-emphasis-style: underline;
+  background-color: #fff;
+} */
 
 /***** COURSE CARDS ********/
 
