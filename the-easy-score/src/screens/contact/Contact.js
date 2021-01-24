@@ -12,16 +12,24 @@ const Contact = (props) => {
 
   return (
     <div className="container mt-5 contact-container">
-      <h2 className="mt-15">Contact Us.</h2>
       <Card className="col p-5">
+        <h2 className="mt-15">Contact Us.</h2>
         <Form>
           {/* <Form.Group controlId="formBasicName"> */}
-          <TextField label="Name" placeholder="Name" variant="outlined" />
+          {/* <TextField label="Name" placeholder="Name" variant="outlined" /> */}
           <br />
-          <TextField label="Email" placeholder="Email" variant="outlined" />
+          {/* <TextField label="Email" placeholder="Email" variant="outlined" /> */}
           {/* <Form.Label>Name</Form.Label> */}
           {/* <Form.Control type="text" placeholder="Name" />
           </Form.Group> */}
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Name</Form.Label>
+            <Form.Control type="text" placeholder="Enter Name" />
+            <Form.Text className="text-muted">
+              Don't worry, it's just for our reference
+            </Form.Text>
+          </Form.Group>
+
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email" />
@@ -29,6 +37,7 @@ const Contact = (props) => {
               We'll never share your email with anyone else.
             </Form.Text>
           </Form.Group>
+          <br />
           <TextField
             id="outlined-multiline-static"
             label="Leave us a message"
