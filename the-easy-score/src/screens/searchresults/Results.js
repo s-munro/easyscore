@@ -13,8 +13,11 @@ import Courses from "./components/Courses";
 import TablePagination from "../../components/TablePagination";
 
 import SearchForm from "../../components/SearchForm";
+import MobileSearchForm from "../home/mobileSearch/MobileSearchForm";
 
 import FiltersCard from "./components/filters/FiltersCard";
+
+import Hidden from "@material-ui/core/Hidden";
 
 import "./results.css";
 
@@ -53,7 +56,12 @@ const Results = (props) => {
   return (
     <div className="container">
       <div className="mt-5">
-        <SearchForm nav={false} />
+        <Hidden only={["xs"]}>
+          <SearchForm nav={false} />
+        </Hidden>
+        <Hidden smUp>
+          <MobileSearchForm />
+        </Hidden>
       </div>
       <hr></hr>
       <div>
