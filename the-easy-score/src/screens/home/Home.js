@@ -26,7 +26,7 @@ const Home = (props) => {
         <Hidden only={["xs"]}>
           <SearchForm nav={false} />
         </Hidden>
-        <Hidden only={["lg", "md", "sm"]}>
+        <Hidden smUp>
           <MobileSearchForm />
         </Hidden>
       </main>
