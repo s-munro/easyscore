@@ -144,7 +144,11 @@ const MobileSearchForm = (props) => {
                 >
                   <CloseIcon />
                 </IconButton>
-                <Typography variant="h6" className={classes.title}>
+                <Typography
+                  color="white"
+                  variant="h6"
+                  className={classes.title}
+                >
                   Filters
                 </Typography>
               </Toolbar>
@@ -192,7 +196,9 @@ const MobileSearchForm = (props) => {
                 />
               </ListItem>
               <Divider />
-              <Button onClick={handleClose}>Apply Filters</Button>
+              <Button color="primary" onClick={handleClose}>
+                Apply Filters
+              </Button>
               <Button onClick={handleFiltersReset}>Reset Filters</Button>
             </List>
           </Dialog>
