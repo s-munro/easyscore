@@ -49,16 +49,20 @@
   flex-direction: row;
 }
 
-.filterBtn {
+.filterBtn,
+.filterBtn.btn-primary,
+.filterBtn:focus,
+.filterBtn.btn-primary:focus {
   font-size: 85%;
   font-weight: 600;
   background-color: #fff;
   color: #b32727;
   border: 0.5px solid #b32727;
   margin-right: 8%;
+  box-shadow: none;
 }
 
-.filterBtn on:hover {
+.filterBtn:hover {
   color: lightblue;
   text-emphasis-style: underline;
   background-color: #fff;

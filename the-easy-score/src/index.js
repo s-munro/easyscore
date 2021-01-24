@@ -10,6 +10,7 @@ import thunk from "redux-thunk";
 
 import reducer from "./reducers";
 
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
@@ -23,9 +24,24 @@ const store = createStore(
   composeEnhancers(applyMiddleware(thunk, logger))
 );
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: "#b32727",
+      main: "#b32727",
+      dark: "#b32727",
+    },
+  },
+  // typography: {
+  //   fontFamily: {"big"Poppins", "Roboto", sans-serif"}
+  // }
+});
+
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </Provider>,
   document.getElementById("root")
 );

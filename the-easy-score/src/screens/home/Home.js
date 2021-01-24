@@ -22,7 +22,7 @@ const Home = (props) => {
           </h1>
         </div>
         <SearchForm nav={false} />
-        {/* <MobileSearchForm /> */}
+        <MobileSearchForm />
       </main>
     </div>
   );

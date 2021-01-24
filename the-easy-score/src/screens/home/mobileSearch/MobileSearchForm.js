@@ -21,6 +21,7 @@ import { FormControl, Button, InputGroup } from "react-bootstrap";
 import FilterSelect from "../../../components/FilterSelect";
 
 import { makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
@@ -44,6 +45,12 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
 }));
+
+const WhiteTextTypography = withStyles({
+  root: {
+    color: "#FFFFFF",
+  },
+})(Typography);
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -89,12 +96,6 @@ const MobileSearchForm = (props) => {
     history.push(`/search/${newUrl}`);
   };
 
-  const handleFiltersSidebar = (e) => {
-    console.log(e);
-    console.log("click");
-    setShowModal(!showModal);
-  };
-
   const handleFiltersReset = () => {
     props.resetFilterValues();
   };
@@ -123,8 +124,14 @@ const MobileSearchForm = (props) => {
               </Button>
             </InputGroup.Append>
           </InputGroup>
-          <div className="filters-activate-button">
-            <Button onClick={handleClickOpen}>Open Course Filters</Button>
+          <div className="row d-flex justify-content-center">
+            <Button
+              className="homeFilterBtn shadow-none"
+              onClick={handleClickOpen}
+              // block
+            >
+              Open Course Filters
+            </Button>
           </div>
 
           {/***************** Begin Popup Dialog  *******************/}
@@ -144,56 +151,82 @@ const MobileSearchForm = (props) => {
                 >
                   <CloseIcon />
                 </IconButton>
-                <Typography variant="h6" className={classes.title}>
+                <WhiteTextTypography
+                  color="white"
+                  variant="h6"
+                  className={classes.title}
+                >
                   Filters
-                </Typography>
+                </WhiteTextTypography>
               </Toolbar>
             </AppBar>
             <List>
-              <ListItem button>
-                <ListItemText primary="Course Level" />
-                <FilterSelect
-                  select_id={"courseLevel"}
-                  handleSelectChange={handleChange}
-                  selectValues={courseLevelValues}
-                  selectValue={props.filters.courseLevel.value}
-                />
-              </ListItem>
-              <Divider />
-              <ListItem button>
-                <ListItemText primary="Credit Hours" />
-                <FilterSelect
-                  select_id={"creditHours"}
-                  handleSelectChange={handleChange}
-                  selectValues={creditHoursValues}
-                  selectValue={props.filters.creditHours.value}
-                />
-              </ListItem>
-              <Divider />
-              <ListItem button>
-                <ListItemText primary="Requirements Fulfilled" />
-                <br />
-                <FilterSelect
-                  select_id={"requirements"}
-                  handleSelectChange={handleChange}
-                  selectValues={requirementsValues}
-                  selectValue={props.filters.requirements.value}
-                />
-              </ListItem>
-              <Divider />
-              <ListItem button>
-                <ListItemText primary="Time of Day" />
-                <br />
-                <FilterSelect
-                  select_id={"timeofDay"}
-                  handleSelectChange={handleChange}
-                  selectValues={timeofDayValues}
-                  selectValue={props.filters.timeofDay.value}
-                />
-              </ListItem>
-              <Divider />
-              <Button onClick={handleClose}>Apply Filters</Button>
-              <Button onClick={handleFiltersReset}>Reset Filters</Button>
+              <div className="col mr-4">
+                <div className="row mt-3 mb-2 d-flex justify-content-center">
+                  <ListItem>
+                    <ListItemText primary="Course Level" />
+                    <FilterSelect
+                      select_id={"courseLevel"}
+                      handleSelectChange={handleChange}
+                      selectValues={courseLevelValues}
+                      selectValue={props.filters.courseLevel.value}
+                    />
+                  </ListItem>
+                </div>
+                <Divider />
+                <div className="row mt-3 mb-2 d-flex justify-content-center">
+                  <ListItem>
+                    <ListItemText primary="Credit Hours" />
+                    <FilterSelect
+                      select_id={"creditHours"}
+                      handleSelectChange={handleChange}
+                      selectValues={creditHoursValues}
+                      selectValue={props.filters.creditHours.value}
+                    />
+                  </ListItem>
+                </div>
+                <Divider />
+                <div className="row mt-3 mb-2 d-flex justify-content-center">
+                  <ListItem>
+                    <ListItemText primary="Requirements Fulfilled" />
+                    <br />
+                    <FilterSelect
+                      select_id={"requirements"}
+                      handleSelectChange={handleChange}
+                      selectValues={requirementsValues}
+                      selectValue={props.filters.requirements.value}
+                    />
+                  </ListItem>
+                </div>
+                <Divider />
+                <div className="row mt-3 mb-2 d-flex justify-content-center">
+                  <ListItem>
+                    <ListItemText primary="Time of Day" />
+                    <br />
+                    <FilterSelect
+                      select_id={"timeofDay"}
+                      handleSelectChange={handleChange}
+                      selectValues={timeofDayValues}
+                      selectValue={props.filters.timeofDay.value}
+                    />
+                  </ListItem>
+                </div>
+                <Divider />
+                <div className="row mt-3 mb-2 d-flex justify-content-center">
+                  <Button
+                    className="homeFilterBtn shadow-none"
+                    onClick={handleClose}
+                  >
+                    Apply Filters
+                  </Button>
+                  <Button
+                    className="homeFilterBtn shadow-none"
+                    onClick={handleFiltersReset}
+                  >
+                    Reset Filters
+                  </Button>
+                </div>
+              </div>
             </List>
           </Dialog>
         </form>
