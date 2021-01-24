@@ -5,6 +5,8 @@ import { setNavStyle } from "../../actions/index";
 
 import MobileSearchForm from "./mobileSearch/MobileSearchForm";
 import SearchForm from "../../components/SearchForm";
+
+import Hidden from "@material-ui/core/Hidden";
 import "./home.css";
 
 const Home = (props) => {
@@ -21,8 +23,12 @@ const Home = (props) => {
             <span className="scoreLogo">Score</span>
           </h1>
         </div>
-        <SearchForm nav={false} />
-        <MobileSearchForm />
+        <Hidden only={["sm", "xs"]}>
+          <SearchForm nav={false} />
+        </Hidden>
+        <Hidden only={["lg", "md"]}>
+          <MobileSearchForm />
+        </Hidden>
       </main>
     </div>
   );
