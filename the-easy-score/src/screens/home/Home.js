@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { setNavStyle } from "../../actions/index";
 
+import MobileSearchForm from "./mobileSearch/MobileSearchForm";
 import SearchForm from "../../components/SearchForm";
 import "./home.css";
 
@@ -14,7 +15,6 @@ const Home = (props) => {
   return (
     <div className="container">
       <main>
-       
         <div className="logoTitleContainer">
           <h1 className="logoTitle">
             <b>Easy</b>
@@ -22,7 +22,7 @@ const Home = (props) => {
           </h1>
         </div>
         <SearchForm nav={false} />
-        
+        {/* <MobileSearchForm /> */}
       </main>
     </div>
   );

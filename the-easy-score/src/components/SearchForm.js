@@ -81,21 +81,25 @@ const SearchForm = (props) => {
               select_id={"courseLevel"}
               handleSelectChange={handleChange}
               selectValues={courseLevelValues}
+              selectValue={props.filters.courseLevel.value}
             />
             <FilterSelect
               select_id={"creditHours"}
               handleSelectChange={handleChange}
               selectValues={creditHoursValues}
+              selectValue={props.filters.creditHours.value}
             />
             <FilterSelect
               select_id={"requirements"}
               handleSelectChange={handleChange}
               selectValues={requirementsValues}
+              selectValue={props.filters.requirements.value}
             />
             <FilterSelect
               select_id={"timeofDay"}
               handleSelectChange={handleChange}
               selectValues={timeofDayValues}
+              selectValue={props.filters.timeofDay.value}
             />
           </div>
         </form>
