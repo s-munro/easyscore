@@ -10,6 +10,7 @@ import {
 } from "../actions/filtersActions";
 
 import SearchForm from "../components/SearchForm";
+import Hidden from "@material-ui/core/Hidden";
 import "../App.css";
 
 const Nav = (props) => {
@@ -42,6 +43,7 @@ const Nav = (props) => {
     );
   } else {
     return (
+<<<<<<< HEAD
       <nav className="nav-3">
         <Link className="navBarThreeLogo" to="/">
           <div>
@@ -56,6 +58,48 @@ const Nav = (props) => {
         </Link>
         <SearchForm formType={"nav"} />
       </nav>
+=======
+      <div>
+        <Hidden smDown>
+          <nav className="nav-3">
+            <Link className="navBarThreeLogo" to="/">
+              <div>
+                <b className="navBarTwoEasy">Easy</b>Score
+              </div>
+            </Link>
+            <Link className="navBarThreeTextLink" to="/about">
+              <div>About</div>
+            </Link>
+            <Link className="navBarThreeTextLink" to="/contact">
+              <div>Contact</div>
+            </Link>
+
+            <SearchForm formType={"nav"} />
+          </nav>
+        </Hidden>
+        {/************** MOBILE NAV 3 ******************/}
+        <Hidden mdUp>
+          <nav className="container">
+            <div className="d-flex justify-content-between">
+              <Link className="navBarThreeLogo" to="/">
+                <div>
+                  <b className="navBarTwoEasy">Easy</b>Score
+                </div>
+              </Link>
+              <div className="d-flex">
+                <Link className="" to="/about">
+                  <div>About</div>
+                </Link>
+                <Link className="" to="/contact">
+                  <div>Contact</div>
+                </Link>
+              </div>
+            </div>
+            <SearchForm formType={"nav"} />
+          </nav>
+        </Hidden>
+      </div>
+>>>>>>> 575e4c86740172ff932cbaa2afa74d571b733762
     );
   }
 };
