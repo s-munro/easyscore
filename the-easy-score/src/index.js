@@ -10,11 +10,7 @@ import thunk from "redux-thunk";
 
 import reducer from "./reducers";
 
-import {
-  createMuiTheme,
-  makeStyles,
-  ThemeProvider,
-} from "@material-ui/core/styles";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";

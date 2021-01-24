@@ -96,12 +96,6 @@ const MobileSearchForm = (props) => {
     history.push(`/search/${newUrl}`);
   };
 
-  const handleFiltersSidebar = (e) => {
-    console.log(e);
-    console.log("click");
-    setShowModal(!showModal);
-  };
-
   const handleFiltersReset = () => {
     props.resetFilterValues();
   };
