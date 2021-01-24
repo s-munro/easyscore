@@ -126,7 +126,7 @@ const MobileSearchForm = (props) => {
           </InputGroup>
           <div className="row d-flex justify-content-center">
             <Button
-              className="filterBtn shadow-none"
+              className="homeFilterBtn shadow-none"
               onClick={handleClickOpen}
               // block
             >
@@ -214,13 +214,13 @@ const MobileSearchForm = (props) => {
                 <Divider />
                 <div className="row mt-3 mb-2 d-flex justify-content-center">
                   <Button
-                    className="filterBtn shadow-none"
+                    className="homeFilterBtn shadow-none"
                     onClick={handleClose}
                   >
                     Apply Filters
                   </Button>
                   <Button
-                    className="filterBtn shadow-none"
+                    className="homeFilterBtn shadow-none"
                     onClick={handleFiltersReset}
                   >
                     Reset Filters

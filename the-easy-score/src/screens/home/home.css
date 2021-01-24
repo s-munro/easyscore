@@ -71,26 +71,40 @@ filterSelect {
   justify-content: center;
   align-items: center;
 }
-.filterBtn {
+.homeFilterBtn,
+.homeFilterBtn-btn-primary {
   background-color: #b32727;
   border: 1px solid #b32727;
   color: white;
 }
-.filterBtn:hover {
+.homeFilterBtn:hover,
+.homeFilterBtn.btn-primary:hover {
   background-color: #bb4c4c;
   border: 1px solid #b32727;
   color: white;
 }
-.filterBtn:active {
+.homeFilterBtn:active,
+.homeFilterBtn.btn-primary:active {
   background-color: #b32727;
   border: 1px solid #b32727;
   color: white;
 }
-.filterBtn:focus {
+
+.homeFilterBtn:focus,
+.homeFilterBtn.btn-primary:focus .homeFilterBtn:active:focus,
+.homeFilterBtn.btn-primary:active:focus {
+  outline: none;
   background-color: #b32727;
   border: 1px solid #b32727;
-  color: white;
 }
+
+/* 
+.homeFilterBtn:focus,
+.homeFilterBtn.btn-primary:focus {
+  background-color: #bb4c4c;
+  border: 1px solid #bb4c4c;
+  color: white;
+} */
 
 /* 
 .filterBtn:active:focus,
