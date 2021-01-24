@@ -75,6 +75,15 @@ filterSelect {
   margin-right: 2%;
 }
 
+.homeModalBtnContainer {
+  float: left;
+  margin-top: 5%;
+  margin-right: inherit;
+  margin-left: inherit;
+}
+/* .homeModalBtn {
+  margin-top: 5%;
+} */
 .homeFilterBtn,
 .homeFilterBtn-btn-primary {
   background-color: #b32727;
