@@ -18,30 +18,30 @@ export const requirementsValues = [
 
 export const courseLevelValues = [
   { value: "", title: "Course Level" },
-  { value: 12, title: "100-299" },
-  { value: 8, title: "300-399" },
-  { value: 9, title: "400-499" },
+  { value: 12, title: "100-299 Level" },
+  { value: 8, title: "300-399 Level" },
+  { value: 9, title: "400-499 Level" },
   { value: 10, title: "Graduate Level Courses" },
   { value: 13, title: "Honors Level Courses" },
 ];
 
 export const courseLevelFilterValues = [
   { value: "", title: "Course Level" },
-  { value: 12, title: "100-299" },
-  { value: 8, title: "300-399" },
-  { value: 9, title: "400-499" },
+  { value: 12, title: "100-299 Level" },
+  { value: 8, title: "300-399 Level" },
+  { value: 9, title: "400-499 Level" },
   { value: 10, title: "Graduate Level Courses" },
 ];
 
 export const creditHoursValues = [
   { value: "", title: "Credit Hours" },
-  { value: 1, title: "1" },
-  { value: 2, title: "2" },
-  { value: 3, title: "3" },
-  { value: 4, title: "4" },
-  { value: 5, title: "5" },
-  { value: 6, title: "6" },
-  { value: 7, title: "7+" },
+  { value: 1, title: "1 Credit" },
+  { value: 2, title: "2 Credits" },
+  { value: 3, title: "3 Credits" },
+  { value: 4, title: "4 Credits" },
+  { value: 5, title: "5 Credits" },
+  { value: 6, title: "6 Credits" },
+  { value: 7, title: "7+ Credits" },
 ];
 
 export const timeofDayValues = [
