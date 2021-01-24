@@ -23,10 +23,10 @@ const Home = (props) => {
             <span className="scoreLogo">Score</span>
           </h1>
         </div>
-        <Hidden only={["sm", "xs"]}>
+        <Hidden only={["xs"]}>
           <SearchForm nav={false} />
         </Hidden>
-        <Hidden only={["lg", "md"]}>
+        <Hidden only={["lg", "md", "sm"]}>
           <MobileSearchForm />
         </Hidden>
       </main>

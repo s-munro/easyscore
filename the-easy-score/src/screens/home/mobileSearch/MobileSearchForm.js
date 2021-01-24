@@ -151,11 +151,7 @@ const MobileSearchForm = (props) => {
                 >
                   <CloseIcon />
                 </IconButton>
-                <WhiteTextTypography
-                  color="white"
-                  variant="h6"
-                  className={classes.title}
-                >
+                <WhiteTextTypography variant="h6" className={classes.title}>
                   Filters
                 </WhiteTextTypography>
               </Toolbar>
