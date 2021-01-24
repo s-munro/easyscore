@@ -152,7 +152,7 @@ const MobileSearchForm = (props) => {
                   <CloseIcon />
                 </IconButton>
                 <WhiteTextTypography variant="h6" className={classes.title}>
-                  Filters
+                  {/* Filters */}
                 </WhiteTextTypography>
               </Toolbar>
             </AppBar>
@@ -160,7 +160,6 @@ const MobileSearchForm = (props) => {
               <div className="col mr-4">
                 <div className="row mt-3 mb-2 d-flex justify-content-center">
                   <ListItem>
-                    <ListItemText primary="Course Level" />
                     <FilterSelect
                       select_id={"courseLevel"}
                       handleSelectChange={handleChange}
@@ -172,7 +171,6 @@ const MobileSearchForm = (props) => {
                 <Divider />
                 <div className="row mt-3 mb-2 d-flex justify-content-center">
                   <ListItem>
-                    <ListItemText primary="Credit Hours" />
                     <FilterSelect
                       select_id={"creditHours"}
                       handleSelectChange={handleChange}
@@ -184,7 +182,6 @@ const MobileSearchForm = (props) => {
                 <Divider />
                 <div className="row mt-3 mb-2 d-flex justify-content-center">
                   <ListItem>
-                    <ListItemText primary="Requirements Fulfilled" />
                     <br />
                     <FilterSelect
                       select_id={"requirements"}
@@ -197,7 +194,6 @@ const MobileSearchForm = (props) => {
                 <Divider />
                 <div className="row mt-3 mb-2 d-flex justify-content-center">
                   <ListItem>
-                    <ListItemText primary="Time of Day" />
                     <br />
                     <FilterSelect
                       select_id={"timeofDay"}
@@ -210,16 +206,17 @@ const MobileSearchForm = (props) => {
                 <Divider />
                 <div className="row mt-3 mb-2 d-flex justify-content-center">
                   <Button
-                    className="homeFilterBtn shadow-none"
+                
+                    className="homeFilterBtn homeApply shadow-none"
                     onClick={handleClose}
                   >
-                    Apply Filters
+                    Apply
                   </Button>
                   <Button
                     className="homeFilterBtn shadow-none"
                     onClick={handleFiltersReset}
                   >
-                    Reset Filters
+                    Reset
                   </Button>
                 </div>
               </div>

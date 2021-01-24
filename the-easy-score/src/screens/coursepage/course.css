@@ -24,7 +24,7 @@
 .courseName {
   color:#b32727;
   margin-bottom: 2%;
-  font-size: 150%;
+  font-size: 145%;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -50,6 +50,7 @@
 
 .requirement {
   width: max-content;
+  height: fit-content;
   background-color: #ededed;
   font-size: 85%;
   padding: 1%;
