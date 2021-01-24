@@ -54,6 +54,7 @@ const Nav = (props) => {
         <Link className="navBarThreeTextLink" to="/contact">
           <div>Contact</div>
         </Link>
+
         <SearchForm formType={"nav"} />
       </nav>
     );

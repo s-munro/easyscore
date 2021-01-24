@@ -200,5 +200,6 @@ https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif
   - [x] search page filters all functioning and working in conjunction with one another
   - [x] search page filters now update and re-render course results accordingly on change rather than on submit
   - [x] professors filters functioning
-    - [] fuzzy search in conjunction with filters
+    - [x] fuzzy search in conjunction with filters
   - [] professor cards animation on render
+  - [x] MobileSearchForm added with popup dialog for filters
