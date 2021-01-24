@@ -27,7 +27,7 @@ const Header = ({ course }) => {
           </div>
 
           <div className="reqsTags">
-            <p className="reqsMetText">Requirements met:</p>
+            <p className="reqsMetText">Requirements:</p>
             <div className="reqsContainer">
               {showFulfilled === true
                 ? course.credits_fulfilled.map((credit) => {

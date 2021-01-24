@@ -43,22 +43,6 @@ const Nav = (props) => {
     );
   } else {
     return (
-<<<<<<< HEAD
-      <nav className="nav-3">
-        <Link className="navBarThreeLogo" to="/">
-          <div>
-            <b className="navBarTwoEasy">Easy</b>Score
-          </div>
-        </Link>
-        <Link className="navBarThreeTextLink" to="/about">
-          <div>About</div>
-        </Link>
-        <Link className="navBarThreeTextLink" to="/contact">
-          <div>Contact</div>
-        </Link>
-        <SearchForm formType={"nav"} />
-      </nav>
-=======
       <div>
         <Hidden smDown>
           <nav className="nav-3">
@@ -99,7 +83,6 @@ const Nav = (props) => {
           </nav>
         </Hidden>
       </div>
->>>>>>> 575e4c86740172ff932cbaa2afa74d571b733762
     );
   }
 };
