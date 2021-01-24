@@ -124,13 +124,13 @@ const MobileSearchForm = (props) => {
               </Button>
             </InputGroup.Append>
           </InputGroup>
-          <div className="row d-flex justify-content-center">
+          <div className="row d-flex homeModalBtnContainer  justify-content-center">
             <Button
-              className="homeFilterBtn shadow-none"
+              className="homeFilterBtn homeModalBtn shadow-none"
               onClick={handleClickOpen}
               // block
             >
-              Open Course Filters
+              Filters
             </Button>
           </div>
 
