@@ -96,10 +96,11 @@ nav a {
   position: absolute;
   width: 100%;
   bottom: 0px;
+  padding-right: 9%;
   color: #a3a3a3;
-  height: 4em;
+  height: 2em;
   font-size: small;
   display: flex;
   justify-content: center;
-  align-items: baseline;
 }
+
