@@ -152,58 +152,62 @@ const Nav = (props) => {
     );
   } else {
     return (
-      <div>
-        <Hidden smDown>
-          <div className="container">
-            <nav className="row d-flex align-items-center">
-              <div className="col-xl-2 col-lg-2 col-md-3">
-                <Link className="nav-bar-3-logo" to="/">
-                  <b className="nav-bar-3-easy-text">Easy</b>Score
-                </Link>
-              </div>
-              <div className="d-flex align-items-center col-xl-8 col-lg-8 col-md-7">
-                <SearchForm formType={"nav"} />
-                <FilterListIcon onClick={handleClickOpen} />
-              </div>
-              <div className="col-xl-1 col-lg-1 col-md-1">
-                <Link className="" to="/about">
-                  About
-                </Link>
-              </div>
-              <div className="col-xl-1 col-lg-1 col-md-1">
-                <Link className="" to="/contact">
-                  Contact
-                </Link>
-              </div>
-            </nav>
-          </div>
-        </Hidden>
+      <div className="nav-3-top-container">
+        <div>
+          <Hidden smDown>
+            <div className="container">
+              <nav className="row d-flex align-items-center">
+                <div className="col-xl-2 col-lg-2 col-md-3">
+                  <Link className="nav-bar-3-logo" to="/">
+                    <b className="nav-bar-3-easy-text">Easy</b>Score
+                  </Link>
+                </div>
+                <div className="d-flex align-items-center col-xl-8 col-lg-8 col-md-7">
+                  <SearchForm formType={"nav"} />
+                  <FilterListIcon onClick={handleClickOpen} />
+                </div>
+                <div className="col-xl-1 col-lg-1 col-md-1">
+                  <Link className="" to="/about">
+                    About
+                  </Link>
+                </div>
+                <div className="col-xl-1 col-lg-1 col-md-1">
+                  <Link className="" to="/contact">
+                    Contact
+                  </Link>
+                </div>
+              </nav>
+            </div>
+          </Hidden>
+        </div>
         {/************** MOBILE NAV 3 ******************/}
-        <Hidden mdUp>
-          <div className="container">
-            <nav className="row d-flex align-items-center">
-              <div className="col-md-8 col-sm-7 col-7">
-                <Link className="mobile-nav-bar-3-logo" to="/">
-                  <b className="mobile-nav-bar-3-easy-text">Easy</b>Score
-                </Link>
-              </div>
-              <div className="col-md-2 col-sm-2 col-2">
-                <Link className="" to="/about">
-                  About
-                </Link>
-              </div>
-              <div className="col-md-2 col-sm-2 col-2">
-                <Link className="" to="/contact">
-                  Contact
-                </Link>
-              </div>
-              <div className="col-md-12 col-sm-12 col-12 d-flex align-items-center">
-                <SearchForm formType={"nav"} />
-                <FilterListIcon onClick={handleClickOpen} />
-              </div>
-            </nav>
-          </div>
-        </Hidden>
+        <div>
+          <Hidden mdUp>
+            <div className="container">
+              <nav className="row d-flex align-items-center">
+                <div className="col-md-8 col-sm-7 col-7">
+                  <Link className="mobile-nav-bar-3-logo" to="/">
+                    <b className="mobile-nav-bar-3-easy-text">Easy</b>Score
+                  </Link>
+                </div>
+                <div className="col-md-2 col-sm-2 col-2">
+                  <Link className="" to="/about">
+                    About
+                  </Link>
+                </div>
+                <div className="col-md-2 col-sm-2 col-2">
+                  <Link className="" to="/contact">
+                    Contact
+                  </Link>
+                </div>
+                <div className="col-md-12 col-sm-12 col-12 d-flex align-items-center">
+                  <SearchForm formType={"nav"} />
+                  <FilterListIcon onClick={handleClickOpen} />
+                </div>
+              </nav>
+            </div>
+          </Hidden>
+        </div>
         {/*******************  POPUP MODAL *******************/}
         <Dialog
           // fullScreen

@@ -64,6 +64,10 @@
 }
 
 /******************* THIRD NAV BAR *********************/
+.nav-3-top-container {
+  margin-top: 1%;
+}
+
 /** DESKTOP **/
 .nav-bar-3-logo {
   /* margin-right: 57%; */
