@@ -92,13 +92,13 @@ nav a {
 }
 
 /************** FOOTER ***********************/
+
 .footer-container {
   position: absolute;
   width: 100%;
   bottom: 0px;
   padding-right: 9%;
   color: #a3a3a3;
-  height: 2em;
   font-size: small;
   display: flex;
   justify-content: center;
@@ -116,9 +116,10 @@ nav a {
 }
 
 .secondaryFooter a {
-  color: #a3a3a3;
+  color:#b32727;
 }
 
 .aboutFooterLink {
   margin-right: 2%;
+  margin-left: 2%;
 }
