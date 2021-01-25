@@ -122,29 +122,26 @@ const Nav = (props) => {
         {/************** MOBILE NAV 2 ******************/}
         <Hidden mdUp>
           <nav>
-            <div>Hey!</div>
+          <Link className="navBarTwoLogo" to="/">
+              <div>
+                <b className="navBarTwoEasy">Easy</b>Score
+              </div>
+            </Link>
           </nav>
         </Hidden>
       </div>
-      /************** END MOBILE NAV 2 ******************/
+      
     );
   } else {
     return (
       <div>
         <Hidden smDown>
-          <nav className="nav-3">
-            <Link className="navBarThreeLogo" to="/">
+          <nav>
+            <Link className="navBarTwoLogo" to="/">
               <div>
                 <b className="navBarTwoEasy">Easy</b>Score
               </div>
             </Link>
-            {/* <Link className="navBarThreeTextLink" to="/about">
-              <div>About</div>
-            </Link>
-            <Link className="navBarThreeTextLink" to="/contact">
-              <div>Contact</div>
-            </Link> */}
-
             <SearchForm formType={"nav"} />
             <FilterListIcon onClick={handleClickOpen} />
           </nav>
@@ -168,7 +165,7 @@ const Nav = (props) => {
               </div>
             </div>
             <SearchForm formType={"nav"} />
-            <hr></hr>
+            
           </nav>
         </Hidden>
         {/*******************  POPUP MODAL *******************/}
