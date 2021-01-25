@@ -103,19 +103,30 @@ const Nav = (props) => {
     );
   } else if (props.navStyle === 2) {
     return (
-      <nav className="nav-2">
-        <Link className="navBarTwoLogo" to="/">
-          <div>
-            <b className="navBarTwoEasy">Easy</b>Score
-          </div>
-        </Link>
-        <Link className="navBarTextLink" to="/about">
-          <div>About</div>
-        </Link>
-        <Link className="navBarTextLink" to="/contact">
-          <div>Contact</div>
-        </Link>
-      </nav>
+      <div>
+        <Hidden smDown>
+          <nav className="nav-2">
+            <Link className="navBarTwoLogo" to="/">
+              <div>
+                <b className="navBarTwoEasy">Easy</b>Score
+              </div>
+            </Link>
+            <Link className="navBarTextLink" to="/about">
+              <div>About</div>
+            </Link>
+            <Link className="navBarTextLink" to="/contact">
+              <div>Contact</div>
+            </Link>
+          </nav>
+        </Hidden>
+        {/************** MOBILE NAV 2 ******************/}
+        <Hidden mdUp>
+          <nav>
+            <div>Hey!</div>
+          </nav>
+        </Hidden>
+      </div>
+      /************** END MOBILE NAV 2 ******************/
     );
   } else {
     return (
