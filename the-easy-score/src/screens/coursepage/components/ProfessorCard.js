@@ -26,7 +26,7 @@ const ProfessorCard = ({ instructor, index }) => {
   };
 
   console.log("days", instructor.timings[1].length);
-
+  // 650 x 180
   return (
     <Card className="container prof-card">
       <div className="profName">{transformedName} </div>
