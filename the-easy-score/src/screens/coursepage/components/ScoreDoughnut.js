@@ -14,11 +14,9 @@ const ScoreDoughnut = ({ easyScore }) => {
         data: [score, 100 - score],
         backgroundColor: ["#b32727", "#ffff"],
         hoverBackgroundColor: ["#b32727"],
-
       },
     ],
   };
-  // #914949
   const options = {
     tooltips: {
       enabled: false,
@@ -38,6 +36,7 @@ const ScoreDoughnut = ({ easyScore }) => {
               size: "40",
             },
             color: "#b32727",
+            // color: "#333333",
           },
         ],
       },

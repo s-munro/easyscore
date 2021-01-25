@@ -12,6 +12,8 @@ import ProfFiltersCard from "./components/filters/ProfFiltersCard";
 import Professors from "./components/Professors";
 import TablePagination from "../../components/TablePagination";
 
+import { FormControl } from "react-bootstrap";
+
 const Course = (props) => {
   const params = useParams();
   const dispatch = useDispatch();
@@ -38,14 +40,21 @@ const Course = (props) => {
   return (
     <div className="container">
       {props.isLoading === true ? (
-        <div className="w-100 d-flex justify-content-center">
-          <Loading />
+        <div
+          style={{ height: "100vh" }}
+          className="row w-100 d-flex justify-content-center"
+        >
+          <div className="col d-flex justify-content-center align-items-center">
+            <Loading />
+          </div>
         </div>
       ) : (
-        <div>
-          <div>
+        <div className="container">
+          <div className="row">
             <Header course={props.coursePage.course} />
-            <hr />
+          </div>
+          <hr />
+          <div className="row">
             <ResultsNumber
               number={props.coursePage.displayedInstructors.length}
               results={"instructors"}
@@ -53,27 +62,31 @@ const Course = (props) => {
               course_name={props.coursePage.course.name}
               header={1}
             />
-            <ProfessorSearch />
-            <div className="row mt-5">
-              <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
-                <ProfFiltersCard />
+          </div>
+          <div className="row">
+            <div className="col padding-0">
+              <ProfessorSearch />
+            </div>
+          </div>
+          <div className="row mt-5 d-flex justify-content-center">
+            <div className="col-xl-3 col-lg-4 col-md-0 col-sm-12 col-12">
+              <ProfFiltersCard />
+            </div>
+            <div className="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
+              <div className="row w-100 profCardContainer">
+                <Professors currentInstructors={currentInstructors} />
               </div>
-              <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
-                <div className="row w-100 profCardContainer">
-                  <Professors currentInstructors={currentInstructors} />
+              {props.isLoading === false ? (
+                <div className="row paginationContainer">
+                  <TablePagination
+                    count={props.coursePage.displayedInstructors.length}
+                    page={currentPage}
+                    rowsPerPage={5}
+                    rowsPerPageOptions={[1]}
+                    paginate={paginate}
+                  />
                 </div>
-                {props.isLoading === false ? (
-                  <div className="row paginationContainer">
-                    <TablePagination
-                      count={props.coursePage.displayedInstructors.length}
-                      page={currentPage}
-                      rowsPerPage={5}
-                      rowsPerPageOptions={[1]}
-                      paginate={paginate}
-                    />
-                  </div>
-                ) : null}
-              </div>
+              ) : null}
             </div>
           </div>
         </div>
