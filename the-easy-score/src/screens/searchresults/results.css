@@ -31,7 +31,7 @@
 /****** Returned Results Section ********/
 
 .showingResultsText {
-  color:  #6c757d;
+  color: #6c757d;
   margin-bottom: 1%;
   padding-left: 0;
 }
@@ -108,6 +108,14 @@
   border: 1px solid #d16a6a;
   color: #d16a6a;
   margin-right: 8%;
+  box-shadow: none;
+}
+
+[class="custom-control-input"]:checked
+  ~ [class="custom-control-label"]::before {
+  background-color: #b32727;
+  outline: none;
+  border: #b32727;
   box-shadow: none;
 }
 

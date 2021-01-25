@@ -185,21 +185,27 @@ const FiltersCard = (props) => {
     props.resultsPage.filtersCard.timeofDay.value,
     resetSearchPageFilters,
   ]);
+  const switchRed = {
+    backgroundColor: "red",
+  };
 
   return (
     <div className="mb-5">
       <Card>
         <Card.Body>
-          <Card.Title className="mb-2 text-muted filterCardTitle">Filter results</Card.Title>
+          <Card.Title className="mb-2 text-muted filterCardTitle">
+            Filter results
+          </Card.Title>
           <hr></hr>
           <br />
-          
+
           <Card.Subtitle className="mb-2 text-muted filterCardBtnLabel">
             Avail. Next Term
           </Card.Subtitle>
           <Form.Check
-          className="filterCardSwitch"
+            className="filterCardSwitch switch-danger"
             type="switch"
+            variant={switchRed}
             id="course-filter-next-semester-switch"
             checked={props.resultsPage.filtersCard.next_sem.value === 1}
             value={props.resultsPage.filtersCard.next_sem.value}
@@ -207,7 +213,7 @@ const FiltersCard = (props) => {
             onChange={handleSwitchChange}
           />
           <br />
-          
+
           <FilterSelect
             select_id={"courseLevel"}
             handleSelectChange={handleChange}
