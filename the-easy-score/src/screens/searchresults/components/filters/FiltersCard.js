@@ -190,15 +190,21 @@ const FiltersCard = (props) => {
     <div className="mb-5">
       <Card>
         <Card.Body>
+<<<<<<< HEAD
           <Card.Title className="mb-2 text-muted filterCardTitle">Filter courses</Card.Title>
+=======
+          <Card.Title className="mb-2 text-muted filterCardTitle">
+            Filter results
+          </Card.Title>
+>>>>>>> 548fe13430bfd2d58489f623af2bd91ba3eab9a2
           <hr></hr>
           <br />
-          
+
           <Card.Subtitle className="mb-2 text-muted filterCardBtnLabel">
             Avail. Next Term
           </Card.Subtitle>
           <Form.Check
-          className="filterCardSwitch"
+            className="filterCardSwitch switch-danger"
             type="switch"
             id="course-filter-next-semester-switch"
             checked={props.resultsPage.filtersCard.next_sem.value === 1}
@@ -207,7 +213,7 @@ const FiltersCard = (props) => {
             onChange={handleSwitchChange}
           />
           <br />
-          
+
           <FilterSelect
             select_id={"courseLevel"}
             handleSelectChange={handleChange}
