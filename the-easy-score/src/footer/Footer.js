@@ -24,7 +24,12 @@ const Footer = (props) => {
         {/* <div></div> */}
       </footer>
     );
-  }
+  } else return null;
 };
 
-export default Footer;
+const mapStateToProps = (state) => {
+  return {
+    footerStyle: state.footerStyle,
+  };
+};
+export default connect(mapStateToProps)(Footer);
