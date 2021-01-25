@@ -18,23 +18,21 @@ const Header = ({ course }) => {
 
   return (
     <div className="container">
-      <header className="row mt-5 testT">
-        <div className="jumbo-score col-xl-2 col-lg-3 col-md-4 mr-2">
+
+      <header className="mt-5 testT">
+
+        <div className="jumbo-score">
           {rating}
         </div>
 
-        <div className="col-xl-10 col-lg-10 col-md-10">
-          <div className="row">
+        <div className="courseContentContainer">
+
             <div className="courseName">
               {course.full_code}: {course.name}
             </div>
-          </div>
-          <div className="row w-100 d-flex align-items-center justify-content-start">
-            {/* <div className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 mr-1"> */}
-            {/* <p className="reqsMetText">Requirements:</p> */}
-            {/* </div> */}
-            <div className="col">
-              <div className="reqsContainer">
+ 
+            <div className="reqsContentContainer">
+              
                 {showFulfilled === true
                   ? course.credits_fulfilled.map((credit) => {
                       let creditType = "";
@@ -78,16 +76,15 @@ const Header = ({ course }) => {
                       );
                     })
                   : null}
-              </div>
             </div>
-          </div>
 
-          <div className="course-page-credits-container">
-            <div className="course-page-credits-title">Credits: </div>
-            <div className="course-page-credits">
+            <div className="course-page-credits-container">
+             <div className="course-page-credits-title">Credits: </div>
+             <div className="course-page-credits">
               <b> {course.credits}</b>
+             </div>
             </div>
-          </div>
+
         </div>
 
         <hr />
