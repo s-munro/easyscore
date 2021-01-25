@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Card, Form, Button } from "react-bootstrap";
-import { setNavStyle } from "../../actions/index";
+import { setNavStyle, setFooterStyle } from "../../actions/index";
 import TextField from "@material-ui/core/TextField";
 import "./Contact.css";
 
@@ -15,6 +15,7 @@ const Contact = (props) => {
   const [formValues, setFormValues] = useState(initialFormValues);
   useEffect(() => {
     props.setNavStyle(3);
+    props.setFooterStyle(1);
   }, []);
 
   const handleChange = (e) => {
@@ -76,7 +77,6 @@ const Contact = (props) => {
           </Form.Group>
           <br />
           <TextField
-          
             label="Leave us a message"
             multiline
             rows={8}
@@ -86,7 +86,11 @@ const Contact = (props) => {
             name="message"
             value={formValues.message}
           />
-          <Button className="contactTextArea" variant="primary" onClick={handleSubmit}>
+          <Button
+            className="contactTextArea"
+            variant="primary"
+            onClick={handleSubmit}
+          >
             Send
           </Button>
         </Form>
@@ -99,7 +103,10 @@ const Contact = (props) => {
 const mapStateToProps = (state) => {
   return {
     navStyle: state.navStyle,
+    footerStyle: state.footerStyle,
   };
 };
 
-export default connect(mapStateToProps, { setNavStyle })(Contact);
+export default connect(mapStateToProps, { setNavStyle, setFooterStyle })(
+  Contact
+);

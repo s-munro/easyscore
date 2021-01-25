@@ -7,6 +7,7 @@ import Course from "./screens/coursepage/Course";
 import Results from "./screens/searchresults/Results";
 import Home from "./screens/home/Home";
 import Nav from "./navbar/Nav";
+import Footer from "./footer/Footer";
 
 import "./App.css";
 
@@ -28,7 +29,7 @@ const App = () => {
             render={(props) => <Results {...props} />}
           />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </div>
   );

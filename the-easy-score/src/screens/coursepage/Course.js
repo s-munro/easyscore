@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
-import { setNavStyle } from "../../actions/index";
+import { setNavStyle, setFooterStyle } from "../../actions/index";
 import { fetchCoursePage } from "../../actions/fetchDataActions";
 
 import Header from "./components/Header";
@@ -22,6 +22,7 @@ const Course = (props) => {
   useEffect(() => {
     dispatch(fetchCoursePage(params.courseid));
     props.setNavStyle(3);
+    props.setFooterStyle(2);
   }, []);
 
   /******  PAGINATION  ******/
@@ -86,9 +87,12 @@ const mapStateToProps = (state) => {
     isLoading: state.isLoading,
     errorText: state.errorText,
     coursePage: state.coursePage,
+    footerStyle: state.footerStyle,
   };
 };
 
-export default connect(mapStateToProps, { fetchCoursePage, setNavStyle })(
-  Course
-);
+export default connect(mapStateToProps, {
+  fetchCoursePage,
+  setNavStyle,
+  setFooterStyle,
+})(Course);
