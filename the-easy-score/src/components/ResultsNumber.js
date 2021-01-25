@@ -21,7 +21,7 @@ const ResultsNumber = ({
     return (
       <div className="showingInstructorsText">
         Showing <b>{number} {results}</b> for <br />
-        <span className="coursePageKeyword">
+        <span className="coursePageCourse">
           {full_code} {course_name} 
         </span>
       </div>

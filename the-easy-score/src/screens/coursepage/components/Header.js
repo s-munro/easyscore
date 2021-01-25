@@ -27,13 +27,14 @@ const Header = ({ course }) => {
 
         <div className="courseContentContainer">
 
-            <div className="courseName">
+          <div className="courseName">
               {course.full_code}: {course.name}
-            </div>
- 
-            <div className="reqsContentContainer">
-              
-                {showFulfilled === true
+          </div>
+
+          <div className="reqsContentContainer">
+             <div className="reqsContent-requirements-title">Requirements: </div>
+             <div className="reqTagsContainer">
+             {showFulfilled === true
                   ? course.credits_fulfilled.map((credit) => {
                       let creditType = "";
                       if (credit === 0) {
@@ -70,14 +71,16 @@ const Header = ({ course }) => {
                         creditType = "World Language";
                       } else return null;
                       return (
-                        <p key={creditType} className="requirement">
+                        <p key={creditType} className="requirements">
                           {creditType}
                         </p>
+                       
                       );
                     })
                   : null}
+             </div>
             </div>
-
+            
             <div className="course-page-credits-container">
              <div className="course-page-credits-title">Credits: </div>
              <div className="course-page-credits">
