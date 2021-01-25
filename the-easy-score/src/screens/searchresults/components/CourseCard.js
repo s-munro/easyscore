@@ -34,6 +34,47 @@ const CourseCard = ({ course }) => {
         <div className="course-card-course-title">
           {course.full_code}: {course.name}
         </div>
+        {course.credits_fulfilled.map((credit) => {
+          let creditType = "";
+          if (credit === 0) {
+            creditType = "A&H";
+          } else if (credit === 1) {
+            creditType = "Diversity in U.S.";
+          } else if (credit === 2) {
+            creditType = "S&H Credit";
+          } else if (credit === 3) {
+            creditType = "N&M Credit";
+          } else if (credit === 4) {
+            creditType = "World Culture";
+          } else if (credit === 5) {
+            creditType = "Public Oral Comm.";
+          } else if (credit === 6) {
+            creditType = "English Composition";
+          } else if (credit === 7) {
+            creditType = "Mathematical Modeling";
+          } else if (credit === 8) {
+            creditType = "300+ Level";
+          } else if (credit === 9) {
+            creditType = "400+ Level";
+          } else if (credit === 10) {
+            creditType = "Grad";
+          } else if (credit === 11) {
+            creditType = "Intensive Writing";
+          } else if (credit === 7) {
+            creditType = "Mathematical Modeling";
+          } else if (credit === 12) {
+            creditType = "100-299 Level";
+          } else if (credit === 13) {
+            creditType = "Honors";
+          } else if (credit === "0GENEDMM") {
+            creditType = "World Language";
+          } else return null;
+          return (
+            <p key={creditType} className="requirement">
+              {creditType}
+            </p>
+          );
+        })}
         <div className="course-card-click-more">
           <Link
             to={`/courses/${course.full_code}_${course.name.replace(
