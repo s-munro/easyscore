@@ -19,10 +19,12 @@ const Header = ({ course }) => {
   return (
     <div className="container">
       <header className="row mt-5 testT">
-        <div className="jumbo-score col-xl-2 col-lg-2 col-md-2">{rating}</div>
+        <div className="jumbo-score col-xl-2 col-lg-3 col-md-4 mr-2">
+          {rating}
+        </div>
 
         <div className="col-xl-10 col-lg-10 col-md-10">
-          <div className="row ml-1">
+          <div className="row">
             <div className="courseName">
               {course.full_code}: {course.name}
             </div>
