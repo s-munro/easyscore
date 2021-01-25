@@ -205,7 +205,6 @@ const FiltersCard = (props) => {
           <Form.Check
             className="filterCardSwitch switch-danger"
             type="switch"
-            variant={switchRed}
             id="course-filter-next-semester-switch"
             checked={props.resultsPage.filtersCard.next_sem.value === 1}
             value={props.resultsPage.filtersCard.next_sem.value}
