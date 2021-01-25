@@ -34,6 +34,9 @@ const CourseCard = ({ course }) => {
         <div className="course-card-course-title">
           {course.full_code}: {course.name}
         </div>
+
+        <div className="reqsTags">
+        <div className="reqsContainer filterCardReqContainer">
         {course.credits_fulfilled.map((credit) => {
           let creditType = "";
           if (credit === 0) {
@@ -70,11 +73,13 @@ const CourseCard = ({ course }) => {
             creditType = "World Language";
           } else return null;
           return (
-            <p key={creditType} className="requirement">
+             <p key={creditType} className="requirement filterCardReq">
               {creditType}
-            </p>
+             </p>
           );
         })}
+        </div>
+        </div>
         <div className="course-card-click-more">
           <Link
             to={`/courses/${course.full_code}_${course.name.replace(
