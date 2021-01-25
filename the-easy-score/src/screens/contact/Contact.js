@@ -33,6 +33,7 @@ const Contact = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormValues(initialFormValues);
     console.log(formValues);
   };
 
@@ -40,7 +41,7 @@ const Contact = (props) => {
     <div className="container mt-5 contact-container">
       <Card className="col p-5">
         <h2 className="mt-15">Contact Us.</h2>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           {/* <Form.Group controlId="formBasicName"> */}
           {/* <TextField label="Name" placeholder="Name" variant="outlined" /> */}
           <br />
@@ -89,7 +90,8 @@ const Contact = (props) => {
           <Button
             className="contactTextArea"
             variant="primary"
-            onClick={handleSubmit}
+            // onClick={handleSubmit}
+            type="submit"
           >
             Send
           </Button>
