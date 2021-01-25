@@ -114,23 +114,32 @@ const Nav = (props) => {
     return (
       /**************** NAV 2 ******************/
       <div>
-        <Hidden smDown>
-          <nav className=" nav-2">
-            <Link className="nav-bar-2-logo" to="/">
-              <div>
-                <b className="nav-bar-2-easy-text">Easy</b>Score
+        <Hidden
+        //  smDown
+        >
+          <div className="container">
+            <nav className="row d-flex align-items-center">
+              <div className="col-lg-10 col-md-9 col-sm-8 col-8">
+                <Link className="nav-bar-2-logo" to="/">
+                  <b className="nav-bar-2-easy-text">Easy</b>Score
+                </Link>
               </div>
-            </Link>
-            <Link className="nav-bar-2-text-link" to="/about">
-              <div>About</div>
-            </Link>
-            <Link className="nav-bar-2-text-link" to="/contact">
-              <div>Contact</div>
-            </Link>
-          </nav>
+
+              <div className="col-lg-1 col-md-1 col-sm-2 col-2">
+                <Link className="nav-bar-2-text-link" to="/about">
+                  About
+                </Link>
+              </div>
+              <div className="col-lg-1 col-md-2 col-sm-2 col-2">
+                <Link className="nav-bar-2-text-link" to="/contact">
+                  Contact
+                </Link>
+              </div>
+            </nav>
+          </div>
         </Hidden>
         {/************** NAV 2 MOBILE ******************/}
-        <Hidden mdUp>
+        {/* <Hidden mdUp>
           <nav>
             <Link className="nav-bar-2-logo" to="/">
               <div>
@@ -138,7 +147,7 @@ const Nav = (props) => {
               </div>
             </Link>
           </nav>
-        </Hidden>
+        </Hidden> */}
       </div>
     );
   } else {

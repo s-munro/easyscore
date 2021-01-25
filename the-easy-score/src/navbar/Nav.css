@@ -35,10 +35,10 @@
   padding-bottom: 2%;
 }
 .nav-bar-2-logo {
-  margin-right: 57%;
+  /* margin-right: 57%; */
   font-size: 145%;
   font-weight: 500;
-  margin-bottom: 5%;
+  /* margin-bottom: 5%; */
   color: #b32727;
 }
 .nav-bar-2-easy-text {
@@ -48,15 +48,15 @@
   text-decoration: none;
   color: #b32727;
   font-size: 90%;
-  padding-right: 2%;
-  padding-bottom: 5%;
+  /* padding-right: 2%; */
+  /* padding-bottom: 5%; */
 }
 /** MOBILE **/
 .mobile-nav-bar-2-logo {
-  margin-right: 57%;
+  /* margin-right: 57%; */
   font-size: 145%;
   font-weight: 500;
-  margin-bottom: 5%;
+  /* margin-bottom: 5%; */
   color: #b32727;
 }
 .mobile.nav-bar-2-easy-text {
