@@ -185,9 +185,6 @@ const FiltersCard = (props) => {
     props.resultsPage.filtersCard.timeofDay.value,
     resetSearchPageFilters,
   ]);
-  const switchRed = {
-    backgroundColor: "red",
-  };
 
   return (
     <div className="mb-5">
@@ -205,7 +202,6 @@ const FiltersCard = (props) => {
           <Form.Check
             className="filterCardSwitch switch-danger"
             type="switch"
-            variant={switchRed}
             id="course-filter-next-semester-switch"
             checked={props.resultsPage.filtersCard.next_sem.value === 1}
             value={props.resultsPage.filtersCard.next_sem.value}
