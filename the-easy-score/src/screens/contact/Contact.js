@@ -57,7 +57,7 @@ const Contact = (props) => {
               value={formValues.name}
             />
             <Form.Text className="text-muted">
-              Don't worry, it's just for our reference
+              Let us know who we're talking to.
             </Form.Text>
           </Form.Group>
 
@@ -71,11 +71,12 @@ const Contact = (props) => {
               value={formValues.email}
             />
             <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
+              We never share your email with anyone.
             </Form.Text>
           </Form.Group>
           <br />
           <TextField
+          
             label="Leave us a message"
             multiline
             rows={8}
@@ -85,8 +86,8 @@ const Contact = (props) => {
             name="message"
             value={formValues.message}
           />
-          <Button variant="primary" onClick={handleSubmit}>
-            Submit
+          <Button className="contactTextArea" variant="primary" onClick={handleSubmit}>
+            Send
           </Button>
         </Form>
       </Card>

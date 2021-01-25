@@ -51,12 +51,12 @@ const Nav = (props) => {
                 <b className="navBarTwoEasy">Easy</b>Score
               </div>
             </Link>
-            <Link className="navBarThreeTextLink" to="/about">
+            {/* <Link className="navBarThreeTextLink" to="/about">
               <div>About</div>
             </Link>
             <Link className="navBarThreeTextLink" to="/contact">
               <div>Contact</div>
-            </Link>
+            </Link> */}
 
             <SearchForm formType={"nav"} />
           </nav>
@@ -65,21 +65,22 @@ const Nav = (props) => {
         <Hidden mdUp>
           <nav className="container">
             <div className="d-flex justify-content-between">
-              <Link className="navBarThreeLogo" to="/">
+              <Link className="navThreeMobileLogo" to="/">
                 <div>
                   <b className="navBarTwoEasy">Easy</b>Score
                 </div>
               </Link>
               <div className="d-flex">
-                <Link className="" to="/about">
+                {/* <Link className="" to="/about">
                   <div>About</div>
                 </Link>
                 <Link className="" to="/contact">
                   <div>Contact</div>
-                </Link>
+                </Link> */}
               </div>
             </div>
             <SearchForm formType={"nav"} />
+            <hr></hr>
           </nav>
         </Hidden>
       </div>
