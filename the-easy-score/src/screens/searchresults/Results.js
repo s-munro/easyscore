@@ -59,12 +59,12 @@ const Results = (props) => {
       <div className="mt-5">
         <Hidden only={["xs"]}>
           <SearchForm nav={false} />
+          <hr></hr>
         </Hidden>
         <Hidden smUp>
           <MobileSearchForm />
         </Hidden>
       </div>
-      <hr></hr>
       <div>
         {props.isLoading === true ? (
           <div className="row w-100 justify-content-center align-items-center">

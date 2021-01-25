@@ -132,8 +132,9 @@ const MobileSearchForm = (props) => {
             >
               Filters
             </Button>
+            <hr></hr>
           </div>
-
+          
           {/***************** Begin Popup Dialog  *******************/}
           <Dialog
             // fullScreen
