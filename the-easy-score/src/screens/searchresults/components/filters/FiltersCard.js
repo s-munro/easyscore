@@ -190,13 +190,9 @@ const FiltersCard = (props) => {
     <div className="mb-5">
       <Card>
         <Card.Body>
-<<<<<<< HEAD
-          <Card.Title className="mb-2 text-muted filterCardTitle">Filter courses</Card.Title>
-=======
           <Card.Title className="mb-2 text-muted filterCardTitle">
             Filter results
           </Card.Title>
->>>>>>> 548fe13430bfd2d58489f623af2bd91ba3eab9a2
           <hr></hr>
           <br />
 
