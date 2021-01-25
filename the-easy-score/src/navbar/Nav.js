@@ -119,14 +119,14 @@ const Nav = (props) => {
             </Link>
           </nav>
         </Hidden>
-        {/************** MOBILE NAV 3 ******************/}
+        {/************** MOBILE NAV 2 ******************/}
         <Hidden mdUp>
           <nav>
             <div>Hey!</div>
           </nav>
         </Hidden>
       </div>
-      /************** END MOBILE NAV 3 ******************/
+      /************** END MOBILE NAV 2 ******************/
     );
   } else {
     return (
