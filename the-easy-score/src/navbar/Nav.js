@@ -33,12 +33,12 @@ const Nav = (props) => {
             <b className="navBarTwoEasy">Easy</b>Score
           </div>
         </Link>
-        <Link className="navBarTextLink" to="/about">
+        {/* <Link className="navBarTextLink" to="/about">
           <div>About</div>
         </Link>
         <Link className="navBarTextLink" to="/contact">
           <div>Contact</div>
-        </Link>
+        </Link> */}
       </nav>
     );
   } else {
