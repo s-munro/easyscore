@@ -50,6 +50,7 @@
   font-size: 85%;
   color: #6c757d;
   margin-bottom: 0;
+  margin-left: 0;
   /* margin-right: 1%; */
 }
 
@@ -95,34 +96,42 @@
 }
 
 .profCardContainer {
-  margin-left: 15px;
-  margin-right: 0;
+  /* margin-left: 15px; */
+  /* margin-right: 0; */
   margin-bottom: 20px;
 }
 
 .prof-card {
   box-shadow: 0px 11px 7px -12px #4e4e4e;
   width: 113%;
+  height: 200px;
+  width: 650px;
 }
 
 .profName {
   color: black;
   font-weight: bold;
   font-size: 120%;
-  margin-top: 1%;
-  margin-left: 1%;
-  margin-bottom: 1%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .profYears {
-  margin-left: 2%;
+  /* margin-left: 2%; */
+  position: absolute;
+  top: 38px;
+  left: 10px;
   color: #6c757d;
   font-size: 80%;
 }
 .profDays {
-  margin-left: 2%;
+  /* margin-left: 2%; */
   color: #6c757d;
   font-size: 80%;
+  position: absolute;
+  top: 53px;
+  left: 10px;
 }
 
 .profCardContentContainer {

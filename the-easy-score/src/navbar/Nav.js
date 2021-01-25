@@ -94,7 +94,7 @@ const Nav = (props) => {
   if (props.navStyle === 1) {
     return (
       /************** NAV 1 ******************/
-      <div className="container">
+      <div className="container nav-1-top-margin">
         <nav className="row">
           <div className="col-xl 10 col-lg-10 col-md-10 col-sm-9 col-8" />
           <div className="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-2">
@@ -113,7 +113,7 @@ const Nav = (props) => {
   } else if (props.navStyle === 2) {
     return (
       /**************** NAV 2 ******************/
-      <div>
+      <div className="nav-top-top-margin">
         <Hidden
         //  smDown
         >
@@ -152,7 +152,7 @@ const Nav = (props) => {
     );
   } else {
     return (
-      <div className="nav-3-top-container">
+      <div className="nav-3-top-margin">
         <div>
           <Hidden smDown>
             <div className="container">

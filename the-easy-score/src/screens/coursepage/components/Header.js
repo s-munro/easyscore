@@ -29,7 +29,7 @@ const Header = ({ course }) => {
               {course.full_code}: {course.name}
             </div>
           </div>
-          <div className="row w-100 d-flex align-items-center justify-content-end">
+          <div className="row w-100 d-flex align-items-center justify-content-start">
             {/* <div className="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-3 mr-1"> */}
             {/* <p className="reqsMetText">Requirements:</p> */}
             {/* </div> */}

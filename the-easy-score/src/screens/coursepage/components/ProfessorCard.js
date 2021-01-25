@@ -29,53 +29,59 @@ const ProfessorCard = ({ instructor, index }) => {
   // 650 x 180
   return (
     <Card className="container prof-card">
-      <div className="profName">{transformedName} </div>
-      <div className="profYears">{instructor.years_taught}</div>
-      <div className="profDays">
-        {instructor.is_teaching_next_semester === 1 ? (
-          <div>
-            Days:{" "}
-            <b>
-              {displayDays
-                ? instructor.timings[1].map((timings) => {
-                    return `${timings} `;
-                  })
-                : "unavailable"}
-            </b>
+      <div className="row">
+        {/* <div className="row"> */}
+        <div className="col">
+          <div className="profName">{transformedName} </div>
+          {/* </div> */}
+          <div className="profYears">{instructor.years_taught}</div>
+          <div className="profDays">
+            {instructor.is_teaching_next_semester === 1 ? (
+              <div>
+                Days:{" "}
+                <b>
+                  {displayDays
+                    ? instructor.timings[1].map((timings) => {
+                        return `${timings} `;
+                      })
+                    : "unavailable"}
+                </b>
+              </div>
+            ) : null}
           </div>
-        ) : null}
-      </div>
-      <div className="profCardContentContainer">
-        <div className="align-items-center profCardRightContentHalf doughnutContainer">
-          <ScoreDoughnut easyScore={instructor.rating} />
-        </div>
+          <div className="profCardContentContainer">
+            <div className="align-items-center profCardRightContentHalf doughnutContainer">
+              <ScoreDoughnut easyScore={instructor.rating} />
+            </div>
 
-        <div className="profCardRightContentHalf profCardMiddle">
-          <div>
-            Semesters Taught: <b>{instructor.semesters_taught}</b>
-          </div>
-          <div>
-            Avg. Class Size: <b>{instructor.average_number_of_students}</b>
-          </div>
-          <div>
-            Avail. Next Term:{" "}
-            {instructor.is_teaching_next_semester === 0 ? (
-              <span>
-                <b>No</b>
-              </span>
-            ) : (
-              <span>
-                <b>Yes</b>
-              </span>
-            )}
-          </div>
-        </div>
+            <div className="profCardRightContentHalf profCardMiddle">
+              <div>
+                Semesters Taught: <b>{instructor.semesters_taught}</b>
+              </div>
+              <div>
+                Avg. Class Size: <b>{instructor.average_number_of_students}</b>
+              </div>
+              <div>
+                Avail. Next Term:{" "}
+                {instructor.is_teaching_next_semester === 0 ? (
+                  <span>
+                    <b>No</b>
+                  </span>
+                ) : (
+                  <span>
+                    <b>Yes</b>
+                  </span>
+                )}
+              </div>
+            </div>
 
-        <div className="profCardEnd">
-          <GradeDistChart2
-            average_grades={instructor.average_grades}
-            key={index}
-          />
+            <div className="profCardEnd">
+              <GradeDistChart2
+                average_grades={instructor.average_grades}
+                key={index}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </Card>
