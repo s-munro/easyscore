@@ -81,9 +81,7 @@ filterSelect {
   margin-right: inherit;
   margin-left: inherit;
 }
-/* .homeModalBtn {
-  margin-top: 5%;
-} */
+
 .homeFilterBtn,
 .homeFilterBtn-btn-primary {
   background-color: #b32727;
@@ -111,19 +109,3 @@ filterSelect {
   border: 1px solid #b32727;
   color: white;
 }
-
-/* 
-.homeFilterBtn:focus,
-.homeFilterBtn.btn-primary:focus {
-  background-color: #bb4c4c;
-  border: 1px solid #bb4c4c;
-  color: white;
-} */
-
-/* 
-.filterBtn:active:focus,
-.filterBtn:active:hover {
-  background-color: #b32727;
-  border: 1px solid #b32727;
-  color: white;
-} */

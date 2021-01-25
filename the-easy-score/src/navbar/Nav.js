@@ -37,7 +37,8 @@ import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 
-import "../App.css";
+// import "../App.css";
+import "./Nav.css";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -92,7 +93,8 @@ const Nav = (props) => {
 
   if (props.navStyle === 1) {
     return (
-      <nav className="nav-bar">
+      /************** NAV 1 ******************/
+      <nav className=" nav-bar">
         <Link to="/about">
           <div>About</div>
         </Link>
@@ -103,43 +105,43 @@ const Nav = (props) => {
     );
   } else if (props.navStyle === 2) {
     return (
+      /**************** NAV 2 ******************/
       <div>
         <Hidden smDown>
-          <nav className="nav-2">
-            <Link className="navBarTwoLogo" to="/">
+          <nav className=" nav-2">
+            <Link className="nav-bar-2-logo" to="/">
               <div>
-                <b className="navBarTwoEasy">Easy</b>Score
+                <b className="nav-bar-2-easy-text">Easy</b>Score
               </div>
             </Link>
-            <Link className="navBarTextLink" to="/about">
+            <Link className="nav-bar-2-text-link" to="/about">
               <div>About</div>
             </Link>
-            <Link className="navBarTextLink" to="/contact">
+            <Link className="nav-bar-2-text-link" to="/contact">
               <div>Contact</div>
             </Link>
           </nav>
         </Hidden>
-        {/************** MOBILE NAV 2 ******************/}
+        {/************** NAV 2 MOBILE ******************/}
         <Hidden mdUp>
           <nav>
-          <Link className="navBarTwoLogo" to="/">
+            <Link className="nav-bar-2-logo" to="/">
               <div>
-                <b className="navBarTwoEasy">Easy</b>Score
+                <b className="nav-bar-2-easy-text">Easy</b>Score
               </div>
             </Link>
           </nav>
         </Hidden>
       </div>
-      
     );
   } else {
     return (
       <div>
         <Hidden smDown>
-          <nav>
-            <Link className="navBarTwoLogo" to="/">
+          <nav className="">
+            <Link className="nav-bar-3-logo" to="/">
               <div>
-                <b className="navBarTwoEasy">Easy</b>Score
+                <b className="nav-bar-3-easy-text">Easy</b>Score
               </div>
             </Link>
             <SearchForm formType={"nav"} />
@@ -148,11 +150,11 @@ const Nav = (props) => {
         </Hidden>
         {/************** MOBILE NAV 3 ******************/}
         <Hidden mdUp>
-          <nav className="container">
+          <nav className="">
             <div className="d-flex justify-content-between">
-              <Link className="navThreeMobileLogo" to="/">
+              <Link className="mobile-nav-bar-3-logo" to="/">
                 <div>
-                  <b className="navBarTwoEasy">Easy</b>Score
+                  <b className="mobile-nav-bar-3-easy-text">Easy</b>Score
                 </div>
               </Link>
               <div className="d-flex">
@@ -165,7 +167,6 @@ const Nav = (props) => {
               </div>
             </div>
             <SearchForm formType={"nav"} />
-            
           </nav>
         </Hidden>
         {/*******************  POPUP MODAL *******************/}
