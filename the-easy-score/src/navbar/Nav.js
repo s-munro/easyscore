@@ -94,14 +94,21 @@ const Nav = (props) => {
   if (props.navStyle === 1) {
     return (
       /************** NAV 1 ******************/
-      <nav className=" nav-bar">
-        <Link to="/about">
-          <div>About</div>
-        </Link>
-        <Link to="/contact">
-          <div>Contact</div>
-        </Link>
-      </nav>
+      <div className="container">
+        <nav className="row">
+          <div className="col-lg-10 col-md-10 col-sm-9 col-8" />
+          <div className="col-lg-1 col-md-1 col-sm-2 col-2">
+            <Link to="/about">
+              <div>About</div>
+            </Link>
+          </div>
+          <div className="col-lg-1 col-md-1 col-sm-1 col-2">
+            <Link to="/contact">
+              <div>Contact</div>
+            </Link>
+          </div>
+        </nav>
+      </div>
     );
   } else if (props.navStyle === 2) {
     return (
