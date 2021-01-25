@@ -41,7 +41,6 @@ const GradeDistChart2 = ({ average_grades }) => {
                   display: false,
                   drawBorder: true,
                 },
-                // barThickness: 30,
                 barPercentage: 0.4,
                 categoryPercentage: 1,
               },
@@ -54,27 +53,10 @@ const GradeDistChart2 = ({ average_grades }) => {
                   stepSize: 25,
                   min: 0,
                   max: 100,
-                  // steps: 4,
                   beginAtZero: true,
                   callback: function (value, index, values) {
                     return value + "%";
                   },
-                  // callback: function (label, index, labels) {
-                  //   switch (label) {
-                  //     case 0:
-                  //       return "0%";
-                  //     case 1:
-                  //       return "25%";
-                  //     case 2:
-                  //       return "50%";
-                  //     case 3:
-                  //       return "75%";
-                  //     case 4:
-                  //       return "100%";
-                  //     default:
-                  //       return "%";
-                  //   }
-                  // },
                 },
               },
             ],
