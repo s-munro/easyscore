@@ -4,7 +4,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import { SidebarData } from "../data/SidebarData";
 
-import "./Sidebar.css";
+import "../componentsStyles/Sidebar.css";
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
