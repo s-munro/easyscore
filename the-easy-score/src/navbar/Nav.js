@@ -154,36 +154,55 @@ const Nav = (props) => {
     return (
       <div>
         <Hidden smDown>
-          <nav className="">
-            <Link className="nav-bar-3-logo" to="/">
-              <div>
-                <b className="nav-bar-3-easy-text">Easy</b>Score
+          <div className="container">
+            <nav className="row d-flex align-items-center">
+              <div className="col-lg-2 col-md-3">
+                <Link className="nav-bar-3-logo" to="/">
+                  <b className="nav-bar-3-easy-text">Easy</b>Score
+                </Link>
               </div>
-            </Link>
-            <SearchForm formType={"nav"} />
-            <FilterListIcon onClick={handleClickOpen} />
-          </nav>
+              <div className="d-flex align-items-center col-lg-8 col-md-7">
+                <SearchForm formType={"nav"} />
+                <FilterListIcon onClick={handleClickOpen} />
+              </div>
+              <div className="col-lg-1 col-md-1">
+                <Link className="" to="/about">
+                  About
+                </Link>
+              </div>
+              <div className="col-lg-1 col-md-1">
+                <Link className="" to="/contact">
+                  Contact
+                </Link>
+              </div>
+            </nav>
+          </div>
         </Hidden>
         {/************** MOBILE NAV 3 ******************/}
         <Hidden mdUp>
-          <nav className="">
-            <div className="d-flex justify-content-between">
-              <Link className="mobile-nav-bar-3-logo" to="/">
-                <div>
+          <div className="container">
+            <nav className="row d-flex align-items-center">
+              <div className="col-md-8 col-sm-7 col-7">
+                <Link className="mobile-nav-bar-3-logo" to="/">
                   <b className="mobile-nav-bar-3-easy-text">Easy</b>Score
-                </div>
-              </Link>
-              <div className="d-flex">
-                {/* <Link className="" to="/about">
-                  <div>About</div>
                 </Link>
-                <Link className="" to="/contact">
-                  <div>Contact</div>
-                </Link> */}
               </div>
-            </div>
-            <SearchForm formType={"nav"} />
-          </nav>
+              <div className="col-md-2 col-sm-2 col-2">
+                <Link className="" to="/about">
+                  About
+                </Link>
+              </div>
+              <div className="col-md-2 col-sm-2 col-2">
+                <Link className="" to="/contact">
+                  Contact
+                </Link>
+              </div>
+              <div className="col-md-12 d-flex align-items-center">
+                <SearchForm formType={"nav"} />
+                <FilterListIcon onClick={handleClickOpen} />
+              </div>
+            </nav>
+          </div>
         </Hidden>
         {/*******************  POPUP MODAL *******************/}
         <Dialog
