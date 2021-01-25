@@ -16,12 +16,15 @@ const Footer = (props) => {
     );
   } else if (props.footerStyle === 2) {
     return (
-      <footer>
-        <Link className="" to="/about">
-          <div>About</div>
+      <footer className="secondaryFooter">
+        <div><p>
+    <small>© Copyright 2021 The EasyScore. All rights reserved.</small>
+</p></div>
+        <Link className="aboutFooterLink" to="/about">
+          <div><small>About</small></div>
         </Link>
         <Link className="" to="/contact">
-          <div>Contact</div>
+          <div><small>Contact</small></div>
         </Link>
         {/* <div></div> */}
       </footer>

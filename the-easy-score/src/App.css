@@ -104,3 +104,21 @@ nav a {
   justify-content: center;
 }
 
+.secondaryFooter {
+  width: 100%;
+  bottom: 0px;
+  padding-right: 9%;
+  color: #a3a3a3;
+  height: 2em;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+}
+
+.secondaryFooter a {
+  color: #a3a3a3;
+}
+
+.aboutFooterLink {
+  margin-right: 2%;
+}
