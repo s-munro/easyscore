@@ -185,9 +185,6 @@ const FiltersCard = (props) => {
     props.resultsPage.filtersCard.timeofDay.value,
     resetSearchPageFilters,
   ]);
-  const switchRed = {
-    backgroundColor: "red",
-  };
 
   return (
     <div className="mb-5">
