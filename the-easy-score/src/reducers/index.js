@@ -1,4 +1,5 @@
 import { SET_NAV_STYLE } from "../actions";
+import { SET_FOOTER_STYLE } from "../actions";
 
 import {
   FETCH_DATA_START,
@@ -101,6 +102,7 @@ const initialState = {
     },
   },
   navStyle: 1,
+  footerStyle: 1,
 };
 
 const reducer = (state = initialState, action) => {
@@ -382,6 +384,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         navStyle: action.payload,
+      };
+    case SET_FOOTER_STYLE:
+      return {
+        ...state,
+        footerStyle: action.payload,
       };
     default:
       return state;

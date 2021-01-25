@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { fetchResults, setCourses } from "../../actions/fetchDataActions";
-import { setNavStyle } from "../../actions/";
+import { setNavStyle, setFooterStyle } from "../../actions/";
 import { useParams } from "react-router-dom";
 
 import { filterToKeyword } from "./hooks/";
@@ -34,6 +34,7 @@ const Results = (props) => {
     dispatch(setCourses(props.courses));
     filterToKeyword(params.axiosUrl, setKeyword);
     props.setNavStyle(2);
+    props.setFooterStyle(2);
     setCurrentPage(1);
   }, []);
 
@@ -124,6 +125,7 @@ const mapStateToProps = (state) => {
     courses: state.courses,
     displayedCourses: state.displayedCourses,
     errorText: state.errorText,
+    footerStyle: state.footerStyle,
   };
 };
 
@@ -131,4 +133,5 @@ export default connect(mapStateToProps, {
   fetchResults,
   setCourses,
   setNavStyle,
+  setFooterStyle,
 })(Results);

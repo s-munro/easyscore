@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
-import { setNavStyle } from "../../actions/index";
+import { setNavStyle, setFooterStyle } from "../../actions/index";
 
 import MobileSearchForm from "./mobileSearch/MobileSearchForm";
 import SearchForm from "../../components/SearchForm";
@@ -12,6 +12,7 @@ import "./home.css";
 const Home = (props) => {
   useEffect(() => {
     props.setNavStyle(1);
+    props.setFooterStyle(1);
   }, []);
 
   return (
@@ -37,7 +38,8 @@ const Home = (props) => {
 const mapStateToProps = (state) => {
   return {
     navStyle: state.navStyle,
+    footerStyle: state.footerStyle,
   };
 };
 
-export default connect(mapStateToProps, { setNavStyle })(Home);
+export default connect(mapStateToProps, { setNavStyle, setFooterStyle })(Home);
