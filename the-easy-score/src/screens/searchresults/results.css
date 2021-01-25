@@ -10,7 +10,7 @@
   border: 1px solid red !important;
 } */
 
-.ant-radio-checked .ant-radio-inner {
+/* .ant-radio-checked .ant-radio-inner {
   border-color: #f5222d !important ;
 }
 .ant-radio-checked .ant-radio-inner:after {
@@ -26,13 +26,12 @@
 
 .userInputText {
   color: #b32727;
-}
+} */
 
 /****** Returned Results Section ********/
 
 .showingResultsText {
-  color: black;
-  font-weight: 500;
+  color:  #6c757d;
   margin-bottom: 1%;
   padding-left: 0;
 }
@@ -47,6 +46,20 @@
 .filterBtnContainer {
   display: flex;
   flex-direction: row;
+}
+
+.filterCardTitle {
+  font-weight: normal;
+  font-size: 100%;
+}
+
+.filterCardBtnLabel {
+  font-weight: normal;
+  font-size: 85%;
+}
+
+.filterCardSwitch {
+  color: #b32727;
 }
 
 .filterBtn,
