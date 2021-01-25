@@ -82,6 +82,15 @@ nav a {
 }
 
 
+
+/****************** MOBILE NAVBAR 3 *******************/
+
+.navThreeMobileLogo {
+  padding-top: 2%;
+  margin-bottom: 2%;
+  font-size: 100%;
+}
+
 /************** FOOTER ***********************/
 .footer-container {
   position: absolute;
