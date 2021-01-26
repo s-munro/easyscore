@@ -29,12 +29,59 @@ const ProfessorCard = ({ instructor, index }) => {
   // 650 x 180
   return (
     <Card className="container prof-card">
-      <div className="row">
+
+     <div className="profCardTopContentContainer">
+       
+      {/* <div className="profCardTopLeftContentContainer">
+        <div className="ESContainer">
+          <ScoreDoughnut easyScore={instructor.rating} />
+        </div>
+      </div> */}
+
+      <div className="profCardTopRightContentContainer">
+
+       <div className="profName">{transformedName}</div>
+       <div className="profYears">{instructor.years_taught}</div>
+       <div>Semesters Taught: <b>{instructor.semesters_taught}</b></div>
+
+       {instructor.is_teaching_next_semester === 1 ? (
+              <div>
+                Days:{" "}
+                <b>
+                  {displayDays
+                    ? instructor.timings[1].map((timings) => {
+                        return `${timings} `;
+                      })
+                    : "unavailable"}
+                </b>
+              </div>
+            ) : null}
+      </div>
+
+       
+     </div>  
+     
+
+     <div className="profCardBottomContentContainer">
+       <GradeDistChart2 average_grades={instructor.average_grades} key={index} />
+         <div className="avgClassSizeContainer">
+          Avg. Class Size: <b>{instructor.average_number_of_students}</b>  
+        </div>   
+     </div>
+
+      
+
+      
+
+
+
+
+      {/* <div className="row"> */}
         {/* <div className="row"> */}
-        <div className="col">
-          <div className="profName">{transformedName} </div>
+        {/* <div className="col">
+          <div className="profName">{transformedName} </div> */}
           {/* </div> */}
-          <div className="profYears">{instructor.years_taught}</div>
+          {/* <div className="profYears">{instructor.years_taught}</div>
           <div className="profDays">
             {instructor.is_teaching_next_semester === 1 ? (
               <div>
@@ -83,7 +130,7 @@ const ProfessorCard = ({ instructor, index }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </Card>
   );
 };
