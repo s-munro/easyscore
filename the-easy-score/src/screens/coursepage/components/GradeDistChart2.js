@@ -1,7 +1,7 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 
-const GradeDistChart2 = ({ average_grades }) => {
+const GradeDistChart2 = ({ average_grades, pixels }) => {
   let data = {
     labels: ["A", "B", "C", "D"],
     datasets: [
@@ -22,12 +22,21 @@ const GradeDistChart2 = ({ average_grades }) => {
     <div>
       <Bar
         data={data}
-        width={240}
-        height={200}
+        width={pixels.width}
+        height={pixels.height}
         options={{
+          responsive: false,
+          layout: {
+            // padding: {
+            //   // left: 50,
+            //   right: 0,
+            //   top: 0,
+            //   bottom: 0,
+            // },
+          },
           maintainAspectRatio: false,
           title: {
-            display: true,
+            display: false,
             text: "Grade Distribution",
           },
           legend: {
@@ -36,13 +45,13 @@ const GradeDistChart2 = ({ average_grades }) => {
           scales: {
             xAxes: [
               {
-                ticks: { display: true },
+                ticks: { display: true, fontColor: "black", fontSize: 8 },
                 gridLines: {
                   display: false,
                   drawBorder: true,
                 },
-                barPercentage: 0.4,
-                categoryPercentage: 1,
+                barPercentage: 1,
+                categoryPercentage: 0.5,
               },
             ],
             yAxes: [
@@ -65,7 +74,7 @@ const GradeDistChart2 = ({ average_grades }) => {
             enabled: true,
             displayColors: false,
             titleFontSize: 8,
-            bodyFontSize: 8,
+            bodyFontSize: 5,
             callbacks: {
               label: (tooltipItem, data) => {
                 return `${tooltipItem.value}%`;

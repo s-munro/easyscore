@@ -6,7 +6,7 @@ import "chartjs-plugin-doughnutlabel";
 const ScoreDoughnut = ({ easyScore }) => {
   const score = Math.round(easyScore);
 
-  const PIXEL_SIZE = 100;
+  const PIXEL_SIZE = 85;
 
   const data = {
     datasets: [

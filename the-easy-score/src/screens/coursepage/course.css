@@ -29,7 +29,6 @@
   margin-right: 2%;
 }
 
-
 .courseContentContainer {
   flex-direction: column;
 }
@@ -38,7 +37,7 @@
   color: #b32727;
   font-size: 165%;
   font-weight: bold;
-  letter-spacing: .7px;
+  letter-spacing: 0.7px;
 }
 
 .reqsContentContainer {
@@ -53,7 +52,6 @@
   color: #6c757d;
   margin-left: 0;
 }
-
 
 .reqTagsContainer {
   display: flex;
@@ -72,8 +70,6 @@
   margin-right: 1%;
   border-radius: 8px;
 }
-
-
 
 .course-page-credits-container {
   display: flex;
@@ -110,7 +106,6 @@
 
 /**************PROFESSOR CARD****************/
 
-
 .prof-card {
   display: flex;
   flex-direction: column;
@@ -129,10 +124,9 @@
   text-align: left;
   width: 100%;
   font-size: 85%;
-  color:#6c757d;
+  color: #6c757d;
   margin-bottom: 2%;
 }
-
 
 .profCardTopLeftContentContainer {
   justify-content: center;
@@ -153,8 +147,7 @@
   font-size: 85%;
   padding-top: 2%;
   padding-bottom: 2%;
-  color:#6c757d;
-
+  color: #6c757d;
 }
 
 .profCardBottomContentContainer {
@@ -163,26 +156,25 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
 }
 
 .profName {
   color: black;
   font-weight: bold;
-  font-size: 150%;
-  top: 10px;
-  left: 10px;
+  font-size: 110%;
+  /* top: 10px;
+  left: 15px;
+  position: absolute; */
 }
 
 .testTest {
   width: 105%;
 }
 
-
 /* .profCardContainer {
   /* margin-left: 15px; */
-  /* margin-right: 0; */
-  /* margin-bottom: 20px;
+/* margin-right: 0; */
+/* margin-bottom: 20px;
 }
 
 .prof-card {
@@ -200,64 +192,131 @@
   top: 10px;
   left: 10px;
 }
-
-.profYears { */
-  /* margin-left: 2%; */
-  /* position: absolute;
-  top: 38px;
-  left: 10px;
-  color: #6c757d;
-  font-size: 80%;
-}
-.profDays { */
-  /* margin-left: 2%; */
-  /* color: #6c757d;
-  font-size: 80%;
-  position: absolute;
-  top: 53px;
-  left: 10px;
-}
-
-.profCardContentContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding-right: 1%;
-  margin-bottom: 2%;
-}
-
-.profCardRightContentHalf {
-  padding-bottom: 2%;
-}
-
-.doughnutContainer {
-  margin-right: 5%;
-  padding-right: 0%;
-  padding-left: 0%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.profCardMiddle {
-  color: #6c757d;
-  font-size: 85%;
-  padding-left: 0;
-  padding-right: 1%;
-  padding-top: 2%;
-  line-height: 155%;
-}
-
-.profCardEnd {
-  padding-bottom: 1%;
-  padding-left: 5%;
-  padding-right: 5%;
-}  */
+*/
 
 /**************FILTER CARD****************/
 
 .filterCardTitle {
   font-size: 105%;
   color: #6c757d;
+}
+
+/**** SAM PROF CARD ****/
+.top-half {
+  position: relative;
+}
+.bottom-half {
+  position: relative;
+}
+
+.professor-card-container {
+  min-height: 175px;
+  max-height: 175px;
+  max-width: 650px;
+  border-radius: 15px;
+  border: none;
+  /* border-bottom: 0.5px solid rgba(211, 211, 211, 0.199); */
+  /* border-top: 0.5px solid rgba(211, 211, 211, 0.199); */
+  box-shadow: 0px 3px 20px 0px #00000010;
+}
+
+.profName {
+  color: black;
+  font-weight: bold;
+  font-size: 110%;
+  top: 10px;
+  left: 35px;
+  position: absolute;
+}
+
+.profYears {
+  /* margin-left: 2%; */
+  /* margin-top: -1%; */
+  position: absolute;
+  /* /* top: 38px; */
+  top: 30px;
+  left: 35px;
+  color: #6c757d;
+  font-size: 80%;
+}
+
+.card-small-text {
+  font-size: 50%;
+}
+
+.doughnut {
+  position: absolute;
+  top: 60px;
+  left: 5px;
+  display: flex;
+}
+.text-block {
+  position: absolute;
+  top: 15px;
+  left: 100px;
+}
+.chart {
+  position: absolute;
+  top: 15px;
+}
+
+@media only screen and (max-width: 991px) {
+  .professor-card-container {
+    /* min-height: 600px; */
+    /* max-height: 600px; */
+    min-width: 500px;
+    border-radius: 15px;
+    border: none;
+    /* border-bottom: 0.5px solid rgba(211, 211, 211, 0.199); */
+    /* border-top: 0.5px solid rgba(211, 211, 211, 0.199); */
+    box-shadow: 0px 3px 20px 0px #00000010;
+    border: 1px solid pink;
+    margin: 0;
+  }
+  .top-half {
+    min-height: 175px;
+  }
+  .bottom-half {
+    min-height: 175px;
+  }
+
+  .profName {
+    color: black;
+    font-weight: bold;
+    font-size: 110%;
+    top: 10px;
+    left: 35px;
+    position: absolute;
+  }
+
+  .profYears {
+    /* margin-left: 2%; */
+    /* margin-top: -1%; */
+    position: absolute;
+    /* /* top: 38px; */
+    top: 30px;
+    left: 35px;
+    color: #6c757d;
+    font-size: 80%;
+  }
+
+  .card-small-text {
+    font-size: 50%;
+  }
+
+  .doughnut {
+    position: absolute;
+    top: 60px;
+    left: 5px;
+    display: flex;
+  }
+  .text-block {
+    position: absolute;
+    top: 15px;
+    left: 100px;
+  }
+  .chart {
+    position: absolute;
+    top: 15px;
+  }
 }
