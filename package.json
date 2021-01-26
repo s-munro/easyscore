@@ -36,7 +36,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "npm run start-app",
+    "start": "npm run build-prod && node server/index.js",
     "start-server": "node server/index.js",
     "start-app": "npm run build && npm run start-server",
     "build": "react-scripts build",

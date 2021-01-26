@@ -38,7 +38,6 @@ const Results = (props) => {
     props.setNavStyle(2);
     props.setFooterStyle(2);
     setCurrentPage(1);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -46,7 +45,6 @@ const Results = (props) => {
     dispatch(setCourses(props.courses));
     filterToKeyword(params.axiosUrl, setKeyword);
     setCurrentPage(1);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.axiosUrl]);
 
   const indexOfLastCourse = currentPage * coursesPerPage;
