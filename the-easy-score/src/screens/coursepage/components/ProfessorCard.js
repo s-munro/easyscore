@@ -32,11 +32,7 @@ const ProfessorCard = ({ instructor, index }) => {
 
      <div className="profCardTopContentContainer">
        
-      {/* <div className="profCardTopLeftContentContainer">
-        <div className="ESContainer">
-          <ScoreDoughnut easyScore={instructor.rating} />
-        </div>
-      </div> */}
+      
 
       <div className="profCardTopRightContentContainer">
 
@@ -59,6 +55,14 @@ const ProfessorCard = ({ instructor, index }) => {
       </div>
 
        
+      <div className="profCardTopLeftContentContainer">
+        <div className="ESContainer">
+          <ScoreDoughnut easyScore={instructor.rating} />
+        </div>
+
+
+      </div>
+     
      </div>  
      
 
