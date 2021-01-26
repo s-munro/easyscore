@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { fetchResults, setCourses } from "../../actions/fetchDataActions";
-import { setNavStyle, setFooterStyle, setShowModal } from "../../actions";
+import { setNavStyle, setFooterStyle, setShowModal } from "../../actions/";
 import { useParams } from "react-router-dom";
 
-import { filterToKeyword } from "./hooks";
+import { filterToKeyword } from "./hooks/";
 
 import NoResults from "../../components/NoResults";
 import Loading from "../../components/Loading";
@@ -38,7 +38,6 @@ const Results = (props) => {
     props.setNavStyle(2);
     props.setFooterStyle(2);
     setCurrentPage(1);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -46,7 +45,6 @@ const Results = (props) => {
     dispatch(setCourses(props.courses));
     filterToKeyword(params.axiosUrl, setKeyword);
     setCurrentPage(1);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.axiosUrl]);
 
   const indexOfLastCourse = currentPage * coursesPerPage;
