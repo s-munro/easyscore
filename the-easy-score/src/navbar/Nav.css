@@ -23,6 +23,18 @@
   align-items: center;
   float: right;
 }
+.moda-icon {
+  cursor: pointer;
+}
+.MuiSvgIcon-root.modal-icon {
+  cursor: pointer;
+}
+.MuiSvgIcon-root.modal-icon:hover {
+  /* background-color: red; */
+  color: #b32727;
+  transition: 0.1s;
+  cursor: pointer;
+}
 
 /** MOBILE NAV1 **/
 
