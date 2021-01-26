@@ -133,7 +133,8 @@
 /***** COURSE CARDS ********/
 
 .CourseCard {
-  width: 590px;
+  width: 300px;
+  min-width: 300px;
   max-height: min-content;
   margin-right: 5%;
 
@@ -182,7 +183,6 @@
 
 .couse-card-top-portion-right-side {
   width: 50%;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
