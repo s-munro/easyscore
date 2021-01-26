@@ -124,114 +124,16 @@ const MobileSearchForm = (props) => {
               </Button>
             </InputGroup.Append>
           </InputGroup>
-          <div className="row d-flex homeModalBtnContainer  justify-content-center">
-            <Button
+          {/* <div className="row d-flex homeModalBtnContainer  justify-content-center"> */}
+          {/* <Button
               className="homeFilterBtn homeModalBtn shadow-none"
               onClick={handleClickOpen}
               // block
             >
               Filters
-            </Button>
-            <hr></hr>
-          </div>
-          
-          {/***************** Begin Popup Dialog  *******************/}
-          <Dialog
-            // fullScreen
-            open={showModal}
-            onClose={handleClose}
-            TransitionComponent={Transition}
-          >
-            <AppBar className={classes.appBar}>
-              <Toolbar>
-                <IconButton
-                  edge="start"
-                  color="inherit"
-                  onClick={handleClose}
-                  aria-label="close"
-                >
-                  <CloseIcon />
-                </IconButton>
-                <WhiteTextTypography variant="h6" className={classes.title}>
-                  Filters
-                </WhiteTextTypography>
-              </Toolbar>
-            </AppBar>
-            <List>
-              <div className="col mr-4">
-                <div className="row mt-3 mb-2 d-flex justify-content-center">
-                  <ListItem>
-                    {/* <ListItemText primary="Course Level" /> */}
-                    <FilterSelect
-                      select_id={"courseLevel"}
-                      handleSelectChange={handleChange}
-                      selectValues={courseLevelValues}
-                      selectValue={props.filters.courseLevel.value}
-                    />
-                  </ListItem>
-                </div>
-                <Divider />
-                <div className="row mt-3 mb-2 d-flex justify-content-center">
-                  <ListItem>
-                    {/* <ListItemText primary="Credit Hours" /> */}
-                    <div className="d-flex justify-content-center align-items-center">
-                      <FilterSelect
-                        select_id={"creditHours"}
-                        handleSelectChange={handleChange}
-                        selectValues={creditHoursValues}
-                        selectValue={props.filters.creditHours.value}
-                      />
-                    </div>
-                  </ListItem>
-                </div>
-                <Divider />
-                <div className="row mt-3 mb-2 d-flex justify-content-center">
-                  <ListItem>
-                    {/* <ListItemText primary="Requirements Fulfilled" /> */}
-                    <br />
-                    <div className="d-flex justify-content-center align-items-center">
-                      <FilterSelect
-                        select_id={"requirements"}
-                        handleSelectChange={handleChange}
-                        selectValues={requirementsValues}
-                        selectValue={props.filters.requirements.value}
-                      />
-                    </div>
-                  </ListItem>
-                </div>
-                <Divider />
-                <div className="row mt-3 mb-2 d-flex justify-content-center">
-                  <ListItem>
-                    {/* <ListItemText primary="Time of Day" /> */}
-                    <br />
-                    <div className="d-flex justify-content-center align-items-center">
-                      <FilterSelect
-                        select_id={"timeofDay"}
-                        handleSelectChange={handleChange}
-                        selectValues={timeofDayValues}
-                        selectValue={props.filters.timeofDay.value}
-                      />
-                    </div>
-                  </ListItem>
-                </div>
-                <Divider />
-                <div className="row mt-3 mb-2 d-flex justify-content-center">
-                  <Button
-                    className="homeFilterBtn homeApply shadow-none"
-                    onClick={handleClose}
-                  >
-                    Apply
-                  </Button>
-                  <Button
-                    className="homeFilterBtn shadow-none"
-                    onClick={handleFiltersReset}
-                  >
-                    Reset
-                  </Button>
-                </div>
-              </div>
-            </List>
-          </Dialog>
+            </Button> */}
+          {/* <hr></hr> */}
+          {/* </div> */}
         </form>
       </div>
     );
@@ -243,6 +145,7 @@ const mapStateToProps = (state) => {
     isLoading: state.isLoading,
     courses: state.courses,
     filters: state.filters,
+    showModal: state.showModal,
   };
 };
 

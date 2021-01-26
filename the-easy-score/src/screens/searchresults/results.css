@@ -103,55 +103,19 @@
   box-shadow: none;
 }
 
-/** ORIGINAL BUTTON SETTINGS **/
-
-/* .filterBtn,
-.filterBtn.btn-primary,
-.filterBtn:focus,
-.filterBtn.btn-primary:focus {
-  font-size: 85%;
-  font-weight: 600;
-  background-color: #fff;
-  color: #b32727;
-  border: 0.5px solid #b32727;
-  margin-right: 8%;
-  box-shadow: none;
-}
-
-.filterBtn:hover {
-  color: lightblue;
-  text-emphasis-style: underline;
-  background-color: #fff;
-} */
-
-/* .filterBtn:hover {
-  color: lightblue;
-  text-emphasis-style: underline;
-  background-color: #fff;
-} */
-
 /***** COURSE CARDS ********/
 
-.CourseCard {
-  width: 300px;
-  min-width: 300px;
-  max-height: min-content;
-  margin-right: 5%;
-
-}
-
-.course-cardSpace {
+.course-card {
+  /* border: 1px solid #c5c5c550; */
   background-color: #ffffff;
+  /* height: 100%; */
   border-radius: 4px;
   color: #222222;
   box-shadow: 0px 3px 20px #00000010;
   padding: 2%;
   border-bottom: 0.5px solid rgba(211, 211, 211, 0.199);
   border-top: 0.5px solid rgba(211, 211, 211, 0.199);
-  margin-top: 10%;
-  margin-bottom: 10%;
 }
-
 
 .course-card-top-portion {
   width: 100%;
@@ -161,6 +125,10 @@
   font-size: 85%;
   color: #6c757d;
   margin-bottom: 8%;
+}
+
+.couse-card-top-portion-left-side {
+  width: 50%;
 }
 
 .course-card-easyscore {
@@ -173,7 +141,6 @@
   justify-content: center;
   align-items: center;
   margin-left: 5%;
-  margin-right: 5%;
   margin-top: 5%;
   width: 80px;
   height: 80px;
@@ -182,12 +149,10 @@
 }
 
 .couse-card-top-portion-right-side {
-  width: 50%;
+  width: 55%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   margin-top: 2%;
-  margin-left: 3%;
 }
 
 .course-card-credits {
@@ -248,8 +213,59 @@
   margin: 3%;
 }
 
-/********** FILTERS CARD ********/
-/* .filters-card-container {
-  border:.5px solid rgba(211, 211, 211, 0.199);
-  height: 40vh;
-} */
+/**** MOBILE FORM ****/
+.inputContainer {
+  border: none;
+}
+
+.inputAndBtnContainer {
+  border: 0.5px solid #d8d6d6;
+  border-radius: 4px;
+  padding-left: 0.2%;
+  font-size: 90%;
+}
+
+.searchPageSrchBtn {
+  background-color: #ffffff;
+  border: none;
+  color: #b32727;
+  /* width: 100%; */
+}
+
+.searchPageModalBtnContainer {
+  /* float: right; */
+  margin-top: 1%;
+  /* margin-right: inherit; */
+  /* margin-left: inherit; */
+}
+
+.searchPageFilterBtn,
+.searchPageFilterBtn-btn-primary {
+  background-color: #b32727;
+  border: 1px solid #b32727;
+  color: white;
+}
+.searchPageFilterBtn:hover,
+.searchPageFilterBtn.btn-primary:hover {
+  background-color: #bb4c4c;
+  border: 1px solid #b32727;
+  color: white;
+}
+.searchPageFilterBtn:active,
+.searchPageFilterBtn.btn-primary:active {
+  background-color: #b32727;
+  border: 1px solid #b32727;
+  color: white;
+}
+
+.searchPageFilterBtn:focus,
+.searchPageFilterBtn.btn-primary:focus .searchPageFilterBtn:active:focus,
+.searchPageFilterBtn.btn-primary:active:focus {
+  outline: none;
+  background-color: #b32727;
+  border: 1px solid #b32727;
+  color: white;
+}
+.searchPageApply {
+  margin-right: 2%;
+}
