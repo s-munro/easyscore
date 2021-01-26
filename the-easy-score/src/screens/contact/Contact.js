@@ -57,6 +57,7 @@ const Contact = (props) => {
               onChange={handleChange}
               name="name"
               value={formValues.name}
+              className="form-padding"
             />
             <Form.Text className="text-muted">
               Let us know who we're talking to.
@@ -71,6 +72,7 @@ const Contact = (props) => {
               onChange={handleChange}
               name="email"
               value={formValues.email}
+              className="form-padding"
             />
             <Form.Text className="text-muted">
               We never share your email with anyone.
@@ -88,7 +90,7 @@ const Contact = (props) => {
             value={formValues.message}
           />
           <Button
-            className="contactTextArea"
+            className="contactTextArea contactBtn"
             variant="primary"
             // onClick={handleSubmit}
             type="submit"
