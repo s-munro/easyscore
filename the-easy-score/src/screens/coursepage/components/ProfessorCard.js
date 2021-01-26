@@ -7,6 +7,11 @@ import { Card } from "react-bootstrap";
 import "../course.css";
 
 const ProfessorCard = ({ instructor, index }) => {
+  const pixels = {
+    width: 250,
+    height: 150,
+  };
+
   const [transformedName, setTransformedName] = useState(instructor.name);
   const [displayDays, setDisplayDays] = useState(false);
 
@@ -28,113 +33,72 @@ const ProfessorCard = ({ instructor, index }) => {
   console.log("days", instructor.timings[1].length);
   // 650 x 180
   return (
-    <Card className="container prof-card">
-
-     <div className="profCardTopContentContainer">
-       
-      
-
-      <div className="profCardTopRightContentContainer">
-
-       <div className="profName">{transformedName}</div>
-       <div className="profYears">{instructor.years_taught}</div>
-       <div>Semesters Taught: <b>{instructor.semesters_taught}</b></div>
-
-       {instructor.is_teaching_next_semester === 1 ? (
-              <div>
-                Days:{" "}
-                <b>
-                  {displayDays
-                    ? instructor.timings[1].map((timings) => {
-                        return `${timings} `;
-                      })
-                    : "unavailable"}
-                </b>
-              </div>
-            ) : null}
-      </div>
-
-       
-      <div className="profCardTopLeftContentContainer">
-        <div className="ESContainer">
-          <ScoreDoughnut easyScore={instructor.rating} />
-        </div>
-
-
-      </div>
-     
-     </div>  
-     
-
-     <div className="profCardBottomContentContainer">
-       <GradeDistChart2 average_grades={instructor.average_grades} key={index} />
-         <div className="avgClassSizeContainer">
-          Avg. Class Size: <b>{instructor.average_number_of_students}</b>  
-        </div>   
-     </div>
-
-      
-
-      
-
-
-
-
-      {/* <div className="row"> */}
-        {/* <div className="row"> */}
-        {/* <div className="col">
-          <div className="profName">{transformedName} </div> */}
-          {/* </div> */}
-          {/* <div className="profYears">{instructor.years_taught}</div>
-          <div className="profDays">
-            {instructor.is_teaching_next_semester === 1 ? (
-              <div>
-                Days:{" "}
-                <b>
-                  {displayDays
-                    ? instructor.timings[1].map((timings) => {
-                        return `${timings} `;
-                      })
-                    : "unavailable"}
-                </b>
-              </div>
-            ) : null}
-          </div>
-          <div className="profCardContentContainer">
-            <div className="align-items-center profCardRightContentHalf doughnutContainer">
+    <Card className="container professor-card-container w-100 mb-5">
+      {/* <div className="container w-100"> */}
+      <div className="row w-100">
+        <div
+          className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 top-half"
+          // style={{ backgroundColor: "red" }}
+        >
+          <div className="row w-100 profName">{transformedName} </div>
+          <div className="row w-100 profYears">{instructor.years_taught}</div>
+          <div className="row w-100">
+            <div className="col doughnut">
               <ScoreDoughnut easyScore={instructor.rating} />
-            </div>
 
-            <div className="profCardRightContentHalf profCardMiddle">
-              <div>
-                Semesters Taught: <b>{instructor.semesters_taught}</b>
+              <div className="col text-block">
+                <div className="card-small-text">
+                  Semesters Taught: <b>{instructor.semesters_taught}</b>
+                </div>
+                <div className="card-small-text">
+                  Avg. Class Size:{" "}
+                  <b>{instructor.average_number_of_students}</b>
+                </div>
+                <div className="card-small-text">
+                  Avail. Next Term:{" "}
+                  {instructor.is_teaching_next_semester === 0 ? (
+                    <span className="card-small-text">
+                      <b>No</b>
+                    </span>
+                  ) : (
+                    <span className="card-small-text">
+                      <b>Yes</b>
+                    </span>
+                  )}
+                </div>
+                {instructor.is_teaching_next_semester === 1 ? (
+                  <div className="card-small-text">
+                    Days:{" "}
+                    <b>
+                      {displayDays
+                        ? instructor.timings[1].map((timings) => {
+                            return `${timings} `;
+                          })
+                        : "unavailable"}
+                    </b>
+                  </div>
+                ) : null}
               </div>
-              <div>
-                Avg. Class Size: <b>{instructor.average_number_of_students}</b>
-              </div>
-              <div>
-                Avail. Next Term:{" "}
-                {instructor.is_teaching_next_semester === 0 ? (
-                  <span>
-                    <b>No</b>
-                  </span>
-                ) : (
-                  <span>
-                    <b>Yes</b>
-                  </span>
-                )}
-              </div>
-            </div>
-
-            <div className="profCardEnd">
-              <GradeDistChart2
-                average_grades={instructor.average_grades}
-                key={index}
-              />
             </div>
           </div>
         </div>
-      </div> */}
+
+        {/* SECOND HALF */}
+        <div
+          className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center bottom-half"
+          // style={{ backgroundColor: "yellow" }}
+        >
+          <div className="chart">
+            <GradeDistChart2
+              average_grades={instructor.average_grades}
+              key={index}
+              pixels={pixels}
+              // className="chart"
+            />
+          </div>
+        </div>
+      </div>
+      {/* </div> */}
     </Card>
   );
 };
