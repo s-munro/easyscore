@@ -74,15 +74,12 @@ const Results = (props) => {
           </div>
         ) : (
           <div className="row mt-5">
-
             <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
               <FiltersCard setCurrentPage={setCurrentPage} />
             </div>
-
             <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
-
               <div className="row">
-                <div>
+                <div className="col mb-4">
                   <ResultsNumber
                     number={props.displayedCourses.length}
                     results={"courses"}
@@ -91,8 +88,7 @@ const Results = (props) => {
                   />
                 </div>
               </div>
-
-              
+              <div className="row">
                 {props.displayedCourses.length > 0 ? (
                   <div>
                     <Courses currentCourses={currentCourses} />
@@ -114,6 +110,7 @@ const Results = (props) => {
                     </div>
                   </div>
                 )}
+              </div>
             </div>
           </div>
         )}
