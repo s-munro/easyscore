@@ -1,9 +1,4 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
+$primary: #b32727;
+$secondary: green;
 
-$theme-colors: (
-  "primary": #b32727,
-  "danger": #ff4136,
-);
-
-// Import Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap.scss";

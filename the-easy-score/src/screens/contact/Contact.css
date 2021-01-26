@@ -3,6 +3,41 @@
   max-height: 80vh;
 }
 
+.form-padding {
+  padding-left: 12%;
+}
+.form-control {
+  padding-left: 42.5px;
+}
+
 .contactTextArea {
   margin-top: 2%;
+}
+
+.contactBtn,
+.contactBtn-btn-primary {
+  background-color: #b32727;
+  border: 1px solid #b32727;
+  color: white;
+}
+.contactBtn:hover,
+.contactBtn.btn-primary:hover {
+  background-color: #bb4c4c;
+  border: 1px solid #b32727;
+  color: white;
+}
+.contactBtn:active,
+.contactBtn.btn-primary:active {
+  background-color: #b32727;
+  border: 1px solid #b32727;
+  color: white;
+}
+
+.contactBtn:focus,
+.contactBtn.btn-primary:focus .contactBtn:active:focus,
+.contactBtn.btn-primary:active:focus {
+  outline: none;
+  background-color: #b32727;
+  border: 1px solid #b32727;
+  color: white;
 }
