@@ -114,8 +114,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 75%;
+  /* width: 75%; */
   padding: 2%;
+  margin-top: 5%;
+  margin-bottom: 15%;
 }
 
 .profCardTopContentContainer {
@@ -124,36 +126,37 @@
   align-items: center;
   text-align: left;
   width: 100%;
-  font-size: 87%;
+  font-size: 85%;
   color:#6c757d;
+  margin-bottom: 2%;
 }
 
 
 .profCardTopLeftContentContainer {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   font-size: 85%;
-  width: 50%;
-  
+  padding-left: 5%;
 }
 
 .profCardTopRightContentContainer {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  margin-right: 5%;
+  width: 76%;
 }
 
 .avgClassSizeContainer {
-  justify-content: center;
+  text-align: center;
   width: 100%;
   font-size: 85%;
+  padding-top: 2%;
   padding-bottom: 2%;
-  padding-left: 25%;
+  color:#6c757d;
+
 }
 
 .profCardBottomContentContainer {
-  text-align: left;
+  text-align: center;
   width: 100%;
   display: flex;
   flex-direction: column;
