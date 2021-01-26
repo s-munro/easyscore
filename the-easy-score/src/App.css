@@ -122,3 +122,23 @@ nav a {
   margin-right: 2%;
   margin-left: 2%;
 }
+
+.btn:focus,
+.btn:active:focus,
+.btn:active {
+  outline: none !important;
+}
+
+*:focus {
+  /* background-color: red !important; */
+  outline: none !important;
+  box-shadow: none;
+}
+
+/* .input-group>.custom-select:not(:last-child), .input-group>.form-control:not(:last-child) {
+  outline: none
+} */
+
+.input-group:focus {
+  outline: none;
+}
