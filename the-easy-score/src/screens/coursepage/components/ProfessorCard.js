@@ -34,9 +34,10 @@ const ProfessorCard = ({ instructor, index }) => {
   // 650 x 180
   return (
     <Card className="container professor-card-container w-100 mb-5">
+      {/* <div className="container w-100"> */}
       <div className="row w-100">
         <div
-          className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 top-half"
+          className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 top-half"
           // style={{ backgroundColor: "red" }}
         >
           <div className="row w-100 profName">{transformedName} </div>
@@ -84,7 +85,7 @@ const ProfessorCard = ({ instructor, index }) => {
 
         {/* SECOND HALF */}
         <div
-          className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6 d-flex justify-content-center align-items-center bottom-half"
+          className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center bottom-half"
           // style={{ backgroundColor: "yellow" }}
         >
           <div className="chart">
@@ -97,6 +98,7 @@ const ProfessorCard = ({ instructor, index }) => {
           </div>
         </div>
       </div>
+      {/* </div> */}
     </Card>
   );
 };

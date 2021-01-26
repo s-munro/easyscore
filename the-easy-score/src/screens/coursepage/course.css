@@ -137,7 +137,7 @@
 .profCardTopRightContentContainer {
   display: flex;
   flex-direction: column;
-  margin-right: 5%;
+  /* margin-right: 5%; */
   width: 76%;
 }
 
@@ -263,15 +263,13 @@
 @media only screen and (max-width: 991px) {
   .professor-card-container {
     /* min-height: 600px; */
-    /* max-height: 600px; */
-    min-width: 500px;
+    max-height: 1200px;
+    max-width: 600px;
+    /* min-width: 500px; */
     border-radius: 15px;
     border: none;
-    /* border-bottom: 0.5px solid rgba(211, 211, 211, 0.199); */
-    /* border-top: 0.5px solid rgba(211, 211, 211, 0.199); */
     box-shadow: 0px 3px 20px 0px #00000010;
-    border: 1px solid pink;
-    margin: 0;
+    /* border: 1px solid pink; */
   }
   .top-half {
     min-height: 175px;
@@ -292,10 +290,10 @@
   .profYears {
     /* margin-left: 2%; */
     /* margin-top: -1%; */
-    position: absolute;
+    position: relative;
     /* /* top: 38px; */
-    top: 30px;
-    left: 35px;
+    /* top: 30px;
+    left: 35px; */
     color: #6c757d;
     font-size: 80%;
   }
@@ -305,18 +303,20 @@
   }
 
   .doughnut {
-    position: absolute;
+    /* position: relative; */
     top: 60px;
-    left: 5px;
+    left: 75px;
     display: flex;
   }
   .text-block {
     position: absolute;
-    top: 15px;
-    left: 100px;
+    top: 10px;
+    left: 95px;
+    font-size: 150%;
   }
   .chart {
-    position: absolute;
-    top: 15px;
+    position: relative;
+    margin-bottom: 5%;
+    /* top: 15px; */
   }
 }
