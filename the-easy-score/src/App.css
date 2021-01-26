@@ -104,6 +104,15 @@ nav a {
   display: flex;
   justify-content: center;
 }
+.footer-3-container {
+  width: 100%;
+  bottom: 0px;
+  padding-right: 9%;
+  color: #a3a3a3;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+}
 
 .secondaryFooter {
   width: 100%;

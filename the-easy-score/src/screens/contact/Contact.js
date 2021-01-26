@@ -15,7 +15,7 @@ const Contact = (props) => {
   const [formValues, setFormValues] = useState(initialFormValues);
   useEffect(() => {
     props.setNavStyle(3);
-    props.setFooterStyle(1);
+    props.setFooterStyle(3);
   }, []);
 
   const handleChange = (e) => {
