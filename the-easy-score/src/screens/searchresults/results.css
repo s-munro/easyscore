@@ -105,17 +105,25 @@
 
 /***** COURSE CARDS ********/
 
-.course-card {
-  /* border: 1px solid #c5c5c550; */
+.CourseCard {
+  width: 590px;
+  max-height: min-content;
+  margin-right: 5%;
+
+}
+
+.course-cardSpace {
   background-color: #ffffff;
-  /* height: 100%; */
   border-radius: 4px;
   color: #222222;
   box-shadow: 0px 3px 20px #00000010;
   padding: 2%;
   border-bottom: 0.5px solid rgba(211, 211, 211, 0.199);
   border-top: 0.5px solid rgba(211, 211, 211, 0.199);
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
+
 
 .course-card-top-portion {
   width: 100%;
@@ -125,10 +133,6 @@
   font-size: 85%;
   color: #6c757d;
   margin-bottom: 8%;
-}
-
-.couse-card-top-portion-left-side {
-  width: 50%;
 }
 
 .course-card-easyscore {
@@ -141,6 +145,7 @@
   justify-content: center;
   align-items: center;
   margin-left: 5%;
+  margin-right: 5%;
   margin-top: 5%;
   width: 80px;
   height: 80px;
@@ -149,10 +154,13 @@
 }
 
 .couse-card-top-portion-right-side {
-  width: 55%;
+  width: 50%;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-top: 2%;
+  margin-left: 3%;
 }
 
 .course-card-credits {
