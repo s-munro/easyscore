@@ -10,7 +10,7 @@ const Footer = (props) => {
     return (
       <footer>
         <div className="footer-container"><p>
-    <small>© Copyright 2021 The EasyScore. All rights reserved.</small>
+    <small>©2021 The EasyScore. All rights reserved.</small>
 </p></div>
       </footer>
     );
@@ -18,7 +18,7 @@ const Footer = (props) => {
     return (
       <footer className="secondaryFooter">
         <div><p>
-    <small>© Copyright 2021 The EasyScore. All rights reserved.</small>
+    <small>©2021 The EasyScore. All rights reserved.</small>
 </p></div>
         <Link className="aboutFooterLink" to="/about">
           <div><small>About</small></div>
