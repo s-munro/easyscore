@@ -12,8 +12,6 @@ import ProfFiltersCard from "./components/filters/ProfFiltersCard";
 import Professors from "./components/Professors";
 import TablePagination from "../../components/TablePagination";
 
-import { FormControl } from "react-bootstrap";
-
 const Course = (props) => {
   const params = useParams();
   const dispatch = useDispatch();
@@ -25,6 +23,7 @@ const Course = (props) => {
     dispatch(fetchCoursePage(params.courseid));
     props.setNavStyle(3);
     props.setFooterStyle(2);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /******  PAGINATION  ******/
@@ -36,7 +35,6 @@ const Course = (props) => {
   );
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   /*****  END PAGINATION  *****/
-  // console.log("currentins", currentInstructors);
   return (
     <div className="container">
       {props.isLoading === true ? (
