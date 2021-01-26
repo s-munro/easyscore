@@ -7,7 +7,7 @@ const CourseCard = ({ course }) => {
 
   return (
     // <div style={{ backgroundColor: "red" }}>Hi</div>
-    <div className="course-card course-cardSpace w-100">
+    <div className="course-card .course-cardSpace w-100">
       <div className="course-card-top-portion">
         <div className="couse-card-top-portion-left-side">
           <div className="course-card-easyscore">{score}</div>
