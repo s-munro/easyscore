@@ -15,7 +15,7 @@ const Contact = (props) => {
   const [formValues, setFormValues] = useState(initialFormValues);
   useEffect(() => {
     props.setNavStyle(3);
-    props.setFooterStyle(1);
+    props.setFooterStyle(3);
   }, []);
 
   const handleChange = (e) => {
@@ -39,65 +39,67 @@ const Contact = (props) => {
 
   return (
     <div className="container mt-5 contact-container">
-      <Card className="col p-5">
-        <h2 className="mt-15">Contact Us.</h2>
-        <Form onSubmit={handleSubmit}>
-          {/* <Form.Group controlId="formBasicName"> */}
-          {/* <TextField label="Name" placeholder="Name" variant="outlined" /> */}
-          <br />
-          {/* <TextField label="Email" placeholder="Email" variant="outlined" /> */}
-          {/* <Form.Label>Name</Form.Label> */}
-          {/* <Form.Control type="text" placeholder="Name" />
+      <Card className="row w-100 p-5">
+        <div className="col">
+          <h2 className="mt-15">Contact Us.</h2>
+          <Form onSubmit={handleSubmit}>
+            {/* <Form.Group controlId="formBasicName"> */}
+            {/* <TextField label="Name" placeholder="Name" variant="outlined" /> */}
+            <br />
+            {/* <TextField label="Email" placeholder="Email" variant="outlined" /> */}
+            {/* <Form.Label>Name</Form.Label> */}
+            {/* <Form.Control type="text" placeholder="Name" />
           </Form.Group> */}
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter Name"
-              onChange={handleChange}
-              name="name"
-              value={formValues.name}
-              className="form-padding"
-            />
-            <Form.Text className="text-muted">
-              Let us know who we're talking to.
-            </Form.Text>
-          </Form.Group>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Name"
+                onChange={handleChange}
+                name="name"
+                value={formValues.name}
+                className="form-padding"
+              />
+              <Form.Text className="text-muted">
+                Let us know who we're talking to.
+              </Form.Text>
+            </Form.Group>
 
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              onChange={handleChange}
-              name="email"
-              value={formValues.email}
-              className="form-padding"
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                onChange={handleChange}
+                name="email"
+                value={formValues.email}
+                className="form-padding"
+              />
+              <Form.Text className="text-muted">
+                We never share your email with anyone.
+              </Form.Text>
+            </Form.Group>
+            <br />
+            <TextField
+              label="Leave us a message"
+              multiline
+              rows={8}
+              fullWidth={true}
+              variant="outlined"
+              onChange={handleChangeMessage}
+              name="message"
+              value={formValues.message}
             />
-            <Form.Text className="text-muted">
-              We never share your email with anyone.
-            </Form.Text>
-          </Form.Group>
-          <br />
-          <TextField
-            label="Leave us a message"
-            multiline
-            rows={8}
-            fullWidth={true}
-            variant="outlined"
-            onChange={handleChangeMessage}
-            name="message"
-            value={formValues.message}
-          />
-          <Button
-            className="contactTextArea contactBtn"
-            variant="primary"
-            // onClick={handleSubmit}
-            type="submit"
-          >
-            Send
-          </Button>
-        </Form>
+            <Button
+              className="contactTextArea contactBtn"
+              variant="primary"
+              // onClick={handleSubmit}
+              type="submit"
+            >
+              Send
+            </Button>
+          </Form>
+        </div>
       </Card>
       <br />
     </div>
