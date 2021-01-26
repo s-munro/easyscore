@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
+
+import { setShowModal } from "../actions";
 import {
   setKeywordFilterValue,
   setLevelFilterValue,
@@ -8,19 +9,18 @@ import {
   setCreditsFilterValue,
   setTimeFilterValue,
   resetFilterValues,
-} from "../../../actions/filtersActions";
+} from "../actions/filtersActions";
 
 import {
   requirementsValues,
   courseLevelValues,
   creditHoursValues,
   timeofDayValues,
-} from "../../../data/FilterSelectsData";
+} from "../data/FilterSelectsData";
 
 import { makeStyles } from "@material-ui/core/styles";
 import { withStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
-import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
@@ -32,9 +32,9 @@ import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 
 import { Button } from "react-bootstrap";
-import FilterSelect from "../../../components/FilterSelect";
+import FilterSelect from "./FilterSelect";
 
-import "../screens/home/home.css;";
+// import "../screens/home/home.css;";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -58,14 +58,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const FiltersModal = (props) => {
   const classes = useStyles();
-  const [showModal, setShowModal] = useState(false);
-
-  const handleClickOpen = () => {
-    setShowModal(true);
-  };
 
   const handleClose = () => {
-    setShowModal(false);
+    props.setShowModal(!props.showModal);
   };
 
   useEffect(() => {
@@ -93,7 +88,7 @@ const FiltersModal = (props) => {
   return (
     <Dialog
       // fullScreen
-      open={showModal}
+      open={props.showModal}
       onClose={handleClose}
       TransitionComponent={Transition}
     >
@@ -189,6 +184,7 @@ const FiltersModal = (props) => {
 const mapStateToProps = (state) => {
   return {
     filters: state.filters,
+    showModal: state.showModal,
   };
 };
 
@@ -199,4 +195,5 @@ export default connect(mapStateToProps, {
   setCreditsFilterValue,
   setTimeFilterValue,
   resetFilterValues,
+  setShowModal,
 })(FiltersModal);

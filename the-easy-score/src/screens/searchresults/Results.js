@@ -14,6 +14,7 @@ import TablePagination from "../../components/TablePagination";
 
 import SearchForm from "../../components/SearchForm";
 import MobileSearch from "./components/MobileSearch";
+import FiltersModal from "../../components/FiltersModal";
 
 import FiltersCard from "./components/filters/FiltersCard";
 
@@ -63,6 +64,7 @@ const Results = (props) => {
         </Hidden>
         <Hidden mdUp>
           <MobileSearch />
+          <FiltersModal />
         </Hidden>
       </div>
       <div>
