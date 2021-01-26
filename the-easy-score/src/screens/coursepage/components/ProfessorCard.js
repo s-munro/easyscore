@@ -42,7 +42,7 @@ const ProfessorCard = ({ instructor, index }) => {
         >
           <div className="row w-100 profName">{transformedName} </div>
           <div className="row w-100 profYears">{instructor.years_taught}</div>
-          <div className="row w-100">
+          <div className="row w-100 mobile-row">
             <div className="col doughnut">
               <ScoreDoughnut easyScore={instructor.rating} />
 
