@@ -164,7 +164,10 @@ const Nav = (props) => {
                 </div>
                 <div className="d-flex align-items-center col-xl-8 col-lg-8 col-md-7">
                   <SearchForm formType={"nav"} />
-                  <FilterListIcon onClick={handleClickOpen} />
+                  <FilterListIcon
+                    onClick={handleClickOpen}
+                    className="modal-icon"
+                  />
                 </div>
                 <div className="col-xl-1 col-lg-1 col-md-1">
                   <Link className="" to="/about">
