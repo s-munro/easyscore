@@ -58,7 +58,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const FiltersModal = (props) => {
   const classes = useStyles();
-  const history = useHistory();
   const [showModal, setShowModal] = useState(false);
 
   const handleClickOpen = () => {
@@ -117,7 +116,6 @@ const FiltersModal = (props) => {
         <div className="col mr-4">
           <div className="row mt-3 mb-2 d-flex justify-content-center">
             <ListItem>
-              {/* <ListItemText primary="Course Level" /> */}
               <FilterSelect
                 select_id={"courseLevel"}
                 handleSelectChange={handleChange}
@@ -129,7 +127,6 @@ const FiltersModal = (props) => {
           <Divider />
           <div className="row mt-3 mb-2 d-flex justify-content-center">
             <ListItem>
-              {/* <ListItemText primary="Credit Hours" /> */}
               <div className="d-flex justify-content-center align-items-center">
                 <FilterSelect
                   select_id={"creditHours"}
@@ -143,7 +140,6 @@ const FiltersModal = (props) => {
           <Divider />
           <div className="row mt-3 mb-2 d-flex justify-content-center">
             <ListItem>
-              {/* <ListItemText primary="Requirements Fulfilled" /> */}
               <br />
               <div className="d-flex justify-content-center align-items-center">
                 <FilterSelect
@@ -158,7 +154,6 @@ const FiltersModal = (props) => {
           <Divider />
           <div className="row mt-3 mb-2 d-flex justify-content-center">
             <ListItem>
-              {/* <ListItemText primary="Time of Day" /> */}
               <br />
               <div className="d-flex justify-content-center align-items-center">
                 <FilterSelect
