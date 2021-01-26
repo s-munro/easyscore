@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { fetchResults, setCourses } from "../../actions/fetchDataActions";
-import { setNavStyle, setFooterStyle } from "../../actions/";
+import { setNavStyle, setFooterStyle, setShowModal } from "../../actions/";
 import { useParams } from "react-router-dom";
 
 import { filterToKeyword } from "./hooks/";
@@ -18,6 +18,7 @@ import FiltersModal from "../../components/FiltersModal";
 
 import FiltersCard from "./components/filters/FiltersCard";
 
+import { Button } from "react-bootstrap";
 import Hidden from "@material-ui/core/Hidden";
 
 import "./results.css";
@@ -55,6 +56,11 @@ const Results = (props) => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const handleModal = (e) => {
+    e.preventDefault();
+    props.setShowModal(!props.showModal);
+  };
+
   return (
     <div className="container">
       <div className="mt-5">
@@ -64,6 +70,13 @@ const Results = (props) => {
         </Hidden>
         <Hidden mdUp>
           <MobileSearch />
+          <Button
+            className="homeFilterBtn homeModalBtn shadow-none"
+            onClick={handleModal}
+            block
+          >
+            Filters
+          </Button>
           <FiltersModal />
         </Hidden>
       </div>
@@ -128,6 +141,7 @@ const mapStateToProps = (state) => {
     displayedCourses: state.displayedCourses,
     errorText: state.errorText,
     footerStyle: state.footerStyle,
+    showModal: state.showModal,
   };
 };
 
@@ -136,4 +150,5 @@ export default connect(mapStateToProps, {
   setCourses,
   setNavStyle,
   setFooterStyle,
+  setShowModal,
 })(Results);
