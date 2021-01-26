@@ -62,23 +62,25 @@ const Results = (props) => {
   };
 
   return (
-    <div className="container">
-      <div className="mt-5">
-        <Hidden smDown>
-          <SearchForm nav={false} />
-          <hr></hr>
-        </Hidden>
-        <Hidden mdUp>
-          <MobileSearch />
-          <Button
-            className="homeFilterBtn homeModalBtn shadow-none"
-            onClick={handleModal}
-            block
-          >
-            Filters
-          </Button>
-          <FiltersModal />
-        </Hidden>
+    <div className="container w-100">
+      <div className="mt-3 mr-0 row w-100">
+        <div className="col w-100">
+          <Hidden smDown>
+            <SearchForm nav={false} />
+            <hr></hr>
+          </Hidden>
+          <Hidden mdUp>
+            <MobileSearch />
+            <Button
+              className="homeFilterBtn homeModalBtn shadow-none"
+              onClick={handleModal}
+              block
+            >
+              Filters
+            </Button>
+            <FiltersModal />
+          </Hidden>
+        </div>
       </div>
       <div>
         {props.isLoading === true ? (

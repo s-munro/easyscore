@@ -99,11 +99,11 @@ const MobileSearchForm = (props) => {
   };
 
   return (
-    <div className="searchPage-form-container container w-100">
+    <div className="searchPage-form-container container-fluid no-gutters w-100">
       <form onSubmit={handleSubmit}>
-        <div className="row w-100 d-flex justify-content-center">
-          <InputGroup className="inputAndBtnContainer row w-100 d-flex">
-            <div className="col d-flex justify-content-center">
+        <div className="row w-100 d-flex justify-content-center ml-0 mr-0">
+          <InputGroup className="inputAndBtnContainer col w-100 d-flex pr-0">
+            <div className="col d-flex justify-content-center w-100 pr-0 pl-0">
               <FormControl
                 className="inputContainer"
                 value={props.filters.keyword.value}
