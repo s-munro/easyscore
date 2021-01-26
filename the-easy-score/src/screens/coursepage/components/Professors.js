@@ -10,7 +10,7 @@ const Professors = (props) => {
           return (
             <div
               key={index}
-              // className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 mb-5"
+              className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 mb-5"
             >
               <ProfessorCard instructor={instructor} key={index} />
             </div>
