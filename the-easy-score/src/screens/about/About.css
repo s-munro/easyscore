@@ -1,0 +1,25 @@
+.about-title {
+  font-size: 400%;
+  font-weight: 800;
+  color: #3d3d3d;
+}
+.about-text {
+  font-size: 100%;
+  color: rgb(117, 117, 117);
+}
+.source-text {
+  color: rgb(32, 32, 32);
+}
+.disclaimer {
+  color: rgb(95, 0, 0);
+  font-weight: 600;
+}
+.small {
+  font-size: 65%;
+  margin: 0;
+  line-height: 100%;
+}
+.grade-dist-link {
+  color: rgb(124, 0, 0);
+  margin-left: 2px;
+}
