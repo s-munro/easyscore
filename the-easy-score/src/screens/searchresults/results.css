@@ -103,33 +103,6 @@
   box-shadow: none;
 }
 
-/** ORIGINAL BUTTON SETTINGS **/
-
-/* .filterBtn,
-.filterBtn.btn-primary,
-.filterBtn:focus,
-.filterBtn.btn-primary:focus {
-  font-size: 85%;
-  font-weight: 600;
-  background-color: #fff;
-  color: #b32727;
-  border: 0.5px solid #b32727;
-  margin-right: 8%;
-  box-shadow: none;
-}
-
-.filterBtn:hover {
-  color: lightblue;
-  text-emphasis-style: underline;
-  background-color: #fff;
-} */
-
-/* .filterBtn:hover {
-  color: lightblue;
-  text-emphasis-style: underline;
-  background-color: #fff;
-} */
-
 /***** COURSE CARDS ********/
 
 .course-card {
@@ -240,8 +213,59 @@
   margin: 3%;
 }
 
-/********** FILTERS CARD ********/
-/* .filters-card-container {
-  border:.5px solid rgba(211, 211, 211, 0.199);
-  height: 40vh;
-} */
+/**** MOBILE FORM ****/
+.inputContainer {
+  border: none;
+}
+
+.inputAndBtnContainer {
+  border: 0.5px solid #d8d6d6;
+  border-radius: 4px;
+  padding-left: 0.2%;
+  font-size: 90%;
+}
+
+.searchPageSrchBtn {
+  background-color: #ffffff;
+  border: none;
+  color: #b32727;
+  /* width: 100%; */
+}
+
+.searchPageModalBtnContainer {
+  /* float: right; */
+  margin-top: 1%;
+  /* margin-right: inherit; */
+  /* margin-left: inherit; */
+}
+
+.searchPageFilterBtn,
+.searchPageFilterBtn-btn-primary {
+  background-color: #b32727;
+  border: 1px solid #b32727;
+  color: white;
+}
+.searchPageFilterBtn:hover,
+.searchPageFilterBtn.btn-primary:hover {
+  background-color: #bb4c4c;
+  border: 1px solid #b32727;
+  color: white;
+}
+.searchPageFilterBtn:active,
+.searchPageFilterBtn.btn-primary:active {
+  background-color: #b32727;
+  border: 1px solid #b32727;
+  color: white;
+}
+
+.searchPageFilterBtn:focus,
+.searchPageFilterBtn.btn-primary:focus .searchPageFilterBtn:active:focus,
+.searchPageFilterBtn.btn-primary:active:focus {
+  outline: none;
+  background-color: #b32727;
+  border: 1px solid #b32727;
+  color: white;
+}
+.searchPageApply {
+  margin-right: 2%;
+}

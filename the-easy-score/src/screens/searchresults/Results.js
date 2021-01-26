@@ -13,7 +13,8 @@ import Courses from "./components/Courses";
 import TablePagination from "../../components/TablePagination";
 
 import SearchForm from "../../components/SearchForm";
-import MobileSearchForm from "../home/mobileSearch/MobileSearchForm";
+import MobileSearch from "./components/MobileSearch";
+import FiltersModal from "../../components/FiltersModal";
 
 import FiltersCard from "./components/filters/FiltersCard";
 
@@ -57,12 +58,13 @@ const Results = (props) => {
   return (
     <div className="container">
       <div className="mt-5">
-        <Hidden only={["xs"]}>
+        <Hidden smDown>
           <SearchForm nav={false} />
           <hr></hr>
         </Hidden>
-        <Hidden smUp>
-          <MobileSearchForm />
+        <Hidden mdUp>
+          <MobileSearch />
+          <FiltersModal />
         </Hidden>
       </div>
       <div>
