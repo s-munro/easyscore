@@ -9,6 +9,8 @@ const buildPath = path.join(__dirname, "..", "build");
 app.use(express.json());
 app.use(express.static(buildPath));
 
+const port = process.env.PORT || 3000;
+
 app.post("/send", (req, res) => {
   try {
     const mailOptions = {
@@ -27,20 +29,18 @@ app.post("/send", (req, res) => {
     };
     transporter.sendMail(mailOptions, function (err, info) {
       if (err) {
-        console.log(err);
         res.status(500).json({ err: `there was an error, ${err}` });
       } else {
         res.status(200).json({ message: "Success" });
       }
     });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: `Something went wrong.  Try again later, ${error}`,
     });
   }
 });
 
-app.listen(3030, () => {
-  console.log("server running 3030");
+app.listen(port, () => {
+  console.log(`server running ${port}`);
 });
