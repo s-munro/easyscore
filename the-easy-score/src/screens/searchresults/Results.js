@@ -105,7 +105,7 @@ const Results = (props) => {
               </div>
               <div className="row">
                 {props.displayedCourses.length > 0 ? (
-                  <div>
+                  <div className="w-100">
                     <Courses currentCourses={currentCourses} />
                     {props.isLoading === false ? (
                       <TablePagination
