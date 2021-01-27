@@ -40,8 +40,10 @@ const FiltersCard = (props) => {
 
   const handleChange = (e) => {
     if (e.target.name === "courseLevel") {
+      // console.log("courselevel etargetname");
       props.setSearchPageFiltersCourseLevel(e.target.value);
     } else if (e.target.name === "creditHours") {
+      // console.log("credithours etargetname");
       props.setSearchPageFiltersCourseCreditHours(e.target.value);
     } else if (e.target.name === "timeofDay") {
       props.setSearchPageFiltersTimeofDay(e.target.value);
@@ -58,7 +60,6 @@ const FiltersCard = (props) => {
     props.setCourses(props.courses);
 
     // functions all depend on one-another, the filters are all activated by calling filterByRequirements
-    // eslint-disable-next-line array-callback-return
     const semesterFilteredCourses = props.courses.filter((course) => {
       if (props.resultsPage.filtersCard.next_sem.value === 0) {
         return course.taught_next_semester === false;
@@ -81,6 +82,7 @@ const FiltersCard = (props) => {
           );
           return instructorsWithValue;
         });
+        // console.log("fc", filteredCourses);
         return filteredCourses;
       } else {
         return semesterFilteredCourses;
@@ -125,7 +127,9 @@ const FiltersCard = (props) => {
     };
 
     const filterByCreditHours = () => {
+      // console.log("filtercredithours func: ", func);
       if (props.resultsPage.filtersCard.creditHours.value !== "") {
+        // console.log("creditHours state value isnt blank");
         const creditsFilteredCourses = filterByCourseLevel().filter(
           (course) => {
             return (
@@ -135,6 +139,7 @@ const FiltersCard = (props) => {
         );
         return creditsFilteredCourses;
       } else {
+        // console.log("creditHours state is blank");
         return filterByCourseLevel();
       }
     };

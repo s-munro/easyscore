@@ -30,10 +30,16 @@ const ProfessorCard = ({ instructor, index }) => {
     setTransformedName(`${firstName}, ${lastNameInitial}.`);
   };
 
+  console.log("days", instructor.timings[1].length);
+  // 650 x 180
   return (
     <Card className="container professor-card-container w-100 mb-5">
+      {/* <div className="container w-100"> */}
       <div className="row w-100">
-        <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 top-half">
+        <div
+          className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 top-half"
+          // style={{ backgroundColor: "red" }}
+        >
           <div className="row w-100 profName">{transformedName} </div>
           <div className="row w-100 profYears">{instructor.years_taught}</div>
           <div className="row w-100 mobile-row">
@@ -78,16 +84,21 @@ const ProfessorCard = ({ instructor, index }) => {
         </div>
 
         {/* SECOND HALF */}
-        <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center bottom-half">
+        <div
+          className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center bottom-half"
+          // style={{ backgroundColor: "yellow" }}
+        >
           <div className="chart">
             <GradeDistChart2
               average_grades={instructor.average_grades}
               key={index}
               pixels={pixels}
+              // className="chart"
             />
           </div>
         </div>
       </div>
+      {/* </div> */}
     </Card>
   );
 };
