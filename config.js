@@ -5,8 +5,8 @@ dotenv.config();
 var transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "easyscore.mailer@gmail.com",
-    pass: "tesmailer20471!@",
+    user: process.env.user,
+    pass: process.env.pass,
   },
 });
 module.exports = transporter;
