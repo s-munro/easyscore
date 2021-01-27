@@ -45,6 +45,7 @@ const Contact = (props) => {
       ? `http://localhost:4000${path}`
       : path;
   }
+
   console.log("test");
   console.log(url("/send"));
 
