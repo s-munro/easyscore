@@ -60,6 +60,7 @@ const FiltersCard = (props) => {
     props.setCourses(props.courses);
 
     // functions all depend on one-another, the filters are all activated by calling filterByRequirements
+    // eslint-disable-next-line array-callback-return
     const semesterFilteredCourses = props.courses.filter((course) => {
       if (props.resultsPage.filtersCard.next_sem.value === 0) {
         return course.taught_next_semester === false;
