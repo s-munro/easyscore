@@ -99,11 +99,11 @@ const MobileSearchForm = (props) => {
   };
 
   return (
-    <div className="searchPage-form-container container w-100">
+    <div className="searchPage-form-container container-fluid no-gutters w-100">
       <form onSubmit={handleSubmit}>
-        <div className="row w-100 d-flex justify-content-center">
-          <InputGroup className="inputAndBtnContainer row w-100 d-flex">
-            <div className="col d-flex justify-content-center">
+        <div className="row w-100 d-flex justify-content-center ml-0 mr-0">
+          <InputGroup className="inputAndBtnContainer col w-100 d-flex pr-0">
+            <div className="col d-flex justify-content-center w-100 pr-0 pl-0">
               <FormControl
                 className="inputContainer"
                 value={props.filters.keyword.value}
@@ -126,114 +126,6 @@ const MobileSearchForm = (props) => {
             </div>
           </InputGroup>
         </div>
-        <div className="row d-flex  justify-content-center">
-          <Button
-            className="searchPageFilterBtn shadow-none"
-            onClick={handleClickOpen}
-            block
-          >
-            Filters
-          </Button>
-          <hr></hr>
-        </div>
-
-        {/***************** Begin Popup Dialog  *******************/}
-        <Dialog
-          // fullScreen
-          open={showModal}
-          onClose={handleClose}
-          TransitionComponent={Transition}
-        >
-          <AppBar className={classes.appBar}>
-            <Toolbar>
-              <IconButton
-                edge="start"
-                color="inherit"
-                onClick={handleClose}
-                aria-label="close"
-              >
-                <CloseIcon />
-              </IconButton>
-              <WhiteTextTypography variant="h6" className={classes.title}>
-                Filters
-              </WhiteTextTypography>
-            </Toolbar>
-          </AppBar>
-          <List>
-            <div className="col mr-4">
-              <div className="row mt-3 mb-2 d-flex justify-content-center">
-                <ListItem>
-                  {/* <ListItemText primary="Course Level" /> */}
-                  <FilterSelect
-                    select_id={"courseLevel"}
-                    handleSelectChange={handleChange}
-                    selectValues={courseLevelValues}
-                    selectValue={props.filters.courseLevel.value}
-                  />
-                </ListItem>
-              </div>
-              <Divider />
-              <div className="row mt-3 mb-2 d-flex justify-content-center">
-                <ListItem>
-                  {/* <ListItemText primary="Credit Hours" /> */}
-                  <div className="d-flex justify-content-center align-items-center">
-                    <FilterSelect
-                      select_id={"creditHours"}
-                      handleSelectChange={handleChange}
-                      selectValues={creditHoursValues}
-                      selectValue={props.filters.creditHours.value}
-                    />
-                  </div>
-                </ListItem>
-              </div>
-              <Divider />
-              <div className="row mt-3 mb-2 d-flex justify-content-center">
-                <ListItem>
-                  {/* <ListItemText primary="Requirements Fulfilled" /> */}
-                  <br />
-                  <div className="d-flex justify-content-center align-items-center">
-                    <FilterSelect
-                      select_id={"requirements"}
-                      handleSelectChange={handleChange}
-                      selectValues={requirementsValues}
-                      selectValue={props.filters.requirements.value}
-                    />
-                  </div>
-                </ListItem>
-              </div>
-              <Divider />
-              <div className="row mt-3 mb-2 d-flex justify-content-center">
-                <ListItem>
-                  {/* <ListItemText primary="Time of Day" /> */}
-                  <br />
-                  <div className="d-flex justify-content-center align-items-center">
-                    <FilterSelect
-                      select_id={"timeofDay"}
-                      handleSelectChange={handleChange}
-                      selectValues={timeofDayValues}
-                      selectValue={props.filters.timeofDay.value}
-                    />
-                  </div>
-                </ListItem>
-              </div>
-              <Divider />
-              <div className="row mt-3 mb-2 d-flex justify-content-center">
-                <Button
-                  className="searchPageFilterBtn searchPageApply shadow-none"
-                  onClick={handleClose}
-                >
-                  Apply
-                </Button>
-                <Button
-                  className="searchPageFilterBtn shadow-none"
-                  onClick={handleFiltersReset}
-                >
-                  Reset
-                </Button>
-              </div>
-            </div>
-          </List>
-        </Dialog>
       </form>
     </div>
   );

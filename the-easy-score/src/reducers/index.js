@@ -1,5 +1,4 @@
-import { SET_NAV_STYLE } from "../actions";
-import { SET_FOOTER_STYLE } from "../actions";
+import { SET_NAV_STYLE, SET_FOOTER_STYLE, SET_SHOW_MODAL } from "../actions";
 
 import {
   FETCH_DATA_START,
@@ -103,6 +102,7 @@ const initialState = {
   },
   navStyle: 1,
   footerStyle: 1,
+  showModal: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -380,6 +380,8 @@ const reducer = (state = initialState, action) => {
           },
         },
       };
+
+    // MISC
     case SET_NAV_STYLE:
       return {
         ...state,
@@ -390,6 +392,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         footerStyle: action.payload,
       };
+    case SET_SHOW_MODAL:
+      return { ...state, showModal: action.payload };
     default:
       return state;
   }

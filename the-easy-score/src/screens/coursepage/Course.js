@@ -12,8 +12,6 @@ import ProfFiltersCard from "./components/filters/ProfFiltersCard";
 import Professors from "./components/Professors";
 import TablePagination from "../../components/TablePagination";
 
-import { FormControl } from "react-bootstrap";
-
 const Course = (props) => {
   const params = useParams();
   const dispatch = useDispatch();
@@ -25,6 +23,7 @@ const Course = (props) => {
     dispatch(fetchCoursePage(params.courseid));
     props.setNavStyle(3);
     props.setFooterStyle(2);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /******  PAGINATION  ******/
@@ -36,7 +35,6 @@ const Course = (props) => {
   );
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   /*****  END PAGINATION  *****/
-  // console.log("currentins", currentInstructors);
   return (
     <div className="container">
       {props.isLoading === true ? (
@@ -72,8 +70,8 @@ const Course = (props) => {
             <div className="col-xl-3 col-lg-4 col-md-0 col-sm-12 col-12">
               <ProfFiltersCard />
             </div>
-            <div className="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
-              <div className="row w-100 profCardContainer">
+            <div className="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 w-100">
+              <div className="row w-100 profCardContainer d-flex justify-content-center">
                 <Professors currentInstructors={currentInstructors} />
               </div>
               {props.isLoading === false ? (

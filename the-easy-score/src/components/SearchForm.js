@@ -56,9 +56,9 @@ const SearchForm = (props) => {
     return (
       <div className="home-form-container w-100">
         <form onSubmit={handleSubmit}>
-          <InputGroup className="inputAndBtnContainer">
+          <InputGroup className="inputAndBtnContainer p-o">
             <FormControl
-              className="inputContainer"
+              className="inputContainer p-0"
               value={props.filters.keyword.value}
               onChange={handleChange}
               placeholder="Search for keyword, i.e., 'Biology'"

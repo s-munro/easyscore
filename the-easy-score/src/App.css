@@ -6,6 +6,9 @@
   align-content: center;
   background-color: fff;
 }
+/* .form-padding {
+  padding-left: 12%;
+} */
 
 /***************** NAVBAR 1 *********************/
 
@@ -101,6 +104,15 @@ nav a {
   display: flex;
   justify-content: center;
 }
+.footer-3-container {
+  width: 100%;
+  bottom: 0px;
+  padding-right: 9%;
+  color: #a3a3a3;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+}
 
 .secondaryFooter {
   width: 100%;
@@ -121,4 +133,24 @@ nav a {
 .aboutFooterLink {
   margin-right: 2%;
   margin-left: 2%;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn:active {
+  outline: none !important;
+}
+
+*:focus {
+  /* background-color: red !important; */
+  outline: none !important;
+  box-shadow: none;
+}
+
+/* .input-group>.custom-select:not(:last-child), .input-group>.form-control:not(:last-child) {
+  outline: none
+} */
+
+.input-group:focus {
+  outline: none;
 }

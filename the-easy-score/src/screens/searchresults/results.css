@@ -105,8 +105,16 @@
 
 /***** COURSE CARDS ********/
 
-.course-card {
-  /* border: 1px solid #c5c5c550; */
+
+.CourseCard {
+  width: 300px;
+  min-width: 300px;
+  max-height: min-content;
+  margin-right: 5%;
+
+}
+
+.course-cardSpace {
   background-color: #ffffff;
   /* height: 100%; */
   border-radius: 4px;
@@ -149,7 +157,7 @@
 }
 
 .couse-card-top-portion-right-side {
-  width: 55%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   margin-top: 2%;

@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
-import { setNavStyle, setFooterStyle } from "../../actions/index";
+import { setNavStyle, setFooterStyle, setShowModal } from "../../actions/index";
 
 import MobileSearchForm from "./mobileSearch/MobileSearchForm";
+import FiltersModal from "../../components/FiltersModal";
 import SearchForm from "../../components/SearchForm";
 
 import Hidden from "@material-ui/core/Hidden";
+import { Button } from "react-bootstrap";
 import "./home.css";
 
 const Home = (props) => {
@@ -14,6 +16,11 @@ const Home = (props) => {
     props.setNavStyle(1);
     props.setFooterStyle(1);
   }, []);
+
+  const handleModal = (e) => {
+    e.preventDefault();
+    props.setShowModal(!props.showModal);
+  };
 
   return (
     <div className="container">
@@ -29,7 +36,15 @@ const Home = (props) => {
         </Hidden>
         <Hidden mdUp>
           <MobileSearchForm />
+          <Button
+            className="homeFilterBtn homeModalBtn shadow-none"
+            onClick={handleModal}
+            // block
+          >
+            Filters
+          </Button>
         </Hidden>
+        <FiltersModal />
       </main>
     </div>
   );
@@ -39,7 +54,12 @@ const mapStateToProps = (state) => {
   return {
     navStyle: state.navStyle,
     footerStyle: state.footerStyle,
+    showModal: state.showModal,
   };
 };
 
-export default connect(mapStateToProps, { setNavStyle, setFooterStyle })(Home);
+export default connect(mapStateToProps, {
+  setNavStyle,
+  setFooterStyle,
+  setShowModal,
+})(Home);

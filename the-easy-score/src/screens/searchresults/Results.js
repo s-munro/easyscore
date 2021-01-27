@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { fetchResults, setCourses } from "../../actions/fetchDataActions";
-import { setNavStyle, setFooterStyle } from "../../actions/";
+import { setNavStyle, setFooterStyle, setShowModal } from "../../actions/";
 import { useParams } from "react-router-dom";
 
 import { filterToKeyword } from "./hooks/";
@@ -14,9 +14,11 @@ import TablePagination from "../../components/TablePagination";
 
 import SearchForm from "../../components/SearchForm";
 import MobileSearch from "./components/MobileSearch";
+import FiltersModal from "../../components/FiltersModal";
 
 import FiltersCard from "./components/filters/FiltersCard";
 
+import { Button } from "react-bootstrap";
 import Hidden from "@material-ui/core/Hidden";
 
 import "./results.css";
@@ -54,16 +56,31 @@ const Results = (props) => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  const handleModal = (e) => {
+    e.preventDefault();
+    props.setShowModal(!props.showModal);
+  };
+
   return (
-    <div className="container">
-      <div className="mt-5">
-        <Hidden smDown>
-          <SearchForm nav={false} />
-          <hr></hr>
-        </Hidden>
-        <Hidden mdUp>
-          <MobileSearch />
-        </Hidden>
+    <div className="container w-100">
+      <div className="mt-3 mr-0 row w-100">
+        <div className="col w-100">
+          <Hidden smDown>
+            <SearchForm nav={false} />
+            <hr></hr>
+          </Hidden>
+          <Hidden mdUp>
+            <MobileSearch />
+            <Button
+              className="homeFilterBtn homeModalBtn shadow-none"
+              onClick={handleModal}
+              block
+            >
+              Filters
+            </Button>
+            <FiltersModal />
+          </Hidden>
+        </div>
       </div>
       <div>
         {props.isLoading === true ? (
@@ -90,7 +107,7 @@ const Results = (props) => {
               </div>
               <div className="row">
                 {props.displayedCourses.length > 0 ? (
-                  <div>
+                  <div className="w-100">
                     <Courses currentCourses={currentCourses} />
                     {props.isLoading === false ? (
                       <TablePagination
@@ -126,6 +143,7 @@ const mapStateToProps = (state) => {
     displayedCourses: state.displayedCourses,
     errorText: state.errorText,
     footerStyle: state.footerStyle,
+    showModal: state.showModal,
   };
 };
 
@@ -134,4 +152,5 @@ export default connect(mapStateToProps, {
   setCourses,
   setNavStyle,
   setFooterStyle,
+  setShowModal,
 })(Results);
