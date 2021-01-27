@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { setNavStyle, setFooterStyle } from "../../actions/index";
-// import Sidebar from "../../components/Sidebar.js";
 import "./About.css";
 
 const About = (props) => {
   useEffect(() => {
     props.setNavStyle(3);
     props.setFooterStyle(3);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

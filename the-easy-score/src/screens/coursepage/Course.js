@@ -67,12 +67,12 @@ const Course = (props) => {
               <ProfessorSearch />
             </div>
           </div>
-          <div className="row mt-5 d-flex justify-content-center">
+          <div className="row mt-5 d-flex justify-content-center w-100">
             <div className="col-xl-3 col-lg-4 col-md-0 col-sm-12 col-12">
               <ProfFiltersCard />
             </div>
             <div className="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 w-100">
-              <div className="row w-100 profCardContainer d-flex justify-content-center">
+              <div className="row w-100 profCardContainer d-flex justify-content-center mr-0 ml-0">
                 <Professors currentInstructors={currentInstructors} />
               </div>
               {props.isLoading === false ? (

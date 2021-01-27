@@ -35,7 +35,7 @@ const ProfessorCard = ({ instructor, index }) => {
   return (
     <Card className="container professor-card-container w-100 mb-5">
       {/* <div className="container w-100"> */}
-      <div className="row w-100">
+      <div className="row w-100 mr-0 ml-0">
         <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 top-half">
           <div className="row w-100 profName">{transformedName} </div>
           <div className="row w-100 profYears">{instructor.years_taught}</div>

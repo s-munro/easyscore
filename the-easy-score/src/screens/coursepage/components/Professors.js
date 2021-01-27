@@ -4,11 +4,12 @@ import NoResults from "../../../components/NoResults";
 
 const Professors = (props) => {
   return (
-    <div className="testTest">
+    <div className="testTest container">
       {props.currentInstructors.length > 0 ? (
         props.currentInstructors.map((instructor, index) => {
           return (
             <div
+              className="row w-100"
               key={index}
               // className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 mb-5"
             >

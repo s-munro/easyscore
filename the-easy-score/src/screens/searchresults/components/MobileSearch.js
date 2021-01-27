@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import {
@@ -10,63 +10,12 @@ import {
   resetFilterValues,
 } from "../../../actions/filtersActions";
 
-import {
-  requirementsValues,
-  courseLevelValues,
-  creditHoursValues,
-  timeofDayValues,
-} from "../../../data/FilterSelectsData";
-
 import { FormControl, Button, InputGroup } from "react-bootstrap";
-import FilterSelect from "../../../components/FilterSelect";
-
-import { makeStyles } from "@material-ui/core/styles";
-import { withStyles } from "@material-ui/core/styles";
-import Dialog from "@material-ui/core/Dialog";
-import ListItem from "@material-ui/core/ListItem";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import CloseIcon from "@material-ui/icons/Close";
-import Slide from "@material-ui/core/Slide";
 
 import "../results.css";
 
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-    position: "relative",
-  },
-  title: {
-    marginLeft: theme.spacing(2),
-    flex: 1,
-  },
-}));
-
-const WhiteTextTypography = withStyles({
-  root: {
-    color: "#FFFFFF",
-  },
-})(Typography);
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
-
 const MobileSearchForm = (props) => {
-  const classes = useStyles();
   const history = useHistory();
-  const [showModal, setShowModal] = useState(false);
-
-  const handleClickOpen = () => {
-    setShowModal(true);
-  };
-
-  const handleClose = () => {
-    setShowModal(false);
-  };
 
   useEffect(() => {
     props.resetFilterValues();
@@ -92,10 +41,6 @@ const MobileSearchForm = (props) => {
     const newUrl = `'keyword'=_'${props.filters.keyword.value}'&_'requirement'=_'${props.filters.requirements.value}'&_'level'=_'${props.filters.courseLevel.value}'&_'credit'=_'${props.filters.creditHours.value}'&_'timing'=_'${props.filters.timeofDay.value}'&_'next_sem'=_''&_'days'=_[]`;
 
     history.push(`/search/${newUrl}`);
-  };
-
-  const handleFiltersReset = () => {
-    props.resetFilterValues();
   };
 
   return (
