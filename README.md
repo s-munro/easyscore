@@ -203,3 +203,18 @@ https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif
     - [x] fuzzy search in conjunction with filters
   - [] professor cards animation on render
   - [x] MobileSearchForm added with popup dialog for filters
+  
+  #### Sunday, Jan 24 - Wed. Jan 27
+  - [x] re-worked course page professor cards
+  - [x] integrated bootstrap classes for responsiveness across the app
+  - [x] popup modal separated into its own component for reusability
+  - [x] established footer and footer-related state
+  - [x] global state for popup modal
+  - [x] installed sass, altered bootstrap color palette for design consistency
+  - [x] removed linting issues
+  - [x] bugfix on course-page course cards when only one result displayed
+  - [x] created about page and contact page
+  - [x] created node back-end with nodemailer for contact form email-to-admin output
+  - [x] reorganized app for heroku deployment
+  - [x] heroku deployment
+  - [x] misc.
