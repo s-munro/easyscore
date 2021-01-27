@@ -16,6 +16,7 @@ const initialFormValues = {
   name: "",
   email: "",
   message: "",
+  subject: "",
 };
 
 let vertical = "bottom";
@@ -41,7 +42,8 @@ const Contact = (props) => {
 
   const sendEmail = () => {
     axios
-      .post("/send", { ...formValues })
+      .post("https://tes-emailer.herokuapp.com/send", { ...formValues })
+      // .post("http://localhost:8000/send", { ...formValues })
       .then((res) => {
         setFormValues(initialFormValues);
         setSuccessOpen(true);
@@ -49,6 +51,7 @@ const Contact = (props) => {
       .catch((err) => {
         setFormValues(initialFormValues);
         setErrorOpen(true);
+        console.log(err);
       });
   };
 
