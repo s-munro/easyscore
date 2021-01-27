@@ -46,9 +46,6 @@ const Contact = (props) => {
       : path;
   }
 
-  console.log("test");
-  console.log(url("/send"));
-
   const sendEmail = () => {
     axios
       // .post("https://tes-emailer.herokuapp.com/send", { ...formValues })
@@ -60,7 +57,6 @@ const Contact = (props) => {
       .catch((err) => {
         setFormValues(initialFormValues);
         setErrorOpen(true);
-        console.log(err);
       });
   };
 
@@ -74,7 +70,6 @@ const Contact = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     sendEmail();
-    console.log(formValues);
   };
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {

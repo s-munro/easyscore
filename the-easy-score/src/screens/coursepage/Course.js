@@ -35,7 +35,6 @@ const Course = (props) => {
   );
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   /*****  END PAGINATION  *****/
-  // console.log("currentins", currentInstructors);
   return (
     <div className="container">
       {props.isLoading === true ? (
