@@ -28,7 +28,7 @@ app.post("/send", (req, res) => {
   try {
     const mailOptions = {
       from: req.body.email,
-      to: "easyscore.mailer@gmail.com",
+      to: process.env.user,
       subject: req.body.subject,
       html: `
       <p>Hello! You've received a new message at EasyScore.</p>
