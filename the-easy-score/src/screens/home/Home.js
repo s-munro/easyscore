@@ -15,6 +15,7 @@ const Home = (props) => {
   useEffect(() => {
     props.setNavStyle(1);
     props.setFooterStyle(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleModal = (e) => {

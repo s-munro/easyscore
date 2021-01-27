@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { setNavStyle, setFooterStyle } from "../../actions/index";
-// import Sidebar from "../../components/Sidebar.js";
 import "./About.css";
 
 const About = (props) => {
   useEffect(() => {
     props.setNavStyle(3);
     props.setFooterStyle(3);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="container">
+    <div className="container about-container">
       <div className="row-100 mt-5">
         <div className="col-12 d-flex justify-content-center align-items-center">
           <h2 className="about-title">About</h2>
@@ -35,6 +35,7 @@ const About = (props) => {
                 course is the average score of all the teachers who have taught
                 that course.
               </p>
+              <br />
               <p>
                 <span className="disclaimer">
                   Disclaimer: This site is not designed to be used solely for

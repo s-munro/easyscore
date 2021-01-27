@@ -6,6 +6,7 @@
     "@ant-design/colors": "^5.0.1",
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
@@ -14,9 +15,11 @@
     "bootstrap": "^4.6.0",
     "chart.js": "^2.9.4",
     "chartjs-plugin-doughnutlabel": "^2.0.3",
+    "dotenv": "^8.2.0",
     "font-awesome": "^4.7.0",
     "fuse.js": "^6.4.6",
     "node-sass": "^4.14.1",
+    "nodemailer": "^6.4.17",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-chartjs-2": "^2.11.1",
@@ -38,6 +41,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-server": "node server/index.js",
+    "start-app": "npm run build && npm run start-server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

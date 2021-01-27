@@ -51,6 +51,7 @@ const ProfessorSearch = (props) => {
     } else {
       props.setInstructorsFuse(instructorsResults);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
   return (
