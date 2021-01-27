@@ -29,21 +29,16 @@ const FiltersCard = (props) => {
   const handleSwitchChange = (e) => {
     if (props.resultsPage.filtersCard.next_sem.value === 1) {
       props.setSearchPageFiltersCourseNextSemester(0);
-      // applyFilters(0);
     }
     if (props.resultsPage.filtersCard.next_sem.value === 0) {
       props.setSearchPageFiltersCourseNextSemester(1);
-      // applyFilters(1);
     }
-    // applyFilters();
   };
 
   const handleChange = (e) => {
     if (e.target.name === "courseLevel") {
-      // console.log("courselevel etargetname");
       props.setSearchPageFiltersCourseLevel(e.target.value);
     } else if (e.target.name === "creditHours") {
-      // console.log("credithours etargetname");
       props.setSearchPageFiltersCourseCreditHours(e.target.value);
     } else if (e.target.name === "timeofDay") {
       props.setSearchPageFiltersTimeofDay(e.target.value);
@@ -51,7 +46,6 @@ const FiltersCard = (props) => {
       props.setSearchPageFiltersCourseRequirements(e.target.value);
     } else {
     }
-    // applyFilters();
   };
 
   const applyFilters = () => {
@@ -83,7 +77,6 @@ const FiltersCard = (props) => {
           );
           return instructorsWithValue;
         });
-        // console.log("fc", filteredCourses);
         return filteredCourses;
       } else {
         return semesterFilteredCourses;
@@ -128,9 +121,7 @@ const FiltersCard = (props) => {
     };
 
     const filterByCreditHours = () => {
-      // console.log("filtercredithours func: ", func);
       if (props.resultsPage.filtersCard.creditHours.value !== "") {
-        // console.log("creditHours state value isnt blank");
         const creditsFilteredCourses = filterByCourseLevel().filter(
           (course) => {
             return (
@@ -140,7 +131,6 @@ const FiltersCard = (props) => {
         );
         return creditsFilteredCourses;
       } else {
-        // console.log("creditHours state is blank");
         return filterByCourseLevel();
       }
     };

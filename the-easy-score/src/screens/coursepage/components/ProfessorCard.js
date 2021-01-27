@@ -30,8 +30,6 @@ const ProfessorCard = ({ instructor, index }) => {
     setTransformedName(`${firstName}, ${lastNameInitial}.`);
   };
 
-  console.log("days", instructor.timings[1].length);
-  // 650 x 180
   return (
     <Card className="container professor-card-container w-100 mb-5">
       {/* <div className="container w-100"> */}
