@@ -3,13 +3,15 @@ const express = require("express");
 const transporter = require("./config");
 const dotenv = require("dotenv");
 dotenv.config();
-const app = express();
+const server = express();
 
 const buildPath = path.join(__dirname, "..", "build");
-app.use(express.json());
-app.use(express.static(buildPath));
+server.use(express.json());
+server.use(express.static(buildPath));
 
-app.post("/send", (req, res) => {
+const port = process.env.PORT || 3030;
+
+server.post("/send", (req, res) => {
   try {
     const mailOptions = {
       from: req.body.email,
@@ -41,6 +43,6 @@ app.post("/send", (req, res) => {
   }
 });
 
-app.listen(3030, () => {
-  console.log("server running 3030");
+server.listen(port, () => {
+  console.log(`server running ${port}`);
 });
