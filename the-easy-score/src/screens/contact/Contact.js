@@ -40,10 +40,19 @@ const Contact = (props) => {
     });
   };
 
+  function url(path) {
+    return process.env.NODE_ENV === "development"
+      ? `http://localhost:4000${path}`
+      : path;
+  }
+
+  console.log("test");
+  console.log(url("/send"));
+
   const sendEmail = () => {
     axios
-      .post("https://tes-emailer.herokuapp.com/send", { ...formValues })
-      // .post("http://localhost:8000/send", { ...formValues })
+      // .post("https://tes-emailer.herokuapp.com/send", { ...formValues })
+      .post(url("/send"), { ...formValues })
       .then((res) => {
         setFormValues(initialFormValues);
         setSuccessOpen(true);

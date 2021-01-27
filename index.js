@@ -1,21 +1,34 @@
-const path = require("path");
-const express = require("express");
-const transporter = require("./config");
 const dotenv = require("dotenv");
 dotenv.config();
-const server = express();
+const transporter = require("./config");
 
-const buildPath = path.join(__dirname, "..", "build");
-server.use(express.json());
-server.use(express.static(buildPath));
+const express = require("express");
+const cors = require("cors");
+const port = process.env.PORT || 4000;
+const path = require("path");
 
-const port = process.env.PORT || 3030;
+const app = express();
 
-server.post("/send", (req, res) => {
+app.use(cors());
+app.use(express.json());
+app.use(express.static(path.join(__dirname, "the-easy-score/build")));
+console.log(__dirname);
+
+app.get("*", (_, res) => {
+  res.sendFile(path.join(__dirname, "the-easy-score/build", "index.html"));
+});
+
+app.get("/banana", (req, res) => {
+  console.log("wahoo!");
+  res.status(200).json("hey!");
+});
+
+app.post("/send", (req, res) => {
+  console.log("whambam!!!");
   try {
     const mailOptions = {
       from: req.body.email,
-      to: process.env.email,
+      to: "easyscore.mailer@gmail.com",
       subject: req.body.subject,
       html: `
       <p>Hello! You've received a new message at EasyScore.</p>
@@ -43,6 +56,6 @@ server.post("/send", (req, res) => {
   }
 });
 
-server.listen(port, () => {
-  console.log(`server running ${port}`);
+app.listen(port, () => {
+  console.log(`listening on ${port}`);
 });
