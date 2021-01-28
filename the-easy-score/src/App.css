@@ -36,6 +36,9 @@
 .padding-right-2 {
   margin-right: 4px;
 }
+input.form-control {
+  padding-left: 8px;
+}
 select.form-control.filterSelect {
   padding: 5px;
   min-width: 175px;
