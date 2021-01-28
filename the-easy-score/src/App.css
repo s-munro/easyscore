@@ -21,6 +21,21 @@
 .mobile-nav-3-padding-top {
   padding-top: 2%;
 }
+.bold {
+  font-weight: 700;
+}
+.dark {
+  color: rgb(49, 49, 49);
+}
+.small-icon-font {
+  font-size: 10px;
+}
+.padding-right {
+  margin-right: 3px;
+}
+.padding-right-2 {
+  margin-right: 4px;
+}
 
 /***************** NAVBAR 1 *********************/
 

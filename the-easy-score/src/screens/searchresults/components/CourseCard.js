@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import "../results.css";
 
 const CourseCard = ({ course }) => {
@@ -80,14 +81,21 @@ const CourseCard = ({ course }) => {
             })}
           </div>
         </div>
-        <div className="course-card-click-more">
+        <div className="course-card-click-more d-flex justify-content-end">
           <Link
             to={`/courses/${course.full_code}_${course.name.replace(
               / /g,
               "_"
             )}`}
           >
-            More
+            <div className="d-flex align-items-center small-icon-font">
+              <span className="padding-right">More</span>
+              {/* <i class="fas fa-arrow-right"></i> */}
+              <ArrowForwardIcon
+                fontSize="inherit"
+                className="padding-right-2"
+              />
+            </div>
           </Link>
         </div>
       </div>
