@@ -78,24 +78,28 @@ const SearchForm = (props) => {
           </InputGroup>
           <div className="filters-container w-100 d-flex justify-content-between align-items-center mt-3">
             <FilterSelect
+              filterSelectClass={true}
               select_id={"courseLevel"}
               handleSelectChange={handleChange}
               selectValues={courseLevelValues}
               selectValue={props.filters.courseLevel.value}
             />
             <FilterSelect
+              filterSelectClass={true}
               select_id={"creditHours"}
               handleSelectChange={handleChange}
               selectValues={creditHoursValues}
               selectValue={props.filters.creditHours.value}
             />
             <FilterSelect
+              filterSelectClass={true}
               select_id={"requirements"}
               handleSelectChange={handleChange}
               selectValues={requirementsValues}
               selectValue={props.filters.requirements.value}
             />
             <FilterSelect
+              filterSelectClass={true}
               select_id={"timeofDay"}
               handleSelectChange={handleChange}
               selectValues={timeofDayValues}
