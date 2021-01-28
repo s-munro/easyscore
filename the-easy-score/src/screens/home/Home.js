@@ -38,7 +38,7 @@ const Home = (props) => {
         <Hidden mdUp>
           <MobileSearchForm />
           <Button
-            className="homeFilterBtn homeModalBtn shadow-none"
+            className="homeFilterBtn homeModalBtn btn-top-padding shadow-none"
             onClick={handleModal}
             // block
           >

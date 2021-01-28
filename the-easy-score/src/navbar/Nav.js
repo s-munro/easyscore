@@ -138,15 +138,6 @@ const Nav = (props) => {
           </div>
         </Hidden>
         {/************** NAV 2 MOBILE ******************/}
-        {/* <Hidden mdUp>
-          <nav>
-            <Link className="nav-bar-2-logo" to="/">
-              <div>
-                <b className="nav-bar-2-easy-text">Easy</b>Score
-              </div>
-            </Link>
-          </nav>
-        </Hidden> */}
       </div>
     );
   } else {
@@ -202,7 +193,7 @@ const Nav = (props) => {
                     Contact
                   </Link>
                 </div>
-                <div className="col-md-12 col-sm-12 col-12 d-flex align-items-center">
+                <div className="col-md-12 col-sm-12 col-12 d-flex align-items-center mobile-nav-3-padding-top">
                   <SearchForm formType={"nav"} />
                   <FilterListIcon onClick={handleClickOpen} />
                 </div>
