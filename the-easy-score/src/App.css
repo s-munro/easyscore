@@ -53,6 +53,9 @@ select.form-control.filterSelect {
     max-width: 125px;
   }
 }
+.margin-left {
+  margin-left: 2%;
+}
 
 /***************** NAVBAR 1 *********************/
 

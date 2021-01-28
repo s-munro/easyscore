@@ -156,7 +156,7 @@ const Nav = (props) => {
                   <SearchForm formType={"nav"} />
                   <FilterListIcon
                     onClick={handleClickOpen}
-                    className="modal-icon"
+                    className="modal-icon margin-left"
                   />
                 </div>
                 <div className="col-xl-1 col-lg-1 col-md-1">
@@ -178,7 +178,7 @@ const Nav = (props) => {
           <Hidden mdUp>
             <div className="container">
               <nav className="row d-flex align-items-center">
-                <div className="col-md-8 col-sm-7 col-7">
+                <div className="col-md-8 col-sm-7 col-8">
                   <Link className="mobile-nav-bar-3-logo" to="/">
                     <b className="mobile-nav-bar-3-easy-text">Easy</b>Score
                   </Link>
@@ -195,7 +195,10 @@ const Nav = (props) => {
                 </div>
                 <div className="col-md-12 col-sm-12 col-12 d-flex align-items-center mobile-nav-3-padding-top">
                   <SearchForm formType={"nav"} />
-                  <FilterListIcon onClick={handleClickOpen} />
+                  <FilterListIcon
+                    onClick={handleClickOpen}
+                    className="modal-icon margin-left"
+                  />
                 </div>
               </nav>
             </div>
