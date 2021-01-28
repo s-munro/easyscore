@@ -182,7 +182,7 @@ const FiltersCard = (props) => {
       <Card>
         <Card.Body>
           <Card.Title className="mb-2 filterCardTitle bold dark">
-            Filter courses
+            Filter Courses
           </Card.Title>
           <hr></hr>
           <br />

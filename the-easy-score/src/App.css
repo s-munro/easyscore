@@ -59,6 +59,10 @@ select.form-control.filterSelect {
 .margin-left {
   margin-left: 2%;
 }
+.MuiTypography-root.filter-card-text {
+  font-size: 85%;
+  font-weight: 500;
+}
 
 /***************** NAVBAR 1 *********************/
 
