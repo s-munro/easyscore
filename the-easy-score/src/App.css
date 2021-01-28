@@ -9,6 +9,11 @@
 /* .form-padding {
   padding-left: 12%;
 } */
+.btn-top-padding {
+  /* padding-top: 15px; */
+  padding: 1% 4%;
+  margin-top: 2%;
+}
 
 /***************** NAVBAR 1 *********************/
 

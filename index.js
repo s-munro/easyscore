@@ -12,19 +12,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "the-easy-score/build")));
-console.log(__dirname);
 
 app.get("*", (_, res) => {
   res.sendFile(path.join(__dirname, "the-easy-score/build", "index.html"));
 });
 
 app.get("/banana", (req, res) => {
-  console.log("wahoo!");
   res.status(200).json("hey!");
 });
 
 app.post("/send", (req, res) => {
-  console.log("whambam!!!");
   try {
     const mailOptions = {
       from: req.body.email,
@@ -42,14 +39,12 @@ app.post("/send", (req, res) => {
     };
     transporter.sendMail(mailOptions, function (err, info) {
       if (err) {
-        console.log(err);
         res.status(500).json({ err: `there was an error, ${err}` });
       } else {
         res.status(200).json({ message: "Success" });
       }
     });
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       message: `Something went wrong.  Try again later, ${error}`,
     });
