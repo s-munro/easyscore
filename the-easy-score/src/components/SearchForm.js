@@ -54,9 +54,9 @@ const SearchForm = (props) => {
 
   if (formType !== "nav") {
     return (
-      <div className="home-form-container w-100">
+      <div className="home-form-container col-12">
         <form onSubmit={handleSubmit}>
-          <InputGroup className="inputAndBtnContainer p-o">
+          <InputGroup className="inputAndBtnContainer">
             <FormControl
               className="inputContainer p-0"
               value={props.filters.keyword.value}
@@ -78,24 +78,28 @@ const SearchForm = (props) => {
           </InputGroup>
           <div className="filters-container w-100 d-flex justify-content-between align-items-center mt-3">
             <FilterSelect
+              filterSelectClass={true}
               select_id={"courseLevel"}
               handleSelectChange={handleChange}
               selectValues={courseLevelValues}
               selectValue={props.filters.courseLevel.value}
             />
             <FilterSelect
+              filterSelectClass={true}
               select_id={"creditHours"}
               handleSelectChange={handleChange}
               selectValues={creditHoursValues}
               selectValue={props.filters.creditHours.value}
             />
             <FilterSelect
+              filterSelectClass={true}
               select_id={"requirements"}
               handleSelectChange={handleChange}
               selectValues={requirementsValues}
               selectValue={props.filters.requirements.value}
             />
             <FilterSelect
+              filterSelectClass={true}
               select_id={"timeofDay"}
               handleSelectChange={handleChange}
               selectValues={timeofDayValues}

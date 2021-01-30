@@ -64,9 +64,9 @@ const Results = (props) => {
   };
 
   return (
-    <div className="container w-100">
-      <div className="mt-3 mr-0 row w-100">
-        <div className="col w-100">
+    <div className="row w-100">
+      <div className="mt-3 col-12 d-flex flex-column align-items-center p-0">
+        <div className="row w-100">
           <Hidden smDown>
             <SearchForm nav={false} />
             <hr></hr>
@@ -84,19 +84,19 @@ const Results = (props) => {
           </Hidden>
         </div>
       </div>
-      <div>
-        {props.isLoading === true ? (
-          <div className="row w-100 justify-content-center align-items-center">
-            <div className="col justify-content-center align-items-center d-flex justify-content-center align-items-center mt-5">
-              <Loading />
-            </div>
+      {props.isLoading === true ? (
+        <div className="col-12 justify-content-center align-items-center">
+          <div className="col-12 justify-content-center align-items-center d-flex mt-5">
+            <Loading />
           </div>
-        ) : (
-          <div className="row mt-5">
-            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
+        </div>
+      ) : (
+        <div className="col-12 mt-5 d-flex flex-column align-items-center">
+          <div className="row w-100">
+            <div className="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12 p-0 non-mobile-zero-padding-right">
               <FiltersCard setCurrentPage={setCurrentPage} />
             </div>
-            <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
+            <div className="col-xl-9 col-lg-9 col-md-7 col-sm-12 col-12">
               <div className="row">
                 <div className="col mb-4">
                   <ResultsNumber
@@ -107,19 +107,21 @@ const Results = (props) => {
                   />
                 </div>
               </div>
-              <div className="row">
+              <div className="row w-100 m-0">
                 {props.displayedCourses.length > 0 ? (
-                  <div className="w-100">
+                  <div className="col-12 p-0">
                     <Courses currentCourses={currentCourses} />
-                    {props.isLoading === false ? (
-                      <TablePagination
-                        count={Math.ceil(props.displayedCourses.length / 3)}
-                        page={currentPage}
-                        rowsPerPage={4}
-                        rowsPerPageOptions={[4]}
-                        paginate={paginate}
-                      />
-                    ) : null}
+                    {/* {props.isLoading === false ? (
+                      <div className="row-w100 d-flex justify-content-center">
+                        <TablePagination
+                          count={Math.ceil(props.displayedCourses.length / 3)}
+                          page={currentPage}
+                          rowsPerPage={4}
+                          rowsPerPageOptions={[4]}
+                          paginate={paginate}
+                        />
+                      </div>
+                    ) : null} */}
                   </div>
                 ) : (
                   //********  RENDER NO RESULTS IF NO RESULTS  *******/
@@ -132,8 +134,19 @@ const Results = (props) => {
               </div>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
+      {props.isLoading === false ? (
+        <div className="row w-100 d-flex justify-content-center">
+          <TablePagination
+            count={Math.ceil(props.displayedCourses.length / 3)}
+            page={currentPage}
+            rowsPerPage={4}
+            rowsPerPageOptions={[4]}
+            paginate={paginate}
+          />
+        </div>
+      ) : null}
     </div>
   );
 };

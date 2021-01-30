@@ -36,23 +36,23 @@ const Course = (props) => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   /*****  END PAGINATION  *****/
   return (
-    <div className="container">
+    <div className="row w-100">
       {props.isLoading === true ? (
         <div
           style={{ height: "100vh" }}
-          className="row w-100 d-flex justify-content-center"
+          className="col d-flex justify-content-center"
         >
           <div className="col d-flex justify-content-center align-items-center">
             <Loading />
           </div>
         </div>
       ) : (
-        <div className="container">
-          <div className="row">
+        <div className="col-12 mt-3">
+          <div className="row w-100" style={{ margin: "auto" }}>
             <Header course={props.coursePage.course} />
           </div>
           <hr />
-          <div className="row">
+          <div className="row w-100" style={{ margin: "auto" }}>
             <ResultsNumber
               number={props.coursePage.displayedInstructors.length}
               results={"instructors"}
@@ -61,21 +61,24 @@ const Course = (props) => {
               header={1}
             />
           </div>
-          <div className="row">
-            <div className="col padding-0">
+          <div className="row w-100 mb-4 d-flex" style={{ margin: "auto" }}>
+            <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex">
               <ProfessorSearch />
             </div>
           </div>
-          <div className="row mt-5 d-flex justify-content-center w-100">
-            <div className="col-xl-3 col-lg-4 col-md-0 col-sm-12 col-12">
+          <div
+            className="row mt-5 d-flex justify-content-center w-100"
+            style={{ margin: "auto" }}
+          >
+            <div className="col-xl-3 col-lg-4 col-md-0 col-sm-12 col-12 mb-5 d-flex justify-content-center align-items-start">
               <ProfFiltersCard />
             </div>
-            <div className="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 w-100">
-              <div className="row w-100 profCardContainer d-flex justify-content-center mr-0 ml-0">
+            <div className="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12 w-100 d-flex flex-column align-items-center">
+              <div className="row w-100 profCardContainer d-flex justify-content-center">
                 <Professors currentInstructors={currentInstructors} />
               </div>
               {props.isLoading === false ? (
-                <div className="row paginationContainer">
+                <div className="row d-flex justify-content-center paginationContainer">
                   <TablePagination
                     count={props.coursePage.displayedInstructors.length}
                     page={currentPage}

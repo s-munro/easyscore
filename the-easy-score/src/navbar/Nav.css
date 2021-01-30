@@ -10,9 +10,9 @@
 
 /***************** FIRST NAV BAR ******************/
 /** DESKTOP NAV1 **/
-.nav-1-top-margin {
+/* .nav-1-top-margin {
   margin-top: 2%;
-}
+} */
 .nav-bar {
   display: flex;
   justify-self: flex-end;
@@ -28,12 +28,11 @@
 }
 .MuiSvgIcon-root.modal-icon {
   cursor: pointer;
+  transition: all 0.275s ease-in-out;
 }
-.MuiSvgIcon-root.modal-icon:hover {
-  /* background-color: red; */
-  color: #b32727;
-  transition: 0.1s;
-  cursor: pointer;
+.filter-icon-handler:hover .MuiSvgIcon-root.modal-icon {
+  color: #b76767;
+  transform: rotate(90deg);
 }
 
 /** MOBILE NAV1 **/

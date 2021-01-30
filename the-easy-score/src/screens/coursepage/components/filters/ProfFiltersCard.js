@@ -89,14 +89,20 @@ const ProfFiltersCard = (props) => {
   ]);
 
   return (
-    <div className="mb-5">
-      <Card>
-        <Card.Body>
-          <Card.Title className="filterCardTitle">Filter</Card.Title>
-          <br />
-          <Card.Subtitle className="mb-2 text-muted">
+    <div className="row w-100">
+      <Card className="col">
+        <Card.Body className="row d-flex flex-column">
+          <Card.Title className="filterCardTitle bold dark">
+            Filter Professors
+          </Card.Title>
+          <hr></hr>
+          <Typography
+            className="mb-2 text-muted filter-card-text"
+            id="next-sem-filter-text"
+            gutterBottom
+          >
             Avail. Next Term
-          </Card.Subtitle>
+          </Typography>
 
           <Form.Check
             type="switch"
@@ -108,7 +114,7 @@ const ProfFiltersCard = (props) => {
           />
           <br />
           <Typography
-            className="mb-2 text-muted"
+            className="mb-2 text-muted filter-card-text"
             id="easy-score-filter"
             gutterBottom
           >
@@ -131,7 +137,7 @@ const ProfFiltersCard = (props) => {
           <br />
           <br />
           <Typography
-            className="mb-2 text-muted"
+            className="mb-2 text-muted filter-card-text"
             id="discrete-slider-always"
             gutterBottom
           >
@@ -153,7 +159,11 @@ const ProfFiltersCard = (props) => {
           />
           <br />
           <br />
-          <Typography className="mb-2 text-muted" id="slider" gutterBottom>
+          <Typography
+            className="mb-2 text-muted filter-card-text"
+            id="slider"
+            gutterBottom
+          >
             By Min. Semesters Taught
           </Typography>
           <Slider

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import "../results.css";
 
 const CourseCard = ({ course }) => {
@@ -73,21 +74,28 @@ const CourseCard = ({ course }) => {
                 creditType = "World Language";
               } else return null;
               return (
-                <p key={creditType} className="requirement filterCardReq">
+                <p key={creditType} className="filterCardReq">
                   {creditType}
                 </p>
               );
             })}
           </div>
         </div>
-        <div className="course-card-click-more">
+        <div className="course-card-click-more d-flex align-items-end justify-content-end fixed">
           <Link
             to={`/courses/${course.full_code}_${course.name.replace(
               / /g,
               "_"
             )}`}
+            className="no-hover"
           >
-            More
+            <div className="small-icon-font absolute-bottom-right-2 slide absolute-bottom-right">
+              <span className="padding-right">More</span>
+              <ArrowForwardIcon
+                fontSize="inherit"
+                className="slide padding-right-2"
+              />
+            </div>
           </Link>
         </div>
       </div>

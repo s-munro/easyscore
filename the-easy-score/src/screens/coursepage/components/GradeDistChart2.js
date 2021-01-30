@@ -34,7 +34,7 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
             //   bottom: 0,
             // },
           },
-          maintainAspectRatio: false,
+          maintainAspectRatio: true,
           title: {
             display: false,
             text: "Grade Distribution",
