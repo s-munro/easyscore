@@ -1,5 +1,7 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import "chartjs-plugin-datalabels";
+// import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const GradeDistChart2 = ({ average_grades, pixels }) => {
   let data = {
@@ -26,14 +28,7 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
         height={pixels.height}
         options={{
           responsive: false,
-          layout: {
-            // padding: {
-            //   // left: 50,
-            //   right: 0,
-            //   top: 0,
-            //   bottom: 0,
-            // },
-          },
+          layout: {},
           maintainAspectRatio: true,
           title: {
             display: false,
@@ -79,6 +74,14 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
               label: (tooltipItem, data) => {
                 return `${tooltipItem.value}%`;
               },
+            },
+          },
+          // plugins: [ChartDataLabels],
+          plugins: {
+            datalabels: {
+              anchor: "end",
+              align: "top",
+              color: ["black"],
             },
           },
         }}

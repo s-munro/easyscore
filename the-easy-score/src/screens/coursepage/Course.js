@@ -48,10 +48,13 @@ const Course = (props) => {
         </div>
       ) : (
         <div className="col-12 mt-3">
-          <div className="row w-100" style={{ margin: "auto" }}>
+          <div
+            className="row w-100 desktop-left-padding"
+            style={{ margin: "auto" }}
+          >
             <Header course={props.coursePage.course} />
           </div>
-          <hr />
+          <hr className="desktop-left-margin" />
           <div className="row w-100" style={{ margin: "auto" }}>
             <ResultsNumber
               number={props.coursePage.displayedInstructors.length}
