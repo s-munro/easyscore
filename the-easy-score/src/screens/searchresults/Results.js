@@ -65,7 +65,7 @@ const Results = (props) => {
 
   return (
     <div className="row w-100">
-      <div className="mt-3 mr-0 row w-100">
+      <div className="mt-3 mr-0 col-12">
         <div className="col w-100">
           <Hidden smDown>
             <SearchForm nav={false} />
@@ -85,49 +85,51 @@ const Results = (props) => {
         </div>
       </div>
       {props.isLoading === true ? (
-        <div className="row w-100 justify-content-center align-items-center">
+        <div className="col-12 justify-content-center align-items-center">
           <div className="col-12 justify-content-center align-items-center d-flex mt-5">
             <Loading />
           </div>
         </div>
       ) : (
-        <div className="row mt-5">
-          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
-            <FiltersCard setCurrentPage={setCurrentPage} />
-          </div>
-          <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
-            <div className="row">
-              <div className="col mb-4">
-                <ResultsNumber
-                  number={props.displayedCourses.length}
-                  results={"courses"}
-                  keyword={keyword}
-                  header={0}
-                />
-              </div>
+        <div className="col-12 mt-5 d-flex flex-column align-items-center">
+          <div className="row w-100">
+            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
+              <FiltersCard setCurrentPage={setCurrentPage} />
             </div>
-            <div className="row">
-              {props.displayedCourses.length > 0 ? (
-                <div className="w-100">
-                  <Courses currentCourses={currentCourses} />
-                  {props.isLoading === false ? (
-                    <TablePagination
-                      count={Math.ceil(props.displayedCourses.length / 3)}
-                      page={currentPage}
-                      rowsPerPage={4}
-                      rowsPerPageOptions={[4]}
-                      paginate={paginate}
-                    />
-                  ) : null}
+            <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
+              <div className="row">
+                <div className="col mb-4">
+                  <ResultsNumber
+                    number={props.displayedCourses.length}
+                    results={"courses"}
+                    keyword={keyword}
+                    header={0}
+                  />
                 </div>
-              ) : (
-                //********  RENDER NO RESULTS IF NO RESULTS  *******/
-                <div className="container">
-                  <div className="ml-10">
-                    <NoResults />
+              </div>
+              <div className="row">
+                {props.displayedCourses.length > 0 ? (
+                  <div className="w-100">
+                    <Courses currentCourses={currentCourses} />
+                    {props.isLoading === false ? (
+                      <TablePagination
+                        count={Math.ceil(props.displayedCourses.length / 3)}
+                        page={currentPage}
+                        rowsPerPage={4}
+                        rowsPerPageOptions={[4]}
+                        paginate={paginate}
+                      />
+                    ) : null}
                   </div>
-                </div>
-              )}
+                ) : (
+                  //********  RENDER NO RESULTS IF NO RESULTS  *******/
+                  <div className="container">
+                    <div className="ml-10">
+                      <NoResults />
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

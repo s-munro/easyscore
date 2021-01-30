@@ -28,13 +28,13 @@ const Nav = (props) => {
     return (
       /************** NAV 1 ******************/
       <nav className="row w-100 mt-2">
-        <div className="col-xl 10 col-lg-10 col-md-10 col-sm-9 col-8" />
-        <div className="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-2">
+        <div className="col-xl 10 col-lg-10 col-md-10 col-sm-9 col-6" />
+        <div className="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-3 p-0 d-flex justify-content-end">
           <Link to="/about">
             <div>About</div>
           </Link>
         </div>
-        <div className="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-2">
+        <div className="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-3">
           <Link to="/contact">
             <div>Contact</div>
           </Link>
@@ -44,20 +44,20 @@ const Nav = (props) => {
   } else if (props.navStyle === 2) {
     return (
       /**************** NAV 2 ******************/
-      <nav className="row w-100 mt-2">
+      <nav className="row w-100 mt-2 d-flex align-items-center">
         {/* <nav className="row d-flex align-items-center"> */}
-        <div className="col-xl-10 col-lg-10 col-md-9 col-sm-8 col-8">
+        <div className="col-xl-10 col-lg-10 col-md-9 col-sm-8 col-6">
           <Link className="nav-bar-2-logo" to="/">
             <b className="nav-bar-2-easy-text">Easy</b>Score
           </Link>
         </div>
 
-        <div className="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-2">
+        <div className="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-3 p-0 d-flex justify-content-end">
           <Link className="nav-bar-2-text-link" to="/about">
             About
           </Link>
         </div>
-        <div className="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-2">
+        <div className="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-3">
           <Link className="nav-bar-2-text-link" to="/contact">
             Contact
           </Link>
@@ -67,7 +67,7 @@ const Nav = (props) => {
     );
   } else {
     return (
-      <div className="row w-100 nav-3-top-margin">
+      <div className="row w-100 nav-3-top-margin d-flex align-items-center">
         <Hidden smDown>
           <div className="col-12">
             <nav className="row d-flex align-items-center">
