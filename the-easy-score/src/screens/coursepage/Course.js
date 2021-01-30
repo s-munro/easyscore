@@ -36,7 +36,7 @@ const Course = (props) => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   /*****  END PAGINATION  *****/
   return (
-    <div className="row">
+    <div className="row w-100">
       {props.isLoading === true ? (
         <div
           style={{ height: "100vh" }}
@@ -48,7 +48,7 @@ const Course = (props) => {
         </div>
       ) : (
         <div className="col-12 mt-3">
-          <div className="row" style={{ margin: "auto" }}>
+          <div className="row w-100" style={{ margin: "auto" }}>
             <Header course={props.coursePage.course} />
           </div>
           <hr />
@@ -61,8 +61,8 @@ const Course = (props) => {
               header={1}
             />
           </div>
-          <div className="row w-100 mb-4">
-            <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div className="row w-100 mb-4 d-flex" style={{ margin: "auto" }}>
+            <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex p-0">
               <ProfessorSearch />
             </div>
           </div>
@@ -70,7 +70,7 @@ const Course = (props) => {
             className="row mt-5 d-flex justify-content-center w-100"
             style={{ margin: "auto" }}
           >
-            <div className="col-xl-3 col-lg-4 col-md-0 col-sm-12 col-12 mb-5">
+            <div className="col-xl-3 col-lg-4 col-md-0 col-sm-12 col-12 mb-5 d-flex justify-content-center">
               <ProfFiltersCard />
             </div>
             <div className="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12 w-100 d-flex flex-column align-items-center">

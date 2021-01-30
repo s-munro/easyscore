@@ -17,11 +17,11 @@ const Header = ({ course }) => {
   }, [course]);
 
   return (
-    <div className="col-12 mt-3">
+    <div className="col-12 mt-3 pr-0">
       <header className="row w-100">
         <div className="col m-0 jumbo-score">{rating}</div>
 
-        <div className="col courseContentContainer">
+        <div className="col courseContentContainer pr-0 mr-0">
           <div className="row w-100 p-0 courseName">
             <div className="col courseName">
               {course.full_code}: {course.name}
@@ -32,7 +32,7 @@ const Header = ({ course }) => {
             <div className="col-xl-2 col-lg-3 col-md-3 col-sm-5 col-5 mr-1 reqsContent-requirements-title">
               Requirements:{" "}
             </div>
-            <div className="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-12 d-flex flex-wrap align-items-center justify-content-start reqTagsContainer">
+            <div className="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-12 d-flex flex-wrap align-items-center justify-content-start reqTagsContainer mobile-hide-">
               {showFulfilled === true
                 ? course.credits_fulfilled.map((credit) => {
                     let creditType = "";
