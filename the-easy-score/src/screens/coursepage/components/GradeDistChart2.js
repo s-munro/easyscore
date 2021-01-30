@@ -85,8 +85,13 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
             datalabels: {
               anchor: "end",
               align: "top",
-              color: ["#323232"],
-              fontSize: "12px",
+              // color: ["#323232"],
+              font: {
+                weight: 600,
+                size: 12,
+                color: "#323232",
+              },
+              padding: -2,
             },
           },
         }}
