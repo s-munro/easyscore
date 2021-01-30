@@ -96,6 +96,10 @@
 .nav-bar-3-easy-text {
   color: black;
 }
+.padding-right-left {
+  padding-right: 30px !important;
+  padding-left: 30px !important;
+}
 
 /** MOBILE **/
 .mobile-nav-bar-3-logo {
