@@ -9,85 +9,19 @@ import {
   setRequirementsFilterValue,
 } from "../actions/filtersActions";
 
-import {
-  requirementsValues,
-  courseLevelValues,
-  creditHoursValues,
-  timeofDayValues,
-} from "../data/FilterSelectsData";
+import { setShowModal } from "../actions/index";
 
 import SearchForm from "../components/SearchForm";
 import Hidden from "@material-ui/core/Hidden";
 import FilterListIcon from "@material-ui/icons/FilterList";
-import FilterSelect from "../components/FilterSelect";
 
-import { Button } from "react-bootstrap";
+import FiltersModal from "../components/FiltersModal";
 
-import { makeStyles } from "@material-ui/core/styles";
-import { withStyles } from "@material-ui/core/styles";
-import Dialog from "@material-ui/core/Dialog";
-import ListItem from "@material-ui/core/ListItem";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import CloseIcon from "@material-ui/icons/Close";
-import Slide from "@material-ui/core/Slide";
-
-// import "../App.css";
 import "./Nav.css";
 
-const useStyles = makeStyles((theme) => ({
-  appBar: {
-    position: "relative",
-  },
-  title: {
-    marginLeft: theme.spacing(2),
-    flex: 1,
-  },
-}));
-
-const WhiteTextTypography = withStyles({
-  root: {
-    color: "#FFFFFF",
-  },
-})(Typography);
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
-
 const Nav = (props) => {
-  const classes = useStyles();
-  const [showModal, setShowModal] = useState(false);
-
   const handleClickOpen = () => {
-    setShowModal(true);
-  };
-
-  const handleClose = () => {
-    setShowModal(false);
-  };
-
-  const handleChange = (e) => {
-    if (e.target.name === "keyword") {
-      props.setKeywordFilterValue(e.target.value);
-    } else if (e.target.name === "courseLevel") {
-      props.setLevelFilterValue(e.target.value);
-    } else if (e.target.name === "creditHours") {
-      props.setCreditsFilterValue(e.target.value);
-    } else if (e.target.name === "timeofDay") {
-      props.setTimeFilterValue(e.target.value);
-    } else if (e.target.name === "requirements") {
-      props.setRequirementsFilterValue(e.target.value);
-    } else {
-    }
-  };
-
-  const handleFiltersReset = () => {
-    props.resetFilterValues();
+    props.setShowModal(true);
   };
 
   if (props.navStyle === 1) {
@@ -193,6 +127,7 @@ const Nav = (props) => {
             </nav>
           </div>
         </Hidden>
+        <FiltersModal />
       </div>
     );
   }
@@ -211,4 +146,5 @@ export default connect(mapStateToProps, {
   setCreditsFilterValue,
   setTimeFilterValue,
   setRequirementsFilterValue,
+  setShowModal,
 })(Nav);
