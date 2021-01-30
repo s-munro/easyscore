@@ -41,13 +41,10 @@ body {
   margin-right: 4px;
 }
 input.form-control {
-  padding-left: 30px;
-}
-input.input-group > .form-control {
-  padding-left: 30px;
+  padding-left: 10px !important;
 }
 select.form-control.filterSelect {
-  padding: 5px;
+  padding: 5px 5px 5px 10px !important;
   min-width: 175px;
   max-width: 175px;
 }
