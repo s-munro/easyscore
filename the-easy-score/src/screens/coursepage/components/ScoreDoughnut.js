@@ -1,5 +1,4 @@
 import React from "react";
-// import Chart from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import "chartjs-plugin-doughnutlabel";
 

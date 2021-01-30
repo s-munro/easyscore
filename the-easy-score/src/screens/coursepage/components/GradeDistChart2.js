@@ -1,7 +1,5 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import "chartjs-plugin-datalabels";
-// import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const GradeDistChart2 = ({ average_grades, pixels }) => {
   let data = {
