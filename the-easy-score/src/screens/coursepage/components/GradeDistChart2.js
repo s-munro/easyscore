@@ -58,7 +58,6 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
                 ticks: {
                   display: true,
                   fontSize: 6,
-                  fontColor: "#0000",
                   stepSize: 25,
                   min: 0,
                   max: 100,
@@ -71,7 +70,7 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
             ],
           },
           tooltips: {
-            enabled: false,
+            enabled: true,
             displayColors: false,
             titleFontSize: 8,
             bodyFontSize: 5,
