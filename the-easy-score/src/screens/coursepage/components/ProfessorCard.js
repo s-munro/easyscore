@@ -39,7 +39,7 @@ const ProfessorCard = ({ instructor, index }) => {
           <div className="row profYears no-gutters">
             {instructor.years_taught}
           </div>
-          <div className="row w-100 d-flex flex-row justify-content-start align-items-center mobile-d-flex-center no-gutters mobile-margin-top-2">
+          <div className="row w-100 d-flex flex-row justify-content-start align-items-center mobile-d-flex-center no-gutters mt-1 mobile-margin-top-2">
             <div className="col-xl-3 col-lg-5 col-4 mobile-d-flex-end">
               <ScoreDoughnut easyScore={instructor.rating} />
             </div>
