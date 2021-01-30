@@ -89,7 +89,7 @@ const ProfFiltersCard = (props) => {
   ]);
 
   return (
-    <div className="">
+    <div className="row w-100">
       <Card className="col">
         <Card.Body className="row d-flex flex-column">
           <Card.Title className="filterCardTitle bold dark">

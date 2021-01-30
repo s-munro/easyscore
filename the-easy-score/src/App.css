@@ -9,6 +9,10 @@
 /* .form-padding {
   padding-left: 12%;
 } */
+html,
+body {
+  overflow-x: hidden;
+}
 .btn-top-padding {
   /* padding-top: 15px; */
   padding: 1% 4%;

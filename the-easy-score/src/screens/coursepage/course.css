@@ -69,6 +69,7 @@
   /* padding: 1%; */
   /* margin-right: 1%; */
   border-radius: 8px;
+  margin-bottom: 0;
 }
 
 .course-page-credits-container {
@@ -81,6 +82,9 @@
 
 .course-page-credits-title {
   /* margin-right: 1%; */
+}
+.course-page-credits {
+  color: black;
 }
 
 /******RETURNED RESULTS TEXT********/
@@ -210,9 +214,7 @@
 }
 
 .professor-card-container {
-  min-height: 175px;
-  /* max-height: 175px; */
-  /* max-width: 650px; */
+  /* min-height: 175px; */
   border-radius: 15px;
   border: none;
   box-shadow: 0px 3px 20px 0px #00000010;
@@ -235,4 +237,53 @@
 
 .card-small-text {
   font-size: 11px;
+}
+/* @media only screen and (min-width: 500px) {
+  .professor-card-container {
+    min-width: 400px;
+  }
+} */
+@media only screen and (max-width: 992px) {
+  .courseName {
+    font-size: 125%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .courseName {
+    font-size: 115%;
+  }
+}
+@media only screen and (max-width: 552px) {
+  .courseName {
+    font-size: 108%;
+  }
+}
+@media only screen and (max-width: 553px) {
+  .courseName {
+    font-size: 108%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .hide-on-450 {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* .professor-card-container {
+    min-width: 400px;
+  } */
+  .mobile-top-margin-5 {
+    margin-top: 5%;
+  }
+  .mobile-top-margin-2 {
+    margin-top: 2%;
+  }
+  .mobile-d-flex-center {
+    display: flex;
+    justify-content: center !important;
+  }
+  .mobile-d-flex-end {
+    display: flex;
+    justify-content: flex-end !important;
+  }
 }

@@ -31,17 +31,19 @@ const ProfessorCard = ({ instructor, index }) => {
   };
 
   return (
-    <Card className="col professor-card-container pt-3 pb-3 mb-5">
+    <Card className="col professor-card-container pt-3 pb-3 mb-5 w-100 ">
       {/* <div className="container w-100"> */}
       <div className="row w-100 mr-0 ml-0">
-        <div className="col-xl-6 col-lg-6 col-md-7 col-sm-12 col-xs-12 top-half">
-          <div className="row profName">{transformedName} </div>
-          <div className="row profYears">{instructor.years_taught}</div>
-          <div className="row w-100 d-flex flex-row justify-content-start">
-            <div className="col-4">
+        <div className="w-100 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 top-half">
+          <div className="row profName no-gutters">{transformedName} </div>
+          <div className="row profYears no-gutters">
+            {instructor.years_taught}
+          </div>
+          <div className="row w-100 d-flex flex-row justify-content-start mobile-d-flex-center no-gutters mobile-margin-top-2">
+            <div className="col-xl-3 col-lg-5 col-4 mobile-d-flex-end">
               <ScoreDoughnut easyScore={instructor.rating} />
             </div>
-            <div className="col-6 d-flex flex-column justify-content-center align-items-start pl-0">
+            <div className="col-xl-7 col-lg-7 col-6 d-flex flex-column justify-content-center align-items-start pl-2">
               <div className="card-small-text">
                 Semesters Taught: <b>{instructor.semesters_taught}</b>
               </div>
@@ -77,8 +79,8 @@ const ProfessorCard = ({ instructor, index }) => {
         </div>
 
         {/* SECOND HALF */}
-        <div className="col-xl-6 col-lg-6 col-md-5 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center bottom-half">
-          <div className="row">
+        <div className="w-100 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center bottom-half mobile-top-margin-5">
+          <div className="row w-100 d-flex justify-content-center">
             <GradeDistChart2
               average_grades={instructor.average_grades}
               key={index}

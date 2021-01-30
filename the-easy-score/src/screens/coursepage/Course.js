@@ -47,12 +47,12 @@ const Course = (props) => {
           </div>
         </div>
       ) : (
-        <div className="col-12">
-          <div className="row">
+        <div className="col-12 mt-3">
+          <div className="row" style={{ margin: "auto" }}>
             <Header course={props.coursePage.course} />
           </div>
           <hr />
-          <div className="row">
+          <div className="row w-100" style={{ margin: "auto" }}>
             <ResultsNumber
               number={props.coursePage.displayedInstructors.length}
               results={"instructors"}
@@ -61,16 +61,19 @@ const Course = (props) => {
               header={1}
             />
           </div>
-          <div className="row">
-            <div className="col">
+          <div className="row w-100 mb-4">
+            <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <ProfessorSearch />
             </div>
           </div>
-          <div className="row mt-5 d-flex justify-content-center w-100">
-            <div className="col-xl-3 col-lg-4 col-md-0 col-sm-12 col-12">
+          <div
+            className="row mt-5 d-flex justify-content-center w-100"
+            style={{ margin: "auto" }}
+          >
+            <div className="col-xl-3 col-lg-4 col-md-0 col-sm-12 col-12 mb-5">
               <ProfFiltersCard />
             </div>
-            <div className="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 w-100 d-flex flex-column align-items-center">
+            <div className="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12 w-100 d-flex flex-column align-items-center">
               <div className="row w-100 profCardContainer d-flex justify-content-center">
                 <Professors currentInstructors={currentInstructors} />
               </div>

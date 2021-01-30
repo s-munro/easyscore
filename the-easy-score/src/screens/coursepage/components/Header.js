@@ -28,11 +28,11 @@ const Header = ({ course }) => {
             </div>
           </div>
 
-          <div className="row w-100 d-flex justify-content-start mt-0 align-items-center reqsContentContainer">
-            <div className="col-xl-1 col-lg-2 col-md-2 col-sm-3 col-5 reqsContent-requirements-title">
+          <div className="row w-100 d-flex justify-content-start mt-0 align-items-center reqsContentContainer hide-on-450">
+            <div className="col-xl-2 col-lg-3 col-md-3 col-sm-5 col-5 mr-1 reqsContent-requirements-title">
               Requirements:{" "}
             </div>
-            <div className="col-8 d-flex align-items-center reqTagsContainer">
+            <div className="col-xl-10 col-lg-9 col-md-9 col-sm-7 col-6 d-flex align-items-center reqTagsContainer">
               {showFulfilled === true
                 ? course.credits_fulfilled.map((credit) => {
                     let creditType = "";
@@ -70,7 +70,7 @@ const Header = ({ course }) => {
                       creditType = "World Language";
                     } else return null;
                     return (
-                      <p key={creditType} className="col-12 m-0 requirements">
+                      <p key={creditType} className="requirements">
                         {creditType}
                       </p>
                     );
@@ -80,9 +80,11 @@ const Header = ({ course }) => {
           </div>
 
           <div className="row w-100 course-page-credits-container">
-            <div className="col-3 course-page-credits-title">Credits: </div>
-            <div className="col-8 pl-0 course-page-credits">
-              <b> {course.credits}</b>
+            <div className="col-xl-1 col-lg-1 col-md-2 col-sm-3 col-3 mr-2 course-page-credits-title">
+              Credits:{" "}
+            </div>
+            <div className="col-1 pl-0 course-page-credits">
+              {course.credits}
             </div>
           </div>
         </div>
