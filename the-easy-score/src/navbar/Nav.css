@@ -28,15 +28,11 @@
 }
 .MuiSvgIcon-root.modal-icon {
   cursor: pointer;
+  transition: all 0.275s ease-in-out;
 }
-.modal-icon {
-  cursor: pointer;
-}
-.MuiSvgIcon-root.modal-icon:hover {
-  /* background-color: red; */
+.filter-icon-handler:hover .MuiSvgIcon-root.modal-icon {
   color: #b76767;
-  transition: 0.3s;
-  cursor: pointer;
+  transform: rotate(90deg);
 }
 
 /** MOBILE NAV1 **/

@@ -134,164 +134,65 @@ const Nav = (props) => {
   } else {
     return (
       <div className="row w-100 nav-3-top-margin">
-        <div>
-          <Hidden smDown>
-            <div className="container">
-              <nav className="row d-flex align-items-center">
-                <div className="col-xl-2 col-lg-2 col-md-3">
-                  <Link className="nav-bar-3-logo" to="/">
-                    <b className="nav-bar-3-easy-text">Easy</b>Score
-                  </Link>
-                </div>
-                <div className="d-flex align-items-center col-xl-8 col-lg-8 col-md-7">
-                  <SearchForm formType={"nav"} />
+        <Hidden smDown>
+          <div className="col-12">
+            <nav className="row d-flex align-items-center">
+              <div className="col-xl-2 col-lg-2 col-md-3">
+                <Link className="nav-bar-3-logo" to="/">
+                  <b className="nav-bar-3-easy-text">Easy</b>Score
+                </Link>
+              </div>
+              <div className="d-flex align-items-center col-xl-8 col-lg-8 col-md-7">
+                <SearchForm formType={"nav"} />
+                <div className="filter-icon-handler ml-2">
                   <FilterListIcon
                     onClick={handleClickOpen}
                     className="modal-icon margin-left"
                   />
                 </div>
-                <div className="col-xl-1 col-lg-1 col-md-1">
-                  <Link className="" to="/about">
-                    About
-                  </Link>
-                </div>
-                <div className="col-xl-1 col-lg-1 col-md-1">
-                  <Link className="" to="/contact">
-                    Contact
-                  </Link>
-                </div>
-              </nav>
-            </div>
-          </Hidden>
-        </div>
+              </div>
+              <div className="col-xl-1 col-lg-1 col-md-1 d-flex justify-content-end">
+                <Link className="" to="/about">
+                  About
+                </Link>
+              </div>
+              <div className="col-xl-1 col-lg-1 col-md-1 d-flex justify-content-end">
+                <Link className="" to="/contact">
+                  Contact
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </Hidden>
         {/************** MOBILE NAV 3 ******************/}
-        <div>
-          <Hidden mdUp>
-            <div className="row w-100">
-              <nav className="row d-flex align-items-center">
-                <div className="col-md-8 col-sm-7 col-8">
-                  <Link className="mobile-nav-bar-3-logo" to="/">
-                    <b className="mobile-nav-bar-3-easy-text">Easy</b>Score
-                  </Link>
-                </div>
-                <div className="col-md-2 col-sm-2 col-2">
-                  <Link className="" to="/about">
-                    About
-                  </Link>
-                </div>
-                <div className="col-md-2 col-sm-2 col-2">
-                  <Link className="" to="/contact">
-                    Contact
-                  </Link>
-                </div>
-                <div className="col-md-12 col-sm-12 col-12 d-flex align-items-center mobile-nav-3-padding-top">
-                  <SearchForm formType={"nav"} />
-                  <FilterListIcon
-                    onClick={handleClickOpen}
-                    className="modal-icon margin-left"
-                  />
-                </div>
-              </nav>
-            </div>
-          </Hidden>
-        </div>
-        {/*******************  POPUP MODAL *******************/}
-        <Dialog
-          // fullScreen
-          open={showModal}
-          onClose={handleClose}
-          TransitionComponent={Transition}
-        >
-          <AppBar className={classes.appBar}>
-            <Toolbar>
-              <IconButton
-                edge="start"
-                color="inherit"
-                onClick={handleClose}
-                aria-label="close"
-              >
-                <CloseIcon />
-              </IconButton>
-              <WhiteTextTypography variant="h6" className={classes.title}>
-                Filters
-              </WhiteTextTypography>
-            </Toolbar>
-          </AppBar>
-          <List>
-            <div className="col mr-4">
-              <div className="row mt-3 mb-2 d-flex justify-content-center">
-                <ListItem>
-                  {/* <ListItemText primary="Course Level" /> */}
-                  <FilterSelect
-                    select_id={"courseLevel"}
-                    handleSelectChange={handleChange}
-                    selectValues={courseLevelValues}
-                    selectValue={props.filters.courseLevel.value}
-                  />
-                </ListItem>
+        <Hidden mdUp>
+          <div className="col-12 w-100">
+            <nav className="row d-flex align-items-center">
+              <div className="col-md-8 col-sm-8 col-8">
+                <Link className="mobile-nav-bar-3-logo" to="/">
+                  <b className="mobile-nav-bar-3-easy-text">Easy</b>Score
+                </Link>
               </div>
-              <Divider />
-              <div className="row mt-3 mb-2 d-flex justify-content-center">
-                <ListItem>
-                  {/* <ListItemText primary="Credit Hours" /> */}
-                  <div className="d-flex justify-content-center align-items-center">
-                    <FilterSelect
-                      select_id={"creditHours"}
-                      handleSelectChange={handleChange}
-                      selectValues={creditHoursValues}
-                      selectValue={props.filters.creditHours.value}
-                    />
-                  </div>
-                </ListItem>
+              <div className="col-md-2 col-sm-2 col-2 d-flex justify-content-end">
+                <Link className="" to="/about">
+                  About
+                </Link>
               </div>
-              <Divider />
-              <div className="row mt-3 mb-2 d-flex justify-content-center">
-                <ListItem>
-                  {/* <ListItemText primary="Requirements Fulfilled" /> */}
-                  <br />
-                  <div className="d-flex justify-content-center align-items-center">
-                    <FilterSelect
-                      select_id={"requirements"}
-                      handleSelectChange={handleChange}
-                      selectValues={requirementsValues}
-                      selectValue={props.filters.requirements.value}
-                    />
-                  </div>
-                </ListItem>
+              <div className="col-md-2 col-sm-2 col-2 d-flex justify-content-end">
+                <Link className="" to="/contact">
+                  Contact
+                </Link>
               </div>
-              <Divider />
-              <div className="row mt-3 mb-2 d-flex justify-content-center">
-                <ListItem>
-                  {/* <ListItemText primary="Time of Day" /> */}
-                  <br />
-                  <div className="d-flex justify-content-center align-items-center">
-                    <FilterSelect
-                      select_id={"timeofDay"}
-                      handleSelectChange={handleChange}
-                      selectValues={timeofDayValues}
-                      selectValue={props.filters.timeofDay.value}
-                    />
-                  </div>
-                </ListItem>
+              <div className="col-md-12 col-sm-12 col-12 d-flex align-items-center mobile-nav-3-padding-top">
+                <SearchForm formType={"nav"} />
+                <FilterListIcon
+                  onClick={handleClickOpen}
+                  className="modal-icon margin-left"
+                />
               </div>
-              <Divider />
-              <div className="row mt-3 mb-2 d-flex justify-content-center">
-                <Button
-                  className="homeFilterBtn homeApply shadow-none"
-                  onClick={handleClose}
-                >
-                  Apply
-                </Button>
-                <Button
-                  className="homeFilterBtn shadow-none"
-                  onClick={handleFiltersReset}
-                >
-                  Reset
-                </Button>
-              </div>
-            </div>
-          </List>
-        </Dialog>
+            </nav>
+          </div>
+        </Hidden>
       </div>
     );
   }
