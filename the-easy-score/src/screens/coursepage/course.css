@@ -281,6 +281,9 @@
   .hide-on-450 {
     display: none !important;
   }
+  .mobile-450-margin-right {
+    margin-right: 40px !important;
+  }
 }
 @media only screen and (max-width: 767px) {
   /* .professor-card-container {

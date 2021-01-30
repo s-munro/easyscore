@@ -80,10 +80,10 @@ const Header = ({ course }) => {
           </div>
 
           <div className="row w-100 course-page-credits-container">
-            <div className="col-xl-1 col-lg-1 col-md-2 col-sm-3 col-3 mr-2 course-page-credits-title">
+            <div className="col-xl-1 col-lg-1 col-md-2 col-sm-3 col-3 mr-2 course-page-credits-title mobile-450-margin-right">
               Credits:{" "}
             </div>
-            <div className="col-1 pl-0 course-page-credits">
+            <div className="col-2 pl-0 course-page-credits">
               {course.credits}
             </div>
           </div>
