@@ -47,8 +47,8 @@ const Nav = (props) => {
       <nav className="row w-100 mt-2 d-flex align-items-center">
         {/* <nav className="row d-flex align-items-center"> */}
         <div className="col-xl-10 col-lg-10 col-md-9 col-sm-8 col-6">
-          <Link className="nav-bar-2-logo" to="/">
-            <b className="nav-bar-2-easy-text">Easy</b>Score
+          <Link className="mobile-nav-bar-3-logo" to="/">
+            <b className="nav-bar-3-easy-text">Easy</b>Score
           </Link>
         </div>
 
@@ -72,8 +72,8 @@ const Nav = (props) => {
           <div className="col-12">
             <nav className="row d-flex align-items-center">
               <div className="col-xl-2 col-lg-2 col-md-3">
-                <Link className="nav-bar-3-logo" to="/">
-                  <b className="nav-bar-3-easy-text">Easy</b>Score
+                <Link className="mobile-nav-bar-3-logo" to="/">
+                  <b className="mobile-nav-bar-3-easy-text">Easy</b>Score
                 </Link>
               </div>
               <div className="d-flex align-items-center col-xl-8 col-lg-8 col-md-6">
