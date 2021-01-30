@@ -81,19 +81,19 @@ const CourseCard = ({ course }) => {
             })}
           </div>
         </div>
-        <div className="course-card-click-more d-flex justify-content-end">
+        <div className="course-card-click-more d-flex align-items-end justify-content-end">
           <Link
             to={`/courses/${course.full_code}_${course.name.replace(
               / /g,
               "_"
             )}`}
+            className="no-hover"
           >
-            <div className="d-flex align-items-center small-icon-font">
+            <div className="small-icon-font absolute-bottom-right-2 slide">
               <span className="padding-right">More</span>
-              {/* <i class="fas fa-arrow-right"></i> */}
               <ArrowForwardIcon
                 fontSize="inherit"
-                className="padding-right-2"
+                className="slide padding-right-2"
               />
             </div>
           </Link>

@@ -32,7 +32,7 @@ const Header = ({ course }) => {
             <div className="col-xl-2 col-lg-3 col-md-3 col-sm-5 col-5 mr-1 reqsContent-requirements-title">
               Requirements:{" "}
             </div>
-            <div className="col-xl-10 col-lg-9 col-md-9 col-sm-7 col-6 d-flex align-items-center reqTagsContainer">
+            <div className="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-12 d-flex flex-wrap align-items-center justify-content-start reqTagsContainer">
               {showFulfilled === true
                 ? course.credits_fulfilled.map((credit) => {
                     let creditType = "";
@@ -71,7 +71,7 @@ const Header = ({ course }) => {
                     } else return null;
                     return (
                       <p key={creditType} className="requirements">
-                        {creditType}
+                        {creditType} <span className="lightgray"> |</span>
                       </p>
                     );
                   })

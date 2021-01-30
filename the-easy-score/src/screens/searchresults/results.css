@@ -121,6 +121,10 @@
   padding: 2%;
   border-bottom: 0.5px solid rgba(211, 211, 211, 0.199);
   border-top: 0.5px solid rgba(211, 211, 211, 0.199);
+  min-height: 279px;
+  /* min-width: 266px;
+  max-width: 266px;
+  width: 266px; */
 }
 
 .course-card-top-portion {
@@ -202,6 +206,24 @@
 }
 .more-arrow {
   font-size: 8px;
+}
+/* .absolute-bottom-right-2 {
+  position: absolute;
+  right: 23px;
+  bottom: 6px;
+} */
+/* .absolute-bottom-right-4 {
+  position: absolute;
+  right
+} */
+.slide {
+  transition: all 0.25s ease-in-out;
+}
+.slide:hover {
+  right: 18px;
+}
+.no-hover:hover {
+  color: #b32727;
 }
 
 /***** No Results Background ********/
