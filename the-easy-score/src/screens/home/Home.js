@@ -24,30 +24,32 @@ const Home = (props) => {
   };
 
   return (
-    <div className="container">
-      <main>
-        <div className="logoTitleContainer">
-          <h1 className="logoTitle">
-            <b>Easy</b>
-            <span className="scoreLogo">Score</span>
-          </h1>
-        </div>
+    <main className="row w-100">
+      <div className="col-12 d-flex justify-content-center">
+        <h1 className="logoTitle">
+          <b>Easy</b>
+          <span className="scoreLogo">Score</span>
+        </h1>
+      </div>
+      <div className="col-12 d-flex justify-content-center align-items-center">
         <Hidden smDown>
           <SearchForm nav={false} />
         </Hidden>
         <Hidden mdUp>
-          <MobileSearchForm />
-          <Button
-            className="homeFilterBtn homeModalBtn btn-top-padding shadow-none"
-            onClick={handleModal}
-            // block
-          >
-            Filters
-          </Button>
+          <div className="col-12 d-flex flex-column justify-content-center align-items-center">
+            <MobileSearchForm />
+            <Button
+              className="homeFilterBtn homeModalBtn btn-top-padding shadow-none"
+              onClick={handleModal}
+              // block
+            >
+              Filters
+            </Button>
+          </div>
         </Hidden>
-        <FiltersModal />
-      </main>
-    </div>
+      </div>
+      <FiltersModal />
+    </main>
   );
 };
 

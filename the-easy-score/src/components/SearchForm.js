@@ -56,7 +56,7 @@ const SearchForm = (props) => {
     return (
       <div className="home-form-container col-12">
         <form onSubmit={handleSubmit}>
-          <InputGroup className="inputAndBtnContainer p-o">
+          <InputGroup className="inputAndBtnContainer">
             <FormControl
               className="inputContainer p-0"
               value={props.filters.keyword.value}
