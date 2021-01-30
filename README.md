@@ -228,5 +228,11 @@ https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif
       - [x] center alignement, fix undesired padding/margins
     - [x] home page
       - [x] migration to bootstrap
-      - [inp] align nav links with search form?
-    - [x] nav bar migrated to bootstrap & responsive
+      - [inp] align nav links with search form?   - [x] nav bar migrated to bootstrap & responsive
+  - [x] bugfix on course-page course cards when only one result displayed
+  - [x] removed linting issues
+  - [x] integrated bootstrap classes for responsiveness across the app
+  - [x] popup modal separated into its own component for reusability
+  - [x] established footer and footer-related state
+  - [x] global state for popup modal
+  - [x] installed sass, altered bootstrap color palette for design consistency
