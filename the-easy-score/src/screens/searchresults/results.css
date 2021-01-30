@@ -4,8 +4,14 @@
 .userInputText {
   color: #b32727;
 }
-*/
-
+*/ .fixed {
+  position: fixed;
+}
+.absolute-bottom-right {
+  position: absolute;
+  bottom: 5px;
+  right: 25px;
+}
 /****** Returned Results Section ********/
 
 .showingResultsText {
@@ -105,12 +111,12 @@
 
 /***** COURSE CARDS ********/
 
-.CourseCard {
+/* .CourseCard {
   width: 300px;
   min-width: 300px;
   max-height: min-content;
   margin-right: 5%;
-}
+} */
 
 .course-cardSpace {
   background-color: #ffffff;
@@ -121,10 +127,65 @@
   padding: 2%;
   border-bottom: 0.5px solid rgba(211, 211, 211, 0.199);
   border-top: 0.5px solid rgba(211, 211, 211, 0.199);
-  min-height: 279px;
+  /* min-height: 279px; */
   /* min-width: 266px;
   max-width: 266px;
   width: 266px; */
+  /* min-height: 296; */
+  /* max-height: 296; */
+}
+
+div.course-cardSpace {
+  /* min-height: 296px; */
+  /* max-height: 296px; */
+  /* min-width: 250px; */
+  /* max-width: 250px; */
+  position: relative;
+  /* position: fixed; */
+}
+
+@media only screen and (min-width: 1200px) {
+  .non-mobile-zero-padding-right {
+    padding-right: 3% !important;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  div.course-cardSpace {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 250px;
+    max-height: 250px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  div.course-cardSpace {
+    min-width: 275px;
+    max-width: 275px;
+    min-height: 275px;
+  }
+}
+@media only screen and (min-width: 650px) and (max-width: 767px) {
+  div.course-cardSpace {
+    min-width: 400px;
+    max-width: 400px;
+    min-height: 400px;
+  }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 650px) {
+  div.course-cardSpace {
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 350px;
+    /* max-height: 400px; */
+  }
+}
+@media only screen and (min-width: 350px) and (max-width: 449px) {
+  div.course-cardSpace {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 300px;
+  }
 }
 
 .course-card-top-portion {
@@ -195,8 +256,10 @@
 }
 
 .filterCardReq {
-  font-size: 80%;
+  font-size: 12px;
   margin-right: 4%;
+  line-height: 50%;
+  color: rgba(85, 85, 85, 0.815);
   width: max-content;
 }
 

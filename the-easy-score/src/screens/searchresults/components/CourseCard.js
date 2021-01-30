@@ -74,14 +74,14 @@ const CourseCard = ({ course }) => {
                 creditType = "World Language";
               } else return null;
               return (
-                <p key={creditType} className="requirement filterCardReq">
+                <p key={creditType} className="filterCardReq">
                   {creditType}
                 </p>
               );
             })}
           </div>
         </div>
-        <div className="course-card-click-more d-flex align-items-end justify-content-end">
+        <div className="course-card-click-more d-flex align-items-end justify-content-end fixed">
           <Link
             to={`/courses/${course.full_code}_${course.name.replace(
               / /g,
@@ -89,7 +89,7 @@ const CourseCard = ({ course }) => {
             )}`}
             className="no-hover"
           >
-            <div className="small-icon-font absolute-bottom-right-2 slide">
+            <div className="small-icon-font absolute-bottom-right-2 slide absolute-bottom-right">
               <span className="padding-right">More</span>
               <ArrowForwardIcon
                 fontSize="inherit"

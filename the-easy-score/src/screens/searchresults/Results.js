@@ -65,8 +65,8 @@ const Results = (props) => {
 
   return (
     <div className="row w-100">
-      <div className="mt-3 mr-0 col-12">
-        <div className="col w-100">
+      <div className="mt-3 col-12 d-flex flex-column align-items-center p-0">
+        <div className="row w-100">
           <Hidden smDown>
             <SearchForm nav={false} />
             <hr></hr>
@@ -93,10 +93,10 @@ const Results = (props) => {
       ) : (
         <div className="col-12 mt-5 d-flex flex-column align-items-center">
           <div className="row w-100">
-            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
+            <div className="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12 p-0 non-mobile-zero-padding-right">
               <FiltersCard setCurrentPage={setCurrentPage} />
             </div>
-            <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
+            <div className="col-xl-9 col-lg-9 col-md-7 col-sm-12 col-12">
               <div className="row">
                 <div className="col mb-4">
                   <ResultsNumber
@@ -107,9 +107,9 @@ const Results = (props) => {
                   />
                 </div>
               </div>
-              <div className="row">
+              <div className="row w-100 m-0">
                 {props.displayedCourses.length > 0 ? (
-                  <div className="w-100">
+                  <div className="col-12 p-0">
                     <Courses currentCourses={currentCourses} />
                     {props.isLoading === false ? (
                       <TablePagination

@@ -54,7 +54,7 @@ const SearchForm = (props) => {
 
   if (formType !== "nav") {
     return (
-      <div className="home-form-container w-100">
+      <div className="home-form-container col-12">
         <form onSubmit={handleSubmit}>
           <InputGroup className="inputAndBtnContainer p-o">
             <FormControl
