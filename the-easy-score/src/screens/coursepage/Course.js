@@ -70,7 +70,7 @@ const Course = (props) => {
             className="row mt-5 d-flex justify-content-center w-100"
             style={{ margin: "auto" }}
           >
-            <div className="col-xl-3 col-lg-4 col-md-0 col-sm-12 col-12 mb-5 d-flex justify-content-center">
+            <div className="col-xl-3 col-lg-4 col-md-0 col-sm-12 col-12 mb-5 d-flex justify-content-center align-items-start">
               <ProfFiltersCard />
             </div>
             <div className="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12 w-100 d-flex flex-column align-items-center">

@@ -4,7 +4,7 @@ import NoResults from "../../../components/NoResults";
 
 const Professors = (props) => {
   return (
-    <div className="testTest col d-flex justify-content-center p-0">
+    <div className="testTest col d-flex flex-column justify-content-center p-0">
       {props.currentInstructors.length > 0 ? (
         props.currentInstructors.map((instructor, index) => {
           return (
