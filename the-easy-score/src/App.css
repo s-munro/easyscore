@@ -41,7 +41,10 @@ body {
   margin-right: 4px;
 }
 input.form-control {
-  padding-left: 8px;
+  padding-left: 30px;
+}
+input.input-group > .form-control {
+  padding-left: 30px;
 }
 select.form-control.filterSelect {
   padding: 5px;

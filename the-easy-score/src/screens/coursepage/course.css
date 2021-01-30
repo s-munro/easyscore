@@ -251,6 +251,12 @@
     min-width: 400px;
   }
 } */
+
+@media only screen and (max-width: 1199px) {
+  .courseName {
+    font-size: 130%;
+  }
+}
 @media only screen and (max-width: 992px) {
   .courseName {
     font-size: 125%;
