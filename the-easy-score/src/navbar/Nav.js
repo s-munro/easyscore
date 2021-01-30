@@ -93,56 +93,47 @@ const Nav = (props) => {
   if (props.navStyle === 1) {
     return (
       /************** NAV 1 ******************/
-      <div className="container nav-1-top-margin">
-        <nav className="row">
-          <div className="col-xl 10 col-lg-10 col-md-10 col-sm-9 col-8" />
-          <div className="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-2">
-            <Link to="/about">
-              <div>About</div>
-            </Link>
-          </div>
-          <div className="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-2">
-            <Link to="/contact">
-              <div>Contact</div>
-            </Link>
-          </div>
-        </nav>
-      </div>
+      <nav className="row w-100 mt-2">
+        <div className="col-xl 10 col-lg-10 col-md-10 col-sm-9 col-8" />
+        <div className="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-2">
+          <Link to="/about">
+            <div>About</div>
+          </Link>
+        </div>
+        <div className="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-2">
+          <Link to="/contact">
+            <div>Contact</div>
+          </Link>
+        </div>
+      </nav>
     );
   } else if (props.navStyle === 2) {
     return (
       /**************** NAV 2 ******************/
-      <div className="nav-top-top-margin">
-        <Hidden
-        //  smDown
-        >
-          <div className="container">
-            <nav className="row d-flex align-items-center">
-              <div className="col-xl-10 col-lg-10 col-md-9 col-sm-8 col-8">
-                <Link className="nav-bar-2-logo" to="/">
-                  <b className="nav-bar-2-easy-text">Easy</b>Score
-                </Link>
-              </div>
+      <nav className="row w-100 mt-2">
+        {/* <nav className="row d-flex align-items-center"> */}
+        <div className="col-xl-10 col-lg-10 col-md-9 col-sm-8 col-8">
+          <Link className="nav-bar-2-logo" to="/">
+            <b className="nav-bar-2-easy-text">Easy</b>Score
+          </Link>
+        </div>
 
-              <div className="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-2">
-                <Link className="nav-bar-2-text-link" to="/about">
-                  About
-                </Link>
-              </div>
-              <div className="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-2">
-                <Link className="nav-bar-2-text-link" to="/contact">
-                  Contact
-                </Link>
-              </div>
-            </nav>
-          </div>
-        </Hidden>
-        {/************** NAV 2 MOBILE ******************/}
-      </div>
+        <div className="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-2">
+          <Link className="nav-bar-2-text-link" to="/about">
+            About
+          </Link>
+        </div>
+        <div className="col-xl-1 col-lg-1 col-md-2 col-sm-2 col-2">
+          <Link className="nav-bar-2-text-link" to="/contact">
+            Contact
+          </Link>
+        </div>
+        {/* </nav> */}
+      </nav>
     );
   } else {
     return (
-      <div className="nav-3-top-margin">
+      <div className="row w-100 nav-3-top-margin">
         <div>
           <Hidden smDown>
             <div className="container">
@@ -176,7 +167,7 @@ const Nav = (props) => {
         {/************** MOBILE NAV 3 ******************/}
         <div>
           <Hidden mdUp>
-            <div className="container">
+            <div className="row w-100">
               <nav className="row d-flex align-items-center">
                 <div className="col-md-8 col-sm-7 col-8">
                   <Link className="mobile-nav-bar-3-logo" to="/">

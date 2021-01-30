@@ -84,56 +84,54 @@ const Results = (props) => {
           </Hidden>
         </div>
       </div>
-      <div>
-        {props.isLoading === true ? (
-          <div className="row w-100 justify-content-center align-items-center">
-            <div className="col justify-content-center align-items-center d-flex justify-content-center align-items-center mt-5">
-              <Loading />
-            </div>
+      {props.isLoading === true ? (
+        <div className="row w-100 justify-content-center align-items-center">
+          <div className="col-12 justify-content-center align-items-center d-flex mt-5">
+            <Loading />
           </div>
-        ) : (
-          <div className="row mt-5">
-            <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
-              <FiltersCard setCurrentPage={setCurrentPage} />
+        </div>
+      ) : (
+        <div className="row mt-5">
+          <div className="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
+            <FiltersCard setCurrentPage={setCurrentPage} />
+          </div>
+          <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
+            <div className="row">
+              <div className="col mb-4">
+                <ResultsNumber
+                  number={props.displayedCourses.length}
+                  results={"courses"}
+                  keyword={keyword}
+                  header={0}
+                />
+              </div>
             </div>
-            <div className="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12">
-              <div className="row">
-                <div className="col mb-4">
-                  <ResultsNumber
-                    number={props.displayedCourses.length}
-                    results={"courses"}
-                    keyword={keyword}
-                    header={0}
-                  />
+            <div className="row">
+              {props.displayedCourses.length > 0 ? (
+                <div className="w-100">
+                  <Courses currentCourses={currentCourses} />
+                  {props.isLoading === false ? (
+                    <TablePagination
+                      count={Math.ceil(props.displayedCourses.length / 3)}
+                      page={currentPage}
+                      rowsPerPage={4}
+                      rowsPerPageOptions={[4]}
+                      paginate={paginate}
+                    />
+                  ) : null}
                 </div>
-              </div>
-              <div className="row">
-                {props.displayedCourses.length > 0 ? (
-                  <div className="w-100">
-                    <Courses currentCourses={currentCourses} />
-                    {props.isLoading === false ? (
-                      <TablePagination
-                        count={Math.ceil(props.displayedCourses.length / 3)}
-                        page={currentPage}
-                        rowsPerPage={4}
-                        rowsPerPageOptions={[4]}
-                        paginate={paginate}
-                      />
-                    ) : null}
+              ) : (
+                //********  RENDER NO RESULTS IF NO RESULTS  *******/
+                <div className="container">
+                  <div className="ml-10">
+                    <NoResults />
                   </div>
-                ) : (
-                  //********  RENDER NO RESULTS IF NO RESULTS  *******/
-                  <div className="container">
-                    <div className="ml-10">
-                      <NoResults />
-                    </div>
-                  </div>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

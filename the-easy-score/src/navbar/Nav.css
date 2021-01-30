@@ -10,9 +10,9 @@
 
 /***************** FIRST NAV BAR ******************/
 /** DESKTOP NAV1 **/
-.nav-1-top-margin {
+/* .nav-1-top-margin {
   margin-top: 2%;
-}
+} */
 .nav-bar {
   display: flex;
   justify-self: flex-end;
