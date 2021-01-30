@@ -62,7 +62,7 @@ const Course = (props) => {
             />
           </div>
           <div className="row w-100 mb-4 d-flex" style={{ margin: "auto" }}>
-            <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex p-0">
+            <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 d-flex">
               <ProfessorSearch />
             </div>
           </div>

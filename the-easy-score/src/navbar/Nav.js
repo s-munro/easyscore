@@ -76,7 +76,7 @@ const Nav = (props) => {
                   <b className="nav-bar-3-easy-text">Easy</b>Score
                 </Link>
               </div>
-              <div className="d-flex align-items-center col-xl-8 col-lg-8 col-md-7">
+              <div className="d-flex align-items-center col-xl-8 col-lg-8 col-md-6">
                 <SearchForm formType={"nav"} />
                 <div className="filter-icon-handler ml-2">
                   <FilterListIcon
@@ -90,7 +90,7 @@ const Nav = (props) => {
                   About
                 </Link>
               </div>
-              <div className="col-xl-1 col-lg-1 col-md-1 d-flex justify-content-end">
+              <div className="col-xl-1 col-lg-1 col-md-2 d-flex justify-content-end">
                 <Link className="" to="/contact">
                   Contact
                 </Link>
@@ -102,17 +102,17 @@ const Nav = (props) => {
         <Hidden mdUp>
           <div className="col-12 w-100">
             <nav className="row d-flex align-items-center">
-              <div className="col-md-8 col-sm-8 col-8">
+              <div className="col-md-8 col-sm-8 col-6">
                 <Link className="mobile-nav-bar-3-logo" to="/">
                   <b className="mobile-nav-bar-3-easy-text">Easy</b>Score
                 </Link>
               </div>
-              <div className="col-md-2 col-sm-2 col-2 d-flex justify-content-end">
+              <div className="col-md-2 col-sm-2 col-4 d-flex justify-content-center mobile-450-margin-right-2">
                 <Link className="" to="/about">
                   About
                 </Link>
               </div>
-              <div className="col-md-2 col-sm-2 col-2 d-flex justify-content-end">
+              <div className="col-md-2 col-sm-2 col-2 d-flex justify-content-end ">
                 <Link className="" to="/contact">
                   Contact
                 </Link>
