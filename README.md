@@ -203,18 +203,36 @@ https://media.giphy.com/media/nPhDWjt7l7IfeLehwL/giphy.gif
     - [x] fuzzy search in conjunction with filters
   - [] professor cards animation on render
   - [x] MobileSearchForm added with popup dialog for filters
-  
-  #### Sunday, Jan 24 - Wed. Jan 27
-  - [x] re-worked course page professor cards
+
+  #### Sunday, Jan 24 - Sat Jan 30
+
+  - [x] contact page set up and designed
+  - [x] about page set up and designed -[x] content migrated from easy score current website, 'about'
+  - [x] back-end
+    - [x] nodemailer installed
+    - [x] basic endpoint with nodemailer to send emails
+    - [x] communicating with front end for errors/success
+  - [x] all functionality completed
+  - [x] transferring over to heroku for deployment
+  - [x] styling/responsiveness across the site
+    - [x] course page
+      - [x] professor cards
+      - [x] header
+      - [x] filter card sizing
+      - [x] graphs
+      - [x] responsive text size
+      - [inp] styling for reqs?
+    - [x] search page
+      - [x] course cards
+      - [x] migration to bootstrap
+      - [x] center alignement, fix undesired padding/margins
+    - [x] home page
+      - [x] migration to bootstrap
+      - [inp] align nav links with search form?   - [x] nav bar migrated to bootstrap & responsive
+  - [x] bugfix on course-page course cards when only one result displayed
+  - [x] removed linting issues
   - [x] integrated bootstrap classes for responsiveness across the app
   - [x] popup modal separated into its own component for reusability
   - [x] established footer and footer-related state
   - [x] global state for popup modal
   - [x] installed sass, altered bootstrap color palette for design consistency
-  - [x] removed linting issues
-  - [x] bugfix on course-page course cards when only one result displayed
-  - [x] created about page and contact page
-  - [x] created node back-end with nodemailer for contact form email-to-admin output
-  - [x] reorganized app for heroku deployment
-  - [x] heroku deployment
-  - [x] misc.
