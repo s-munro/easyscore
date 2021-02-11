@@ -45,7 +45,6 @@ const Nav = (props) => {
     return (
       /**************** NAV 2 ******************/
       <nav className="row w-100 mt-2 d-flex align-items-center">
-        {/* <nav className="row d-flex align-items-center"> */}
         <div className="col-xl-10 col-lg-10 col-md-9 col-sm-8 col-6">
           <Link className="mobile-nav-bar-3-logo" to="/">
             <b className="nav-bar-3-easy-text">Easy</b>Score
@@ -62,7 +61,6 @@ const Nav = (props) => {
             Contact
           </Link>
         </div>
-        {/* </nav> */}
       </nav>
     );
   } else {

@@ -11,7 +11,6 @@ const Professors = (props) => {
             <div
               className="col-12 d-flex flex-column justify-content-center"
               key={index}
-              // className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12 mb-5"
             >
               <ProfessorCard instructor={instructor} key={index} />
             </div>

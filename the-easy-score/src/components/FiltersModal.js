@@ -87,7 +87,6 @@ const FiltersModal = (props) => {
   };
   return (
     <Dialog
-      // fullScreen
       open={props.showModal}
       onClose={handleClose}
       TransitionComponent={Transition}
@@ -165,14 +164,14 @@ const FiltersModal = (props) => {
             <Button
               className="homeFilterBtn homeApply shadow-none"
               onClick={handleClose}
-              name="apply-filters-button"
+              name="apply-filters"
             >
               Apply
             </Button>
             <Button
               className="homeFilterBtn shadow-none"
               onClick={handleFiltersReset}
-              name="reset-filters-button"
+              name="reset-filters"
             >
               Reset
             </Button>

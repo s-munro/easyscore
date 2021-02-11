@@ -142,7 +142,6 @@ const Contact = (props) => {
             <Button
               className="contactTextArea contactBtn"
               variant="primary"
-              // onClick={handleSubmit}
               type="submit"
               name="contact-form-submit"
             >

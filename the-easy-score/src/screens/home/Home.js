@@ -40,9 +40,8 @@ const Home = (props) => {
             <MobileSearchForm />
             <Button
               className="homeFilterBtn homeModalBtn btn-top-padding shadow-none"
+              name="view-filters"
               onClick={handleModal}
-              name="view-filters-button"
-              // block
             >
               Filters
             </Button>

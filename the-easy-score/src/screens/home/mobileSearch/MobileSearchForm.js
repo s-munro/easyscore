@@ -64,6 +64,7 @@ const MobileSearchForm = (props) => {
                 type="submit"
                 onSubmit={handleSubmit}
                 id="basic-addon2"
+                name="search"
               >
                 <i className="fa fa-search"></i>
               </Button>

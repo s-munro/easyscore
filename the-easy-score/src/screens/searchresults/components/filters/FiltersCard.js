@@ -54,6 +54,7 @@ const FiltersCard = (props) => {
     props.setCourses(props.courses);
 
     // functions all depend on one-another, the filters are all activated by calling filterByRequirements
+
     // eslint-disable-next-line array-callback-return
     const semesterFilteredCourses = props.courses.filter((course) => {
       if (props.resultsPage.filtersCard.next_sem.value === 0) {
@@ -196,7 +197,7 @@ const FiltersCard = (props) => {
             id="course-filter-next-semester-switch"
             checked={props.resultsPage.filtersCard.next_sem.value === 1}
             value={props.resultsPage.filtersCard.next_sem.value}
-            // label="Next Semester Only"
+            label="Next Semester Only"
             onChange={handleSwitchChange}
           />
           <br />
@@ -235,7 +236,7 @@ const FiltersCard = (props) => {
           <br />
           <div className="filterBtnContainer">
             <Button
-              name="reset-filters-button"
+              name="reset-filters"
               className="filterBtn"
               onClick={handleFiltersReset}
             >
