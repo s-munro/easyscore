@@ -23,7 +23,6 @@ const Footer = (props) => {
           <p>
             <small>© Copyright 2021 The EasyScore. All rights reserved.</small>
           </p>
-          {/* </div> */}
           <Link className="aboutFooterLink" to="/about">
             <div>
               <small>About</small>

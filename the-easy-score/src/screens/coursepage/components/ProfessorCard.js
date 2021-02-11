@@ -32,7 +32,6 @@ const ProfessorCard = ({ instructor, index }) => {
 
   return (
     <Card className="col professor-card-container pt-3 pb-3 mb-5 w-100 ">
-      {/* <div className="container w-100"> */}
       <div className="row w-100 mr-0 ml-0">
         <div className="w-100 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 top-half">
           <div className="row profName no-gutters">{transformedName} </div>
@@ -77,8 +76,6 @@ const ProfessorCard = ({ instructor, index }) => {
             </div>
           </div>
         </div>
-
-        {/* SECOND HALF */}
         <div className="w-100 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center bottom-half mobile-top-margin-5">
           <div className="row w-100 d-flex justify-content-center">
             <GradeDistChart2

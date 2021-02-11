@@ -71,6 +71,7 @@ const SearchForm = (props) => {
                 type="submit"
                 onSubmit={handleSubmit}
                 id="basic-addon2"
+                name="search-button"
               >
                 <i className="fa fa-search"></i>
               </Button>
@@ -130,6 +131,7 @@ const SearchForm = (props) => {
                 type="submit"
                 onSubmit={handleSubmit}
                 id="basic-addon2"
+                name="search-button"
               >
                 <i className="fa fa-search"></i>
               </Button>
