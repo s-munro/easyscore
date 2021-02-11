@@ -68,6 +68,7 @@ const SearchForm = (props) => {
             <InputGroup.Append>
               <Button
                 className="homeSrchBtn"
+                name="submit-button"
                 type="submit"
                 onSubmit={handleSubmit}
                 id="basic-addon2"

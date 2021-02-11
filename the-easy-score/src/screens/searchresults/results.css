@@ -284,17 +284,14 @@ div.course-cardSpace {
   padding-left: 0.2%;
   font-size: 90%;
 }
-
 .searchPageSrchBtn {
   background-color: #ffffff;
   border: none;
   color: #b32727;
 }
-
 .searchPageModalBtnContainer {
   margin-top: 1%;
 }
-
 .searchPageFilterBtn,
 .searchPageFilterBtn-btn-primary {
   background-color: #b32727;

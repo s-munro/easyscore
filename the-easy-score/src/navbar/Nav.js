@@ -67,7 +67,7 @@ const Nav = (props) => {
     return (
       <div className="row w-100 nav-3-top-margin d-flex align-items-center">
         <Hidden smDown>
-          <div className="col-12">
+          <div className="col-12 padding-right-left">
             <nav className="row d-flex align-items-center">
               <div className="col-xl-2 col-lg-2 col-md-3">
                 <Link className="mobile-nav-bar-3-logo" to="/">

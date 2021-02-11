@@ -17,10 +17,6 @@ app.get("*", (_, res) => {
   res.sendFile(path.join(__dirname, "the-easy-score/build", "index.html"));
 });
 
-app.get("/banana", (req, res) => {
-  res.status(200).json("hey!");
-});
-
 app.post("/send", (req, res) => {
   try {
     const mailOptions = {

@@ -126,8 +126,6 @@ const ProfFiltersCard = (props) => {
             max={100}
             name="ratingFilter"
             onChange={handleRatingChange}
-            // onChangeCommitted={handleRatingChange}
-            // marks={marks}
             valueLabelDisplay="auto"
           />
           <br />
@@ -142,15 +140,12 @@ const ProfFiltersCard = (props) => {
           <Slider
             id={"percentageAs"}
             value={props.coursePage.filters.percentageAs}
-            // defaultValue={1}
             aria-labelledby="discrete-slider-always"
             step={1}
             min={0}
             max={100}
-            // onChange={handlePercentageAsChange}
             onChange={handlePercentageAsChange}
             name="percentageAs"
-            // marks={marks}
             valueLabelDisplay="auto"
           />
           <br />

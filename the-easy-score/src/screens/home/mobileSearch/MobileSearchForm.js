@@ -60,6 +60,7 @@ const MobileSearchForm = (props) => {
             <InputGroup.Append>
               <Button
                 className="homeSrchBtn"
+                name="search-submit-button"
                 type="submit"
                 onSubmit={handleSubmit}
                 id="basic-addon2"

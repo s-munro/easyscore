@@ -1,7 +1,5 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import "chartjs-plugin-datalabels";
-// import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const GradeDistChart2 = ({ average_grades, pixels }) => {
   let data = {
@@ -40,7 +38,12 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
           scales: {
             xAxes: [
               {
-                ticks: { display: true, fontColor: "black", fontSize: 8 },
+                ticks: {
+                  display: true,
+                  fontColor: "black",
+                  fontSize: 8,
+                  mirror: true,
+                },
                 gridLines: {
                   display: false,
                   drawBorder: true,
@@ -81,7 +84,13 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
             datalabels: {
               anchor: "end",
               align: "top",
-              color: ["black"],
+              // color: ["#323232"],
+              font: {
+                weight: 600,
+                size: 10,
+                color: "#323232",
+              },
+              padding: -2,
             },
           },
         }}

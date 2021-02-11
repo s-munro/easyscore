@@ -1,5 +1,4 @@
 import React from "react";
-// import Chart from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import "chartjs-plugin-doughnutlabel";
 
@@ -28,6 +27,9 @@ const ScoreDoughnut = ({ easyScore }) => {
       display: false,
     },
     plugins: {
+      datalabels: {
+        display: false,
+      },
       doughnutlabel: {
         labels: [
           {
@@ -43,6 +45,7 @@ const ScoreDoughnut = ({ easyScore }) => {
     },
   };
 
+  // Doughnut.plugins.unregister(ChartDataLabels);
   return (
     <div style={{ width: PIXEL_SIZE }}>
       <Doughnut

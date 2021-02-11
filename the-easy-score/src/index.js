@@ -5,7 +5,6 @@ import "font-awesome/css/font-awesome.min.css";
 
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import logger from "redux-logger";
 import thunk from "redux-thunk";
 
 import reducer from "./reducers";
@@ -17,10 +16,6 @@ import "./index.css";
 import "./custom.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import ChartDataLabels from "chartjs-plugin-datalabels";
-import Chart from "chart.js";
-
-Chart.plugins.unregister(ChartDataLabels);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));

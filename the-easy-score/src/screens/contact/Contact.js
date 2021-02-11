@@ -48,7 +48,6 @@ const Contact = (props) => {
 
   const sendEmail = () => {
     axios
-      // .post("https://tes-emailer.herokuapp.com/send", { ...formValues })
       .post(url("/send"), { ...formValues })
       .then((res) => {
         setFormValues(initialFormValues);
@@ -144,6 +143,7 @@ const Contact = (props) => {
               variant="primary"
               name="send-message"
               type="submit"
+              name="contact-form-submit"
             >
               Send
             </Button>

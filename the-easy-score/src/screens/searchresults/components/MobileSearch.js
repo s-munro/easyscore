@@ -60,6 +60,7 @@ const MobileSearchForm = (props) => {
               />
               <InputGroup.Append>
                 <Button
+                  name="submit-search"
                   className="searchPageSrchBtn"
                   type="submit"
                   onSubmit={handleSubmit}

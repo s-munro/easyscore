@@ -68,14 +68,16 @@
 }
 /** DESKTOP **/
 .nav-bar-3-logo {
-  /* margin-right: 57%; */
   font-size: 145%;
   font-weight: 500;
-  /* margin-bottom: 5%; */
   color: #b32727;
 }
 .nav-bar-3-easy-text {
   color: black;
+}
+.padding-right-left {
+  padding-right: 30px !important;
+  padding-left: 30px !important;
 }
 
 /** MOBILE **/
