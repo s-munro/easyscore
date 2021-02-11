@@ -7,7 +7,6 @@ const CourseCard = ({ course }) => {
   const score = Math.round(course.rating);
 
   return (
-    // <div style={{ backgroundColor: "red" }}>Hi</div>
     <div className="course-card course-cardSpace w-100">
       <div className="course-card-top-portion">
         <div className="couse-card-top-portion-left-side">

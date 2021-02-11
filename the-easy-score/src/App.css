@@ -6,9 +6,6 @@
   align-content: center;
   background-color: fff;
 }
-/* .form-padding {
-  padding-left: 12%;
-} */
 html,
 body {
   width: 100%;
@@ -18,7 +15,6 @@ body {
   overflow-x: hidden;
 }
 .btn-top-padding {
-  /* padding-top: 15px; */
   padding: 1% 4%;
   margin-top: 2%;
 }
@@ -71,91 +67,25 @@ select.form-control.filterSelect {
   font-size: 85%;
   font-weight: 500;
 }
-
 /***************** NAVBAR 1 *********************/
-
 nav a {
   text-decoration: none;
   color: #b32727;
   font-size: 90%;
-  /* padding-right: 15%; */
 }
-
-/* .nav-bar {
-  display: flex;
-  justify-self: flex-end;
-  align-items: center;
-  height: 7vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  float: right;
-} */
-
 /****************** NAVBAR 2 *******************/
-/* .nav-2 {
-  height: 7vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  float: right;
-  padding-bottom: 2%;
-}
-
-.navBarTwoLogo {
-  margin-right: 57%; 
-  font-size: 145%;
-  font-weight: 500;
-  margin-bottom: 5%;
-  color: #b32727;
-
-}
-
 .navBarTwoEasy {
   color: black;
 }
-
 .navBarTextLink {
   text-decoration: none;
   color: #b32727;
   font-size: 90%;
   padding-right: 2%;
   padding-bottom: 5%;
-} */
-
-/****************** NAVBAR 3 *******************/
-/* .nav-3 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 7vh;
-  width: 100%;
-  padding-top: 4%;
 }
-
-.navBarThreeLogo {
-  margin-right: 10%;
-  font-size: 125%;
-  font-weight: 500;
-  color: #b32727;
-}
-
-.navBarThreeTextLink {
-  padding-right: 2%;
-  font-size: 85%;
-} */
-
-/****************** MOBILE NAVBAR 3 *******************/
-
-/* .navThreeMobileLogo {
-  padding-top: 2%;
-  margin-bottom: 2%;
-  font-size: 100%;
-} */
-
+*/
 /************** FOOTER ***********************/
-
 .footer-container {
   position: absolute;
   width: 100%;
@@ -202,17 +132,11 @@ nav a {
 .btn:active {
   outline: none !important;
 }
-
 *:focus {
   /* background-color: red !important; */
   outline: none !important;
   box-shadow: none;
 }
-
-/* .input-group>.custom-select:not(:last-child), .input-group>.form-control:not(:last-child) {
-  outline: none
-} */
-
 .input-group:focus {
   outline: none;
 }
