@@ -26,13 +26,16 @@ const ProfFiltersCard = (props) => {
 
   const applyFilters = (semesterValue) => {
     // let availableInstructors = []
-
     const availableInstructors = props.coursePage.instructors.filter(
       (instructor) => {
-        return (
-          instructor.is_teaching_next_semester ===
-          props.coursePage.filters.next_sem
-        );
+        if (props.coursePage.filters.next_sem === 1) {
+          return (
+            instructor.is_teaching_next_semester ===
+            props.coursePage.filters.next_sem
+          );
+        } else {
+          return props.coursePage.instructors;
+        }
       }
     );
     const filteredByRating = availableInstructors.filter((instructor) => {
