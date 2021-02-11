@@ -6,6 +6,8 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
     labels: ["A", "B", "C", "D"],
     datasets: [
       {
+        barPercentage: 1,
+        categoryPercentage: 0.5,
         label: "Grade %",
         data: [
           `${parseInt(average_grades[0])}`,
@@ -48,8 +50,8 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
                   display: false,
                   drawBorder: true,
                 },
-                barPercentage: 1,
-                categoryPercentage: 0.5,
+                // barPercentage: 1,
+                // categoryPercentage: 0.5,
               },
             ],
             yAxes: [
