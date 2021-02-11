@@ -56,7 +56,6 @@ const MobileSearchForm = (props) => {
                 placeholder="Search for keyword, i.e., 'Biology'"
                 name="keyword"
                 id="searchForm-nonNav"
-                block
               />
               <InputGroup.Append>
                 <Button
