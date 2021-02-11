@@ -143,7 +143,6 @@ const Contact = (props) => {
               variant="primary"
               name="send-message"
               type="submit"
-              name="contact-form-submit"
             >
               Send
             </Button>
