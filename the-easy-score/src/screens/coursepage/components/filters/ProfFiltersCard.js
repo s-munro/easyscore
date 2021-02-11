@@ -25,7 +25,6 @@ const ProfFiltersCard = (props) => {
   };
 
   const applyFilters = (semesterValue) => {
-    // let availableInstructors = []
     const availableInstructors = props.coursePage.instructors.filter(
       (instructor) => {
         if (props.coursePage.filters.next_sem === 1) {

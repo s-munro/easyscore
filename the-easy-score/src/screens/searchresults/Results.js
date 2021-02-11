@@ -62,11 +62,11 @@ const Results = (props) => {
     e.preventDefault();
     props.setShowModal(!props.showModal);
   };
-  console.log(props.courses);
-  console.log(
-    "here:",
-    props.courses.find((course) => course.taught_next_semester === true)
-  );
+  // console.log(props.courses);
+  // console.log(
+  //   "here:",
+  //   props.courses.find((course) => course.taught_next_semester === true)
+  // );
 
   return (
     <div className="row w-100">
