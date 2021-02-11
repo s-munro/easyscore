@@ -47,7 +47,6 @@ const Contact = (props) => {
   }
 
   const sendEmail = () => {
-    console.log("yup!", formValues);
     axios
       .post(url("/send"), formValues)
       .then((res) => {
@@ -55,8 +54,6 @@ const Contact = (props) => {
         setSuccessOpen(true);
       })
       .catch((err) => {
-        console.log(err.err);
-        console.log(err.message);
         setFormValues(initialFormValues);
         setErrorOpen(true);
       });
