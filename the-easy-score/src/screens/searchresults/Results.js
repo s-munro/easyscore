@@ -74,6 +74,7 @@ const Results = (props) => {
           <Hidden mdUp>
             <MobileSearch />
             <Button
+              name="view-filters-button"
               className="homeFilterBtn homeModalBtn btn-top-padding-2 shadow-none"
               onClick={handleModal}
               block

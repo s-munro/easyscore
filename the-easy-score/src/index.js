@@ -5,7 +5,6 @@ import "font-awesome/css/font-awesome.min.css";
 
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import logger from "redux-logger";
 import thunk from "redux-thunk";
 
 import reducer from "./reducers";
@@ -19,10 +18,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
-  reducer,
-  composeEnhancers(applyMiddleware(thunk, logger))
-);
+const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 const theme = createMuiTheme({
   palette: {
@@ -32,9 +28,6 @@ const theme = createMuiTheme({
       dark: "#b32727",
     },
   },
-  // typography: {
-  //   fontFamily: {"big"Poppins", "Roboto", sans-serif"}
-  // }
 });
 
 ReactDOM.render(

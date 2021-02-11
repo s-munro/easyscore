@@ -182,10 +182,18 @@ const ProfFiltersCard = (props) => {
           <br />
           <br />
           <div className="row d-flex justify-content-around">
-            <Button className="filterBtn" onClick={applyFilters}>
+            <Button
+              name="apply-filters"
+              className="filterBtn"
+              onClick={applyFilters}
+            >
               Apply
             </Button>
-            <Button className="filterBtn" onClick={handleFiltersReset}>
+            <Button
+              name="reset-filters"
+              className="filterBtn"
+              onClick={handleFiltersReset}
+            >
               Reset
             </Button>
           </div>

@@ -144,6 +144,7 @@ const Contact = (props) => {
               variant="primary"
               // onClick={handleSubmit}
               type="submit"
+              name="contact-form-submit"
             >
               Send
             </Button>
