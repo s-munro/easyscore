@@ -26,6 +26,7 @@
   border-radius: 8%;
   font-size: 400%;
   font-weight: 900;
+  /* margin-right: 2%; */
 }
 
 .courseContentContainer {
@@ -46,9 +47,11 @@
 }
 
 .reqsContent-requirements-title {
+  /* margin-right: 1%; */
   font-size: 13px;
   font-weight: 500;
   color: #6c757d;
+  /* margin-left: 0; */
 }
 .lightgray {
   color: #afb1b2;
@@ -60,14 +63,19 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
+  /* padding-top: 2%; */
 }
 
 .requirements {
   width: max-content;
   height: max-content;
+  /* background-color: #ededed; */
   font-size: 12px;
+  /* padding: 1%; */
+  /* margin-right: 1%; */
   border-radius: 8px;
   margin-bottom: 0;
+  /* margin-right: 4%; */
 }
 
 .course-page-credits-container {
@@ -141,6 +149,7 @@
 .profCardTopRightContentContainer {
   display: flex;
   flex-direction: column;
+  /* margin-right: 5%; */
   width: 76%;
 }
 
@@ -165,7 +174,33 @@
   color: black;
   font-weight: bold;
   font-size: 110%;
+  /* top: 10px;
+  left: 15px;
+  position: absolute; */
 }
+
+/* .profCardContainer {
+  /* margin-left: 15px; */
+/* margin-right: 0; */
+/* margin-bottom: 20px;
+}
+
+.prof-card {
+  box-shadow: 0px 11px 7px -12px #4e4e4e;
+  width: 113%;
+  height: 200px;
+  width: 650px;
+}
+
+.profName {
+  color: black;
+  font-weight: bold;
+  font-size: 120%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+*/
 
 /**************FILTER CARD****************/
 
@@ -183,6 +218,7 @@
 }
 
 .professor-card-container {
+  /* min-height: 175px; */
   border-radius: 15px;
   border: none;
   box-shadow: 0px 3px 20px 0px #00000010;
@@ -206,6 +242,11 @@
 .card-small-text {
   font-size: 11px;
 }
+/* @media only screen and (min-width: 500px) {
+  .professor-card-container {
+    min-width: 400px;
+  }
+} */
 @media only screen and (min-width: 992px) {
   .desktop-left-padding {
     padding-left: 15px;
@@ -251,6 +292,9 @@
   }
 }
 @media only screen and (max-width: 767px) {
+  /* .professor-card-container {
+    min-width: 400px;
+  } */
   .courseName {
     font-size: 110%;
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import "chartjs-plugin-doughnutlabel";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 const ScoreDoughnut = ({ easyScore }) => {
   const score = Math.round(easyScore);
