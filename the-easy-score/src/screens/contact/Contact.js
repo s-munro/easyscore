@@ -49,7 +49,12 @@ const Contact = (props) => {
   const sendEmail = () => {
     console.log("yup!", formValues);
     axios
+<<<<<<< HEAD
       .post(url("/send"), formValues)
+=======
+      // .post("https://tes-emailer.herokuapp.com/send", { ...formValues })
+      .post(url("/send"), { ...formValues })
+>>>>>>> 63a24a71efe505f86c8a9e3be12f8ead2f5896e0
       .then((res) => {
         setFormValues(initialFormValues);
         setSuccessOpen(true);
@@ -144,7 +149,6 @@ const Contact = (props) => {
             <Button
               className="contactTextArea contactBtn"
               variant="primary"
-              name="send-message"
               type="submit"
             >
               Send

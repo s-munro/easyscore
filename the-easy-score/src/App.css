@@ -15,6 +15,7 @@ body {
   overflow-x: hidden;
 }
 .btn-top-padding {
+  /* padding-top: 15px; */
   padding: 1% 4%;
   margin-top: 2%;
 }
@@ -67,13 +68,18 @@ select.form-control.filterSelect {
   font-size: 85%;
   font-weight: 500;
 }
+
 /***************** NAVBAR 1 *********************/
+
 nav a {
   text-decoration: none;
   color: #b32727;
   font-size: 90%;
+  /* padding-right: 15%; */
 }
+
 /************** FOOTER ***********************/
+
 .footer-container {
   position: absolute;
   width: 100%;
@@ -118,6 +124,7 @@ nav a {
 .btn:active {
   outline: none !important;
 }
+
 *:focus {
   outline: none !important;
   box-shadow: none;
