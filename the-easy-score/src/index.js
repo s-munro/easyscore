@@ -23,10 +23,7 @@ import Chart from "chart.js";
 Chart.plugins.unregister(ChartDataLabels);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
-  reducer,
-  composeEnhancers(applyMiddleware(thunk, logger))
-);
+const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 const theme = createMuiTheme({
   palette: {
@@ -36,9 +33,6 @@ const theme = createMuiTheme({
       dark: "#b32727",
     },
   },
-  // typography: {
-  //   fontFamily: {"big"Poppins", "Roboto", sans-serif"}
-  // }
 });
 
 ReactDOM.render(
