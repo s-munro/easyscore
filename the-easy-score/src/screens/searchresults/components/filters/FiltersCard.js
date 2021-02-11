@@ -234,10 +234,11 @@ const FiltersCard = (props) => {
           <br />
           <br />
           <div className="filterBtnContainer">
-            {/* <Button className="filterBtn" onClick={applyFilters}>
-              Apply
-            </Button> */}
-            <Button className="filterBtn" onClick={handleFiltersReset}>
+            <Button
+              name="reset-filters-button"
+              className="filterBtn"
+              onClick={handleFiltersReset}
+            >
               Reset
             </Button>
           </div>

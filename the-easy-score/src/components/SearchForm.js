@@ -68,6 +68,7 @@ const SearchForm = (props) => {
             <InputGroup.Append>
               <Button
                 className="homeSrchBtn"
+                name="submit-button"
                 type="submit"
                 onSubmit={handleSubmit}
                 id="basic-addon2"
@@ -130,6 +131,7 @@ const SearchForm = (props) => {
                 type="submit"
                 onSubmit={handleSubmit}
                 id="basic-addon2"
+                name="submit-button"
               >
                 <i className="fa fa-search"></i>
               </Button>

@@ -41,6 +41,7 @@ const Home = (props) => {
             <Button
               className="homeFilterBtn homeModalBtn btn-top-padding shadow-none"
               onClick={handleModal}
+              name="view-filters-button"
               // block
             >
               Filters

@@ -165,12 +165,14 @@ const FiltersModal = (props) => {
             <Button
               className="homeFilterBtn homeApply shadow-none"
               onClick={handleClose}
+              name="apply-filters-button"
             >
               Apply
             </Button>
             <Button
               className="homeFilterBtn shadow-none"
               onClick={handleFiltersReset}
+              name="reset-filters-button"
             >
               Reset
             </Button>
