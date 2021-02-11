@@ -290,6 +290,14 @@
   .mobile-450-margin-right {
     margin-right: 40px !important;
   }
+  .professor-card-container {
+    min-height: 325px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  /* .mobile-chart-change {
+    width: 100px !important;
+  } */
 }
 @media only screen and (max-width: 767px) {
   /* .professor-card-container {
