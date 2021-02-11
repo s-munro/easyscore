@@ -25,6 +25,8 @@ const ProfFiltersCard = (props) => {
   };
 
   const applyFilters = (semesterValue) => {
+    // let availableInstructors = []
+
     const availableInstructors = props.coursePage.instructors.filter(
       (instructor) => {
         return (
@@ -107,6 +109,7 @@ const ProfFiltersCard = (props) => {
             id="professor-filter-next-semester-switch"
             checked={props.coursePage.filters.next_sem === 1}
             value={props.coursePage.filters.next_sem}
+            // label="Next Semester Only"
             onChange={handleSwitchChange}
           />
           <br />
@@ -120,12 +123,15 @@ const ProfFiltersCard = (props) => {
           <Slider
             id={"ratingFilter"}
             value={props.coursePage.filters.ratingFilter}
+            // defaultValue={1}
             aria-labelledby="easy-score-filter"
             step={1}
             min={0}
             max={100}
             name="ratingFilter"
             onChange={handleRatingChange}
+            // onChangeCommitted={handleRatingChange}
+            // marks={marks}
             valueLabelDisplay="auto"
           />
           <br />
@@ -140,12 +146,15 @@ const ProfFiltersCard = (props) => {
           <Slider
             id={"percentageAs"}
             value={props.coursePage.filters.percentageAs}
+            // defaultValue={1}
             aria-labelledby="discrete-slider-always"
             step={1}
             min={0}
             max={100}
+            // onChange={handlePercentageAsChange}
             onChange={handlePercentageAsChange}
             name="percentageAs"
+            // marks={marks}
             valueLabelDisplay="auto"
           />
           <br />
@@ -159,7 +168,9 @@ const ProfFiltersCard = (props) => {
           </Typography>
           <Slider
             id={"minSemestersTaught"}
+            // defaultValue={1}
             value={props.coursePage.filters.minSemestersTaught}
+            // onChange={handleMinSemestersChange}
             onChange={handleMinSemestersChange}
             step={1}
             min={0}
