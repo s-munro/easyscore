@@ -4,7 +4,7 @@ A student-oriented web application intended as a course-planning resource. Offer
 
 ### 💻 [Staging Demo](http://the-easy-score.herokuapp.com/)
 
-![banner]('https://raw.githubusercontent.com/s-munro/easyscore/blob/main/the-easy-score/src/assets/search.png')
+![banner](https://github.com/s-munro/easyscore/blob/main/the-easy-score/src/assets/search-page.png?raw=true)
 
 <br>
 
