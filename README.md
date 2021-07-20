@@ -1,11 +1,10 @@
-![banner]('./the-easy-score/src/assets/easyscore.png')
----
+![banner]('https://raw.githubusercontent.com/s-munro/easyscore/blob/main/the-easy-score/src/assets/easyscore.png')
 
 A student-oriented web application intended as a course-planning resource. Offers students the ability to quickly and easily compare courses, professors, and grade distributions, as well as to search for which courses satisfy their target requirements (credit hours, time of day, credit types, etc).
 
 ### 💻 [Staging Demo](http://the-easy-score.herokuapp.com/)
 
-![banner]('./the-easy-score/src/assets/search.png)
+![banner]('https://raw.githubusercontent.com/s-munro/easyscore/blob/main/the-easy-score/src/assets/search.png')
 
 <br>
 
