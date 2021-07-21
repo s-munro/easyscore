@@ -36,15 +36,17 @@ const FiltersCard = (props) => {
   };
 
   const handleChange = (e) => {
-    if (e.target.name === "courseLevel") {
-      props.setSearchPageFiltersCourseLevel(e.target.value);
-    } else if (e.target.name === "creditHours") {
-      props.setSearchPageFiltersCourseCreditHours(e.target.value);
-    } else if (e.target.name === "timeofDay") {
-      props.setSearchPageFiltersTimeofDay(e.target.value);
-    } else if (e.target.name === "requirements") {
-      props.setSearchPageFiltersCourseRequirements(e.target.value);
-    } else {
+    switch (e.target.name) {
+      case "courseLevel":
+        return props.setSearchPageFiltersCourseLevel(e.target.value);
+      case "creditHours":
+        return props.setSearchPageFiltersCourseCreditHours(e.target.value);
+      case "timeofDay":
+        return props.setSearchPageFiltersTimeofDay(e.target.value);
+      case "requirements":
+        return props.setSearchPageFiltersCourseRequirements(e.target.value);
+      default:
+        return null;
     }
   };
 
@@ -105,19 +107,17 @@ const FiltersCard = (props) => {
           return course.code > 499;
         }
       );
-
-      if (props.resultsPage.filtersCard.courseLevel.value === 12) {
-        return lowerLevelCourses;
-      } else if (props.resultsPage.filtersCard.courseLevel.value === 8) {
-        return middleLevelCourses;
-      } else if (props.resultsPage.filtersCard.courseLevel.value === 9) {
-        return upperLevelCourses;
-      } else if (props.resultsPage.filtersCard.courseLevel.value === 10) {
-        return graduateLevelCourses;
-      } else if (props.resultsPage.filtersCard.courseLevel.value === "") {
-        return filterByTime(semesterFilteredCourses);
-      } else {
-        return filterByTime(semesterFilteredCourses);
+      switch (props.resultsPage.filtersCard.courseLevel.value) {
+        case 12:
+          return lowerLevelCourses;
+        case 8:
+          return middleLevelCourses;
+        case 9:
+          return upperLevelCourses;
+        case 10:
+          return graduateLevelCourses;
+        default:
+          return filterByTime(semesterFilteredCourses);
       }
     };
 
@@ -158,7 +158,7 @@ const FiltersCard = (props) => {
     props.resetSearchPageFilters();
     props.setCourses(props.courses);
   };
-
+  console.log(props);
   // filters reset and are applied on initial page render
   useEffect(() => {
     props.resetSearchPageFilters();
@@ -251,10 +251,10 @@ const FiltersCard = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    courses: state.courses,
-    displayedCourses: state.displayedCourses,
-    filters: state.filters,
-    resultsPage: state.resultsPage,
+    courses: state.fetch.courses,
+    displayedCourses: state.courses.displayedCourses,
+    filters: state.filters.filters,
+    resultsPage: state.results.resultsPage,
   };
 };
 

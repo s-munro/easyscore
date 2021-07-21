@@ -38,14 +38,11 @@ const ScoreDoughnut = ({ easyScore }) => {
               size: "40",
             },
             color: "#b32727",
-            // color: "#333333",
           },
         ],
       },
     },
   };
-
-  // Doughnut.plugins.unregister(ChartDataLabels);
   return (
     <div style={{ width: PIXEL_SIZE }}>
       <Doughnut

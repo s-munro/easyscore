@@ -25,7 +25,7 @@ const Home = (props) => {
 
   return (
     <main className="row w-100">
-      {/* <div className="col-12 d-flex justify-content-center">
+      <div className="col-12 d-flex justify-content-center">
         <h1 className="logoTitle">
           <b>Easy</b>
           <span className="scoreLogo">Score</span>
@@ -33,7 +33,7 @@ const Home = (props) => {
       </div>
       <div className="col-12 d-flex justify-content-center align-items-center">
         <Hidden smDown>
-          <SearchForm nav={false} />
+          <SearchForm nav={false} {...props} />
         </Hidden>
         <Hidden mdUp>
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
@@ -48,7 +48,7 @@ const Home = (props) => {
           </div>
         </Hidden>
       </div>
-      <FiltersModal /> */}
+      <FiltersModal />
     </main>
   );
 };

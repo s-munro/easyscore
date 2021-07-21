@@ -101,10 +101,10 @@ const Course = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    errorText: state.errorText,
-    coursePage: state.coursePage,
-    footerStyle: state.footerStyle,
+    isLoading: state.fetch.isLoading,
+    errorText: state.fetch.errorText,
+    coursePage: state.courses.coursePage,
+    footerStyle: state.ui.footerStyle,
   };
 };
 

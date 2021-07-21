@@ -62,11 +62,6 @@ const Results = (props) => {
     e.preventDefault();
     props.setShowModal(!props.showModal);
   };
-  // console.log(props.courses);
-  // console.log(
-  //   "here:",
-  //   props.courses.find((course) => course.taught_next_semester === true)
-  // );
 
   return (
     <div className="row w-100">
@@ -117,17 +112,6 @@ const Results = (props) => {
                 {props.displayedCourses.length > 0 ? (
                   <div className="col-12 p-0">
                     <Courses currentCourses={currentCourses} />
-                    {/* {props.isLoading === false ? (
-                      <div className="row-w100 d-flex justify-content-center">
-                        <TablePagination
-                          count={Math.ceil(props.displayedCourses.length / 3)}
-                          page={currentPage}
-                          rowsPerPage={4}
-                          rowsPerPageOptions={[4]}
-                          paginate={paginate}
-                        />
-                      </div>
-                    ) : null} */}
                   </div>
                 ) : (
                   //********  RENDER NO RESULTS IF NO RESULTS  *******/
@@ -159,12 +143,12 @@ const Results = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    courses: state.courses,
-    displayedCourses: state.displayedCourses,
-    errorText: state.errorText,
-    footerStyle: state.footerStyle,
-    showModal: state.showModal,
+    isLoading: state.fetch.isLoading,
+    courses: state.fetch.courses,
+    displayedCourses: state.courses.displayedCourses,
+    errorText: state.fetch.errorText,
+    footerStyle: state.ui.footerStyle,
+    showModal: state.ui.showModal,
   };
 };
 

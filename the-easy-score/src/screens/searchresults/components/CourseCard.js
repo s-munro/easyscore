@@ -7,7 +7,6 @@ const CourseCard = ({ course }) => {
   const score = Math.round(course.rating);
 
   return (
-    // <div style={{ backgroundColor: "red" }}>Hi</div>
     <div className="course-card course-cardSpace w-100">
       <div className="course-card-top-portion">
         <div className="couse-card-top-portion-left-side">
@@ -39,45 +38,40 @@ const CourseCard = ({ course }) => {
         <div className="reqsTags">
           <div className="reqsContainer filterCardReqContainer">
             {course.credits_fulfilled.map((credit) => {
-              let creditType = "";
-              if (credit === 0) {
-                creditType = "A&H";
-              } else if (credit === 1) {
-                creditType = "Diversity in U.S.";
-              } else if (credit === 2) {
-                creditType = "S&H Credit";
-              } else if (credit === 3) {
-                creditType = "N&M Credit";
-              } else if (credit === 4) {
-                creditType = "World Culture";
-              } else if (credit === 5) {
-                creditType = "Public Oral Comm.";
-              } else if (credit === 6) {
-                creditType = "English Composition";
-              } else if (credit === 7) {
-                creditType = "Mathematical Modeling";
-              } else if (credit === 8) {
-                creditType = "300+ Level";
-              } else if (credit === 9) {
-                creditType = "400+ Level";
-              } else if (credit === 10) {
-                creditType = "Grad";
-              } else if (credit === 11) {
-                creditType = "Intensive Writing";
-              } else if (credit === 7) {
-                creditType = "Mathematical Modeling";
-              } else if (credit === 12) {
-                creditType = "100-299 Level";
-              } else if (credit === 13) {
-                creditType = "Honors";
-              } else if (credit === "0GENEDMM") {
-                creditType = "World Language";
-              } else return null;
-              return (
-                <p key={creditType} className="filterCardReq">
-                  {creditType}
-                </p>
-              );
+              switch (credit) {
+                case "0":
+                  return <div>A&H</div>;
+                case 1:
+                  return <div>Diversity in U.S.</div>;
+                case 2:
+                  return <div>S&H Credit</div>;
+                case 3:
+                  return <div>N&M Credit</div>;
+                case 4:
+                  return <div>World Culure</div>;
+                case 5:
+                  return <div>Public Oral Comm.</div>;
+                case 6:
+                  return <div>English Composition</div>;
+                case 7:
+                  return <div>Mathematical Modeling</div>;
+                case 8:
+                  return <div>300+ Level</div>;
+                case 9:
+                  return <div>400+ Level</div>;
+                case 10:
+                  return <div>Grad</div>;
+                case 11:
+                  return <div>Intensive Writing</div>;
+                case 12:
+                  return <div>100-299 Level</div>;
+                case 13:
+                  return <div>Honors</div>;
+                case "0GENEDMM":
+                  return <div>World Language</div>;
+                default:
+                  return null;
+              }
             })}
           </div>
         </div>

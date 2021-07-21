@@ -68,7 +68,7 @@ const ProfessorSearch = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    coursePage: state.coursePage,
+    coursePage: state.courses.coursePage,
   };
 };
 

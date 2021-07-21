@@ -48,7 +48,6 @@ const SearchForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newUrl = `'keyword'=_'${props.filters.keyword.value}'&_'requirement'=_'${props.filters.requirements.value}'&_'level'=_'${props.filters.courseLevel.value}'&_'credit'=_'${props.filters.creditHours.value}'&_'timing'=_'${props.filters.timeofDay.value}'&_'next_sem'=_''&_'days'=_[]`;
-
     history.push(`/search/${newUrl}`);
   };
 
@@ -145,9 +144,9 @@ const SearchForm = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    courses: state.courses,
-    filters: state.filters,
+    isLoading: state.fetch.isLoading,
+    courses: state.fetch.courses,
+    filters: state.filters.filters,
   };
 };
 

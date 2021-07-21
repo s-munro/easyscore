@@ -23,17 +23,19 @@ const MobileSearchForm = (props) => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleChange = (e) => {
-    if (e.target.name === "keyword") {
-      props.setKeywordFilterValue(e.target.value);
-    } else if (e.target.name === "courseLevel") {
-      props.setLevelFilterValue(e.target.value);
-    } else if (e.target.name === "creditHours") {
-      props.setCreditsFilterValue(e.target.value);
-    } else if (e.target.name === "timeofDay") {
-      props.setTimeFilterValue(e.target.value);
-    } else if (e.target.name === "requirements") {
-      props.setRequirementsFilterValue(e.target.value);
-    } else {
+    switch (e.target.name) {
+      case "keyword":
+        return props.setKeywordFilterValue(e.target.value);
+      case "courseLevel":
+        return props.setLevelFilterValue(e.target.value);
+      case "creditHours":
+        return props.setCreditsFilterValue(e.target.value);
+      case "timeofDay":
+        return props.setTimeFilterValue(e.target.value);
+      case "requirements":
+        return props.setRequirementsFilterValue(e.target.value);
+      default:
+        return null;
     }
   };
 
@@ -77,10 +79,10 @@ const MobileSearchForm = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    courses: state.courses,
-    filters: state.filters,
-    showModal: state.showModal,
+    isLoading: state.fetch.isLoading,
+    courses: state.fetch.courses,
+    filters: state.filters.filters,
+    showModal: state.ui.showModal,
   };
 };
 

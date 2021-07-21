@@ -5,7 +5,7 @@ import {
   SET_CREDITS_FILTER_VALUE,
   SET_TIME_FILTER_VALUE,
   RESET_FILTER_VALUES
-} from '../actions';
+} from '../actions/filtersActions';
 
 const initialState = {
   filters: {
@@ -36,7 +36,7 @@ const initialState = {
   },
 };
 
-export const uiReducer = (state = initialState, action) => {
+export const filtersReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_KEYWORD_FILTER_VALUE:
       return {

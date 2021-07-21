@@ -68,8 +68,8 @@ const About = (props) => {
 };
 const mapStateToProps = (state) => {
   return {
-    navStyle: state.navStyle,
-    footerStyle: state.footerStyle,
+    navStyle: state.ui.navStyle,
+    footerStyle: state.ui.footerStyle,
   };
 };
 export default connect(mapStateToProps, { setNavStyle, setFooterStyle })(About);

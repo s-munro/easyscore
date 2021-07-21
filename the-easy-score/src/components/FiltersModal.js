@@ -184,8 +184,8 @@ const FiltersModal = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    filters: state.filters,
-    showModal: state.showModal,
+    filters: state.filters.filters,
+    showModal: state.ui.showModal,
   };
 };
 

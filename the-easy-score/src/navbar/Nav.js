@@ -23,10 +23,8 @@ const Nav = (props) => {
   const handleClickOpen = () => {
     props.setShowModal(true);
   };
-
   if (props.navStyle === 1) {
     return (
-      /************** NAV 1 ******************/
       <nav className="row w-100 mt-2">
         <div className="col-xl 10 col-lg-10 col-md-10 col-sm-9 col-6" />
         <div className="col-xl-1 col-lg-1 col-md-1 col-sm-2 col-3 p-0 d-flex justify-content-end">
@@ -133,8 +131,8 @@ const Nav = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    navStyle: state.navStyle,
-    filters: state.filters,
+    navStyle: state.ui.navStyle,
+    filters: state.filters.filters,
   };
 };
 
