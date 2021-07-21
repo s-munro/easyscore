@@ -11,13 +11,11 @@ import {
 
 import { setShowModal } from "../store/actions/index";
 
-import SearchForm from "../components/SearchForm";
+import SearchForm from "./SearchForm";
 import Hidden from "@material-ui/core/Hidden";
 import FilterListIcon from "@material-ui/icons/FilterList";
 
-import FiltersModal from "../components/FiltersModal";
-
-import "./Nav.css";
+import FiltersModal from "./FiltersModal";
 
 const Nav = (props) => {
   const handleClickOpen = () => {
