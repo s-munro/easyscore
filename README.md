@@ -24,7 +24,7 @@ $ cd easyscore
 ```
 ## 🎨 Mockups
 
-![View](https://drive.google.com/file/d/1KeLd_lEFZ7BI9ouB6Rfy4bFRg_SO988J/view?usp=sharing)
+[View](https://drive.google.com/file/d/1KeLd_lEFZ7BI9ouB6Rfy4bFRg_SO988J/view?usp=sharing)
 
 ## 💪🏽 Team 
 
