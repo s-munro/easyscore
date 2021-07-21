@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import Fuse from "fuse.js";
+import { FormControl } from "react-bootstrap";
 
 import { setInstructors } from "../../../store/actions/fetchDataActions";
-
 import {
   setKeywordFilterValue,
   setLevelFilterValue,
@@ -15,7 +15,6 @@ import {
   fuseResetFiltersExceptNextSemester,
 } from "../../../store/actions/filtersActions";
 
-import { FormControl } from "react-bootstrap";
 
 const ProfessorSearch = (props) => {
   const [query, setQuery] = useState("");

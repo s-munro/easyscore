@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
+import { FormControl, Button, InputGroup } from "react-bootstrap";
+
 import {
   setKeywordFilterValue,
   setLevelFilterValue,
@@ -10,9 +12,8 @@ import {
   resetFilterValues,
 } from "../../../store/actions/filtersActions";
 
-import { FormControl, Button, InputGroup } from "react-bootstrap";
-
 import "../results.css";
+
 
 const MobileSearchForm = (props) => {
   const history = useHistory();

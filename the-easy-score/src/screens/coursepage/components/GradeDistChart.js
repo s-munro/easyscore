@@ -1,7 +1,7 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
 
-const GradeDistChart2 = ({ average_grades, pixels }) => {
+const GradeDistChart = ({ average_grades, pixels }) => {
   let data = {
     labels: ["A", "B", "C", "D"],
     datasets: [
@@ -97,4 +97,4 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
   );
 };
 
-export default GradeDistChart2;
+export default GradeDistChart;

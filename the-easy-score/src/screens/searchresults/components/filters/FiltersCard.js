@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { Card, Button, Form } from "react-bootstrap";
 
 import {
   setSearchPageFiltersCourseLevel,
@@ -9,9 +10,7 @@ import {
   setSearchPageFiltersTimeofDay,
   resetSearchPageFilters,
 } from "../../../../store/actions/filtersActions";
-
 import { setCourses } from "../../../../store/actions/fetchDataActions";
-
 import {
   requirementsValues,
   courseLevelFilterValues,
@@ -20,9 +19,6 @@ import {
 } from "../../../../data/FilterSelectsData";
 
 import FilterSelect from "../../../../components/FilterSelect";
-
-import { Card, Button, Form } from "react-bootstrap";
-
 import "../../results.css";
 
 const FiltersCard = (props) => {
@@ -158,7 +154,6 @@ const FiltersCard = (props) => {
     props.resetSearchPageFilters();
     props.setCourses(props.courses);
   };
-  console.log(props);
   // filters reset and are applied on initial page render
   useEffect(() => {
     props.resetSearchPageFilters();

@@ -9,7 +9,6 @@ export const FETCH_COURSE_PAGE_SUCCESS = "FETCH_COURSE_PAGE_SUCCESS";
 export const SET_INSTRUCTORS_ON_PAGE = "SET_INSTRUCTORS_ON_PAGE";
 
 // SEARCH PAGE **
-
 export const fetchResults = (url) => async (dispatch) => {
   dispatch({ type: FETCH_DATA_START });
 

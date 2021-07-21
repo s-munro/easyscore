@@ -35,8 +35,6 @@ const initialState = {
 
 export const resultsPageReducer = (state = initialState, action) => {
   switch (action.type) {
-
-    // filtering cases * searchPage
     case SEARCH_PAGE_FILTERS_COURSE_LEVEL_FILTER_VALUE:
       return {
         ...state,

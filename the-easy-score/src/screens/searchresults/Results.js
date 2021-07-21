@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
 import { connect, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import Hidden from "@material-ui/core/Hidden";
+
 import { fetchResults, setCourses } from "../../store/actions/fetchDataActions";
 import { setNavStyle, setFooterStyle, setShowModal } from "../../store/actions/";
-import { useParams } from "react-router-dom";
-
-import { filterToKeyword } from "./hooks/";
+import { filterToKeyword } from "./helpers/index";
 
 import NoResults from "../../components/NoResults";
 import Loading from "../../components/Loading";
 import ResultsNumber from "../../components/ResultsNumber";
 import Courses from "./components/Courses";
-import TablePagination from "../../components/TablePagination";
-
 import SearchForm from "../../components/SearchForm";
 import MobileSearch from "./components/MobileSearch";
 import FiltersModal from "../../components/FiltersModal";
-
+import TablePagination from "../../components/TablePagination";
 import FiltersCard from "./components/filters/FiltersCard";
 
-import { Button } from "react-bootstrap";
-import Hidden from "@material-ui/core/Hidden";
+
 
 import "./results.css";
 

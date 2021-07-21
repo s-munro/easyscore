@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { Card, Button, Form } from "react-bootstrap";
+import { Typography, Slider } from "@material-ui/core";
 
 import { setInstructors } from "../../../../store/actions/fetchDataActions";
-
 import {
   setInstructorNextSemesterFilterValue,
   resetInstructorFilters,
@@ -11,8 +12,7 @@ import {
   setInstructorMinimumSemestersFilterValue,
 } from "../../../../store/actions/filtersActions";
 
-import { Card, Button, Form } from "react-bootstrap";
-import { Typography, Slider } from "@material-ui/core";
+
 
 const ProfFiltersCard = (props) => {
   const handleFiltersReset = (e) => {

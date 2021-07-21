@@ -1,2 +1,2 @@
+// urls here once more endpoints are made
 export const BASE_URL = process.env.REACT_APP_API_URL;
-// results&jsonquery=
