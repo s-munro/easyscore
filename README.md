@@ -23,7 +23,7 @@ $ git clone https://github.com/s-munro/easyscore.git
 $ cd easyscore
 ```
 ## 🎨 Mockups
-
+All mockups were made on Adobe XD.
 [View](https://drive.google.com/file/d/1KeLd_lEFZ7BI9ouB6Rfy4bFRg_SO988J/view?usp=sharing)
 
 ## 💪🏽 Team 
