@@ -7,7 +7,7 @@ import Course from "./screens/coursepage/Course";
 import Results from "./screens/searchresults/Results";
 import Home from "./screens/home/Home";
 import Nav from "./navbar/Nav";
-import Footer from "./footer/Footer";
+import Footer from "./components/Footer";
 
 import "./App.css";
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import Fuse from "fuse.js";
 
-import { setInstructors } from "../../../actions/fetchDataActions";
+import { setInstructors } from "../../../store/actions/fetchDataActions";
 
 import {
   setKeywordFilterValue,
@@ -13,7 +13,7 @@ import {
   setInstructorsKeywordFilterValue,
   setInstructorsFuse,
   fuseResetFiltersExceptNextSemester,
-} from "../../../actions/filtersActions";
+} from "../../../store/actions/filtersActions";
 
 import { FormControl } from "react-bootstrap";
 

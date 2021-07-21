@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
-import { setShowModal } from "../actions";
+import { setShowModal } from "../store/actions";
 import {
   setKeywordFilterValue,
   setLevelFilterValue,
@@ -9,7 +9,7 @@ import {
   setCreditsFilterValue,
   setTimeFilterValue,
   resetFilterValues,
-} from "../actions/filtersActions";
+} from "../store/actions/filtersActions";
 
 import {
   requirementsValues,

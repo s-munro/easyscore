@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
-import { setNavStyle, setFooterStyle } from "../../actions/index";
-import { fetchCoursePage } from "../../actions/fetchDataActions";
+import { setNavStyle, setFooterStyle } from "../../store/actions/index";
+import { fetchCoursePage } from "../../store/actions/fetchDataActions";
 
 import Header from "./components/Header";
 import Loading from "../../components/Loading";

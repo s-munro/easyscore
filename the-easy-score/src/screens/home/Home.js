@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
-import { setNavStyle, setFooterStyle, setShowModal } from "../../actions/index";
+import { setNavStyle, setFooterStyle, setShowModal } from "../../store/actions/index";
 
 import MobileSearchForm from "./mobileSearch/MobileSearchForm";
 import FiltersModal from "../../components/FiltersModal";
