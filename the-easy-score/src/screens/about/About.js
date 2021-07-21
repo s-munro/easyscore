@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+
 import { setNavStyle, setFooterStyle } from "../../store/actions/index";
 import "./About.css";
 

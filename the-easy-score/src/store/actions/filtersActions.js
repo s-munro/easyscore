@@ -34,8 +34,7 @@ export const SET_COURSE_PAGE_MINIMUM_SEMESTERS_FILTER_VALUE =
 export const RESET_COURSE_PAGE_FILTERS = "RESET_COURSE_PAGE_FILTERS";
 export const FUSE_RESET_COURSE_PAGE_FILTERS = "FUSE_RESET_COURSE_PAGE_FILTERS";
 
-// SEARCHFORM ** SearchForm.js Filter-related actions ***
-
+// SEARCHFORM 
 export const setKeywordFilterValue = (value) => {
   return { type: SET_KEYWORD_FILTER_VALUE, payload: value };
 };
@@ -163,10 +162,6 @@ export const setInstructorsKeywordFilterValue = (value) => {
 };
 
 export const setInstructorsFuse = (instructors) => {
-  // const fuseArray = instructors.map((instructor) => {
-  //   return instructor.item;
-  // });
-
   return { type: SET_INSTRUCTORS_ON_PAGE, payload: instructors };
 };
 

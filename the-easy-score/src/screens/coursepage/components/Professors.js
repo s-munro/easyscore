@@ -1,4 +1,5 @@
 import React from "react";
+
 import ProfessorCard from "./ProfessorCard";
 import NoResults from "../../../components/NoResults";
 

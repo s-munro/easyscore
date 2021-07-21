@@ -1,23 +1,5 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-
-import { setShowModal } from "../store/actions";
-import {
-  setKeywordFilterValue,
-  setLevelFilterValue,
-  setRequirementsFilterValue,
-  setCreditsFilterValue,
-  setTimeFilterValue,
-  resetFilterValues,
-} from "../store/actions/filtersActions";
-
-import {
-  requirementsValues,
-  courseLevelValues,
-  creditHoursValues,
-  timeofDayValues,
-} from "../data/FilterSelectsData";
-
 import { makeStyles } from "@material-ui/core/styles";
 import { withStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
@@ -31,10 +13,25 @@ import Typography from "@material-ui/core/Typography";
 import CloseIcon from "@material-ui/icons/Close";
 import Slide from "@material-ui/core/Slide";
 
+import { setShowModal } from "../store/actions";
+import {
+  setKeywordFilterValue,
+  setLevelFilterValue,
+  setRequirementsFilterValue,
+  setCreditsFilterValue,
+  setTimeFilterValue,
+  resetFilterValues,
+} from "../store/actions/filtersActions";
+import {
+  requirementsValues,
+  courseLevelValues,
+  creditHoursValues,
+  timeofDayValues,
+} from "../data/FilterSelectsData";
+
+
 import { Button } from "react-bootstrap";
 import FilterSelect from "./FilterSelect";
-
-// import "../screens/home/home.css;";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {

@@ -12,7 +12,6 @@ export const requirementsValues = [
   { value: 9, title: "400+" },
   { value: 10, title: "Grad" },
   { value: 11, title: "Intensive Writing" },
-  // { value: "0GENEDMM", title: "World Language Class" },
   { value: 12, title: "100-299" },
 ];
 

@@ -6,7 +6,7 @@ import About from "./screens/about/About";
 import Course from "./screens/coursepage/Course";
 import Results from "./screens/searchresults/Results";
 import Home from "./screens/home/Home";
-import Nav from "./navbar/Nav";
+import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 import "./App.css";

@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-
 import { connect } from "react-redux";
+import Hidden from "@material-ui/core/Hidden";
+import { Button } from "react-bootstrap";
+
 import { setNavStyle, setFooterStyle, setShowModal } from "../../store/actions/index";
 
 import MobileSearchForm from "./mobileSearch/MobileSearchForm";
 import FiltersModal from "../../components/FiltersModal";
 import SearchForm from "../../components/SearchForm";
 
-import Hidden from "@material-ui/core/Hidden";
-import { Button } from "react-bootstrap";
 import "./home.css";
 
 const Home = (props) => {
@@ -54,7 +54,6 @@ const Home = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     navStyle: state.ui.navStyle,
     footerStyle: state.ui.footerStyle,

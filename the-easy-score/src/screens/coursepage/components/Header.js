@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
+
 import "../course.css";
 
 const Header = ({ course }) => {
   const [showFulfilled, setShowFulfilled] = useState(false);
   const [rating, setRating] = useState(course.rating);
-  // const [creditType, setCreditType] = useState("");
 
   useEffect(() => {
     if (!course.credits_fulfilled) {

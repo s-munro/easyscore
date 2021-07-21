@@ -1,19 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
 import "font-awesome/css/font-awesome.min.css";
 import { Provider } from "react-redux";
-
-import { store } from "./store/store";
-
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import "antd/dist/antd.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+import Chart from "chart.js";
+
+import { store } from "./store/store";
 import "./index.css";
 import "./custom.scss";
 import App from "./App";
-import ChartDataLabels from "chartjs-plugin-datalabels";
-import Chart from "chart.js";
 
 Chart.plugins.unregister(ChartDataLabels);
 

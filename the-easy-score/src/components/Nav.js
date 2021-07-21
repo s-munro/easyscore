@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Hidden from "@material-ui/core/Hidden";
+import FilterListIcon from "@material-ui/icons/FilterList";
+
 import {
   setKeywordFilterValue,
   setLevelFilterValue,
@@ -8,16 +11,10 @@ import {
   setTimeFilterValue,
   setRequirementsFilterValue,
 } from "../store/actions/filtersActions";
-
 import { setShowModal } from "../store/actions/index";
 
-import SearchForm from "../components/SearchForm";
-import Hidden from "@material-ui/core/Hidden";
-import FilterListIcon from "@material-ui/icons/FilterList";
-
-import FiltersModal from "../components/FiltersModal";
-
-import "./Nav.css";
+import SearchForm from "./SearchForm";
+import FiltersModal from "./FiltersModal";
 
 const Nav = (props) => {
   const handleClickOpen = () => {

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+
 import ScoreDoughnut from "./ScoreDoughnut";
-import GradeDistChart2 from "./GradeDistChart2";
-
+import GradeDistChart from "./GradeDistChart";
 import { Card } from "react-bootstrap";
-
 import "../course.css";
+
 
 const ProfessorCard = ({ instructor, index }) => {
   const pixels = {
@@ -67,8 +67,8 @@ const ProfessorCard = ({ instructor, index }) => {
                   <b>
                     {displayDays
                       ? instructor.timings[1].map((timings) => {
-                          return `${timings} `;
-                        })
+                        return `${timings} `;
+                      })
                       : "unavailable"}
                   </b>
                 </div>
@@ -78,7 +78,7 @@ const ProfessorCard = ({ instructor, index }) => {
         </div>
         <div className="w-100 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center bottom-half mobile-top-margin-5">
           <div className="row w-100 d-flex justify-content-center">
-            <GradeDistChart2
+            <GradeDistChart
               average_grades={instructor.average_grades}
               key={index}
               pixels={pixels}
