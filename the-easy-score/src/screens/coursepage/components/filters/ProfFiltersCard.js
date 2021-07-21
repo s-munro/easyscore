@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
-import { setInstructors } from "../../../../actions/fetchDataActions";
+import { setInstructors } from "../../../../store/actions/fetchDataActions";
 
 import {
   setInstructorNextSemesterFilterValue,
@@ -9,7 +9,7 @@ import {
   setInstructorEasyScoreFilterValue,
   setInstructorPercentageAsFilterValue,
   setInstructorMinimumSemestersFilterValue,
-} from "../../../../actions/filtersActions";
+} from "../../../../store/actions/filtersActions";
 
 import { Card, Button, Form } from "react-bootstrap";
 import { Typography, Slider } from "@material-ui/core";

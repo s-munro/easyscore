@@ -8,7 +8,7 @@ import {
   setCreditsFilterValue,
   setTimeFilterValue,
   resetFilterValues,
-} from "../actions/filtersActions";
+} from "../store/actions/filtersActions";
 
 import {
   requirementsValues,

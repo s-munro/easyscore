@@ -7,9 +7,9 @@ import {
   setCreditsFilterValue,
   setTimeFilterValue,
   setRequirementsFilterValue,
-} from "../actions/filtersActions";
+} from "../store/actions/filtersActions";
 
-import { setShowModal } from "../actions/index";
+import { setShowModal } from "../store/actions/index";
 
 import SearchForm from "../components/SearchForm";
 import Hidden from "@material-ui/core/Hidden";

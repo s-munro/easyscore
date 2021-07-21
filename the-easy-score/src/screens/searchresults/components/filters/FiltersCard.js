@@ -8,9 +8,9 @@ import {
   setSearchPageFiltersCourseCreditHours,
   setSearchPageFiltersTimeofDay,
   resetSearchPageFilters,
-} from "../../../../actions/filtersActions";
+} from "../../../../store/actions/filtersActions";
 
-import { setCourses } from "../../../../actions/fetchDataActions";
+import { setCourses } from "../../../../store/actions/fetchDataActions";
 
 import {
   requirementsValues,

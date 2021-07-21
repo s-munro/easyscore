@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { Card, Form, Button } from "react-bootstrap";
-import { setNavStyle, setFooterStyle } from "../../actions/index";
 import TextField from "@material-ui/core/TextField";
 import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
+
+import { setNavStyle, setFooterStyle } from "../../store/actions/index";
 import "./Contact.css";
 
 function Alert(props) {
@@ -18,9 +19,6 @@ const initialFormValues = {
   message: "",
   subject: "",
 };
-
-let vertical = "bottom";
-let horizontal = "left";
 
 const Contact = (props) => {
   const [formValues, setFormValues] = useState(initialFormValues);
@@ -42,7 +40,7 @@ const Contact = (props) => {
 
   function url(path) {
     return process.env.NODE_ENV === "development"
-      ? `http://localhost:4000${path}`
+      ? `${process.env.REACT_APP_DEV_URL + path}`
       : path;
   }
 
@@ -146,7 +144,7 @@ const Contact = (props) => {
               Send
             </Button>
             <Snackbar
-              anchorOrigin={{ vertical, horizontal }}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
               severity="success"
               open={successOpen}
               autoHideDuration={2000}
@@ -157,7 +155,7 @@ const Contact = (props) => {
               </Alert>
             </Snackbar>
             <Snackbar
-              anchorOrigin={{ vertical, horizontal }}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
               open={errorOpen}
               autoHideDuration={2000}
               onClose={handleClose}
