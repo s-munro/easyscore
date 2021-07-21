@@ -2,12 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "font-awesome/css/font-awesome.min.css";
-
-import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import thunk from "redux-thunk";
 
-import reducer from "./store/reducers";
+import { store } from "./store/store";
 
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import "antd/dist/antd.css";
@@ -19,9 +16,6 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 import Chart from "chart.js";
 
 Chart.plugins.unregister(ChartDataLabels);
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 const theme = createMuiTheme({
   palette: {

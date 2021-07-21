@@ -14,7 +14,8 @@ import "./App.css";
 const App = () => {
   return (
     <div className="container d-flex flex-column align-items-center">
-      <Router>
+      <Home />
+      {/* <Router>
         <Nav />
         <Switch>
           <Route exact path="/" render={(props) => <Home {...props} />} />
@@ -30,7 +31,7 @@ const App = () => {
           />
         </Switch>
         <Footer />
-      </Router>
+      </Router> */}
     </div>
   );
 };

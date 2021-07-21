@@ -25,7 +25,7 @@ const Home = (props) => {
 
   return (
     <main className="row w-100">
-      <div className="col-12 d-flex justify-content-center">
+      {/* <div className="col-12 d-flex justify-content-center">
         <h1 className="logoTitle">
           <b>Easy</b>
           <span className="scoreLogo">Score</span>
@@ -48,16 +48,17 @@ const Home = (props) => {
           </div>
         </Hidden>
       </div>
-      <FiltersModal />
+      <FiltersModal /> */}
     </main>
   );
 };
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
-    navStyle: state.navStyle,
-    footerStyle: state.footerStyle,
-    showModal: state.showModal,
+    navStyle: state.ui.navStyle,
+    footerStyle: state.ui.footerStyle,
+    showModal: state.ui.showModal,
   };
 };
 
