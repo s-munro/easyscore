@@ -50,8 +50,6 @@ const GradeDistChart2 = ({ average_grades, pixels }) => {
                   display: false,
                   drawBorder: true,
                 },
-                // barPercentage: 1,
-                // categoryPercentage: 0.5,
               },
             ],
             yAxes: [

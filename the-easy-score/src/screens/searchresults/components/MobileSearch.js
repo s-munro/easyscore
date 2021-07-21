@@ -78,9 +78,9 @@ const MobileSearchForm = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    courses: state.courses,
-    filters: state.filters,
+    isLoading: state.fetch.isLoading,
+    courses: state.fetch.courses,
+    filters: state.filters.filters,
   };
 };
 

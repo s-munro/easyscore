@@ -33,7 +33,7 @@ const Home = (props) => {
       </div>
       <div className="col-12 d-flex justify-content-center align-items-center">
         <Hidden smDown>
-          <SearchForm nav={false} />
+          <SearchForm nav={false} {...props} />
         </Hidden>
         <Hidden mdUp>
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
@@ -54,10 +54,11 @@ const Home = (props) => {
 };
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
-    navStyle: state.navStyle,
-    footerStyle: state.footerStyle,
-    showModal: state.showModal,
+    navStyle: state.ui.navStyle,
+    footerStyle: state.ui.footerStyle,
+    showModal: state.ui.showModal,
   };
 };
 

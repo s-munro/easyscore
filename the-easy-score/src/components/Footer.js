@@ -55,7 +55,7 @@ const Footer = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    footerStyle: state.footerStyle,
+    footerStyle: state.ui.footerStyle,
   };
 };
 export default connect(mapStateToProps)(Footer);

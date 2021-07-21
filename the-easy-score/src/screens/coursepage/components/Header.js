@@ -34,47 +34,42 @@ const Header = ({ course }) => {
             </div>
             <div className="col-xl-10 col-lg-9 col-md-9 col-sm-12 col-12 d-flex flex-wrap align-items-center justify-content-start reqTagsContainer mobile-hide-">
               {showFulfilled === true
-                ? course.credits_fulfilled.map((credit) => {
-                    let creditType = "";
-                    if (credit === 0) {
-                      creditType = "A&H";
-                    } else if (credit === 1) {
-                      creditType = "Diversity in U.S.";
-                    } else if (credit === 2) {
-                      creditType = "S&H Credit";
-                    } else if (credit === 3) {
-                      creditType = "N&M Credit";
-                    } else if (credit === 4) {
-                      creditType = "World Culture";
-                    } else if (credit === 5) {
-                      creditType = "Public Oral Comm.";
-                    } else if (credit === 6) {
-                      creditType = "English Composition";
-                    } else if (credit === 7) {
-                      creditType = "Mathematical Modeling";
-                    } else if (credit === 8) {
-                      creditType = "300+ Level";
-                    } else if (credit === 9) {
-                      creditType = "400+ Level";
-                    } else if (credit === 10) {
-                      creditType = "Grad";
-                    } else if (credit === 11) {
-                      creditType = "Intensive Writing";
-                    } else if (credit === 7) {
-                      creditType = "Mathematical Modeling";
-                    } else if (credit === 12) {
-                      creditType = "100-299 Level";
-                    } else if (credit === 13) {
-                      creditType = "Honors";
-                    } else if (credit === "0GENEDMM") {
-                      creditType = "World Language";
-                    } else return null;
-                    return (
-                      <p key={creditType} className="requirements">
-                        {creditType} <span className="lightgray"> |</span>
-                      </p>
-                    );
-                  })
+                ? course.credits_fulfilled.map((credit, i) => {
+                  switch (credit) {
+                    case "0":
+                      return <div key={i} className="requirements">A&H<span className="lightgray"> |</span></div>;
+                    case 1:
+                      return <div key={i} className="requirements">Diversity in U.S.<span className="lightgray"> |</span></div>;
+                    case 2:
+                      return <div key={i} className="requirements">S&H Credit<span className="lightgray"> |</span></div>;
+                    case 3:
+                      return <div key={i} className="requirements">N&M Credit<span className="lightgray"> |</span></div>;
+                    case 4:
+                      return <div key={i} className="requirements">World Culure<span className="lightgray"> |</span></div>;
+                    case 5:
+                      return <div key={i} className="requirements">Public Oral Comm.<span className="lightgray"> |</span></div>;
+                    case 6:
+                      return <div key={i} className="requirements">English Composition<span className="lightgray"> |</span></div>;
+                    case 7:
+                      return <div key={i} className="requirements">Mathematical Modeling<span className="lightgray"> |</span></div>;
+                    case 8:
+                      return <div key={i} className="requirements">300+ Level<span className="lightgray"> |</span></div>;
+                    case 9:
+                      return <div key={i} className="requirements">400+ Level<span className="lightgray"> |</span></div>;
+                    case 10:
+                      return <div key={i} className="requirements">Grad<span className="lightgray"> |</span></div>;
+                    case 11:
+                      return <div key={i} className="requirements">Intensive Writing<span className="lightgray"> |</span></div>;
+                    case 12:
+                      return <div key={i} className="requirements">100-299 Level<span className="lightgray"> |</span></div>;
+                    case 13:
+                      return <div key={i} className="requirements">Honors<span className="lightgray"> |</span></div>;
+                    case "0GENEDMM":
+                      return <div key={i} className="requirements">World Language<span className="lightgray"> |</span></div>;
+                    default:
+                      return null;
+                  }
+                })
                 : null}
             </div>
           </div>
